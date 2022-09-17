@@ -1,0 +1,682 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523302E28D624D4007F18F6 /* UserDefault.swift */; };
+		6523303128D624FB007F18F6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303028D624FB007F18F6 /* ViewExtension.swift */; };
+		6523303428D62593007F18F6 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303328D62593007F18F6 /* Localization.swift */; };
+		6523303628D625B3007F18F6 /* Localizable(English).strings in Resources */ = {isa = PBXBuildFile; fileRef = 6523303528D625B3007F18F6 /* Localizable(English).strings */; };
+		6523303A28D625DD007F18F6 /* Localizable(Vietnamese).strings in Resources */ = {isa = PBXBuildFile; fileRef = 6523303928D625DD007F18F6 /* Localizable(Vietnamese).strings */; };
+		6523303C28D62623007F18F6 /* Bundle+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303B28D62623007F18F6 /* Bundle+Locator.swift */; };
+		6523303E28D6263C007F18F6 /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303D28D6263C007F18F6 /* String+Localizable.swift */; };
+		6523304128D62699007F18F6 /* RequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304028D62699007F18F6 /* RequestInfo.swift */; };
+		6523304328D626A0007F18F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304228D626A0007F18F6 /* NetworkService.swift */; };
+		6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304428D626A7007F18F6 /* AlamofireNetworkService.swift */; };
+		6523304728D626AE007F18F6 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304628D626AE007F18F6 /* NetworkServiceProtocol.swift */; };
+		65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */; };
+		65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401228D5FE9D000F7477 /* ContentView.swift */; };
+		65ED401528D5FEA5000F7477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65ED401428D5FEA5000F7477 /* Assets.xcassets */; };
+		65ED401828D5FEA5000F7477 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65ED401728D5FEA5000F7477 /* Preview Assets.xcassets */; };
+		65ED403728D60434000F7477 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED403628D60434000F7477 /* ColorExtension.swift */; };
+		65ED403928D606CC000F7477 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED403828D606CC000F7477 /* Logger.swift */; };
+		65ED403B28D606E9000F7477 /* ServerConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED403A28D606E9000F7477 /* ServerConstant.swift */; };
+		65ED403D28D606F6000F7477 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED403C28D606F6000F7477 /* DIContainer.swift */; };
+		E7EFBEBD7D064843085F995E /* Pods_ChemistryAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C29B6DA53CABA3BA48A514 /* Pods_ChemistryAR.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		26EA850E32323879880D3AB7 /* Pods-ChemistryAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.debug.xcconfig"; path = "Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.debug.xcconfig"; sourceTree = "<group>"; };
+		6523302E28D624D4007F18F6 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		6523303028D624FB007F18F6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		6523303328D62593007F18F6 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		6523303528D625B3007F18F6 /* Localizable(English).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localizable(English).strings"; sourceTree = "<group>"; };
+		6523303928D625DD007F18F6 /* Localizable(Vietnamese).strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = "Localizable(Vietnamese).strings"; sourceTree = "<group>"; };
+		6523303B28D62623007F18F6 /* Bundle+Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Locator.swift"; sourceTree = "<group>"; };
+		6523303D28D6263C007F18F6 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
+		6523304028D62699007F18F6 /* RequestInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInfo.swift; sourceTree = "<group>"; };
+		6523304228D626A0007F18F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		6523304428D626A7007F18F6 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
+		6523304628D626AE007F18F6 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		65ED400D28D5FE9D000F7477 /* ChemistryAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemistryAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryARApp.swift; sourceTree = "<group>"; };
+		65ED401228D5FE9D000F7477 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		65ED401428D5FEA5000F7477 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65ED401728D5FEA5000F7477 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		65ED403628D60434000F7477 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		65ED403828D606CC000F7477 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		65ED403A28D606E9000F7477 /* ServerConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConstant.swift; sourceTree = "<group>"; };
+		65ED403C28D606F6000F7477 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		69C29B6DA53CABA3BA48A514 /* Pods_ChemistryAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChemistryAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF952D4FAD307029EDE348AF /* Pods-ChemistryAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.release.xcconfig"; path = "Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65ED400A28D5FE9D000F7477 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7EFBEBD7D064843085F995E /* Pods_ChemistryAR.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6523303228D62575007F18F6 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				6523303328D62593007F18F6 /* Localization.swift */,
+				6523303528D625B3007F18F6 /* Localizable(English).strings */,
+				6523303928D625DD007F18F6 /* Localizable(Vietnamese).strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		6523303F28D62677007F18F6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				65ED403828D606CC000F7477 /* Logger.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		65ED400428D5FE9D000F7477 = {
+			isa = PBXGroup;
+			children = (
+				65ED400F28D5FE9D000F7477 /* ChemistryAR */,
+				65ED400E28D5FE9D000F7477 /* Products */,
+				75D4713C920CE1D0A6D35317 /* Pods */,
+				C3510D40054748E7B58F712F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		65ED400E28D5FE9D000F7477 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65ED400D28D5FE9D000F7477 /* ChemistryAR.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65ED400F28D5FE9D000F7477 /* ChemistryAR */ = {
+			isa = PBXGroup;
+			children = (
+				65ED401E28D6009F000F7477 /* Config */,
+				65ED401F28D600C0000F7477 /* Resources */,
+				65ED402928D60164000F7477 /* DataInfrastructure */,
+				65ED402528D60132000F7477 /* Domain */,
+				65ED402428D60128000F7477 /* Manager */,
+				65ED402128D600E7000F7477 /* Presentation */,
+				65ED402028D600D6000F7477 /* Utils */,
+				65ED401628D5FEA5000F7477 /* Preview Content */,
+			);
+			path = ChemistryAR;
+			sourceTree = "<group>";
+		};
+		65ED401628D5FEA5000F7477 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				65ED401728D5FEA5000F7477 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		65ED401E28D6009F000F7477 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */,
+				65ED401228D5FE9D000F7477 /* ContentView.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		65ED401F28D600C0000F7477 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6523303228D62575007F18F6 /* Localization */,
+				65ED401428D5FEA5000F7477 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		65ED402028D600D6000F7477 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6523303F28D62677007F18F6 /* Helper */,
+				65ED403328D603D9000F7477 /* BaseService */,
+				65ED403228D603CD000F7477 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		65ED402128D600E7000F7477 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				65ED402328D60120000F7477 /* Views */,
+				65ED402228D60119000F7477 /* ViewModels */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		65ED402228D60119000F7477 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		65ED402328D60120000F7477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65ED402428D60128000F7477 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		65ED402528D60132000F7477 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				65ED402628D60147000F7477 /* Application */,
+				65ED402828D60157000F7477 /* DomainModel */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		65ED402628D60147000F7477 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				65ED402728D60150000F7477 /* UseCases */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		65ED402728D60150000F7477 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		65ED402828D60157000F7477 /* DomainModel */ = {
+			isa = PBXGroup;
+			children = (
+				65ED402A28D60176000F7477 /* Repositories */,
+				65ED402B28D60187000F7477 /* Model */,
+			);
+			path = DomainModel;
+			sourceTree = "<group>";
+		};
+		65ED402928D60164000F7477 /* DataInfrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				65ED402C28D601E5000F7477 /* Connection */,
+				65ED403128D6022A000F7477 /* Mapper */,
+				65ED403028D6021A000F7477 /* Entities */,
+			);
+			path = DataInfrastructure;
+			sourceTree = "<group>";
+		};
+		65ED402A28D60176000F7477 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		65ED402B28D60187000F7477 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		65ED402C28D601E5000F7477 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				65ED402E28D60205000F7477 /* DB */,
+				65ED402D28D601F2000F7477 /* Http */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		65ED402D28D601F2000F7477 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		65ED402E28D60205000F7477 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				65ED402F28D60211000F7477 /* UserDefaults */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		65ED402F28D60211000F7477 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		65ED403028D6021A000F7477 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		65ED403128D6022A000F7477 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		65ED403228D603CD000F7477 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				65ED403528D60418000F7477 /* Foundation */,
+				65ED403428D6040A000F7477 /* View */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		65ED403328D603D9000F7477 /* BaseService */ = {
+			isa = PBXGroup;
+			children = (
+				6523304628D626AE007F18F6 /* NetworkServiceProtocol.swift */,
+				6523304428D626A7007F18F6 /* AlamofireNetworkService.swift */,
+				6523304228D626A0007F18F6 /* NetworkService.swift */,
+				6523304028D62699007F18F6 /* RequestInfo.swift */,
+				65ED403C28D606F6000F7477 /* DIContainer.swift */,
+				65ED403A28D606E9000F7477 /* ServerConstant.swift */,
+			);
+			path = BaseService;
+			sourceTree = "<group>";
+		};
+		65ED403428D6040A000F7477 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6523303028D624FB007F18F6 /* ViewExtension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65ED403528D60418000F7477 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				65ED403628D60434000F7477 /* ColorExtension.swift */,
+				6523302E28D624D4007F18F6 /* UserDefault.swift */,
+				6523303B28D62623007F18F6 /* Bundle+Locator.swift */,
+				6523303D28D6263C007F18F6 /* String+Localizable.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		75D4713C920CE1D0A6D35317 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26EA850E32323879880D3AB7 /* Pods-ChemistryAR.debug.xcconfig */,
+				FF952D4FAD307029EDE348AF /* Pods-ChemistryAR.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C3510D40054748E7B58F712F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69C29B6DA53CABA3BA48A514 /* Pods_ChemistryAR.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65ED400C28D5FE9D000F7477 /* ChemistryAR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65ED401B28D5FEA5000F7477 /* Build configuration list for PBXNativeTarget "ChemistryAR" */;
+			buildPhases = (
+				7A63C5A5645C82403FBA2BA2 /* [CP] Check Pods Manifest.lock */,
+				65ED400928D5FE9D000F7477 /* Sources */,
+				65ED400A28D5FE9D000F7477 /* Frameworks */,
+				65ED400B28D5FE9D000F7477 /* Resources */,
+				409ED7FB0E0485EE92F749E5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChemistryAR;
+			productName = ChemistryAR;
+			productReference = 65ED400D28D5FE9D000F7477 /* ChemistryAR.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65ED400528D5FE9D000F7477 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					65ED400C28D5FE9D000F7477 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 65ED400828D5FE9D000F7477 /* Build configuration list for PBXProject "ChemistryAR" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65ED400428D5FE9D000F7477;
+			productRefGroup = 65ED400E28D5FE9D000F7477 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65ED400C28D5FE9D000F7477 /* ChemistryAR */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65ED400B28D5FE9D000F7477 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6523303628D625B3007F18F6 /* Localizable(English).strings in Resources */,
+				65ED401828D5FEA5000F7477 /* Preview Assets.xcassets in Resources */,
+				65ED401528D5FEA5000F7477 /* Assets.xcassets in Resources */,
+				6523303A28D625DD007F18F6 /* Localizable(Vietnamese).strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		409ED7FB0E0485EE92F749E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A63C5A5645C82403FBA2BA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChemistryAR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65ED400928D5FE9D000F7477 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6523303128D624FB007F18F6 /* ViewExtension.swift in Sources */,
+				6523304128D62699007F18F6 /* RequestInfo.swift in Sources */,
+				65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */,
+				6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */,
+				6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */,
+				65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */,
+				6523303E28D6263C007F18F6 /* String+Localizable.swift in Sources */,
+				65ED403728D60434000F7477 /* ColorExtension.swift in Sources */,
+				6523303C28D62623007F18F6 /* Bundle+Locator.swift in Sources */,
+				6523303428D62593007F18F6 /* Localization.swift in Sources */,
+				65ED403928D606CC000F7477 /* Logger.swift in Sources */,
+				65ED403D28D606F6000F7477 /* DIContainer.swift in Sources */,
+				6523304328D626A0007F18F6 /* NetworkService.swift in Sources */,
+				65ED403B28D606E9000F7477 /* ServerConstant.swift in Sources */,
+				6523304728D626AE007F18F6 /* NetworkServiceProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		65ED401928D5FEA5000F7477 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65ED401A28D5FEA5000F7477 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65ED401C28D5FEA5000F7477 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26EA850E32323879880D3AB7 /* Pods-ChemistryAR.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChemistryAR/Preview Content\"";
+				DEVELOPMENT_TEAM = 67A5KG44NX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Minh.ChemistryAR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65ED401D28D5FEA5000F7477 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF952D4FAD307029EDE348AF /* Pods-ChemistryAR.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ChemistryAR/Preview Content\"";
+				DEVELOPMENT_TEAM = 67A5KG44NX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Minh.ChemistryAR;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65ED400828D5FE9D000F7477 /* Build configuration list for PBXProject "ChemistryAR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65ED401928D5FEA5000F7477 /* Debug */,
+				65ED401A28D5FEA5000F7477 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65ED401B28D5FEA5000F7477 /* Build configuration list for PBXNativeTarget "ChemistryAR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65ED401C28D5FEA5000F7477 /* Debug */,
+				65ED401D28D5FEA5000F7477 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65ED400528D5FE9D000F7477 /* Project object */;
+}
