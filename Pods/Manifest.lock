@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.6.2)
+  - lottie-ios (3.4.3)
   - Swinject (2.8.2)
 
 DEPENDENCIES:
   - Alamofire
+  - lottie-ios
   - Swinject
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - lottie-ios
     - Swinject
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  lottie-ios: 9ae750cdc7820fecbd3c2f0cfc493038208fcdc4
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
 
-PODFILE CHECKSUM: 4c27f5e6a3a51a18a859efbcb6efb1833910d6b1
+PODFILE CHECKSUM: 9c319e1b892c2c5ae761e5b7cf94de1d78f3e728
 
 COCOAPODS: 1.11.3

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 public extension Color {
     // static let cF1CC45 = Color(hex: 0xF1CC45)
@@ -25,3 +26,11 @@ public extension Color {
     }
 }
 
+extension UIColor {
+    func image(_ size: CGSize = CGSize(width: 200, height: 200)) -> UIImage {
+        return UIGraphicsImageRenderer(size: size).image { rendererContext in
+            self.setFill()
+            rendererContext.fill(CGRect(origin: .zero, size: size))
+        }
+    }
+}

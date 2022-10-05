@@ -18,6 +18,22 @@
 		6523304328D626A0007F18F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304228D626A0007F18F6 /* NetworkService.swift */; };
 		6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304428D626A7007F18F6 /* AlamofireNetworkService.swift */; };
 		6523304728D626AE007F18F6 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304628D626AE007F18F6 /* NetworkServiceProtocol.swift */; };
+		65985E2928EBE04800061E68 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E2828EBE04800061E68 /* MainTabView.swift */; };
+		65985E2B28EC51A800061E68 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 65985E2A28EC51A800061E68 /* splash.json */; };
+		65985E2D28EC560A00061E68 /* SplashAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E2C28EC560A00061E68 /* SplashAnimationView.swift */; };
+		65985E3028EC5BCF00061E68 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E2F28EC5BCF00061E68 /* OnboardingView.swift */; };
+		65985E3228EC5BFF00061E68 /* BoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E3128EC5BFF00061E68 /* BoardingModel.swift */; };
+		65985E3428EC5D1800061E68 /* OffsetPageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E3328EC5D1800061E68 /* OffsetPageTabView.swift */; };
+		65985E3628EC775D00061E68 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E3528EC775D00061E68 /* UserDefaultKeys.swift */; };
+		65985E3828EC77EC00061E68 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E3728EC77EC00061E68 /* AppState.swift */; };
+		65A5B4F528DEC2E20011425C /* helium.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 65A5B4F428DEC2E20011425C /* helium.usdz */; };
+		65A5B4FA28DED5610011425C /* hydrogen.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 65A5B4F928DED5610011425C /* hydrogen.usdz */; };
+		65C0D13828E160990068757A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0D13728E160990068757A /* UIViewExtension.swift */; };
+		65C1693328DAAEAE004406CA /* ImageTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1693228DAAEAE004406CA /* ImageTrackingView.swift */; };
+		65E46FB128E197270051A150 /* CustomMaterialShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 65E46FAE28E197270051A150 /* CustomMaterialShaders.metal */; };
+		65E46FB228E197270051A150 /* DrawableQueueShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 65E46FAF28E197270051A150 /* DrawableQueueShaders.metal */; };
+		65E46FB328E197270051A150 /* DrawableTextureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46FB028E197270051A150 /* DrawableTextureManager.swift */; };
+		65E46FB728E1BA630051A150 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46FB628E1BA630051A150 /* AppConstant.swift */; };
 		65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */; };
 		65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401228D5FE9D000F7477 /* ContentView.swift */; };
 		65ED401528D5FEA5000F7477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65ED401428D5FEA5000F7477 /* Assets.xcassets */; };
@@ -42,6 +58,22 @@
 		6523304228D626A0007F18F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6523304428D626A7007F18F6 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		6523304628D626AE007F18F6 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		65985E2828EBE04800061E68 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		65985E2A28EC51A800061E68 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
+		65985E2C28EC560A00061E68 /* SplashAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAnimationView.swift; sourceTree = "<group>"; };
+		65985E2F28EC5BCF00061E68 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		65985E3128EC5BFF00061E68 /* BoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingModel.swift; sourceTree = "<group>"; };
+		65985E3328EC5D1800061E68 /* OffsetPageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPageTabView.swift; sourceTree = "<group>"; };
+		65985E3528EC775D00061E68 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
+		65985E3728EC77EC00061E68 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		65A5B4F428DEC2E20011425C /* helium.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = helium.usdz; sourceTree = "<group>"; };
+		65A5B4F928DED5610011425C /* hydrogen.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = hydrogen.usdz; sourceTree = "<group>"; };
+		65C0D13728E160990068757A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		65C1693228DAAEAE004406CA /* ImageTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrackingView.swift; sourceTree = "<group>"; };
+		65E46FAE28E197270051A150 /* CustomMaterialShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = CustomMaterialShaders.metal; sourceTree = "<group>"; };
+		65E46FAF28E197270051A150 /* DrawableQueueShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DrawableQueueShaders.metal; sourceTree = "<group>"; };
+		65E46FB028E197270051A150 /* DrawableTextureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableTextureManager.swift; sourceTree = "<group>"; };
+		65E46FB628E1BA630051A150 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		65ED400D28D5FE9D000F7477 /* ChemistryAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemistryAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryARApp.swift; sourceTree = "<group>"; };
 		65ED401228D5FE9D000F7477 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,9 +112,74 @@
 		6523303F28D62677007F18F6 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				65E46FB628E1BA630051A150 /* AppConstant.swift */,
+				65985E3728EC77EC00061E68 /* AppState.swift */,
 				65ED403828D606CC000F7477 /* Logger.swift */,
+				65985E3528EC775D00061E68 /* UserDefaultKeys.swift */,
+				65E46FAD28E197270051A150 /* Metal */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		65581ABD28DC229900BFEBA8 /* 3D Model */ = {
+			isa = PBXGroup;
+			children = (
+				65A5B4F928DED5610011425C /* hydrogen.usdz */,
+				65A5B4F428DEC2E20011425C /* helium.usdz */,
+			);
+			path = "3D Model";
+			sourceTree = "<group>";
+		};
+		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
+			isa = PBXGroup;
+			children = (
+				65985E2E28EC5BB500061E68 /* Onboarding */,
+				65985E2728EBE01A00061E68 /* BaseView */,
+			);
+			path = SwiftUIView;
+			sourceTree = "<group>";
+		};
+		65985E2728EBE01A00061E68 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				65985E2C28EC560A00061E68 /* SplashAnimationView.swift */,
+				65985E2828EBE04800061E68 /* MainTabView.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		65985E2E28EC5BB500061E68 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				65985E3128EC5BFF00061E68 /* BoardingModel.swift */,
+				65985E2F28EC5BCF00061E68 /* OnboardingView.swift */,
+				65985E3328EC5D1800061E68 /* OffsetPageTabView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		65C1693128DAA71F004406CA /* AR Views */ = {
+			isa = PBXGroup;
+			children = (
+				65C1693228DAAEAE004406CA /* ImageTrackingView.swift */,
+			);
+			path = "AR Views";
+			sourceTree = "<group>";
+		};
+		65E46FAD28E197270051A150 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				65E46FAE28E197270051A150 /* CustomMaterialShaders.metal */,
+				65E46FAF28E197270051A150 /* DrawableQueueShaders.metal */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		65E46FB428E1B92C0051A150 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		65ED400428D5FE9D000F7477 = {
@@ -138,8 +235,10 @@
 		65ED401F28D600C0000F7477 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6523303228D62575007F18F6 /* Localization */,
+				65985E2A28EC51A800061E68 /* splash.json */,
 				65ED401428D5FEA5000F7477 /* Assets.xcassets */,
+				65581ABD28DC229900BFEBA8 /* 3D Model */,
+				6523303228D62575007F18F6 /* Localization */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -173,6 +272,9 @@
 		65ED402328D60120000F7477 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				65985E2628EBDFF900061E68 /* SwiftUIView */,
+				65E46FB428E1B92C0051A150 /* UIView */,
+				65C1693128DAA71F004406CA /* AR Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +282,7 @@
 		65ED402428D60128000F7477 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				65E46FB028E197270051A150 /* DrawableTextureManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -312,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				6523303028D624FB007F18F6 /* ViewExtension.swift */,
+				65C0D13728E160990068757A /* UIViewExtension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,10 +508,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65A5B4F528DEC2E20011425C /* helium.usdz in Resources */,
 				6523303628D625B3007F18F6 /* Localizable(English).strings in Resources */,
 				65ED401828D5FEA5000F7477 /* Preview Assets.xcassets in Resources */,
 				65ED401528D5FEA5000F7477 /* Assets.xcassets in Resources */,
 				6523303A28D625DD007F18F6 /* Localizable(Vietnamese).strings in Resources */,
+				65985E2B28EC51A800061E68 /* splash.json in Resources */,
+				65A5B4FA28DED5610011425C /* hydrogen.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,21 +567,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C0D13828E160990068757A /* UIViewExtension.swift in Sources */,
 				6523303128D624FB007F18F6 /* ViewExtension.swift in Sources */,
+				65985E3228EC5BFF00061E68 /* BoardingModel.swift in Sources */,
 				6523304128D62699007F18F6 /* RequestInfo.swift in Sources */,
 				65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */,
+				65E46FB228E197270051A150 /* DrawableQueueShaders.metal in Sources */,
+				65985E2928EBE04800061E68 /* MainTabView.swift in Sources */,
+				65C1693328DAAEAE004406CA /* ImageTrackingView.swift in Sources */,
+				65985E3628EC775D00061E68 /* UserDefaultKeys.swift in Sources */,
 				6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */,
 				6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */,
 				65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */,
+				65E46FB728E1BA630051A150 /* AppConstant.swift in Sources */,
 				6523303E28D6263C007F18F6 /* String+Localizable.swift in Sources */,
 				65ED403728D60434000F7477 /* ColorExtension.swift in Sources */,
 				6523303C28D62623007F18F6 /* Bundle+Locator.swift in Sources */,
 				6523303428D62593007F18F6 /* Localization.swift in Sources */,
 				65ED403928D606CC000F7477 /* Logger.swift in Sources */,
 				65ED403D28D606F6000F7477 /* DIContainer.swift in Sources */,
+				65985E2D28EC560A00061E68 /* SplashAnimationView.swift in Sources */,
 				6523304328D626A0007F18F6 /* NetworkService.swift in Sources */,
 				65ED403B28D606E9000F7477 /* ServerConstant.swift in Sources */,
+				65E46FB128E197270051A150 /* CustomMaterialShaders.metal in Sources */,
+				65985E3828EC77EC00061E68 /* AppState.swift in Sources */,
+				65985E3428EC5D1800061E68 /* OffsetPageTabView.swift in Sources */,
+				65985E3028EC5BCF00061E68 /* OnboardingView.swift in Sources */,
 				6523304728D626AE007F18F6 /* NetworkServiceProtocol.swift in Sources */,
+				65E46FB328E197270051A150 /* DrawableTextureManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +651,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -585,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -607,21 +727,26 @@
 				DEVELOPMENT_TEAM = 67A5KG44NX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "camera use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Minh.ChemistryAR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Minh.ChemistryAR.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -637,21 +762,26 @@
 				DEVELOPMENT_TEAM = 67A5KG44NX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "camera use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Minh.ChemistryAR;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Minh.ChemistryAR.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

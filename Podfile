@@ -7,6 +7,7 @@ target 'ChemistryAR' do
   use_frameworks!
 
   # Pods for ChemistryAR
+pod 'lottie-ios'
 pod 'Swinject'
 pod 'Alamofire'
 

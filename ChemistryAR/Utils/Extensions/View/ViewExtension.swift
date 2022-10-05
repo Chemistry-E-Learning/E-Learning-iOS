@@ -12,7 +12,6 @@ extension View {
         clipShape(RoundedCorner(radius: radius, corners: corners) )
     }
 
-    /// Handle action hide keyboard
     func hideKeyboard() {
         UIApplication.shared.sendAction(
             #selector(UIResponder.resignFirstResponder),
@@ -20,6 +19,10 @@ extension View {
             from: nil,
             for: nil
         )
+    }
+
+    func getScreenBounds() -> CGRect {
+        return UIScreen.main.bounds
     }
 }
 

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ChemistryARApp: App {
+    let appState = AppState.shared
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(appState)
         }
     }
 }
