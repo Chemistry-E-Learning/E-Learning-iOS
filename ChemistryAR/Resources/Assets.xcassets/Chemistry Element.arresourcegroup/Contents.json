@@ -5,10 +5,16 @@
   },
   "resources" : [
     {
+      "filename" : "beryllium.arreferenceimage"
+    },
+    {
       "filename" : "helium.arreferenceimage"
     },
     {
       "filename" : "hydrogen.arreferenceimage"
+    },
+    {
+      "filename" : "lithium.arreferenceimage"
     }
   ]
 }

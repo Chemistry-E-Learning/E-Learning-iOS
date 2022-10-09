@@ -9,7 +9,9 @@ import SwiftUI
 import UIKit
 
 public extension Color {
-    // static let cF1CC45 = Color(hex: 0xF1CC45)
+    static let c4A4A4A = Color(hex: 0x4A4A4A)
+    static let cE1E1E1 = Color(hex: 0xE1E1E1)
+    static let c081645 = Color(hex: 0x081645)
 
     /// color initalizer
     /// - Parameters:

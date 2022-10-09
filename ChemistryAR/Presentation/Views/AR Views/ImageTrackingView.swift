@@ -7,29 +7,26 @@
 
 import SwiftUI
 import Foundation
-import RealityKit
+import SceneKit
+import SceneKit.ModelIO
 import ARKit
 
 struct ImageTrackingView: View {
-    @State private var isShowInformationView = false
-
     var body: some View {
         ZStack {
             ImageTrackingARView()
         }
-            .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
 struct ImageTrackingARView: UIViewRepresentable {
-    var arView = ARView(frame: .zero, cameraMode: .ar, automaticallyConfigureSession: true)
+    var sceneView = ARSCNView(frame: .zero)
 
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
-
-
-    func makeUIView(context: Context) -> ARView {
+    func makeUIView(context: Context) -> ARSCNView {
         guard let referenceImages = ARReferenceImage.referenceImages(
             inGroupNamed: AppConstant.ChemistryElementResource,
             bundle: nil)
@@ -42,50 +39,61 @@ struct ImageTrackingARView: UIViewRepresentable {
         configuration.detectionImages = referenceImages
         configuration.maximumNumberOfTrackedImages = AppConstant.maximumImageTracking
 
-        arView.session.delegate = context.coordinator
-        arView.session.run(configuration)
-        return arView
+        sceneView.delegate = context.coordinator
+        sceneView.showsStatistics = true
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.automaticallyUpdatesLighting = true
+        sceneView.session.run(configuration)
+        return sceneView
     }
 
-     func updateUIView(_ uiView: ARView, context: Context) {
+    func updateUIView(_ uiView: ARSCNView, context: Context) {
     }
 
-    class Coordinator: NSObject, ARSessionDelegate {
+    class Coordinator: NSObject, ARSCNViewDelegate {
         var parent: ImageTrackingARView
-        lazy var drawableTextureManager: DrawableTextureManager = DrawableTextureManager()
 
         init(parent: ImageTrackingARView) {
             self.parent = parent
         }
 
-        func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
-            for anchor in anchors {
-                //                guard let imageAnchor = anchor as? ARImageAnchor, let imageName = imageAnchor.name else { return }
-                //                let physicSize = imageAnchor.referenceImage.physicalSize
-                //                let imageAnchorEntity = AnchorEntity(anchor: imageAnchor)
-                //                let filename = "\(imageName).usdz"
-                //                let modelEntity = try! ModelEntity.loadModel(named: filename)
-                //                let rotationAngle = simd_quatf(
-                //                    angle: GLKMathDegreesToRadians(-90),
-                //                    axis: SIMD3(x: 1, y: 0, z: 0)
-                //                )
-                //                drawableTextureManager.update(with: UIView(frame: CGRect(x: 0, y: 0, width: physicSize.width, height: physicSize.height)))
-                //                let entity = ModelEntity(
-                //                    mesh: .generatePlane(width: 0.5, height: 0.5),
-                //                    materials: [drawableTextureManager.customMaterial]
-                //                )
-                //                entity.setOrientation(rotationAngle, relativeTo: imageAnchorEntity)
-                //                entity.setPosition(SIMD3(x: Float(physicSize.width * 1.2 ), y: 0, z: 0), relativeTo: imageAnchorEntity)
-                //                imageAnchorEntity.addChild(entity)
-                //                modelEntity.generateCollisionShapes(recursive: true)
-                //                modelEntity.setOrientation(rotationAngle, relativeTo: imageAnchorEntity)
-                //                imageAnchorEntity.addChild(modelEntity)
-                //                parent.arView.installGestures([.translation, .scale], for: modelEntity)
-                //                parent.arView.scene.addAnchor(imageAnchorEntity)
-            }
-        }
+        // MARK: - Anchor Method
+        func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+            let node = SCNNode()
+            if let imageAnchor = anchor as? ARImageAnchor, let imageName = imageAnchor.name {
+                let physicSize = imageAnchor.referenceImage.physicalSize
+                let plane = SCNPlane(width: physicSize.width, height: physicSize.height)
+                let planeNode = SCNNode(geometry: plane)
 
-        func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
+                let inforPlane = SCNPlane(width: physicSize.width * 1.6, height: physicSize.height * 2.5)
+                let inforNode = SCNNode(geometry: inforPlane)
+                let initialXPosition = imageAnchor.referenceImage.physicalSize.width * 1.4
+                let initialZPosition = imageAnchor.referenceImage.physicalSize.height * 0.71
+
+                plane.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 0)
+                planeNode.eulerAngles.x = -.pi / 2
+
+                inforNode.position.x = Float(initialXPosition)
+                inforNode.position.z = Float(initialZPosition)
+                inforNode.eulerAngles.x = -.pi / 2
+
+                InformationView().createHostingController(
+                    for: inforNode,
+                    width: UIScreen.main.bounds.width * 0.8,
+                    height: UIScreen.main.bounds.height * 0.8
+                )
+
+                node.addChildNode(planeNode)
+                node.addChildNode(inforNode)
+                if let elementScene = SCNScene(named: "art.scnassets/\(imageName).scn") {
+                    if let elementNode = elementScene.rootNode.childNodes.first {
+                        elementNode.eulerAngles.x = .pi / 2
+                        elementNode.scale = SCNVector3(x: 0.005, y: 0.005, z: 0.005)
+                        planeNode.addChildNode(elementNode)
+                    }
+                }
+            }
+            return node
         }
     }
 }

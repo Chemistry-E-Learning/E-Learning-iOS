@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SceneKit
 
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
@@ -23,6 +24,28 @@ extension View {
 
     func getScreenBounds() -> CGRect {
         return UIScreen.main.bounds
+    }
+
+    func createHostingController(for node: SCNNode, width: CGFloat, height: CGFloat) {
+        DispatchQueue.main.async {
+            let arVC = UIHostingController(rootView: self)
+            arVC.view.backgroundColor = UIColor.clear
+            arVC.view.frame = CGRect(x: 0, y: 0, width: width, height: height)
+            let material = SCNMaterial()
+            arVC.view.isOpaque = false
+            material.diffuse.contents = arVC.view
+            node.geometry?.materials = [material]
+        }
+    }
+
+    func getSafeAreaBottom() -> CGFloat {
+        let keyWindow = UIApplication.shared.connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .map({$0 as? UIWindowScene})
+            .compactMap({$0})
+            .first?.windows
+            .filter({$0.isKeyWindow}).first
+        return (keyWindow?.safeAreaInsets.bottom)!
     }
 }
 
