@@ -23,8 +23,7 @@ struct MainTabView: View {
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
             TabView(selection: $selectedTab) {
-                Color.cE1E1E1.opacity(0.3)
-                    .ignoresSafeArea(.all, edges: .all)
+                HomeView()
                     .tag(TabItem.home)
                 ImageTrackingView()
                     .ignoresSafeArea(.all, edges: .all)

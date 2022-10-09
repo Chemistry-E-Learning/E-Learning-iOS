@@ -8,7 +8,12 @@
 import Foundation
 
 enum Localization: String {
-    case informationContentTextRecommend
+    case classProgramTitle
+    case branchesOfChemistryTitle
+    case chemistryLawsTitle
+    case helloTitle
+    case welcomeBackTitle
+    case startCourseTitle
 
     var localizedString: String {
         return rawValue.localizedString

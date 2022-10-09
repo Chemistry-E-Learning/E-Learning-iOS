@@ -12,6 +12,7 @@ public extension Color {
     static let c4A4A4A = Color(hex: 0x4A4A4A)
     static let cE1E1E1 = Color(hex: 0xE1E1E1)
     static let c081645 = Color(hex: 0x081645)
+    static let c7A2F81 = Color(hex: 0x7A2F81)
 
     /// color initalizer
     /// - Parameters:

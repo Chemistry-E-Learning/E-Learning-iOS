@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65093A6428F2FB9B00538549 /* BranchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6328F2FB9B00538549 /* BranchItem.swift */; };
+		65093A6728F30BD400538549 /* LawItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6628F30BD400538549 /* LawItem.swift */; };
 		6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523302E28D624D4007F18F6 /* UserDefault.swift */; };
 		6523303128D624FB007F18F6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303028D624FB007F18F6 /* ViewExtension.swift */; };
 		6523303C28D62623007F18F6 /* Bundle+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303B28D62623007F18F6 /* Bundle+Locator.swift */; };
@@ -28,6 +30,9 @@
 		65AF945928F18E2600B77BEB /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF945828F18E2600B77BEB /* InformationView.swift */; };
 		65AF945B28F1D0A500B77BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65AF945A28F1D0A500B77BEB /* Assets.xcassets */; };
 		65E3BDB428F275210081D29D /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDB328F275210081D29D /* CustomShape.swift */; };
+		65E3BDB728F2BF530081D29D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDB628F2BF530081D29D /* HomeView.swift */; };
+		65E3BDB928F2BFB30081D29D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDB828F2BFB30081D29D /* HeaderView.swift */; };
+		65E3BDBB28F2C4DC0081D29D /* ProgramItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDBA28F2C4DC0081D29D /* ProgramItem.swift */; };
 		65E46FB728E1BA630051A150 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46FB628E1BA630051A150 /* AppConstant.swift */; };
 		65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */; };
 		65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401228D5FE9D000F7477 /* ContentView.swift */; };
@@ -41,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		26EA850E32323879880D3AB7 /* Pods-ChemistryAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.debug.xcconfig"; path = "Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.debug.xcconfig"; sourceTree = "<group>"; };
+		65093A6328F2FB9B00538549 /* BranchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchItem.swift; sourceTree = "<group>"; };
+		65093A6628F30BD400538549 /* LawItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawItem.swift; sourceTree = "<group>"; };
 		6523302E28D624D4007F18F6 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		6523303028D624FB007F18F6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		6523303B28D62623007F18F6 /* Bundle+Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Locator.swift"; sourceTree = "<group>"; };
@@ -65,6 +72,9 @@
 		65AF945828F18E2600B77BEB /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		65AF945A28F1D0A500B77BEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65E3BDB328F275210081D29D /* CustomShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShape.swift; sourceTree = "<group>"; };
+		65E3BDB628F2BF530081D29D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		65E3BDB828F2BFB30081D29D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		65E3BDBA28F2C4DC0081D29D /* ProgramItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramItem.swift; sourceTree = "<group>"; };
 		65E46FB628E1BA630051A150 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		65ED400D28D5FE9D000F7477 /* ChemistryAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemistryAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryARApp.swift; sourceTree = "<group>"; };
@@ -90,6 +100,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65093A6528F2FE7A00538549 /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manage;
+			sourceTree = "<group>";
+		};
 		6523303F28D62677007F18F6 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +131,7 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				65E3BDB528F2BF3C0081D29D /* Home */,
 				65AF945728F18DA300B77BEB /* Information */,
 				65985E2728EBE01A00061E68 /* BaseView */,
 				65985E2E28EC5BB500061E68 /* Onboarding */,
@@ -157,6 +175,18 @@
 			path = "AR Views";
 			sourceTree = "<group>";
 		};
+		65E3BDB528F2BF3C0081D29D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				65E3BDB628F2BF530081D29D /* HomeView.swift */,
+				65E3BDB828F2BFB30081D29D /* HeaderView.swift */,
+				65E3BDBA28F2C4DC0081D29D /* ProgramItem.swift */,
+				65093A6328F2FB9B00538549 /* BranchItem.swift */,
+				65093A6628F30BD400538549 /* LawItem.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		65ED400428D5FE9D000F7477 = {
 			isa = PBXGroup;
 			children = (
@@ -178,11 +208,11 @@
 		65ED400F28D5FE9D000F7477 /* ChemistryAR */ = {
 			isa = PBXGroup;
 			children = (
+				65093A6528F2FE7A00538549 /* Manage */,
 				65ED401E28D6009F000F7477 /* Config */,
 				65ED401F28D600C0000F7477 /* Resources */,
 				65ED402928D60164000F7477 /* DataInfrastructure */,
 				65ED402528D60132000F7477 /* Domain */,
-				65ED402428D60128000F7477 /* Manager */,
 				65ED402128D600E7000F7477 /* Presentation */,
 				65ED402028D600D6000F7477 /* Utils */,
 				65ED401628D5FEA5000F7477 /* Preview Content */,
@@ -251,13 +281,6 @@
 				65C1693128DAA71F004406CA /* AR Views */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		65ED402428D60128000F7477 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		65ED402528D60132000F7477 /* Domain */ = {
@@ -543,6 +566,7 @@
 				65985E2928EBE04800061E68 /* MainTabView.swift in Sources */,
 				65985E3628EC775D00061E68 /* UserDefaultKeys.swift in Sources */,
 				65AF945928F18E2600B77BEB /* InformationView.swift in Sources */,
+				65093A6728F30BD400538549 /* LawItem.swift in Sources */,
 				6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */,
 				6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */,
 				65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */,
@@ -551,9 +575,13 @@
 				65ED403728D60434000F7477 /* ColorExtension.swift in Sources */,
 				6523303C28D62623007F18F6 /* Bundle+Locator.swift in Sources */,
 				65ED403928D606CC000F7477 /* Logger.swift in Sources */,
+				65E3BDB728F2BF530081D29D /* HomeView.swift in Sources */,
 				65ED403D28D606F6000F7477 /* DIContainer.swift in Sources */,
 				65985E2D28EC560A00061E68 /* SplashAnimationView.swift in Sources */,
 				6523304328D626A0007F18F6 /* NetworkService.swift in Sources */,
+				65E3BDBB28F2C4DC0081D29D /* ProgramItem.swift in Sources */,
+				65093A6428F2FB9B00538549 /* BranchItem.swift in Sources */,
+				65E3BDB928F2BFB30081D29D /* HeaderView.swift in Sources */,
 				65ED403B28D606E9000F7477 /* ServerConstant.swift in Sources */,
 				65830B6C28F026EB0052BA49 /* ImageTrackingView.swift in Sources */,
 				65E3BDB428F275210081D29D /* CustomShape.swift in Sources */,
