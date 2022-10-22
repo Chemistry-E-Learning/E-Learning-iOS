@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BranchItem: View {
+struct BranchItemView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Image("organic")
@@ -50,7 +50,7 @@ struct BranchItem: View {
 
 struct BranchItem_Previews: PreviewProvider {
     static var previews: some View {
-        BranchItem()
+        BranchItemView()
             .previewLayout(PreviewLayout.sizeThatFits)
             .padding()
             .previewDisplayName("Default preview")

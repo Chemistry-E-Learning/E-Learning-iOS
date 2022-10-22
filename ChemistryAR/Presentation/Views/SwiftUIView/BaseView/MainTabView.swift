@@ -22,20 +22,21 @@ struct MainTabView: View {
 
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-            TabView(selection: $selectedTab) {
+            if selectedTab == .home {
                 HomeView()
-                    .tag(TabItem.home)
+            } else if selectedTab == .ar {
                 ImageTrackingView()
                     .ignoresSafeArea(.all, edges: .all)
-                    .tag(TabItem.ar)
+            } else if selectedTab == .lab {
+                VirtualLabView(selectedTab: $selectedTab)
+                    .ignoresSafeArea(.all, edges: .all)
+            } else {
                 Color.cE1E1E1.opacity(0.3)
                     .ignoresSafeArea(.all, edges: .all)
-                    .tag(TabItem.lab)
-                Color.cE1E1E1.opacity(0.3)
-                    .ignoresSafeArea(.all, edges: .all)
-                    .tag(TabItem.table)
             }
-            tabArea
+            if selectedTab != .lab {
+                tabArea
+            }
         }
         .ignoresSafeArea(.all, edges: .bottom)
     }
@@ -83,7 +84,6 @@ private extension MainTabView {
         .shadow(color: Color.cE1E1E1, radius: 8, x: 2, y: 2)
         .padding(.horizontal)
         .padding(.bottom, getSafeAreaBottom())
-        .padding(.bottom, 20)
     }
 
     func makeTabItem(tab: TabItem) -> some View {

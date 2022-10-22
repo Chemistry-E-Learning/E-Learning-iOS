@@ -1,0 +1,14 @@
+//
+//  ScaleButtonStyle.swift
+//  ChemistryAR
+//
+//  Created by NhatMinh on 11/10/2022.
+//
+
+import SwiftUI
+struct ScaleButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.5 : 1)
+    }
+}

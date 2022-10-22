@@ -45,7 +45,15 @@ extension View {
             .compactMap({$0})
             .first?.windows
             .filter({$0.isKeyWindow}).first
-        return (keyWindow?.safeAreaInsets.bottom)!
+        return (keyWindow?.safeAreaInsets.bottom) ?? 20.0
+    }
+
+    func customOffset(_ point: CGPoint) -> some View {
+        return self.offset(x: point.x, y: point.y)
+    }
+
+    func squareFrame(_ size: CGFloat) -> some View {
+        return self.frame(width: size, height: size)
     }
 }
 

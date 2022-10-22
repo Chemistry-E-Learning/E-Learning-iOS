@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProgramItem: View {
+struct ProgramItemView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .leading) {
@@ -51,7 +51,7 @@ struct ProgramItem: View {
 
 struct ProgramItem_Previews: PreviewProvider {
     static var previews: some View {
-        ProgramItem()
+        ProgramItemView()
             .previewLayout(PreviewLayout.sizeThatFits)
             .padding()
             .previewDisplayName("Default preview")

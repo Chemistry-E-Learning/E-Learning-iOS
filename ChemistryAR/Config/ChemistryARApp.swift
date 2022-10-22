@@ -13,8 +13,12 @@ struct ChemistryARApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(appState)
+            NavigationView {
+                ContentView()
+                    .navigationBarHidden(true)
+            }
+            .navigationViewStyle(.stack)
+            .environmentObject(appState)
         }
     }
 }

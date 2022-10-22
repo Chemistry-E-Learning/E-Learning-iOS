@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var isPushToChaptersView = false
     let branchColumns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -15,19 +16,29 @@ struct HomeView: View {
 
     var body: some View {
         GeometryReader { geo in
-            VStack {
-                HeaderView()
-                ScrollView(showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 12) {
-                        makeProgramCarouselView(geo: geo)
-                        branchOfChemistryView
-                        lawOfChemistryView
-                            .padding(.top, 28)
+            ZStack {
+                NavigationLink(
+                    destination: NavigationLazyView(
+                        VideoListView(isPushToVideoListView: $isPushToChaptersView)
+                    ),
+                    isActive: $isPushToChaptersView
+                ) {
+                    EmptyView()
+                }
+                VStack {
+                    HeaderView()
+                    ScrollView(showsIndicators: false) {
+                        VStack(alignment: .leading, spacing: 12) {
+                            makeProgramCarouselView(geo: geo)
+                            branchOfChemistryView
+                            lawOfChemistryView
+                                .padding(.top, 28)
+                        }
                     }
                 }
             }
         }
-        .background(
+         .background(
             Color.cE1E1E1.opacity(0.3)
                 .ignoresSafeArea(.all, edges: .all)
         )
@@ -48,7 +59,10 @@ private extension HomeView {
                 HStack(spacing: 8) {
                     ForEach(0..<5) { _ in
                         GeometryReader { geo in
-                            ProgramItem()
+                            ProgramItemView()
+                                .onTapGesture {
+                                    isPushToChaptersView = true
+                                }
                                 .rotation3DEffect(
                                     Angle(degrees: Double(geo.frame(in: .global).minX) - 40) / -20,
                                     axis: (x: 0, y: 10.0, z: 0))
@@ -67,7 +81,7 @@ private extension HomeView {
             makeTitleView(title: "Branches Of Chemistry")
             LazyVGrid(columns: branchColumns, spacing: 20) {
                 ForEach(0..<6, id: \.self) { _ in
-                    BranchItem()
+                    BranchItemView()
                         .frame(height: 216)
                 }
             }
