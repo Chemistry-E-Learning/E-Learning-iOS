@@ -18,6 +18,7 @@ public extension Color {
     static let cA3C8FF = Color(hex: 0xA3C8FF)
     static let cFF8686 = Color(hex: 0xFF8686)
     static let cFF5757 = Color(hex: 0xFF5757)
+    static let cF7F9FC = Color(hex: 0xF7F9FC)
 
     // MARK: - LinearGradient
     static let virtualLabBGC = LinearGradient(

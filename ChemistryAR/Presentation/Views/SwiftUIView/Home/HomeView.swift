@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var isPushToChaptersListView = false
+    @State private var isPushToBranchesView = false
+
     let branchColumns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -22,6 +24,14 @@ struct HomeView: View {
                         ChaptersListView(isPushToChaptersListView: $isPushToChaptersListView)
                     ),
                     isActive: $isPushToChaptersListView
+                ) {
+                    EmptyView()
+                }
+                NavigationLink(
+                    destination: NavigationLazyView(
+                        ChemistryBranchesView(isPushToBranchesView: $isPushToBranchesView)
+                    ),
+                    isActive: $isPushToBranchesView
                 ) {
                     EmptyView()
                 }
@@ -83,6 +93,9 @@ private extension HomeView {
                 ForEach(0..<6, id: \.self) { _ in
                     BranchItemView()
                         .frame(height: 216)
+                        .onTapGesture {
+                            isPushToBranchesView = true
+                        }
                 }
             }
             .padding(.horizontal, 20)
