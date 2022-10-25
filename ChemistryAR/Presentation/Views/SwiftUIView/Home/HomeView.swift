@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var isPushToChaptersView = false
+    @State private var isPushToChaptersListView = false
     let branchColumns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -19,9 +19,9 @@ struct HomeView: View {
             ZStack {
                 NavigationLink(
                     destination: NavigationLazyView(
-                        VideoListView(isPushToVideoListView: $isPushToChaptersView)
+                        ChaptersListView(isPushToChaptersListView: $isPushToChaptersListView)
                     ),
-                    isActive: $isPushToChaptersView
+                    isActive: $isPushToChaptersListView
                 ) {
                     EmptyView()
                 }
@@ -61,7 +61,7 @@ private extension HomeView {
                         GeometryReader { geo in
                             ProgramItemView()
                                 .onTapGesture {
-                                    isPushToChaptersView = true
+                                    isPushToChaptersListView = true
                                 }
                                 .rotation3DEffect(
                                     Angle(degrees: Double(geo.frame(in: .global).minX) - 40) / -20,

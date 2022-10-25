@@ -16,12 +16,20 @@ public extension Color {
     static let c5398FF = Color(hex: 0x5398FF)
     static let c3686FF = Color(hex: 0x3686FF)
     static let cA3C8FF = Color(hex: 0xA3C8FF)
+    static let cFF8686 = Color(hex: 0xFF8686)
+    static let cFF5757 = Color(hex: 0xFF5757)
 
     // MARK: - LinearGradient
     static let virtualLabBGC = LinearGradient(
         gradient: Gradient(colors: [.c3686FF, .c5398FF.opacity(0.8)]),
         startPoint: .top,
         endPoint: .bottom
+    )
+
+    static let startButton = LinearGradient(
+        colors: [.cFF5757, .cFF8686],
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
     )
 
     /// color initalizer

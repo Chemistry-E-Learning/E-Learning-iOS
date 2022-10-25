@@ -13,29 +13,35 @@ struct VideoDetailView: View {
     @State var player = AVPlayer(url: URL(string: "https://swiftanytime-content.s3.ap-south-1.amazonaws.com/SwiftUI-Beginner/Video-Player/iMacAdvertisement.mp4")!)
 
     var body: some View {
-        GeometryReader { geo in
-            VStack {
-                VideoPlayer(player: player)
-                    .aspectRatio(4 / 2.6, contentMode: .fit)
-                    .frame(width: geo.size.width)
+        VStack {
+            VideoPlayer(player: player)
+                .frame(height: UIScreen.main.bounds.height * 0.3)
+            Spacer()
+            ScrollView(showsIndicators: false) {
+                Text("Phan Ung Oxi Hoa Khu")
+                    .font(.system(size: 20, weight: .bold))
+                    .multilineTextAlignment(.leading)
+                // Content Here
             }
         }
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                HStack {
-                    Button(action: {
-                        isPushToVideoDetailView = false
-                    }, label: {
-                        Image(systemName: "chevron.backward")
-                            .resizable()
-                            .scaledToFit()
-                    })
-                    .buttonStyle(ScaleButtonStyle())
-                    .padding(.vertical, 4)
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    HStack {
+                        Button(action: {
+                            isPushToVideoDetailView = false
+                        }, label: {
+                            Image(systemName: "chevron.backward")
+                                .resizable()
+                                .scaledToFit()
+                        })
+                        .buttonStyle(ScaleButtonStyle())
+                        .padding(.vertical, 4)
+                    }
                 }
             }
-        }
     }
 }
 
