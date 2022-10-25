@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var isPushToChaptersListView = false
     @State private var isPushToBranchesView = false
+    @State private var isPushToLawsView = false
 
     let branchColumns = [
         GridItem(.flexible()),
@@ -19,22 +20,7 @@ struct HomeView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                NavigationLink(
-                    destination: NavigationLazyView(
-                        ChaptersListView(isPushToChaptersListView: $isPushToChaptersListView)
-                    ),
-                    isActive: $isPushToChaptersListView
-                ) {
-                    EmptyView()
-                }
-                NavigationLink(
-                    destination: NavigationLazyView(
-                        ChemistryBranchesView(isPushToBranchesView: $isPushToBranchesView)
-                    ),
-                    isActive: $isPushToBranchesView
-                ) {
-                    EmptyView()
-                }
+                navigationLinkGroup
                 VStack {
                     HeaderView()
                     ScrollView(showsIndicators: false) {
@@ -55,6 +41,36 @@ struct HomeView: View {
     }
 }
 
+private extension HomeView {
+    var navigationLinkGroup: some View {
+        ZStack {
+            NavigationLink(
+                destination: NavigationLazyView(
+                    ChaptersListView(isPushToChaptersListView: $isPushToChaptersListView)
+                ),
+                isActive: $isPushToChaptersListView
+            ) {
+                EmptyView()
+            }
+            NavigationLink(
+                destination: NavigationLazyView(
+                    ChemistryBranchesView(isPushToBranchesView: $isPushToBranchesView)
+                ),
+                isActive: $isPushToBranchesView
+            ) {
+                EmptyView()
+            }
+            NavigationLink(
+                destination: NavigationLazyView(
+                    ChemistryLawsView(isPushToLawsView: $isPushToLawsView)
+                ),
+                isActive: $isPushToLawsView
+            ) {
+                EmptyView()
+            }
+        }
+    }
+}
 private extension HomeView {
     func makeTitleView(title: String) -> some View {
         Text(title)
@@ -108,6 +124,9 @@ private extension HomeView {
                 .padding(.bottom, 12)
             ForEach(0..<6) { _ in
                 LawItem()
+                    .onTapGesture {
+                        isPushToLawsView = true
+                    }
             }
             .padding(.horizontal, 20)
         }

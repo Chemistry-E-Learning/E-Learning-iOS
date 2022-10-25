@@ -49,6 +49,7 @@
 		65B0EC212902C9ED008C49E0 /* MetalGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B0EC202902C9ED008C49E0 /* MetalGroupView.swift */; };
 		65B21D16290796B200D32753 /* ChemistryBranchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B21D15290796B200D32753 /* ChemistryBranchesView.swift */; };
 		65B21D19290796D200D32753 /* BranchLessonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B21D18290796D200D32753 /* BranchLessonItemView.swift */; };
+		65B21D1D2907A81300D32753 /* ChemistryLawsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B21D1C2907A81300D32753 /* ChemistryLawsView.swift */; };
 		65D0ECBB28FFDA070006E8E9 /* BeakerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */; };
 		65D0ECBD28FFDCA00006E8E9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0ECBC28FFDCA00006E8E9 /* TestView.swift */; };
 		65D1ED6B28FE778200B9725C /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 65D1ED6A28FE778200B9725C /* ConfettiSwiftUI */; };
@@ -115,6 +116,7 @@
 		65B0EC202902C9ED008C49E0 /* MetalGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalGroupView.swift; sourceTree = "<group>"; };
 		65B21D15290796B200D32753 /* ChemistryBranchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryBranchesView.swift; sourceTree = "<group>"; };
 		65B21D18290796D200D32753 /* BranchLessonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchLessonItemView.swift; sourceTree = "<group>"; };
+		65B21D1C2907A81300D32753 /* ChemistryLawsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryLawsView.swift; sourceTree = "<group>"; };
 		65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeakerShape.swift; sourceTree = "<group>"; };
 		65D0ECBC28FFDCA00006E8E9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		65D1ED7228FE8BBC00B9725C /* SineWaveShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SineWaveShape.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				65B21D1A2907A7F400D32753 /* ChemistryLaw */,
 				65B21D142907966D00D32753 /* ChemistryBranch */,
 				6590541C28F69F2A00FF5061 /* VirtualLab */,
 				6595DBA428F526FE00B1F503 /* ClassProgram */,
@@ -304,6 +307,14 @@
 				65B21D18290796D200D32753 /* BranchLessonItemView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		65B21D1A2907A7F400D32753 /* ChemistryLaw */ = {
+			isa = PBXGroup;
+			children = (
+				65B21D1C2907A81300D32753 /* ChemistryLawsView.swift */,
+			);
+			path = ChemistryLaw;
 			sourceTree = "<group>";
 		};
 		65C1693128DAA71F004406CA /* AR Views */ = {
@@ -734,6 +745,7 @@
 				65093A6728F30BD400538549 /* LawItem.swift in Sources */,
 				6595DBA728F5275100B1F503 /* ChaptersListView.swift in Sources */,
 				6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */,
+				65B21D1D2907A81300D32753 /* ChemistryLawsView.swift in Sources */,
 				6595DBAE28F5553600B1F503 /* VideoDetailView.swift in Sources */,
 				6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */,
 				6595DBB028F5690F00B1F503 /* ScaleButtonStyle.swift in Sources */,
