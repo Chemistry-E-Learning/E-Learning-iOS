@@ -21,7 +21,7 @@ struct HomeView: View {
         GeometryReader { geo in
             ZStack {
                 navigationLinkGroup
-                VStack {
+                VStack(alignment: .leading, spacing: 0) {
                     HeaderView()
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 12) {
@@ -29,6 +29,7 @@ struct HomeView: View {
                             branchOfChemistryView
                             lawOfChemistryView
                                 .padding(.top, 28)
+                                .padding(.bottom, getSafeArea(edge: .bottom) + 72)
                         }
                     }
                 }

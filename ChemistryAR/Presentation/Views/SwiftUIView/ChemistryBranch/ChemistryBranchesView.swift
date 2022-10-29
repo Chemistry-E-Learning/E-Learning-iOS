@@ -16,7 +16,7 @@ struct ChemistryBranchesView: View {
             ZStack {
                 NavigationLink(
                     destination: NavigationLazyView(
-                        EmptyView()
+                        LessonDetailView(isPushToLessonDetailView: $isPushToLessonDetail)
                     ),
                     isActive: $isPushToLessonDetail
                 ) {
@@ -30,17 +30,8 @@ struct ChemistryBranchesView: View {
                             ZStack(alignment: .topLeading) {
                                 Color.black.opacity(0.4)
                                 VStack(alignment: .leading, spacing: 28) {
-                                    Button {
+                                    BackCircleButton {
                                         isPushToBranchesView = false
-                                    } label: {
-                                        Image(systemName: "chevron.backward")
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 24, weight: .bold))
-                                            .background(
-                                                Circle()
-                                                    .fill(Color.black.opacity(0.6))
-                                                    .squareFrame(48)
-                                            )
                                     }
                                     .padding(.horizontal, 8)
                                     VStack(alignment: .leading, spacing: 8) {

@@ -28,7 +28,9 @@ struct HeaderView: View {
                 .frame(width: 48, height: 48)
                 .clipShape(Circle())
         }
+        .padding(.vertical, 12)
         .padding(.horizontal, 20)
+        .background(Color.clear)
     }
 }
 
