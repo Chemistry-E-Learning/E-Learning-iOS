@@ -83,7 +83,7 @@ private extension MainTabView {
         )
         .shadow(color: Color.cE1E1E1, radius: 8, x: 2, y: 2)
         .padding(.horizontal)
-        .padding(.bottom, getSafeAreaBottom())
+        .padding(.bottom, getSafeArea(edge: .bottom))
     }
 
     func makeTabItem(tab: TabItem) -> some View {

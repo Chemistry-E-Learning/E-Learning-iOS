@@ -10,6 +10,7 @@
 		6507FAE928F6AAF40013813A /* VirtualLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507FAE828F6AAF40013813A /* VirtualLabView.swift */; };
 		65093A6428F2FB9B00538549 /* BranchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6328F2FB9B00538549 /* BranchItemView.swift */; };
 		65093A6728F30BD400538549 /* LawItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6628F30BD400538549 /* LawItem.swift */; };
+		650B7704290CF72100F8E1C2 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B7703290CF72000F8E1C2 /* BackButton.swift */; };
 		6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523302E28D624D4007F18F6 /* UserDefault.swift */; };
 		6523303128D624FB007F18F6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303028D624FB007F18F6 /* ViewExtension.swift */; };
 		6523303C28D62623007F18F6 /* Bundle+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303B28D62623007F18F6 /* Bundle+Locator.swift */; };
@@ -18,6 +19,8 @@
 		6523304328D626A0007F18F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304228D626A0007F18F6 /* NetworkService.swift */; };
 		6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304428D626A7007F18F6 /* AlamofireNetworkService.swift */; };
 		6523304728D626AE007F18F6 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304628D626AE007F18F6 /* NetworkServiceProtocol.swift */; };
+		65430EE82907DAF700AA83BC /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65430EE72907DAF700AA83BC /* LessonDetailView.swift */; };
+		65430EEA2907DD0800AA83BC /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65430EE92907DD0800AA83BC /* WebView.swift */; };
 		654CABE928FD31B70024A228 /* AttachmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CABE828FD31B70024A228 /* AttachmentButton.swift */; };
 		654CABEC28FD32080024A228 /* FloatButtonGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CABEB28FD32080024A228 /* FloatButtonGroupView.swift */; };
 		65830B6C28F026EB0052BA49 /* ImageTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65830B6B28F026EB0052BA49 /* ImageTrackingView.swift */; };
@@ -27,7 +30,7 @@
 		6595DBA028F520BD00B1F503 /* VideoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595DB9F28F520BD00B1F503 /* VideoItemView.swift */; };
 		6595DBA228F522FC00B1F503 /* ChapterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595DBA128F522FC00B1F503 /* ChapterItemView.swift */; };
 		6595DBA728F5275100B1F503 /* ChaptersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595DBA628F5275100B1F503 /* ChaptersListView.swift */; };
-		6595DBAA28F52DD500B1F503 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595DBA928F52DD500B1F503 /* BackButton.swift */; };
+		6595DBAA28F52DD500B1F503 /* BackCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595DBA928F52DD500B1F503 /* BackCircleButton.swift */; };
 		6595DBAC28F5451B00B1F503 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595DBAB28F5451B00B1F503 /* NavigationLazyView.swift */; };
 		6595DBAE28F5553600B1F503 /* VideoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595DBAD28F5553600B1F503 /* VideoDetailView.swift */; };
 		6595DBB028F5690F00B1F503 /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595DBAF28F5690F00B1F503 /* ScaleButtonStyle.swift */; };
@@ -50,9 +53,9 @@
 		65B21D16290796B200D32753 /* ChemistryBranchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B21D15290796B200D32753 /* ChemistryBranchesView.swift */; };
 		65B21D19290796D200D32753 /* BranchLessonItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B21D18290796D200D32753 /* BranchLessonItemView.swift */; };
 		65B21D1D2907A81300D32753 /* ChemistryLawsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B21D1C2907A81300D32753 /* ChemistryLawsView.swift */; };
+		65BC8BB8290927B3004CC8A1 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC8BB7290927B3004CC8A1 /* TagView.swift */; };
 		65D0ECBB28FFDA070006E8E9 /* BeakerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */; };
 		65D0ECBD28FFDCA00006E8E9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0ECBC28FFDCA00006E8E9 /* TestView.swift */; };
-		65D1ED6B28FE778200B9725C /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 65D1ED6A28FE778200B9725C /* ConfettiSwiftUI */; };
 		65D1ED7328FE8BBC00B9725C /* SineWaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1ED7228FE8BBC00B9725C /* SineWaveShape.swift */; };
 		65E3BDB428F275210081D29D /* CustomShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDB328F275210081D29D /* CustomShape.swift */; };
 		65E3BDB728F2BF530081D29D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDB628F2BF530081D29D /* HomeView.swift */; };
@@ -74,6 +77,7 @@
 		6507FAE828F6AAF40013813A /* VirtualLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualLabView.swift; sourceTree = "<group>"; };
 		65093A6328F2FB9B00538549 /* BranchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchItemView.swift; sourceTree = "<group>"; };
 		65093A6628F30BD400538549 /* LawItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawItem.swift; sourceTree = "<group>"; };
+		650B7703290CF72000F8E1C2 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		6523302E28D624D4007F18F6 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		6523303028D624FB007F18F6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		6523303B28D62623007F18F6 /* Bundle+Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Locator.swift"; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 		6523304228D626A0007F18F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6523304428D626A7007F18F6 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		6523304628D626AE007F18F6 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		65430EE72907DAF700AA83BC /* LessonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
+		65430EE92907DD0800AA83BC /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		654CABE828FD31B70024A228 /* AttachmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentButton.swift; sourceTree = "<group>"; };
 		654CABEB28FD32080024A228 /* FloatButtonGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatButtonGroupView.swift; sourceTree = "<group>"; };
 		65830B6B28F026EB0052BA49 /* ImageTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrackingView.swift; sourceTree = "<group>"; };
@@ -94,7 +100,7 @@
 		6595DB9F28F520BD00B1F503 /* VideoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItemView.swift; sourceTree = "<group>"; };
 		6595DBA128F522FC00B1F503 /* ChapterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterItemView.swift; sourceTree = "<group>"; };
 		6595DBA628F5275100B1F503 /* ChaptersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersListView.swift; sourceTree = "<group>"; };
-		6595DBA928F52DD500B1F503 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		6595DBA928F52DD500B1F503 /* BackCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackCircleButton.swift; sourceTree = "<group>"; };
 		6595DBAB28F5451B00B1F503 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		6595DBAD28F5553600B1F503 /* VideoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailView.swift; sourceTree = "<group>"; };
 		6595DBAF28F5690F00B1F503 /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 		65B21D15290796B200D32753 /* ChemistryBranchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryBranchesView.swift; sourceTree = "<group>"; };
 		65B21D18290796D200D32753 /* BranchLessonItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchLessonItemView.swift; sourceTree = "<group>"; };
 		65B21D1C2907A81300D32753 /* ChemistryLawsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryLawsView.swift; sourceTree = "<group>"; };
+		65BC8BB7290927B3004CC8A1 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeakerShape.swift; sourceTree = "<group>"; };
 		65D0ECBC28FFDCA00006E8E9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		65D1ED7228FE8BBC00B9725C /* SineWaveShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SineWaveShape.swift; sourceTree = "<group>"; };
@@ -142,7 +149,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65D1ED6B28FE778200B9725C /* ConfettiSwiftUI in Frameworks */,
 				E7EFBEBD7D064843085F995E /* Pods_ChemistryAR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,6 +172,14 @@
 				65985E3528EC775D00061E68 /* UserDefaultKeys.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		65430EE62907DADC00AA83BC /* LessonDetail */ = {
+			isa = PBXGroup;
+			children = (
+				65430EE72907DAF700AA83BC /* LessonDetailView.swift */,
+			);
+			path = LessonDetail;
 			sourceTree = "<group>";
 		};
 		654CABEA28FD31EF0024A228 /* Components */ = {
@@ -240,6 +254,7 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				65430EE62907DADC00AA83BC /* LessonDetail */,
 				65B21D1A2907A7F400D32753 /* ChemistryLaw */,
 				65B21D142907966D00D32753 /* ChemistryBranch */,
 				6590541C28F69F2A00FF5061 /* VirtualLab */,
@@ -275,11 +290,14 @@
 		65A7D56729026E8A009F7206 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6595DBA928F52DD500B1F503 /* BackButton.swift */,
+				6595DBA928F52DD500B1F503 /* BackCircleButton.swift */,
+				650B7703290CF72000F8E1C2 /* BackButton.swift */,
 				6595DBAB28F5451B00B1F503 /* NavigationLazyView.swift */,
 				6595DBAF28F5690F00B1F503 /* ScaleButtonStyle.swift */,
 				654CABE828FD31B70024A228 /* AttachmentButton.swift */,
 				65A86E0628F7E063007BBB16 /* CustomSceneView.swift */,
+				65430EE92907DD0800AA83BC /* WebView.swift */,
+				65BC8BB7290927B3004CC8A1 /* TagView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -624,7 +642,6 @@
 			);
 			name = ChemistryAR;
 			packageProductDependencies = (
-				65D1ED6A28FE778200B9725C /* ConfettiSwiftUI */,
 			);
 			productName = ChemistryAR;
 			productReference = 65ED400D28D5FE9D000F7477 /* ChemistryAR.app */;
@@ -655,7 +672,6 @@
 			);
 			mainGroup = 65ED400428D5FE9D000F7477;
 			packageReferences = (
-				65D1ED6928FE778200B9725C /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 65ED400E28D5FE9D000F7477 /* Products */;
 			projectDirPath = "";
@@ -737,9 +753,10 @@
 				6507FAE928F6AAF40013813A /* VirtualLabView.swift in Sources */,
 				65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */,
 				65985E2928EBE04800061E68 /* MainTabView.swift in Sources */,
+				65BC8BB8290927B3004CC8A1 /* TagView.swift in Sources */,
 				65985E3628EC775D00061E68 /* UserDefaultKeys.swift in Sources */,
 				65A5861629011C16007A0860 /* DropShape.swift in Sources */,
-				6595DBAA28F52DD500B1F503 /* BackButton.swift in Sources */,
+				6595DBAA28F52DD500B1F503 /* BackCircleButton.swift in Sources */,
 				6595DBA028F520BD00B1F503 /* VideoItemView.swift in Sources */,
 				65AF945928F18E2600B77BEB /* InformationView.swift in Sources */,
 				65093A6728F30BD400538549 /* LawItem.swift in Sources */,
@@ -768,13 +785,16 @@
 				65D1ED7328FE8BBC00B9725C /* SineWaveShape.swift in Sources */,
 				6595DBA228F522FC00B1F503 /* ChapterItemView.swift in Sources */,
 				659404ED2901371300D78A70 /* WaveFillShape.swift in Sources */,
+				65430EEA2907DD0800AA83BC /* WebView.swift in Sources */,
 				65ED403B28D606E9000F7477 /* ServerConstant.swift in Sources */,
 				65D0ECBD28FFDCA00006E8E9 /* TestView.swift in Sources */,
 				65B21D16290796B200D32753 /* ChemistryBranchesView.swift in Sources */,
 				654CABEC28FD32080024A228 /* FloatButtonGroupView.swift in Sources */,
 				65830B6C28F026EB0052BA49 /* ImageTrackingView.swift in Sources */,
+				650B7704290CF72100F8E1C2 /* BackButton.swift in Sources */,
 				65E3BDB428F275210081D29D /* CustomShape.swift in Sources */,
 				65985E3828EC77EC00061E68 /* AppState.swift in Sources */,
+				65430EE82907DAF700AA83BC /* LessonDetailView.swift in Sources */,
 				65B0EC212902C9ED008C49E0 /* MetalGroupView.swift in Sources */,
 				65A7D56629026DB0009F7206 /* DropGroupView.swift in Sources */,
 				65A86E0728F7E063007BBB16 /* CustomSceneView.swift in Sources */,
@@ -995,25 +1015,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		65D1ED6928FE778200B9725C /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		65D1ED6A28FE778200B9725C /* ConfettiSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 65D1ED6928FE778200B9725C /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
-			productName = ConfettiSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 65ED400528D5FE9D000F7477 /* Project object */;
 }

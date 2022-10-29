@@ -7,41 +7,38 @@
 
 import SwiftUI
 
-struct TestView: View {
-    @State private var beakerYellow = Color.yellow
-    @State private var beakerPercent = 1.0
-    @State private var instrumentAppear = 0
-
+struct DemoScrollViewOffsetView: View {
+    @State private var offset = CGFloat.zero
     var body: some View {
-        VStack {
-            HStack {
-                Button {
-                    instrumentAppear = 1
-                } label: {
-                    Text("Add")
-                }
-                Button {
-                    instrumentAppear = 2
-                } label: {
-                    Text("Add new item")
-                }
-                Button {
-                    instrumentAppear = 3
-                } label: {
-                    Text("Add new item")
-                }
-                Button {
-                    instrumentAppear = 4
-                } label: {
-                    Text("Add new item")
+        ScrollView {
+            Rectangle()
+                .squareFrame(400)
+                .background(
+                    GeometryReader {
+                        Color.clear.preference(
+                            key: ViewOffsetKey.self,
+                            value: -$0.frame(in: .named("scroll")).origin.y
+                        )
+                    }
+                )
+            VStack {
+                ForEach(0..<100) { i in
+                    Text("Item \(i)").padding()
                 }
             }
+            .background(Color.red)
         }
+        .onPreferenceChange(ViewOffsetKey.self) {
+            print("offset >> \($0)")
+        }
+        .coordinateSpace(name: "scroll")
     }
 }
 
-struct TestView_Previews: PreviewProvider {
-    static var previews: some View {
-        TestView()
+struct ViewOffsetKey: PreferenceKey {
+    typealias Value = CGFloat
+    static var defaultValue = CGFloat.zero
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value += nextValue()
     }
 }

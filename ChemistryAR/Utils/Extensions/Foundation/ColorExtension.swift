@@ -9,6 +9,7 @@ import SwiftUI
 import UIKit
 
 public extension Color {
+    static let mainColor = Color(hex: 0x104A51)
     static let c4A4A4A = Color(hex: 0x4A4A4A)
     static let cE1E1E1 = Color(hex: 0xE1E1E1)
     static let c081645 = Color(hex: 0x081645)
@@ -19,6 +20,7 @@ public extension Color {
     static let cFF8686 = Color(hex: 0xFF8686)
     static let cFF5757 = Color(hex: 0xFF5757)
     static let cF7F9FC = Color(hex: 0xF7F9FC)
+    static let cFFD335 = Color(hex: 0xFFD335)
 
     // MARK: - LinearGradient
     static let virtualLabBGC = LinearGradient(

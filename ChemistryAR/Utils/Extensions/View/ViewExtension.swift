@@ -38,14 +38,23 @@ extension View {
         }
     }
 
-    func getSafeAreaBottom() -> CGFloat {
+    func getSafeArea(edge: Edge) -> CGFloat {
         let keyWindow = UIApplication.shared.connectedScenes
             .filter({$0.activationState == .foregroundActive})
             .map({$0 as? UIWindowScene})
             .compactMap({$0})
             .first?.windows
             .filter({$0.isKeyWindow}).first
-        return (keyWindow?.safeAreaInsets.bottom) ?? 20.0
+        switch edge {
+        case .top:
+            return (keyWindow?.safeAreaInsets.top) ?? 20.0
+        case .leading:
+            return (keyWindow?.safeAreaInsets.left) ?? 0.0
+        case .bottom:
+            return (keyWindow?.safeAreaInsets.bottom) ?? 20.0
+        case .trailing:
+            return (keyWindow?.safeAreaInsets.right) ?? 0.0
+        }
     }
 
     func customOffset(_ point: CGPoint) -> some View {

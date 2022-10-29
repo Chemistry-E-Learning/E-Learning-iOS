@@ -9,16 +9,16 @@ import SwiftUI
 
 struct ChemistryLawsView: View {
     @Binding var isPushToLawsView: Bool
-    @State private var isPushToLessonDetail = false
+    @State private var isPushToLessonDetailView = false
 
     var body: some View {
         GeometryReader { geo in
             ZStack {
                 NavigationLink(
                     destination: NavigationLazyView(
-                        EmptyView() 
+                        LessonDetailView(isPushToLessonDetailView: $isPushToLessonDetailView)
                     ),
-                    isActive: $isPushToLessonDetail
+                    isActive: $isPushToLessonDetailView
                 ) {
                     EmptyView()
                 }
@@ -67,7 +67,7 @@ struct ChemistryLawsView: View {
                             ForEach(0..<10) { _ in
                                 BranchLessonItemView()
                                     .onTapGesture {
-                                        isPushToLessonDetail = true
+                                        isPushToLessonDetailView = true
                                     }
                             }
                         }

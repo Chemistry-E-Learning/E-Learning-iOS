@@ -37,7 +37,7 @@ struct ImageTrackingARView: UIViewRepresentable {
         let configuration = ARWorldTrackingConfiguration()
         configuration.isAutoFocusEnabled = true
         configuration.detectionImages = referenceImages
-        configuration.maximumNumberOfTrackedImages = AppConstant.maximumImageTracking
+        configuration.maximumNumberOfTrackedImages = AppConstant.MaximumImageTracking
 
         sceneView.delegate = context.coordinator
         sceneView.showsStatistics = true
