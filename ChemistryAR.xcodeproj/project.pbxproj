@@ -11,6 +11,8 @@
 		65093A6428F2FB9B00538549 /* BranchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6328F2FB9B00538549 /* BranchItemView.swift */; };
 		65093A6728F30BD400538549 /* LawItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6628F30BD400538549 /* LawItem.swift */; };
 		650B7704290CF72100F8E1C2 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B7703290CF72000F8E1C2 /* BackButton.swift */; };
+		651AFC6F290D702A00719F14 /* ElementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651AFC6E290D702A00719F14 /* ElementDetailView.swift */; };
+		651AFC72290D92C300719F14 /* ElementInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651AFC71290D92C300719F14 /* ElementInformationView.swift */; };
 		6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523302E28D624D4007F18F6 /* UserDefault.swift */; };
 		6523303128D624FB007F18F6 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303028D624FB007F18F6 /* ViewExtension.swift */; };
 		6523303C28D62623007F18F6 /* Bundle+Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523303B28D62623007F18F6 /* Bundle+Locator.swift */; };
@@ -78,6 +80,8 @@
 		65093A6328F2FB9B00538549 /* BranchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchItemView.swift; sourceTree = "<group>"; };
 		65093A6628F30BD400538549 /* LawItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawItem.swift; sourceTree = "<group>"; };
 		650B7703290CF72000F8E1C2 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		651AFC6E290D702A00719F14 /* ElementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailView.swift; sourceTree = "<group>"; };
+		651AFC71290D92C300719F14 /* ElementInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementInformationView.swift; sourceTree = "<group>"; };
 		6523302E28D624D4007F18F6 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		6523303028D624FB007F18F6 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		6523303B28D62623007F18F6 /* Bundle+Locator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Locator.swift"; sourceTree = "<group>"; };
@@ -161,6 +165,23 @@
 			children = (
 			);
 			path = Manage;
+			sourceTree = "<group>";
+		};
+		651AFC6D290D700900719F14 /* ElementDetail */ = {
+			isa = PBXGroup;
+			children = (
+				651AFC70290D92A700719F14 /* Components */,
+				651AFC6E290D702A00719F14 /* ElementDetailView.swift */,
+			);
+			path = ElementDetail;
+			sourceTree = "<group>";
+		};
+		651AFC70290D92A700719F14 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				651AFC71290D92C300719F14 /* ElementInformationView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		6523303F28D62677007F18F6 /* Helper */ = {
@@ -254,6 +275,7 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				651AFC6D290D700900719F14 /* ElementDetail */,
 				65985E2728EBE01A00061E68 /* BaseView */,
 				65E3BDB528F2BF3C0081D29D /* Home */,
 				65430EE62907DADC00AA83BC /* LessonDetail */,
@@ -767,6 +789,7 @@
 				6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */,
 				6595DBB028F5690F00B1F503 /* ScaleButtonStyle.swift in Sources */,
 				65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */,
+				651AFC6F290D702A00719F14 /* ElementDetailView.swift in Sources */,
 				65E46FB728E1BA630051A150 /* AppConstant.swift in Sources */,
 				6523303E28D6263C007F18F6 /* String+Localizable.swift in Sources */,
 				65ED403728D60434000F7477 /* ColorExtension.swift in Sources */,
@@ -776,6 +799,7 @@
 				65E3BDB728F2BF530081D29D /* HomeView.swift in Sources */,
 				65ED403D28D606F6000F7477 /* DIContainer.swift in Sources */,
 				65985E2D28EC560A00061E68 /* SplashAnimationView.swift in Sources */,
+				651AFC72290D92C300719F14 /* ElementInformationView.swift in Sources */,
 				65A5861429010316007A0860 /* WaterFlowAnimation.swift in Sources */,
 				6523304328D626A0007F18F6 /* NetworkService.swift in Sources */,
 				65E3BDBB28F2C4DC0081D29D /* ProgramItemView.swift in Sources */,
