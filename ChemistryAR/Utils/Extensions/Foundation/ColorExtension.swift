@@ -25,6 +25,20 @@ public extension Color {
     static let c2A323F = Color(hex: 0x2A323F)
     static let c225096 = Color(hex: 0x225096)
     static let cBF2121 = Color(hex: 0xBF2121)
+    static let c1A1F2C = Color(hex: 0x1A1F2C)
+
+    // MARK: - Element Group Color
+    static let diatomicNonMetal = Color(hex: 0x2F3168)
+    static let polyatomicNonMetal = Color(hex: 0x2F3168)
+    static let alkali = Color(hex: 0x602B39)
+    static let alkaliEarth = Color(hex: 0x513E35)
+    static let transitionMetal = Color(hex: 0x333E51)
+    static let postTransitionMetal = Color(hex: 0x1B5643)
+    static let metalloid = Color(hex: 0x154959)
+    static let halogen = Color(hex: 0x424181)
+    static let noble = Color(hex: 0x4A2D6D)
+    static let lanthanoid = Color(hex: 0x403361)
+    static let actinide = Color(hex: 0x382349)
 
     // MARK: - LinearGradient
     static let virtualLabBGC = LinearGradient(
