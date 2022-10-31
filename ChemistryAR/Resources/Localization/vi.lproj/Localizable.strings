@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  ChemistryAR
+
+  Created by NhatMinh on 31/10/2022.
+  
+*/
+"allElementTitle" = "Tất cả các nguyên tố";
+"diatomicNonMetalTitle" = "Diatomic Phi Kim";
+"polyatomicNonMetalTitle" = "Polyatomic Phi Kim";
+"alkaliTitle" = "Kim loại Kiềm";
+"alkaliEarthTitle" = "Kim loại Kiềm Thổ";
+"transitionMetalTitle" = "Kim loại chuyển tiếp";
+"postTransitionMetalTitle" = "Chất Bán Dẫn";
+"metalloidTitle" = "Á Kim";
+"halogenTitle" = "Halogen";
+"nobleTitle" = "Khí Trơ";
+"lanthanoidTitle" = "Lanthanoid";
+"actinideTitle" = "Actinide";

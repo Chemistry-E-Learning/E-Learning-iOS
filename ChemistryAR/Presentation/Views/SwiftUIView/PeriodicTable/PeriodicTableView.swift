@@ -10,8 +10,10 @@ import SwiftUI
 struct PeriodicTableView: View {
     @Binding var elementList: Matrix<Element>
     @State private var isPushToElementDetailView = false
+    @State private var isShowFilterView = false
     @State private var viewState = CGSize.zero
-    @State private var selectedElement: Element = emptyElement
+    @State private var selectedElement = Element.emptyElement
+    @State private var groupSelected = ElementGroup.initial
 
     var body: some View {
         GeometryReader { geo in
@@ -44,7 +46,10 @@ struct PeriodicTableView: View {
                                             self.selectedElement = self.elementList[i, j]
                                             isPushToElementDetailView = true
                                         } label: {
-                                            ElementItemView(element: .constant(self.elementList[i, j]))
+                                            ElementItemView(
+                                                element: .constant(self.elementList[i, j]),
+                                                groupSelected: $groupSelected
+                                            )
                                         }
                                     }
                                 }
@@ -53,7 +58,17 @@ struct PeriodicTableView: View {
                         }
                         .frame(height: geo.size.height)
                     }
-                    .background(Color.c1A1F2C)
+                    .background(
+                        Color.c1A1F2C
+                     )
+                }
+                if isShowFilterView {
+                    Color.white.opacity(0.2)
+                        .onTapGesture {
+                            isShowFilterView = false
+                        }
+                    FilterGroupView(isShowFilterView: $isShowFilterView, groupSelected: $groupSelected)
+                        .offset(y: -geo.size.height * 0.08)
                 }
             }
         }
@@ -63,7 +78,9 @@ struct PeriodicTableView: View {
 
 struct PeriodicTableView_Previews: PreviewProvider {
     static var previews: some View {
-        PeriodicTableView(elementList: .constant(PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix()))
+        PeriodicTableView(
+            elementList: .constant(PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix())
+        )
     }
 }
 
@@ -78,7 +95,7 @@ private extension PeriodicTableView {
                 .font(.system(size: 22, weight: .medium))
             Spacer()
             Button {
-                print("open filter popup")
+                isShowFilterView = true
             } label: {
                 Image("filter")
                     .resizable()

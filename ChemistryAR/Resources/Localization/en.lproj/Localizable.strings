@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  ChemistryAR
+
+  Created by NhatMinh on 31/10/2022.
+  
+*/
+"allElementTitle" = "All Elements";
+"diatomicNonMetalTitle" = "Diatomic NonMetal";
+"polyatomicNonMetalTitle" = "Polyatomic NonMetal";
+"alkaliTitle" = "Alkali";
+"alkaliEarthTitle" = "Alkali Earth";
+"transitionMetalTitle" = "Transition Metal";
+"postTransitionMetalTitle" = "Post Transition Metal";
+"metalloidTitle" = "Metalloid";
+"halogenTitle" = "Halogen";
+"nobleTitle" = "Noble";
+"lanthanoidTitle" = "Lanthanoid";
+"actinideTitle" = "Actinide";

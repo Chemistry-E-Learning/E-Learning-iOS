@@ -15,6 +15,20 @@ enum Localization: String {
     case welcomeBackTitle
     case startCourseTitle
 
+    // MARK: - Element Group
+    case allElementTitle
+    case diatomicNonMetalTitle
+    case polyatomicNonMetalTitle
+    case alkaliTitle
+    case alkaliEarthTitle
+    case transitionMetalTitle
+    case postTransitionMetalTitle
+    case metalloidTitle
+    case halogenTitle
+    case nobleTitle
+    case lanthanoidTitle
+    case actinideTitle
+
     var localizedString: String {
         return rawValue.localizedString
     }

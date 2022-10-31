@@ -9,38 +9,10 @@
 import Foundation
 import SwiftUI
 
-let emptyElement = Element(
-    name: "",
-    appearance: "",
-    atomicMass: 0,
-    boil: 0,
-    category: "",
-    color: "",
-    density: 0,
-    discoveredBy: "",
-    melt: 0,
-    molarHeat: 0,
-    namedBy: "",
-    number: 0,
-    period: 0,
-    phase: .gas,
-    source: "",
-    spectralImg: "",
-    summary: "",
-    symbol: "",
-    xpos: 0,
-    ypos: 0,
-    shells: [],
-    electronConfiguration: "",
-    electronAffinity: 0,
-    electronegativityPauling: 0,
-    ionizationEnergies: []
-)
-
 extension PeriodicElementList {
 
   func periodicElementMatrix() -> Matrix<Element> {
-    var elementMatrix: Matrix<Element> = Matrix(rows: 10, columns: 18, defaultValue: emptyElement)
+      var elementMatrix: Matrix<Element> = Matrix(rows: 10, columns: 18, defaultValue: Element.emptyElement)
     for e in elements {
       elementMatrix[e.ypos - 1 ,e.xpos - 1] = e
     }
@@ -113,7 +85,7 @@ extension Element {
     }
 }
 
-enum ElementGroup {
+enum ElementGroup: Hashable {
     case initial
     case diatomicNonMetal
     case polyatomicNonMetal
@@ -126,4 +98,62 @@ enum ElementGroup {
     case noble
     case lanthanoid
     case actinide
+
+    func getColor() -> Color {
+        switch self {
+        case .initial:
+            return Color.red.opacity(0.7)
+        case .diatomicNonMetal:
+            return .diatomicNonMetal
+        case .polyatomicNonMetal:
+            return .polyatomicNonMetal
+        case .alkali:
+            return .alkali
+        case .alkaliEarth:
+            return .alkaliEarth
+        case .transitionMetal:
+            return .transitionMetal
+        case .postTransitionMetal:
+            return .postTransitionMetal
+        case .metalloid:
+            return .metalloid
+        case .halogen:
+            return .halogen
+        case .noble:
+            return .noble
+        case .lanthanoid:
+            return .lanthanoid
+        case .actinide:
+            return .actinide
+        }
+    }
+
+    func getGroupName() -> String {
+        switch self {
+        case .initial:
+            return Localization.allElementTitle.localizedString
+        case .diatomicNonMetal:
+            return Localization.diatomicNonMetalTitle.localizedString
+        case .polyatomicNonMetal:
+            return Localization.polyatomicNonMetalTitle.localizedString
+        case .alkali:
+            return Localization.alkaliTitle.localizedString
+        case .alkaliEarth:
+            return Localization.alkaliEarthTitle.localizedString
+        case .transitionMetal:
+            return Localization.transitionMetalTitle.localizedString
+        case .postTransitionMetal:
+            return Localization.postTransitionMetalTitle.localizedString
+        case .metalloid:
+            return Localization.metalloidTitle.localizedString
+        case .halogen:
+            return Localization.halogenTitle.localizedString
+        case .noble:
+            return Localization.nobleTitle.localizedString
+        case .lanthanoid:
+            return Localization.lanthanoidTitle.localizedString
+        case .actinide:
+            return Localization.actinideTitle.localizedString
+        }
+    }
 }

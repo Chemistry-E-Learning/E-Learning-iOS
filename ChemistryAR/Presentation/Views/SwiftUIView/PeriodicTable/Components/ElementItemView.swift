@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ElementItemView: View {
     @Binding var element: Element
+    @Binding var groupSelected: ElementGroup
 
     var body: some View {
         GeometryReader { _ in
@@ -37,6 +38,22 @@ struct ElementItemView: View {
             .foregroundColor(.white)
         }
         .squareFrame(70)
-        .background(element.getColor())
+        .background(
+            groupSelected == .initial
+            ? element.getColor()
+            : element.getGroup() == groupSelected
+            ? groupSelected.getColor()
+            : element.isValid()
+            ? Color.c444444
+            : .clear
+        )
+    }
+}
+
+struct ElementItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        PeriodicTableView(
+            elementList: .constant(PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix())
+        )
     }
 }

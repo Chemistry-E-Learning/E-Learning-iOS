@@ -10,6 +10,6 @@ import Foundation
 class StringLocalizable {}
 extension String {
     var localizedString: String {
-        Bundle.Module.localizedString(forKey: self)
+        return Bundle.Module.localizedString(forKey: self)
     }
 }
