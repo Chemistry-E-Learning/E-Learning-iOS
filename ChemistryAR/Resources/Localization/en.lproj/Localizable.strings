@@ -5,6 +5,7 @@
   Created by NhatMinh on 31/10/2022.
   
 */
+// MARK: - ElementGroup
 "allElementTitle" = "All Elements";
 "diatomicNonMetalTitle" = "Diatomic NonMetal";
 "polyatomicNonMetalTitle" = "Polyatomic NonMetal";
@@ -17,3 +18,7 @@
 "nobleTitle" = "Noble";
 "lanthanoidTitle" = "Lanthanoid";
 "actinideTitle" = "Actinide";
+// MARK: - NavigationTitile
+"periodicTableTitle" = "Periodic Table";
+"electrochemicalSeriesTitle" = "Electrochemical Series";
+

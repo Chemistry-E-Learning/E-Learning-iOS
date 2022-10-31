@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PeriodicTableView: View {
+    @Binding var isPushToPeriodicTableView: Bool
     @Binding var elementList: Matrix<Element>
     @State private var isPushToElementDetailView = false
     @State private var isShowFilterView = false
@@ -27,49 +28,17 @@ struct PeriodicTableView: View {
                     EmptyView()
                 }
                 VStack(alignment: .leading) {
-                    makeToolBarCustomView()
-                    ScrollView([.horizontal], showsIndicators: false)  {
-                        VStack(alignment: .leading, spacing: 0) {
-                            HStack(spacing: 0) {
-                                ForEach(0..<18) { index in
-                                    Text("\(index + 1)")
-                                        .font(.system(size: 16, weight: .medium))
-                                        .frame(width: 70, height: 40)
-                                        .foregroundColor(.white)
-                                        .background(Color.black.opacity(0.7))
-                                }
-                            }
-                            ForEach(0...self.elementList.rows - 1, id: \.self) { i in
-                                HStack(alignment: .center, spacing: 0) {
-                                    ForEach(0...self.elementList.columns - 1, id: \.self) { j in
-                                        Button {
-                                            self.selectedElement = self.elementList[i, j]
-                                            isPushToElementDetailView = true
-                                        } label: {
-                                            ElementItemView(
-                                                element: .constant(self.elementList[i, j]),
-                                                groupSelected: $groupSelected
-                                            )
-                                        }
-                                    }
-                                }
-                            }
-                            Spacer()
+                    ToolBarCustomView(
+                        isPushToCurrentView: $isPushToPeriodicTableView,
+                        title: Localization.periodicTableTitle.localizedString,
+                        rightButtonImage: "filter",
+                        rightButtonAction: {
+                            isShowFilterView = true
                         }
-                        .frame(height: geo.size.height)
-                    }
-                    .background(
-                        Color.c1A1F2C
-                     )
+                    )
+                    makePeriodicTableView(height: geo.size.height)
                 }
-                if isShowFilterView {
-                    Color.white.opacity(0.2)
-                        .onTapGesture {
-                            isShowFilterView = false
-                        }
-                    FilterGroupView(isShowFilterView: $isShowFilterView, groupSelected: $groupSelected)
-                        .offset(y: -geo.size.height * 0.08)
-                }
+                makeFilterViewOverlay(height: geo.size.height  )
             }
         }
         .ignoresSafeArea(.all, edges: .bottom)
@@ -79,31 +48,61 @@ struct PeriodicTableView: View {
 struct PeriodicTableView_Previews: PreviewProvider {
     static var previews: some View {
         PeriodicTableView(
+            isPushToPeriodicTableView: .constant(false),
             elementList: .constant(PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix())
         )
     }
 }
 
+// MARK: - Functions View
 private extension PeriodicTableView {
-    func makeToolBarCustomView() -> some View {
-        HStack {
-            BackButton(action: {
-                isPushToElementDetailView = false
-            }, fontWeight: .medium, color: .black)
-            Spacer()
-            Text("Periodic Table")
-                .font(.system(size: 22, weight: .medium))
-            Spacer()
-            Button {
-                isShowFilterView = true
-            } label: {
-                Image("filter")
-                    .resizable()
-                    .renderingMode(.template)
-                    .squareFrame(28)
-                    .padding(.trailing, 16)
-            }
-            .foregroundColor(.black)
+    @ViewBuilder func makeFilterViewOverlay(height: CGFloat) -> some View {
+        if isShowFilterView {
+            Color.white.opacity(0.2)
+                .onTapGesture {
+                    isShowFilterView = false
+                }
+            FilterGroupView(
+                isShowFilterView: $isShowFilterView,
+                groupSelected: $groupSelected
+            )
+            .offset(y: -height * 0.08)
         }
+    }
+
+    func makePeriodicTableView(height: CGFloat) -> some View {
+        ScrollView([.horizontal], showsIndicators: false)  {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(spacing: 0) {
+                    ForEach(0..<18) { index in
+                        Text("\(index + 1)")
+                            .font(.system(size: 16, weight: .medium))
+                            .frame(width: 70, height: 40)
+                            .foregroundColor(.white)
+                            .background(Color.black.opacity(0.7))
+                    }
+                }
+                ForEach(0...elementList.rows - 1, id: \.self) { i in
+                    HStack(alignment: .center, spacing: 0) {
+                        ForEach(0...elementList.columns - 1, id: \.self) { j in
+                            Button {
+                                selectedElement = elementList[i, j]
+                                isPushToElementDetailView = true
+                            } label: {
+                                ElementItemView(
+                                    element: .constant(elementList[i, j]),
+                                    groupSelected: $groupSelected
+                                )
+                            }
+                        }
+                    }
+                }
+                Spacer()
+            }
+            .frame(height: height)
+        }
+        .background(
+            Color.c1A1F2C
+        )
     }
 }

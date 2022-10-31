@@ -29,6 +29,10 @@ enum Localization: String {
     case lanthanoidTitle
     case actinideTitle
 
+    // MARK: - NavigationTitle
+    case periodicTableTitle
+    case electrochemicalSeriesTitle
+
     var localizedString: String {
         return rawValue.localizedString
     }
