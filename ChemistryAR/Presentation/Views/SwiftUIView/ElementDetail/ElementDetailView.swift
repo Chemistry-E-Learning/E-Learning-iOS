@@ -10,28 +10,55 @@ import SwiftUI
 struct ElementDetailView: View {
     @Binding var isPushToElementDetailView: Bool
     @State private var headerOffset = CGFloat.zero
+    @State private var stickerSize = CGFloat.zero
+    @State private var isShowWikipedia = false
 
     var body: some View {
         GeometryReader { geo in
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 0) {
-                    makeHeaderView(size: geo.size)
-                        .background(
-                            GeometryReader {
-                                Color.clear.preference(
-                                    key: ViewOffsetKey.self,
-                                    value: -$0.frame(in: .named("scroll")).origin.y
-                                )
-                            }
-                        )
+            ZStack(alignment: .top) {
+                NavigationLink(
+                    destination: NavigationLazyView(
+                        ElementWikipediaView(isPushToWikipediaView: $isShowWikipedia)
+                    ),
+                    isActive: $isShowWikipedia
+                ) {
+                    EmptyView()
                 }
+                makeButtonGroupView()
+                    .padding(.top, getSafeArea(edge: .top) - 12)
+                    .zIndex(2)
+                makeHeaderView(size: geo.size)
+                    .zIndex(1)
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        ForEach(0..<10) { index in
+                            ElementSectionView(parentSize: geo.size)
+                                .padding(.bottom, index == 3 ? 28 : 0)
+                        }
+                    }
+                    .offset(y: getContentOffset(height: geo.size.height))
+                    .padding(.bottom, geo.size.height * 0.36)
+                    .background(
+                        GeometryReader {
+                            Color.clear.preference(
+                                key: ViewOffsetKey.self,
+                                value: -$0.frame(in: .named("scroll")).origin.y
+                            )
+                        }
+                    )
+                }
+                .onPreferenceChange(ViewOffsetKey.self) {
+                    headerOffset = $0
+                    let _ = getHeaderOffset(height: geo.size.height)
+                }
+                .coordinateSpace(name: "scroll")
             }
-            .onPreferenceChange(ViewOffsetKey.self) {
-                headerOffset = $0
-            }
-            .coordinateSpace(name: "scroll")
+
         }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -53,7 +80,7 @@ private extension ElementDetailView {
             .padding(.horizontal, 4)
             Spacer()
             Button {
-                print("Open wikipedia")
+                isShowWikipedia = true
             } label: {
                 Image("wikipedia")
                     .resizable()
@@ -72,24 +99,24 @@ private extension ElementDetailView {
             .scaledToFill()
             .overlay {
                 ZStack(alignment: .topLeading) {
-                    Color.black.opacity(0.3)
+                    Color.c2A323F.opacity(0.3 + (headerOffset / 300))
                     VStack(alignment: .leading) {
-                        makeButtonGroupView()
                         VStack(alignment: .leading) {
                             makeNoticeTag(title: "Phóng Xạ")
                                 .padding(.bottom, -3)
+                                .opacity(headerOffset > 0 ? 0 : 1)
                             makeElementTagView(serial: 35, category: "Halogen", color: .green)
                             makeElementTitleView()
                                 .offset(y: -size.height * 0.01)
                         }
                         .padding(.top, size.height * 0.04)
                     }
-                    .offset(y: getSafeArea(edge: .top) + size.height * 0.06)
+                    .offset(y: getSafeArea(edge: .top) + size.height * 0.12)
                 }
             }
             .frame(width: size.width, height: size.height * 0.34)
             .clipped()
-            .offset(y: (headerOffset < 0 ? headerOffset : 0))
+            .offset(y: getHeaderOffset(height: size.height))
     }
 
     func makeElementTagView(serial: Int, category: String, color: Color) -> some View {
@@ -110,6 +137,7 @@ private extension ElementDetailView {
         .background(
             color.cornerRadius(6, corners: [.topRight, .bottomRight])
         )
+        .opacity(headerOffset > 0 ? 0 : 1)
     }
 
     func makeNoticeTag(title: String) -> some View {
@@ -125,16 +153,26 @@ private extension ElementDetailView {
     }
 
     func makeElementTitleView() -> some View {
-        HStack(spacing: 24) {
+        HStack(spacing: 24 + (stickerSize > 0 ? 0 : stickerSize / 5.5)) {
             Text("Br")
                 .font(.system(size: 60, weight: .medium))
+                .background(
+                    Circle()
+                        .fill(Color.green)
+                        .squareFrame(88)
+                        .opacity(headerOffset > 0 ? 1 : 0)
+                )
                 .padding(.leading, 32)
+                .scaleEffect(1 + (stickerSize > 0 ? 0 : stickerSize / 400))
+                .padding(.bottom, stickerSize / 7)
             VStack(alignment: .leading, spacing: 4) {
                 Text("Brom")
                     .font(.system(size: 24, weight: .medium))
                 Text("\(79904) (g/mol)")
                     .font(.system(size: 16, weight: .medium))
             }
+            .scaleEffect(1 + (stickerSize > 0 ? 0 : stickerSize / 1000))
+            .padding(.bottom, stickerSize / 7)
             Spacer()
             Button {
                 print("Open AR View")
@@ -144,8 +182,24 @@ private extension ElementDetailView {
             }
             .squareFrame(44)
             .padding(.top, 16)
+            .opacity(headerOffset > 0 ? 0 : 1)
         }
+        .padding(.leading, stickerSize > 0 ? 0 : -stickerSize / 12)
         .padding(.trailing, 20)
         .foregroundColor(.white)
+    }
+}
+
+// MARK: - Helper Function
+private extension ElementDetailView {
+    func getHeaderOffset(height: CGFloat) -> CGFloat {
+        let navSize = height * 0.28 - getSafeArea(edge: .top)
+        stickerSize = headerOffset > navSize ? -navSize : -headerOffset
+        return headerOffset > 0 ? stickerSize : 0
+    }
+
+    func getContentOffset(height: CGFloat) -> CGFloat {
+        let contentHeight = height * 0.34
+        return headerOffset > 0 ? contentHeight : contentHeight + headerOffset
     }
 }

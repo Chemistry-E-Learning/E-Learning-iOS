@@ -11,6 +11,7 @@ struct AppConstant {
     static let ChemistryElementResource = "Chemistry Element"
     static let NoAsset = "Missing expected asset catalog resources."
     static let MaximumImageTracking = 10
+    static let NoContent = "---"
 }
 
 // MARK: - Dummy Data

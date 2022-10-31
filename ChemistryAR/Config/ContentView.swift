@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if isActive {
-                contentView
+                ElementDetailView(isPushToElementDetailView: .constant(true))
             } else {
                 SplashAnimationView()
             }

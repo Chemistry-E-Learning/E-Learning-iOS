@@ -23,6 +23,8 @@ public extension Color {
     static let cFFD335 = Color(hex: 0xFFD335)
     static let c444444 = Color(hex: 0x444444)
     static let c2A323F = Color(hex: 0x2A323F)
+    static let c225096 = Color(hex: 0x225096)
+    static let cBF2121 = Color(hex: 0xBF2121)
 
     // MARK: - LinearGradient
     static let virtualLabBGC = LinearGradient(
