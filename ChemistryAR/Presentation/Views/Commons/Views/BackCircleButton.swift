@@ -11,7 +11,7 @@ struct BackCircleButton: View {
     let action: () -> Void
     var body: some View {
         Button(action: action) {
-            Image(systemName: "chevron.backward")
+            Image(systemName: AppConstant.BackImage)
                 .foregroundColor(.white)
                 .font(.system(size: 24, weight: .bold))
                 .background(

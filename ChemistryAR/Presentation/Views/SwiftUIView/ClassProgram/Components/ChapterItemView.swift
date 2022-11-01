@@ -11,7 +11,7 @@ struct ChapterItemView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Chapter 1")
+                Text(Localization.chapterAttributeTitle.localizedString + " \(1)")
                     .font(.system(size: 12, weight: .regular))
                     .foregroundColor(.white.opacity(0.8))
                 Text("Phản ứng oxi - hoá khử")
@@ -42,17 +42,6 @@ struct ChapterItemView: View {
             }
                 .cornerRadius(16)
         )
-
-    }
-}
-
-private extension ChapterItemView {
-    var playVideoButtonView: some View {
-        Image("play")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 40, height: 40)
-            .padding(8)
     }
 }
 

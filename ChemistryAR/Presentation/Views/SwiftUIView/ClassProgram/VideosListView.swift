@@ -37,29 +37,7 @@ struct VideosListView: View {
                                         .foregroundColor(.white)
                                         .font(.system(size: 28, weight: .bold))
                                 })
-                                VStack(alignment: .leading, spacing: 20) {
-                                    Text("Chapter 1")
-                                        .font(.system(size: 24, weight: .bold))
-                                        .foregroundColor(.white)
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        Text("20 Sections - 40 Videos")
-                                        Text("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour")
-                                            .multilineTextAlignment(.leading)
-                                            .lineLimit(2)
-                                            .fixedSize(horizontal: false, vertical: true)
-                                    }
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 14, weight: .regular))
-                                }
-                                    .padding(12)
-                                    .background(
-                                        Color.black.opacity(0.3)
-                                            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                                            .blur(radius: 1)
-                                            .shadow(
-                                                color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1
-                                            )
-                                    )
+                                makeHeaderContentView()
                             }
                                 .padding(.top, 16)
                                 .padding(.horizontal, 32)
@@ -68,12 +46,10 @@ struct VideosListView: View {
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 16) {
                             ForEach(0..<20) { _ in
-                                Button {
-                                    isPushToVideoDetailView = true
-                                } label: {
-                                    VideoItemView()
-                                }
-                                .buttonStyle(.plain)
+                                VideoItemView()
+                                    .onTapGesture {
+                                        isPushToVideoDetailView = true
+                                    }
                             }
                         }
                         .padding(.horizontal, 20)
@@ -94,3 +70,32 @@ struct ChaptersListView_Previews: PreviewProvider {
         VideosListView(isPushToVideosListView: .constant(false))
     }
 }
+
+private extension VideosListView {
+    func makeHeaderContentView() -> some View {
+        VStack(alignment: .leading, spacing: 20) {
+            Text("\(Localization.chapterAttributeTitle.localizedString) \(1)")
+                .font(.system(size: 24, weight: .bold))
+                .foregroundColor(.white)
+            VStack(alignment: .leading, spacing: 4) {
+                Text("\(20) \(Localization.sectionsAttributeTitle.localizedString) - \(40) Videos")
+                Text("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour")
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .foregroundColor(.white)
+            .font(.system(size: 14, weight: .regular))
+        }
+            .padding(12)
+            .background(
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                    .fill(Color.black.opacity(0.3))
+                    .blur(radius: 1)
+                    .shadow(
+                        color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1
+                    )
+            )
+    }
+}
+

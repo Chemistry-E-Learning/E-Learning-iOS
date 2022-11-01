@@ -13,7 +13,12 @@ struct VideoDetailView: View {
     @State var player = AVPlayer(url: URL(string: "https://swiftanytime-content.s3.ap-south-1.amazonaws.com/SwiftUI-Beginner/Video-Player/iMacAdvertisement.mp4")!)
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 0) {
+            ToolBarCustomView(
+                isPushToCurrentView: $isPushToVideoDetailView,
+                title: Localization.experimentVideoTitle.localizedString
+            )
+            Divider()
             VideoPlayer(player: player)
                 .frame(height: UIScreen.main.bounds.height * 0.3)
             Spacer()
@@ -23,25 +28,11 @@ struct VideoDetailView: View {
                     .multilineTextAlignment(.leading)
                 // Content Here
             }
+            .padding(.horizontal, 20)
         }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    HStack {
-                        Button(action: {
-                            isPushToVideoDetailView = false
-                        }, label: {
-                            Image(systemName: "chevron.backward")
-                                .resizable()
-                                .scaledToFit()
-                        })
-                        .buttonStyle(ScaleButtonStyle())
-                        .padding(.vertical, 4)
-                    }
-                }
-            }
     }
 }
 

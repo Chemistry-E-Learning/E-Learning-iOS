@@ -13,6 +13,7 @@ struct LawItem: View {
             Image("boyle")
                 .resizable()
                 .scaledToFill()
+                .squareFrame(64)
                 .frame(width: 64, height: 64)
                 .cornerRadius(12)
                 .clipped()

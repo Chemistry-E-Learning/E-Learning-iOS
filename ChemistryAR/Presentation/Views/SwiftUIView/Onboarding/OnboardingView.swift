@@ -66,8 +66,7 @@ struct OnboardingView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            #warning("TODO: MinhNN44 - Add localized here")
-                            Text("STARTED")
+                            Text(Localization.startButtonTitle.localizedString.uppercased())
                                 .fontWeight(.semibold)
                                 .foregroundColor(.black)
                                 .padding(.vertical, 12)
@@ -83,7 +82,7 @@ struct OnboardingView: View {
                         Circle()
                             .fill(.white)
                             .opacity(index == getIndex() ? 1 : 0.4)
-                            .frame(width: 8, height: 8)
+                            .squareFrame(8)
                             .scaleEffect(index == getIndex() ? 1.3 : 0.85)
                             .animation(.easeInOut, value: getIndex())
                     }

@@ -17,7 +17,7 @@ struct OffsetPageTabView<Content: View>: UIViewRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        return OffsetPageTabView.Coordinator(parrent: self)
+        return OffsetPageTabView.Coordinator(parent: self)
     }
 
     func makeUIView(context: Context) -> UIScrollView {
@@ -54,15 +54,15 @@ struct OffsetPageTabView<Content: View>: UIViewRepresentable {
     }
 
     class Coordinator: NSObject, UIScrollViewDelegate {
-        var parrent: OffsetPageTabView
+        var parent: OffsetPageTabView
 
-        init(parrent: OffsetPageTabView) {
-            self.parrent = parrent
+        init(parent: OffsetPageTabView) {
+            self.parent = parent
         }
 
         func scrollViewDidScroll(_ scrollView: UIScrollView) {
             let offset = scrollView.contentOffset.x
-            parrent.offset = offset
+            parent.offset = offset
         }
     }
 }

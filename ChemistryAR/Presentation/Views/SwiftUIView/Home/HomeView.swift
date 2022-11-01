@@ -12,7 +12,7 @@ struct HomeView: View {
     @State private var isPushToBranchesView = false
     @State private var isPushToLawsView = false
 
-    let branchColumns = [
+    private let branchColumns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
@@ -72,6 +72,7 @@ private extension HomeView {
         }
     }
 }
+
 private extension HomeView {
     func makeTitleView(title: String) -> some View {
         Text(title)
@@ -81,7 +82,7 @@ private extension HomeView {
 
     func makeProgramCarouselView(geo: GeometryProxy) -> some View {
         VStack(alignment: .leading, spacing: -28) {
-            makeTitleView(title: "Class Programs")
+            makeTitleView(title: Localization.classProgramTitle.localizedString)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 8) {
                     ForEach(0..<5) { _ in
@@ -105,7 +106,7 @@ private extension HomeView {
 
     var branchOfChemistryView: some View {
         VStack(alignment: .leading, spacing: 20) {
-            makeTitleView(title: "Branches Of Chemistry")
+            makeTitleView(title: Localization.branchesOfChemistryTitle.localizedString)
             LazyVGrid(columns: branchColumns, spacing: 20) {
                 ForEach(0..<6, id: \.self) { _ in
                     BranchItemView()
@@ -121,7 +122,7 @@ private extension HomeView {
 
     var lawOfChemistryView: some View {
         VStack(alignment: .leading, spacing: 8) {
-            makeTitleView(title: "Chemistry Laws")
+            makeTitleView(title: Localization.chemistryLawsTitle.localizedString)
                 .padding(.bottom, 12)
             ForEach(0..<6) { _ in
                 LawItem()

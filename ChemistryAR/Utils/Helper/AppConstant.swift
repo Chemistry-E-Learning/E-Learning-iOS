@@ -12,6 +12,8 @@ struct AppConstant {
     static let NoAsset = "Missing expected asset catalog resources."
     static let MaximumImageTracking = 10
     static let NoContent = "---"
+    static let BackImage = "chevron.backward"
+    static let PlayImage = "play.fill"
 }
 
 // MARK: - Dummy Data

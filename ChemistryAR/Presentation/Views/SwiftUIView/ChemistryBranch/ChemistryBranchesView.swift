@@ -22,54 +22,26 @@ struct ChemistryBranchesView: View {
                 ) {
                     EmptyView()
                 }
-                VStack(alignment: .leading, spacing: 0) {
-                    Image("branchBG")
-                        .resizable()
-                        .scaledToFill()
-                        .overlay {
-                            ZStack(alignment: .topLeading) {
-                                Color.black.opacity(0.4)
-                                VStack(alignment: .leading, spacing: 28) {
-                                    BackCircleButton {
-                                        isPushToBranchesView = false
-                                    }
-                                    .padding(.horizontal, 8)
-                                    VStack(alignment: .leading, spacing: 8) {
-                                        Text("Inorganic Chemistry")
-                                            .font(.system(size: 26, weight: .bold))
-                                            .foregroundColor(.white)
-                                        Text("5m30s - 12 Lessons")
-                                            .font(.system(size: 13, weight: .regular))
-                                            .foregroundColor(.white.opacity(0.9))
-                                    }
-                                    Text("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant pour calibrer une mise en page, le texte définitif venant")
-                                        .multilineTextAlignment(.leading)
-                                        .font(.system(size: 14, weight: .regular))
-                                        .foregroundColor(.white)
-                                        .lineLimit(4)
+                HeaderListCustomView(
+                    isPushToCurrentView: $isPushToBranchesView,
+                    parentHeight: geo.size.height
+                )
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading, spacing: 12) {
+                        ForEach(0..<10) { _ in
+                            BranchLessonItemView()
+                                .onTapGesture {
+                                    isPushToLessonDetail = true
                                 }
-                                .padding(.horizontal, 28)
-                                .offset(y: geo.size.height * 0.17)
-                            }
                         }
-                        .frame(height: geo.size.height * 0.2)
-                    ScrollView(showsIndicators: false) {
-                        VStack(alignment: .leading, spacing: 12) {
-                            ForEach(0..<10) { _ in
-                                BranchLessonItemView()
-                                    .onTapGesture {
-                                        isPushToLessonDetail = true
-                                    }
-                            }
-                        }
-                        .padding(.bottom, 40)
                     }
-                    .padding(.top, geo.size.height * 0.11)
-                    .padding(.horizontal, 20)
+                    .padding(.bottom, geo.size.height * 0.38)
                 }
-
+                .offset(y: geo.size.height * 0.34)
+                .padding(.horizontal, 20)
             }
         }
+        .ignoresSafeArea(.all)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)

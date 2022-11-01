@@ -67,6 +67,7 @@
 		65B94EB8290EA8A0001F1FD4 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */; };
 		65B94EBA290EA8E7001F1FD4 /* ElementSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */; };
 		65BA6299290F775900135907 /* ElementWikipediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BA6298290F775900135907 /* ElementWikipediaView.swift */; };
+		65BAAA422910AD280055D482 /* HeaderListCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAAA412910AD280055D482 /* HeaderListCustomView.swift */; };
 		65BC8BB8290927B3004CC8A1 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC8BB7290927B3004CC8A1 /* TagView.swift */; };
 		65C8EE2D29101E7A00E251AB /* ElectrochemicalSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8EE2C29101E7A00E251AB /* ElectrochemicalSeriesView.swift */; };
 		65C8EE302910225300E251AB /* ToolBarCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */; };
@@ -150,6 +151,7 @@
 		65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSectionView.swift; sourceTree = "<group>"; };
 		65BA6298290F775900135907 /* ElementWikipediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementWikipediaView.swift; sourceTree = "<group>"; };
+		65BAAA412910AD280055D482 /* HeaderListCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderListCustomView.swift; sourceTree = "<group>"; };
 		65BC8BB7290927B3004CC8A1 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		65C8EE2C29101E7A00E251AB /* ElectrochemicalSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrochemicalSeriesView.swift; sourceTree = "<group>"; };
 		65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCustomView.swift; sourceTree = "<group>"; };
@@ -302,18 +304,18 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				65985E2728EBE01A00061E68 /* BaseView */,
+				65985E2E28EC5BB500061E68 /* Onboarding */,
+				65E3BDB528F2BF3C0081D29D /* Home */,
 				65C8EE2B29101E1200E251AB /* ElectrochemicalSeries */,
 				65A759E1290F8354005105B7 /* PeriodicTable */,
 				651AFC6D290D700900719F14 /* ElementDetail */,
-				65985E2728EBE01A00061E68 /* BaseView */,
-				65E3BDB528F2BF3C0081D29D /* Home */,
 				65430EE62907DADC00AA83BC /* LessonDetail */,
 				65B21D1A2907A7F400D32753 /* ChemistryLaw */,
 				65B21D142907966D00D32753 /* ChemistryBranch */,
 				6590541C28F69F2A00FF5061 /* VirtualLab */,
 				6595DBA428F526FE00B1F503 /* ClassProgram */,
 				65AF945728F18DA300B77BEB /* Information */,
-				65985E2E28EC5BB500061E68 /* Onboarding */,
 			);
 			path = SwiftUIView;
 			sourceTree = "<group>";
@@ -323,7 +325,6 @@
 			children = (
 				65985E2C28EC560A00061E68 /* SplashAnimationView.swift */,
 				65985E2828EBE04800061E68 /* MainTabView.swift */,
-				65E3BDB328F275210081D29D /* CustomShape.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -386,6 +387,7 @@
 			children = (
 				6595DBA928F52DD500B1F503 /* BackCircleButton.swift */,
 				650B7703290CF72000F8E1C2 /* BackButton.swift */,
+				65B21D18290796D200D32753 /* BranchLessonItemView.swift */,
 				6595DBAB28F5451B00B1F503 /* NavigationLazyView.swift */,
 				6595DBAF28F5690F00B1F503 /* ScaleButtonStyle.swift */,
 				654CABE828FD31B70024A228 /* AttachmentButton.swift */,
@@ -393,6 +395,7 @@
 				65430EE92907DD0800AA83BC /* WebView.swift */,
 				65BC8BB7290927B3004CC8A1 /* TagView.swift */,
 				65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */,
+				65BAAA412910AD280055D482 /* HeaderListCustomView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -408,18 +411,9 @@
 		65B21D142907966D00D32753 /* ChemistryBranch */ = {
 			isa = PBXGroup;
 			children = (
-				65B21D17290796B600D32753 /* Components */,
 				65B21D15290796B200D32753 /* ChemistryBranchesView.swift */,
 			);
 			path = ChemistryBranch;
-			sourceTree = "<group>";
-		};
-		65B21D17290796B600D32753 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				65B21D18290796D200D32753 /* BranchLessonItemView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		65B21D1A2907A7F400D32753 /* ChemistryLaw */ = {
@@ -455,6 +449,7 @@
 				65A5861529011C16007A0860 /* DropShape.swift */,
 				659404EA2901361700D78A70 /* FillShape.swift */,
 				659404EC2901371300D78A70 /* WaveFillShape.swift */,
+				65E3BDB328F275210081D29D /* CustomShape.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -869,6 +864,7 @@
 				659404EB2901361700D78A70 /* FillShape.swift in Sources */,
 				6595DBAC28F5451B00B1F503 /* NavigationLazyView.swift in Sources */,
 				654CABE928FD31B70024A228 /* AttachmentButton.swift in Sources */,
+				65BAAA422910AD280055D482 /* HeaderListCustomView.swift in Sources */,
 				65BA6299290F775900135907 /* ElementWikipediaView.swift in Sources */,
 				65A759F7290FB3CE005105B7 /* FilterGroupView.swift in Sources */,
 				6507FAE928F6AAF40013813A /* VirtualLabView.swift in Sources */,

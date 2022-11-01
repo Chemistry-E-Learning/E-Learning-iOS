@@ -56,14 +56,14 @@ private extension ChaptersListView {
             isPushToChaptersListView = false
         } label: {
             HStack {
-                Image(systemName: "chevron.backward")
+                Image(systemName: AppConstant.BackImage)
                     .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black.opacity(0.7))
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Class Program 8")
+                    Text(Localization.classProgramAttributeTitle.localizedString + " \(8)")
                         .foregroundColor(.black.opacity(0.7))
                         .font(.system(size: 24, weight: .medium))
-                    Text("20 Chapters - 30 videos")
+                    Text("\(20) \(Localization.chaptersAttributeTitle.localizedString) - \(30) videos")
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(.black.opacity(0.6))
                 }

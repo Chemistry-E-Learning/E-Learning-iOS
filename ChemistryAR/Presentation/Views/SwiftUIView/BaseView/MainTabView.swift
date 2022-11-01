@@ -78,8 +78,12 @@ private extension MainTabView {
         }
         .padding(.horizontal, 28)
         .padding(.vertical)
-        .background(Color.white.clipShape(
-            CustomShape(xAxis: xAxis)).cornerRadius(12)
+        .background(
+            Color.white
+                .clipShape(
+                    CustomShape(xAxis: xAxis)
+                )
+                .cornerRadius(12)
         )
         .shadow(color: Color.cE1E1E1, radius: 8, x: 2, y: 2)
         .padding(.horizontal)
@@ -91,10 +95,12 @@ private extension MainTabView {
             .resizable()
             .renderingMode(.template)
             .aspectRatio(contentMode: .fit)
-            .frame(width: 25, height: 25)
+            .squareFrame(25)
             .foregroundColor(selectedTab == tab ? .red : .gray)
             .padding(selectedTab == tab ? 16 : 0)
-            .background(Color.white.opacity(selectedTab == tab ? 1 : 0))
+            .background(
+                Color.white.opacity(selectedTab == tab ? 1 : 0)
+            )
     }
 }
 

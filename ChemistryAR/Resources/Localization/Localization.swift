@@ -8,12 +8,16 @@
 import Foundation
 
 enum Localization: String {
+    case startButtonTitle
+    case welcomeBackTitle
     case classProgramTitle
     case branchesOfChemistryTitle
     case chemistryLawsTitle
-    case helloTitle
-    case welcomeBackTitle
-    case startCourseTitle
+    case startReadingTitle
+    case chapterAttributeTitle
+    case chaptersAttributeTitle
+    case sectionsAttributeTitle
+    case classProgramAttributeTitle
 
     // MARK: - Element Group
     case allElementTitle
@@ -32,6 +36,7 @@ enum Localization: String {
     // MARK: - NavigationTitle
     case periodicTableTitle
     case electrochemicalSeriesTitle
+    case experimentVideoTitle
 
     var localizedString: String {
         return rawValue.localizedString

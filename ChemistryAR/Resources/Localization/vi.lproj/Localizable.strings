@@ -5,7 +5,17 @@
   Created by NhatMinh on 31/10/2022.
   
 */
-// MARK: - ElementGroup
+"startButtonTitle" = "Bắt Đầu";
+"welcomeBackTitle" = "Xin Chào";
+"classProgramTitle" = "Chương Trình Học";
+"branchesOfChemistryTitle" = "Các Phân Nhánh Hoá Học";
+"chemistryLawsTitle" = "Định Luật Hoá Học";
+"startReadingTitle" = "Bắt đầu đọc";
+"chapterAttributeTitle" = "Chương";
+"chaptersAttributeTitle" = "Chương";
+"sectionsAttributeTitle" = "Phần";
+"classProgramAttributeTitle" = "Chương Trình Lớp";
+// MARK: - ElementGroup 
 "allElementTitle" = "Tất cả các nguyên tố";
 "diatomicNonMetalTitle" = "Diatomic Phi Kim";
 "polyatomicNonMetalTitle" = "Polyatomic Phi Kim";
@@ -21,3 +31,4 @@
 // MARK: - NavigationTitile
 "periodicTableTitle" = "Bảng Tuần Hoàn";
 "electrochemicalSeriesTitle" = "Dãy Điện Hoá";
+"experimentVideoTitle" = "Video Thí Nghiệm";

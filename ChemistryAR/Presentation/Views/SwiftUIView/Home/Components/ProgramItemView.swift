@@ -17,7 +17,7 @@ struct ProgramItemView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: geo.size.width / 2)
-                        .offset(x: 20,y: 36)
+                        .offset(x: 20, y: 36)
                 }
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Lớp 8")

@@ -5,6 +5,16 @@
   Created by NhatMinh on 31/10/2022.
   
 */
+"startButtonTitle" = "Start";
+"welcomeBackTitle" = "Welcome Back";
+"classProgramTitle" = "Class Programs";
+"branchesOfChemistryTitle" = "Branches Of Chemistry";
+"chemistryLawsTitle" = "Chemistry Laws";
+"startReadingTitle" = "Start Reading";
+"chapterAttributeTitle" = "Chapter";
+"chaptersAttributeTitle" = "Chapters";
+"sectionsAttributeTitle" = "Sections";
+"classProgramAttributeTitle" = "Class Program";
 // MARK: - ElementGroup
 "allElementTitle" = "All Elements";
 "diatomicNonMetalTitle" = "Diatomic NonMetal";
@@ -21,4 +31,5 @@
 // MARK: - NavigationTitile
 "periodicTableTitle" = "Periodic Table";
 "electrochemicalSeriesTitle" = "Electrochemical Series";
+"experimentVideoTitle" = "Experiment Video";
 

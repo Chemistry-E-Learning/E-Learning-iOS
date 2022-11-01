@@ -12,7 +12,7 @@ struct HeaderView: View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .lastTextBaseline) {
-                    Text("Welcome Back")
+                    Text(Localization.welcomeBackTitle.localizedString)
                         .font(.system(size: 11, weight: .regular))
                         .foregroundColor(.gray)
                     Image("hand")
@@ -28,7 +28,7 @@ struct HeaderView: View {
                 .frame(width: 48, height: 48)
                 .clipShape(Circle())
         }
-        .padding(.vertical, 12)
+        .padding(.vertical, 12 )
         .padding(.horizontal, 20)
         .background(Color.clear)
     }

@@ -10,14 +10,14 @@ import SwiftUI
 struct VideoItemView: View {
     var body: some View {
         HStack {
-            Image(systemName: "play.fill")
+            Image(systemName: AppConstant.PlayImage)
                 .foregroundColor(.white)
                 .squareFrame(44)
                 .background(
                     Color.startButton.cornerRadius(24)
                 )
             VStack(alignment: .leading, spacing: 4) {
-                Text("Chapter 1")
+                Text(Localization.chapterAttributeTitle.localizedString + " \(1)")
                     .foregroundColor(.gray)
                     .font(.system(size: 11, weight: .regular))
                 Text("Chất, Nguyên Tử và Phân Tử")
@@ -28,7 +28,9 @@ struct VideoItemView: View {
         }
         .padding(.horizontal, 16)
         .frame(height: 72)
-        .background(Color.white.cornerRadius(8))
+        .background(
+            Color.white.cornerRadius(8)
+        )
     }
 }
 

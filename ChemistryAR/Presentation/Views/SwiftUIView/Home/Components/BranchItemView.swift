@@ -28,11 +28,11 @@ struct BranchItemView: View {
                         .fill(Color.c7A2F81)
                         .frame(width: 24, height: 24)
                         .overlay {
-                            Image(systemName: "play.fill")
+                            Image(systemName: AppConstant.PlayImage)
                                 .foregroundColor(.white)
                                 .font(.system(size: 12))
                         }
-                    Text("Start the course")
+                    Text(Localization.startReadingTitle.localizedString)
                         .font(.system(size: 13, weight: .medium))
                 }
                 .padding(.bottom, 8)
