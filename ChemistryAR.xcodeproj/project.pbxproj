@@ -304,6 +304,7 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				65BAAA432910C7D40055D482 /* SolubitityTable */,
 				65985E2728EBE01A00061E68 /* BaseView */,
 				65985E2E28EC5BB500061E68 /* Onboarding */,
 				65E3BDB528F2BF3C0081D29D /* Home */,
@@ -431,6 +432,13 @@
 				65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		65BAAA432910C7D40055D482 /* SolubitityTable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SolubitityTable;
 			sourceTree = "<group>";
 		};
 		65C1693128DAA71F004406CA /* AR Views */ = {
