@@ -15,7 +15,13 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if isActive {
-                ElementDetailView(isPushToElementDetailView: .constant(true))
+                SolubilityTableView(
+                    isShowSolubilityTableView: .constant(false),
+                    elementList: .constant(
+                        SolubilityModelList.readJSONFromFile()?.solubilityModelMatrix()
+                        ?? SolubilityModelList(data: []).solubilityModelMatrix()
+                    )
+                )
             } else {
                 SplashAnimationView()
             }

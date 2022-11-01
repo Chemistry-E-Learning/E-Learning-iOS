@@ -38,10 +38,13 @@ struct PeriodicTableView: View {
                     )
                     makePeriodicTableView(height: geo.size.height)
                 }
-                makeFilterViewOverlay(height: geo.size.height  )
+                makeFilterViewOverlay(height: geo.size.height)
             }
         }
         .ignoresSafeArea(.all, edges: .bottom)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarHidden(true)
     }
 }
 

@@ -28,7 +28,14 @@
 "nobleTitle" = "Khí Trơ";
 "lanthanoidTitle" = "Lanthanoid";
 "actinideTitle" = "Actinide";
+// MARK: - Solubility Category
+"soluble" = "Tan Trong Nước";
+"insoluble" = "Không Tan";
+"slightlySoluble" = "Ít Tan";
+"decomposesInWater" = "Bị Thuỷ Phân";
+"unavailableSoluble" = "Không Tồn Tại";
 // MARK: - NavigationTitile
 "periodicTableTitle" = "Bảng Tuần Hoàn";
 "electrochemicalSeriesTitle" = "Dãy Điện Hoá";
+"solubilityTableTitle" = "Bảng Tính Tan";
 "experimentVideoTitle" = "Video Thí Nghiệm";

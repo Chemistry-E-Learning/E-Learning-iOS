@@ -10,15 +10,13 @@ import Foundation
 import SwiftUI
 
 extension PeriodicElementList {
-
-  func periodicElementMatrix() -> Matrix<Element> {
-      var elementMatrix: Matrix<Element> = Matrix(rows: 10, columns: 18, defaultValue: Element.emptyElement)
-    for e in elements {
-      elementMatrix[e.ypos - 1 ,e.xpos - 1] = e
+    func periodicElementMatrix() -> Matrix<Element> {
+        var elementMatrix: Matrix<Element> = Matrix(rows: 10, columns: 18, defaultValue: Element.emptyElement)
+        for e in elements {
+            elementMatrix[e.ypos - 1 ,e.xpos - 1] = e
+        } 
+        return elementMatrix
     }
-    return elementMatrix
-  }
-
 }
 
 extension Element {

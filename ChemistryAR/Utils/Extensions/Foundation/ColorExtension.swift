@@ -27,6 +27,9 @@ public extension Color {
     static let cBF2121 = Color(hex: 0xBF2121)
     static let c1A1F2C = Color(hex: 0x1A1F2C)
     static let c556386 = Color(hex: 0x293044)
+    static let c101216 = Color(hex: 0x101216)
+    static let c2E2E3A = Color(hex: 0x2E2E3A)
+    static let c1E2128 = Color(hex: 0x1E2128)
 
     // MARK: - Element Group Color
     static let diatomicNonMetal = Color(hex: 0x2F3168)

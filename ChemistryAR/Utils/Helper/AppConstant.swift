@@ -16,8 +16,62 @@ struct AppConstant {
     static let PlayImage = "play.fill"
 }
 
+struct IONModel {
+    let symbol: String
+    let electrolysis: String
+}
 // MARK: - Dummy Data
 extension AppConstant {
+    static let cations = [
+        IONModel(symbol: "H", electrolysis: "+"),
+        IONModel(symbol: "NH4", electrolysis: "+"),
+        IONModel(symbol: "Li", electrolysis: "+"),
+        IONModel(symbol: "Rb", electrolysis: "+"),
+        IONModel(symbol: "K", electrolysis: "+"),
+        IONModel(symbol: "Ba", electrolysis: "2+"),
+        IONModel(symbol: "Sr", electrolysis: "2+"),
+        IONModel(symbol: "Ca", electrolysis: "2+"),
+        IONModel(symbol: "Na", electrolysis: "+"),
+        IONModel(symbol: "Mg", electrolysis: "2+"),
+        IONModel(symbol: "Be", electrolysis: "2+"),
+        IONModel(symbol: "Al", electrolysis: "3+"),
+        IONModel(symbol: "Mn", electrolysis: "2+"),
+        IONModel(symbol: "Zn", electrolysis: "2+"),
+        IONModel(symbol: "Cr", electrolysis: "2+"),
+        IONModel(symbol: "Cr", electrolysis: "3+"),
+        IONModel(symbol: "Fe", electrolysis: "2+"),
+        IONModel(symbol: "Fe", electrolysis: "3+"),
+        IONModel(symbol: "Cd", electrolysis: "2+"),
+        IONModel(symbol: "Co", electrolysis: "2+"),
+        IONModel(symbol: "Co", electrolysis: "3+"),
+        IONModel(symbol: "Ni", electrolysis: "2+"),
+        IONModel(symbol: "Sn", electrolysis: "2+"),
+        IONModel(symbol: "Pb", electrolysis: "2+"),
+        IONModel(symbol: "Cu", electrolysis: "2+"),
+        IONModel(symbol: "Ag", electrolysis: "+"),
+        IONModel(symbol: "Hg", electrolysis: "2+")
+    ]
+    static let anions = [
+        IONModel(symbol: "I", electrolysis: "-"),
+        IONModel(symbol: "S", electrolysis: "2-"),
+        IONModel(symbol: "SO4", electrolysis: "2-"),
+        IONModel(symbol: "HSO4", electrolysis: "-"),
+        IONModel(symbol: "SO3", electrolysis: "2-"),
+        IONModel(symbol: "ClO4", electrolysis: "-"),
+        IONModel(symbol: "ClO3", electrolysis: "-"),
+        IONModel(symbol: "NO3", electrolysis: "-"),
+        IONModel(symbol: "NO2", electrolysis: "-"),
+        IONModel(symbol: "PO4", electrolysis: "3-"),
+        IONModel(symbol: "HPO4", electrolysis: "2-"),
+        IONModel(symbol: "H2PO4", electrolysis: "-"),
+        IONModel(symbol: "CH3COO", electrolysis: "2-"),
+        IONModel(symbol: "Cr2O7", electrolysis: "2-"),
+        IONModel(symbol: "CrO4", electrolysis: "-"),
+        IONModel(symbol: "MnO4", electrolysis: "-"),
+        IONModel(symbol: "CO3", electrolysis: "2-"),
+        IONModel(symbol: "HCO3", electrolysis: "-"),
+        IONModel(symbol: "SiO3", electrolysis: "2-")
+    ]
     static let HtmlContent = """
 <html lang="en">
   <head>

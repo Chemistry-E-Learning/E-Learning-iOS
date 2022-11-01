@@ -28,8 +28,15 @@
 "nobleTitle" = "Noble";
 "lanthanoidTitle" = "Lanthanoid";
 "actinideTitle" = "Actinide";
+// MARK: - Solubility Category
+"soluble" = "Soluble";
+"insoluble" = "Insoluble";
+"slightlySoluble" = "Slightly Soluble";
+"decomposesInWater" = "Decomposes In Water";
+"unavailableSoluble" = "Unavailable Soluble";
 // MARK: - NavigationTitile
 "periodicTableTitle" = "Periodic Table";
 "electrochemicalSeriesTitle" = "Electrochemical Series";
+"solubilityTableTitle" = "Solubility Table";
 "experimentVideoTitle" = "Experiment Video";
 

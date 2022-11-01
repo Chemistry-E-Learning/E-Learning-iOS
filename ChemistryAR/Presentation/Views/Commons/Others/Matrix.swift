@@ -8,7 +8,7 @@ import Foundation
 struct Matrix<T> {
   let rows: Int, columns: Int
   var grid: [T]
-  init(rows: Int, columns: Int,defaultValue: T) {
+  init(rows: Int, columns: Int, defaultValue: T) {
     self.rows = rows
     self.columns = columns
     grid = Array(repeating: defaultValue, count: rows * columns)

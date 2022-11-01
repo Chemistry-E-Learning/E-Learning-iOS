@@ -33,9 +33,17 @@ enum Localization: String {
     case lanthanoidTitle
     case actinideTitle
 
+    // MARK: - Solubility Category
+    case soluble
+    case insoluble
+    case slightlySoluble
+    case decomposesInWater
+    case unavailableSoluble
+
     // MARK: - NavigationTitle
     case periodicTableTitle
     case electrochemicalSeriesTitle
+    case solubilityTableTitle
     case experimentVideoTitle
 
     var localizedString: String {
