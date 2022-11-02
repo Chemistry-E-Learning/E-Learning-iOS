@@ -12,19 +12,42 @@ struct SolubilityTableView: View {
     @Binding var elementList: Matrix<SolubilityModel>
     @State private var isShowInformationSheet = false
 
+    private let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    private let solubilityInformations = [
+        SolubilityModel(symbol: "S", xPos: 0, yPos: 0),
+        SolubilityModel(symbol: "I", xPos: 0, yPos: 0),
+        SolubilityModel(symbol: "SS", xPos: 0, yPos: 0),
+        SolubilityModel(symbol: "D", xPos: 0, yPos: 0),
+        SolubilityModel(symbol: "-", xPos: 0, yPos: 0),
+    ]
+    
     var body: some View {
         GeometryReader { geo in
-            ZStack {
+            ZStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
                     ToolBarCustomView(
                         isPushToCurrentView: $isShowSolubilityTableView,
                         title: Localization.solubilityTableTitle.localizedString,
                         rightButtonImage: "info",
                         rightButtonAction: {
-                            isShowInformationSheet = true
+                            withAnimation(.easeInOut) {
+                                isShowInformationSheet.toggle()
+                            }
                         }
                     )
                     makeSolubilityTableView(height: geo.size.height)
+                }
+                .onTapGesture {
+                    withAnimation {
+                        isShowInformationSheet = false
+                    }
+                }
+                if isShowInformationSheet {
+                    makeInformationView(height: geo.size.height)
+                        .transition(.move(edge: .bottom))
                 }
             }
         }
@@ -48,6 +71,25 @@ struct SolubilityTableView_Previews: PreviewProvider {
 }
 
 private extension SolubilityTableView {
+    func makeInformationView(height: CGFloat) -> some View {
+        LazyVGrid(columns: columns, alignment: .leading)  {
+            ForEach(solubilityInformations, id: \.self) { item in
+                HStack {
+                    makeSolubilityItemView(item: item, size: CGSize(width: 52, height: 52))
+                        .background(Color.c2E2E3A)
+                    Text(item.getTitle())
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+            }
+        }
+            .frame(height: height * 0.3)
+            .padding(.leading, 32)
+            .background(Color.c1E2128)
+            .cornerRadius(24, corners: [.topLeft, .topRight])
+    }
+
     func makeSolubilityTableView(height: CGFloat) -> some View {
         ScrollView([.vertical], showsIndicators: false) {
             HStack(alignment: .top, spacing: 0) {
@@ -64,9 +106,8 @@ private extension SolubilityTableView {
                                 makeIonItemView(item: cation, isCation: true)
                             }
                         }
-
                         ForEach(0...elementList.rows - 1, id: \.self) { i in
-                            HStack(alignment: .center, spacing: 0) {
+                            HStack(alignment: .center, spacing: 4) {
                                 ForEach(0...elementList.columns - 1, id: \.self) { j in
                                     makeSolubilityItemView(item: elementList[i, j])
                                 }
@@ -105,7 +146,10 @@ private extension SolubilityTableView {
             .border(.gray, width: 1)
     }
 
-    func makeSolubilityItemView(item: SolubilityModel) -> some View {
+    func makeSolubilityItemView(
+        item: SolubilityModel,
+        size: CGSize = CGSize(width: 50, height: 38)
+    ) -> some View {
         VStack(spacing: 0) {
             Spacer()
             Text(item.symbol)
@@ -114,9 +158,9 @@ private extension SolubilityTableView {
             Spacer()
             Rectangle()
                 .fill(item.getColor())
-                .frame(width: 44, height: 2)
+                .frame(width: size.width, height: 2)
         }
-        .frame(width: 52, height: 38)
+        .frame(width: size.width, height: size.height)
     }
 }
 // 1 -> 14 ..... 15 -> 19 <=> 18 -> 23
