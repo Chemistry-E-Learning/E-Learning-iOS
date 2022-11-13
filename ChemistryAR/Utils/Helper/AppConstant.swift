@@ -10,18 +10,23 @@ import Foundation
 struct AppConstant {
     static let ChemistryElementResource = "Chemistry Element"
     static let NoAsset = "Missing expected asset catalog resources."
-    static let MaximumImageTracking = 10
+    static let MaximumImageTracking = 2
     static let NoContent = "---"
     static let BackImage = "chevron.backward"
     static let PlayImage = "play.fill"
+    static let BackSide = "backside"
+    static let GasIndex = "2"
 }
 
 struct IONModel {
     let symbol: String
     let electrolysis: String
 }
+
+
 // MARK: - Dummy Data
 extension AppConstant {
+    static let elements = PeriodicElementList.readJSONFromFile()?.elements ?? []
     static let cations = [
         IONModel(symbol: "H", electrolysis: "+"),
         IONModel(symbol: "NH4", electrolysis: "+"),

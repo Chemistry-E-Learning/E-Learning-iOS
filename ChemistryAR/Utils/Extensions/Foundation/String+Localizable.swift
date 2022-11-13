@@ -13,3 +13,10 @@ extension String {
         return Bundle.Module.localizedString(forKey: self)
     }
 }
+
+extension String {
+    static func convertDoubleToString(item: Double?) -> String {
+        guard let itemWrapper = item else { return AppConstant.NoContent }
+        return "\(itemWrapper)"
+    }
+}

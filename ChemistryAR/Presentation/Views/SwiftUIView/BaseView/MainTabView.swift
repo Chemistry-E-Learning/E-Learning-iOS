@@ -31,8 +31,10 @@ struct MainTabView: View {
                 VirtualLabView(selectedTab: $selectedTab)
                     .ignoresSafeArea(.all, edges: .all)
             } else {
-                Color.cE1E1E1.opacity(0.3)
-                    .ignoresSafeArea(.all, edges: .all)
+                PeriodicTableView(
+                    isPushToPeriodicTableView: .constant(false),
+                    elementList: .constant(PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix())
+                )
             }
             if selectedTab != .lab {
                 tabArea

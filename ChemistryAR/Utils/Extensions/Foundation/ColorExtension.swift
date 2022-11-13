@@ -30,6 +30,7 @@ public extension Color {
     static let c101216 = Color(hex: 0x101216)
     static let c2E2E3A = Color(hex: 0x2E2E3A)
     static let c1E2128 = Color(hex: 0x1E2128)
+    static let c1D283A = Color(hex: 0x1D283A)
 
     // MARK: - Element Group Color
     static let diatomicNonMetal = Color(hex: 0x2F3168)
