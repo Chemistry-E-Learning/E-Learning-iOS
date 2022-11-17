@@ -11,30 +11,37 @@ import SceneKit
 import ARKit
 
 struct ImageTrackingView: View {
-    @StateObject private var viewModel = ElementTrackingViewModel()
+    @StateObject private var viewModel = ImageTrackingViewModel()
     @State private var reactants = [String: String]()
     @State private var reactantsTracking = [String]()
 
     var body: some View {
         ZStack {
-            ImageTrackingARView(reactants: $reactants, reactantsTracking: $reactantsTracking, result: $viewModel.result)
-            if !viewModel.result.isEmpty {
-                Text(viewModel.result)
-                    .font(.system(size: 24, weight: .medium))
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 16)
-                    .background(Color.white.opacity(0.6).cornerRadius(12))
-                    .rotationEffect(.init(degrees: -90))
+            ImageTrackingARView(
+                reactants: $reactants,
+                reactantsTracking: $reactantsTracking,
+                chemicalEquation: $viewModel.chemicalEquation
+            )
+            if viewModel.chemicalEquation.count > 0 {
+                VStack(alignment: .leading, spacing: 4) {
+                    ForEach(viewModel.chemicalEquation, id: \.self) { item in
+                        Text(item)
+                            .font(.system(size: 24, weight: .medium))
+                    }
+                }
+                .padding(.horizontal, 20)
+                .padding(.vertical, 16)
+                .background(Color.white.opacity(0.6).cornerRadius(12))
+                .rotationEffect(.init(degrees: -90))
             }
         }
         .onChange(of: reactantsTracking) { _ in
             if reactantsTracking.count == 2 {
                 // Call api reaction
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    viewModel.doPredictChemicalReaction(with: reactantsTracking)
-                }
+                viewModel.doGetReactionResult(with: reactantsTracking)
             } else {
-                viewModel.result = ""
+                viewModel.reactants = []
+                viewModel.chemicalEquation = []
             }
         }
         .edgesIgnoringSafeArea(.all)
@@ -44,11 +51,15 @@ struct ImageTrackingView: View {
 struct ImageTrackingARView: UIViewRepresentable {
     @Binding var reactants: [String: String]
     @Binding var reactantsTracking: [String]
-    @Binding var result: String
+    @Binding var chemicalEquation: [String]
     var sceneView = ARSCNView(frame: .zero)
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(reactants: $reactants, reactantsTracking: $reactantsTracking, result: $result)
+        Coordinator(
+            reactants: $reactants,
+            reactantsTracking: $reactantsTracking,
+            chemicalEquation: $chemicalEquation
+        )
     }
 
     func makeUIView(context: Context) -> ARSCNView {
@@ -79,17 +90,17 @@ struct ImageTrackingARView: UIViewRepresentable {
 class Coordinator: NSObject, ARSCNViewDelegate {
     @Binding var reactants: [String: String]
     @Binding var reactantsTracking: [String]
-    @Binding var result: String
+    @Binding var chemicalEquation: [String]
 
     init(
         reactants: Binding<[String: String]>,
         reactantsTracking: Binding<[String]>,
-        result: Binding<String>
+        chemicalEquation: Binding<[String]>
 
     ) {
         _reactants = reactants
         _reactantsTracking = reactantsTracking
-        _result = result
+        _chemicalEquation = chemicalEquation
     }
 
     // MARK: - Anchor Method

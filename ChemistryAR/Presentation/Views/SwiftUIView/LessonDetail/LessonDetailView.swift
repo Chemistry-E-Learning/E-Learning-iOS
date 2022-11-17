@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct LessonDetailView: View {
+    @StateObject private var viewModel: LessonDetailViewModel
     @Binding var isPushToLessonDetailView: Bool
     @State private var contentHeight = CGFloat.zero
     @State private var headerOffset = CGFloat.zero
+
+    init(isPushToLessonDetailView: Binding<Bool>, lessonID: String) {
+        _isPushToLessonDetailView = isPushToLessonDetailView
+        _viewModel = .init(wrappedValue: LessonDetailViewModel(lessonID: lessonID))
+    }
 
     var body: some View {
         GeometryReader { geo in
@@ -30,11 +36,11 @@ struct LessonDetailView: View {
                             contentHeight: $contentHeight,
                             isLoading: .constant(false),
                             type: .normal,
-                            url: AppConstant.HtmlContent
+                            url: viewModel.lesson.content
                         )
                         .frame(height: contentHeight)
                         .padding(.top, geo.size.height * 0.03)
-                        .padding(.horizontal, 32)
+                        .padding(.horizontal, 20)
                     }
                 }
                 .onPreferenceChange(ViewOffsetKey.self) {
@@ -58,7 +64,7 @@ private extension LessonDetailView {
                 isPushToLessonDetailView = false
             }
             Spacer()
-            makeTitleView(title: "What Is Inorganic?", isSticker: true)
+            makeTitleView(title: viewModel.lesson.lessonName, isSticker: true)
             Spacer()
             Rectangle()
                 .fill(Color.clear)
@@ -73,9 +79,7 @@ private extension LessonDetailView {
     }
 
     func makeHeaderView(size: CGSize) -> some View {
-        Image("chapter1")
-            .resizable()
-            .scaledToFill()
+        ImageFromUrlView(image: viewModel.lesson.coverImageURL)
             .overlay {
                 ZStack(alignment: .topLeading) {
                     Color.black.opacity(0.4)
@@ -85,8 +89,10 @@ private extension LessonDetailView {
                         }
                         .padding(.horizontal, 8)
                         VStack(alignment: .leading) {
-                            makeTitleView(title: "What Is Inorganic?")
-                            TagView(tags: ["chemistry", "inorganic"])
+                            makeTitleView(title: viewModel.lesson.lessonName)
+                            if let tags = viewModel.lesson.lessonTag {
+                                TagView(tags: tags)
+                            }
                         }
                         .padding(.top, 32)
                     }
@@ -105,11 +111,5 @@ private extension LessonDetailView {
             .lineLimit(isSticker ? 1 : 2)
             .font(.system(size: isSticker ? 24 : 32, weight: .bold))
             .foregroundColor(.white)
-    }
-}
-
-struct LessonDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        LessonDetailView(isPushToLessonDetailView: .constant(false))
     }
 }

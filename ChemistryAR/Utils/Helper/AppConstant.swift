@@ -16,6 +16,8 @@ struct AppConstant {
     static let PlayImage = "play.fill"
     static let BackSide = "backside"
     static let GasIndex = "2"
+    static let ShortText = "lorem ipsum est"
+    static let LongText = "Le lorem ipsum est, en imprimerie, une suite Le lorem ipsum est, en imprimerie, une suite"
 }
 
 struct IONModel {
@@ -26,6 +28,14 @@ struct IONModel {
 
 // MARK: - Dummy Data
 extension AppConstant {
+    static let branchesDummyData = [
+        Series(id: "1", seriesName: AppConstant.ShortText, description: nil, author: nil, coverImage: nil, thumbImage: nil, childSeriesNumber: nil),
+        Series(id: "2", seriesName: AppConstant.ShortText, description: nil, author: nil, coverImage: nil, thumbImage: nil, childSeriesNumber: nil),
+        Series(id: "3", seriesName: AppConstant.ShortText, description: nil, author: nil, coverImage: nil, thumbImage: nil, childSeriesNumber: nil),
+        Series(id: "4", seriesName: AppConstant.ShortText, description: nil, author: nil, coverImage: nil, thumbImage: nil, childSeriesNumber: nil),
+        Series(id: "5", seriesName: AppConstant.ShortText, description: nil, author: nil, coverImage: nil, thumbImage: nil, childSeriesNumber: nil),
+        Series(id: "6", seriesName: AppConstant.ShortText, description: nil, author: nil, coverImage: nil, thumbImage: nil, childSeriesNumber: nil)
+    ]
     static let elements = PeriodicElementList.readJSONFromFile()?.elements ?? []
     static let cations = [
         IONModel(symbol: "H", electrolysis: "+"),
@@ -78,123 +88,73 @@ extension AppConstant {
         IONModel(symbol: "SiO3", electrolysis: "2-")
     ]
     static let HtmlContent = """
-<html lang="en">
+<!DOCTYPE html>
+  <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght&display=swap" rel="stylesheet">
+    <style>
+      #video1 {margin: 0 !important;width: 100%;}
 
-    <!-- Declared Vars To Go Here -->
+h1 {
+    background-color: #FFF7C3;
+    border-left: 4px solid #FFD335;
+    padding: 4px 8px;
+    margin-top: 16px;
+    margin-bottom: 0px;
+    color: rgba(0, 0, 0, 0.8);
+    font: -apple-system-title3;
+    font-weight: 700;
+}
+h2, h3, h4, h5 {
+    border-left: 4px solid #FFD335;
+    padding-left: 8px;
+    margin-top: 16px;
+    margin-bottom: 0px;
+    color: rgba(0, 0, 0, 0.8);
+    font: -apple-system-headline;
+}
+* + h1 {
+    margin-top: 48px;
+}
+* + h2, h3, h4, h5 {
+    margin-top: 32px;
+}
+p, ol, ul {
+    margin-top: 16px;
+    margin-bottom: 0px;
+    color: rgba(0, 0, 0, 0.8);
+    font: -apple-system-body;
+}
+p {
+    line-height: 1.5;
+}
+li > ul, li >  ol {
+    margin-top: 0;
+}
+a {
+    color: #176BEB;
+}
+strong {
+    font-weight: 700;
+}
+img {
+    display: block;
+    margin: 16px auto 0;
+    max-width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+}
+img + br + img{
+    margin-top: 0;
+}
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Metadata -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <link rel="icon" href="mysource_files/favicon.ico">
-
-    <!-- Page Name and Site Name -->
-    <title>Page Name - Squiz Matrix HTML Example</title>
-
-    <!-- CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="mysource_files/style.css" rel="stylesheet">
-
+    </style>
   </head>
-
   <body>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="page-contents">
-            <!-- Design Body -->
-            <h2>Sub Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-            <h4>Sub Heading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-            <h4>Sub Heading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-          </div>
-        <div class="col-sm-6">
-          <div class="page-contents">
-            <!-- Design Body -->
-            <h2>Sub Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-            <h4>Sub Heading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-            <h4>Sub Heading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-          </div>
-
-        </div>
-        <div class="col-sm-6">
-          <div class="page-contents">
-            <!-- Design Body -->
-            <h2>Sub Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-            <h4>Sub Heading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-            <h4>Sub Heading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-          </div>
-
-        </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="page-contents">
-            <!-- Design Body -->
-            <h2>Sub Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-            <h4>Sub Heading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-            <h4>Sub Heading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-          </div>
-
-        </div>
-        <div class="col-sm-6">
-          <div class="page-contents">
-            <!-- Design Body -->
-            <h2>Sub Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-            <h4>Sub Heading</h4>
-            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-            <h4>Sub Heading</h4>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-          </div>
-
-        </div>
-        <div class="col-sm-3">
-
-          <!-- Login Section -->
-          <h2>Login</h2>
-
-          <!-- Search Section -->
-          <h2>Search</h2>
-
-          <!-- Nested Right Column Content -->
-
-        </div>
-
-      </div>
-
-      <footer class="footer">
-        <p class="pull-right">
-          <!-- Last Updated Design Area-->
-          Last Updated: Wednesday, January 6, 2016
-        </p>
-        <p>&copy; 2016 Company, Inc.</p>
-      </footer>
-
-    </div> <!-- /container -->
-
+    <p>Dummy Content</p>
   </body>
-</html>
+  </html>
 """
 }

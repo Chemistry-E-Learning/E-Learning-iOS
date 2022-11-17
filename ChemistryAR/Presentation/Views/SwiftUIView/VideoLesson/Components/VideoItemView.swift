@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct VideoItemView: View {
+    let title: String
+    let index: Int
+
     var body: some View {
         HStack {
             Image(systemName: AppConstant.PlayImage)
@@ -17,10 +20,10 @@ struct VideoItemView: View {
                     Color.startButton.cornerRadius(24)
                 )
             VStack(alignment: .leading, spacing: 4) {
-                Text(Localization.chapterAttributeTitle.localizedString + " \(1)")
+                Text(Localization.lessonAttributeTitle.localizedString + " \(index)")
                     .foregroundColor(.gray)
                     .font(.system(size: 11, weight: .regular))
-                Text("Chất, Nguyên Tử và Phân Tử")
+                Text(title)
                     .font(.system(size: 13, weight: .medium))
             }
             .padding(.leading, 4)
@@ -31,13 +34,5 @@ struct VideoItemView: View {
         .background(
             Color.white.cornerRadius(8)
         )
-    }
-}
-
-struct VideoItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        VideoItemView()
-            .padding()
-            .background(Color.gray)
     }
 }

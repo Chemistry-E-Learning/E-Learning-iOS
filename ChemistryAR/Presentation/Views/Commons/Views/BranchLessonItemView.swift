@@ -8,27 +8,31 @@
 import SwiftUI
 
 struct BranchLessonItemView: View {
+    let lessonTitle: String
+    let lessonNumber: Int
+    let durationRead: Int?
+
     var body: some View {
         HStack(spacing: 16) {
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color.white)
                 .squareFrame(60)
                 .overlay (
-                    Text("1")
+                    Text("\(lessonNumber)")
                         .foregroundColor(.black.opacity(0.7))
                         .font(.system(size: 32, weight: .bold))
                 )
                 .clipped()
             VStack(alignment: .leading, spacing: -2) {
                 Spacer()
-                Text("What is inorganic chemistry?")
+                Text(lessonTitle)
                     .foregroundColor(.black.opacity(0.8))
                     .font(.system(size: 14, weight: .medium))
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
                 Spacer()
-                Text("1 Min read")
+                Text("\(String.convertOptionalToString(item: durationRead)) Min read")
                     .foregroundColor(.black.opacity(0.2))
                     .font(.system(size: 12, weight: .light))
                 Spacer()
@@ -42,12 +46,5 @@ struct BranchLessonItemView: View {
         .background(
             Color.cF7F9FC.cornerRadius(14)
         )
-    }
-}
-
-struct BranchLessonItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        BranchLessonItemView()
-            .padding()
     }
 }

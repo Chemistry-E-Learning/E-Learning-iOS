@@ -15,8 +15,14 @@ extension String {
 }
 
 extension String {
-    static func convertDoubleToString(item: Double?) -> String {
+    static func convertOptionalToString<T>(item: T?) -> String {
+
         guard let itemWrapper = item else { return AppConstant.NoContent }
         return "\(itemWrapper)"
+    }
+
+    func getClassProgram() -> String {
+        let result = self.components(separatedBy: " ")
+        return result.last ?? ""
     }
 }

@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct BranchItemView: View {
+    let branch: Series
+
     var body: some View {
         VStack(alignment: .leading) {
-            Image("organic")
-                .resizable()
-                .scaledToFill()
+            ImageFromUrlView(
+                image: branch.thumbImage?.url ?? "",
+                isClearBackground: false
+            )
                 .frame(height: 120)
                 .cornerRadius(12, corners: [.topLeft, .topRight])
                 .clipped()
             VStack(alignment: .leading) {
-                Text("Organic Chemistry")
+                Text(branch.seriesName)
+                    .redacted(if: branch.seriesName == AppConstant.ShortText)
+                    .if(branch.seriesName == AppConstant.ShortText){ view in
+                        view.shimmerAnimation()
+                    }
                     .font(.system(size: 16, weight: .semibold))
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(2)
@@ -45,15 +52,5 @@ struct BranchItemView: View {
             Color.white.cornerRadius(12)
         )
         .shadow(color: .black.opacity(0.08), radius: 8, x: 2, y: 2)
-    }
-}
-
-struct BranchItem_Previews: PreviewProvider {
-    static var previews: some View {
-        BranchItemView()
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .padding()
-            .previewDisplayName("Default preview")
-            .background(Color.red.opacity(0.6))
     }
 }

@@ -8,23 +8,26 @@
 import SwiftUI
 
 struct LawItem: View {
+    let law: Series
+
     var body: some View {
         HStack(spacing: 20) {
-            Image("boyle")
-                .resizable()
-                .scaledToFill()
+            ImageFromUrlView(image: law.thumbImage?.url ?? "", isClearBackground: false)
                 .squareFrame(64)
-                .frame(width: 64, height: 64)
                 .cornerRadius(12)
                 .clipped()
             VStack(alignment: .leading, spacing: 4) {
-                Text("Boyle's Law")
+                Text(law.seriesName)
                     .font(.system(size: 16, weight: .semibold))
-                Text("Robert Boyle")
+                Text(law.author ?? AppConstant.NoContent)
                     .foregroundColor(.c4A4A4A)
                     .font(.system(size: 12, weight: .light))
                 Spacer()
             }
+            .redacted(if: law.id.isEmpty)
+            .if(law.id.isEmpty, transform: { view in
+                view.shimmerAnimation()
+            })
             .padding(.top, 12)
             Spacer()
         }
@@ -34,15 +37,5 @@ struct LawItem: View {
             Color.white.cornerRadius(12)
         )
         .shadow(color: .black.opacity(0.08), radius: 8, x: 2, y: 2)
-    }
-}
-
-struct LawItem_Previews: PreviewProvider {
-    static var previews: some View {
-        LawItem()
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .padding()
-            .previewDisplayName("Default preview")
-            .background(Color.red.opacity(0.6))
     }
 }

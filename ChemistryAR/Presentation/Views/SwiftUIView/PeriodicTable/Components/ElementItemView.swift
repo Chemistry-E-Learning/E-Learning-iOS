@@ -49,12 +49,3 @@ struct ElementItemView: View {
         )
     }
 }
-
-struct ElementItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        PeriodicTableView(
-            isPushToPeriodicTableView: .constant(false),
-            elementList: .constant(PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix())
-        )
-    }
-}

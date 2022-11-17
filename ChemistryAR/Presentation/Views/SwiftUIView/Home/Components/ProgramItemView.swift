@@ -8,24 +8,25 @@
 import SwiftUI
 
 struct ProgramItemView: View {
+    let program: Series
+    let videoNumber: Int
+
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .leading) {
                 HStack {
                     Spacer()
-                    Image("atom")
-                        .resizable()
-                        .scaledToFill()
+                    ImageFromUrlView(image: program.thumbImage?.url ?? "")
                         .frame(width: geo.size.width / 2)
                         .offset(x: 20, y: 36)
                 }
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Lớp 8")
+                    Text(program.seriesName)
                         .font(.system(size: 32, weight: .medium))
                         .padding(.bottom, 8)
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("20 Sections - 40 Videos")
-                        Text("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour")
+                        Text("\(program.childSeriesNumber ?? 2) \(Localization.chaptersAttributeTitle.localizedString) - \(videoNumber) Videos")
+                        Text(program.description ?? "")
                             .multilineTextAlignment(.leading)
                             .lineLimit(2)
                             .fixedSize(horizontal: false, vertical: true)
@@ -33,7 +34,12 @@ struct ProgramItemView: View {
                     .foregroundColor(.c4A4A4A.opacity(0.6))
                     .font(.system(size: 14, weight: .regular))
                 }
+                .redacted(if: program.id.isEmpty)
                 .padding(.horizontal, 16)
+            }
+            .if(program.id.isEmpty) { view in
+                view
+                    .shimmerAnimation()
             }
             .frame(width: 300, height: 260)
             .background(
@@ -46,14 +52,5 @@ struct ProgramItemView: View {
                     .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
             )
         }
-    }
-}
-
-struct ProgramItem_Previews: PreviewProvider {
-    static var previews: some View {
-        ProgramItemView()
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .padding()
-            .previewDisplayName("Default preview")
     }
 }

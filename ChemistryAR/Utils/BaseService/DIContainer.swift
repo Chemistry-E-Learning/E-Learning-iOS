@@ -19,15 +19,34 @@ final class DIContainer {
     }
 
     private func generalInit() {
-        // Repository
-        //        container.register(ListContentRepository.self) { _ in
-        //            ListContentHttpConnectionImpl()
-        //        }
+        //Repository
+        container.register(SeriesRepository.self) { _ in
+            SeriesHttpConnectionImpl()
+        }
+        container.register(ElementRepository.self) { _ in
+            ElementHttpConnectionImpl()
+        }
+        container.register(ReactionRepository.self) { _ in
+            ReactionHttpConnectionImpl()
+        }
+        container.register(LessonRepository.self) { _ in
+            LessonHttpConnectionImpl()
+        }
 
-        // Usecase
-        //        container.register(ListContentUseCase.self) { _ in
-        //            ListContentUseCaseImpl()
-        //        }
+
+        // UseCase
+        container.register(SeriesUseCase.self) { _ in
+            SeriesUseCaseImpl()
+        }
+        container.register(ElementUseCase.self) { _ in
+            ElementUseCaseImpl()
+        }
+        container.register(ReactionUseCase.self) { _ in
+            ReactionUseCaseImpl()
+        }
+        container.register(LessonUseCase.self) { _ in
+            LessonUseCaseImpl()
+        }
 
         // UserDefault
         //        container.register(UserDefaultsDataProtocol.self) { _ in
@@ -35,13 +54,35 @@ final class DIContainer {
         //        }
     }
 
-    /// ListContentRepository
-    //    func getListContentRepository() -> ListContentRepository {
-    //        return container.resolve(ListContentRepository.self)!
-    //    }
+    func getSeriesRepository() -> SeriesRepository {
+        return container.resolve(SeriesRepository.self)!
+    }
 
-    /// ListContentUseCase
-    //    func getListContentUseCase() -> ListContentUseCase {
-    //        return container.resolve(ListContentUseCase.self)!
-    //    }
+    func getSeriesUseCase() -> SeriesUseCase {
+        return container.resolve(SeriesUseCase.self)!
+    }
+
+    func getElementRepository() -> ElementRepository {
+        return container.resolve(ElementRepository.self)!
+    }
+
+    func getElementUseCase() -> ElementUseCase {
+        return container.resolve(ElementUseCase.self)!
+    }
+
+    func getReactionRepository() -> ReactionRepository {
+        return container.resolve(ReactionRepository.self)!
+    }
+
+    func getReactionUseCase() -> ReactionUseCase {
+        return container.resolve(ReactionUseCase.self)!
+    }
+
+    func getLessonRepository() -> LessonRepository {
+        return container.resolve(LessonRepository.self)!
+    }
+
+    func getLessonUseCase() -> LessonUseCase {
+        return container.resolve(LessonUseCase.self)!
+    }
 }

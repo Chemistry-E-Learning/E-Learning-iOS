@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChemicalView: View {
-    @StateObject private var viewModel = ElementTrackingViewModel()
+    @StateObject private var viewModel = ImageTrackingViewModel()
     @State private var isLastReactant = false
     @Binding var reactants: [String: String]
 

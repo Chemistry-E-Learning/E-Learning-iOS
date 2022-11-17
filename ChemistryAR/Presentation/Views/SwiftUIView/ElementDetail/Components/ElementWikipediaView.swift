@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ElementWikipediaView: View {
     @Binding var isPushToWikipediaView: Bool
+    let url: String
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -35,18 +36,12 @@ struct ElementWikipediaView: View {
                 contentHeight: .constant(0),
                 isLoading: .constant(false),
                 type: .external,
-                url: "https://en.wikipedia.org/wiki/Nitrogen"
+                url: url
             )
         }
         .ignoresSafeArea(.all, edges: .bottom)
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-struct ElementWikipediaView_Previews: PreviewProvider {
-    static var previews: some View {
-        ElementWikipediaView(isPushToWikipediaView: .constant(false))
     }
 }

@@ -17,7 +17,34 @@ enum Localization: String {
     case chapterAttributeTitle
     case chaptersAttributeTitle
     case sectionsAttributeTitle
+    case lessonAttributeTitle
+    case lessonsAttributeTitle
+    case timeAttributeTitle
     case classProgramAttributeTitle
+    case radiationTitle
+    case theoreticalElementTitle
+    case overviewTitle
+    case natureTitle
+    case atomParametersTitle
+    case englishNameTitle
+    case descriptionTitle
+    case periodTitle
+    case groupTitle
+    case discoveredByTitle
+    case namedByTitle
+    case structureTitle
+    case standardStateTitle
+    case atomicMassTitle
+    case densityTitle
+    case meltTitle
+    case boilTitle
+    case molarHeatTitle
+    case electronConfigurationTitle
+    case chemotherapyTitle
+    case spectralTitle
+    case electronAffinityTitle
+    case electronegativityTitle
+    case ionizationEnergiesTitle
 
     // MARK: - Element Group
     case allElementTitle

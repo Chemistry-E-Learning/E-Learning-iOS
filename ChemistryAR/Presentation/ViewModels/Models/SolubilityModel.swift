@@ -109,7 +109,6 @@ extension SolubilityModelList {
                 let fileUrl = URL(fileURLWithPath: path)
                 // Getting data from JSON file using the file URL
                 let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
-                print("MinhNN- \(String(decoding: data, as: UTF8.self))")
                 json = try? SolubilityModelList(data: data)
             } catch {
                 // Handle error here

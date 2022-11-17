@@ -9,19 +9,24 @@ import SwiftUI
 
 struct PeriodicTableView: View {
     @Binding var isPushToPeriodicTableView: Bool
-    @Binding var elementList: Matrix<Element>
     @State private var isPushToElementDetailView = false
     @State private var isShowFilterView = false
     @State private var viewState = CGSize.zero
     @State private var selectedElement = Element.emptyElement
     @State private var groupSelected = ElementGroup.initial
+    @State private var elementID = ""
+
+    var elementList = PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix()
 
     var body: some View {
         GeometryReader { geo in
             ZStack {
                 NavigationLink(
                     destination: NavigationLazyView(
-                        ElementDetailView(isPushToElementDetailView: $isPushToElementDetailView)
+                        ElementDetailView(
+                            isPushToElementDetailView: $isPushToElementDetailView,
+                            elementID: elementID
+                        )
                     ),
                     isActive: $isPushToElementDetailView
                 ) {
@@ -45,15 +50,6 @@ struct PeriodicTableView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarHidden(true)
-    }
-}
-
-struct PeriodicTableView_Previews: PreviewProvider {
-    static var previews: some View {
-        PeriodicTableView(
-            isPushToPeriodicTableView: .constant(false),
-            elementList: .constant(PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix())
-        )
     }
 }
 
@@ -89,8 +85,7 @@ private extension PeriodicTableView {
                     HStack(alignment: .center, spacing: 0) {
                         ForEach(0...elementList.columns - 1, id: \.self) { j in
                             Button {
-                                selectedElement = elementList[i, j]
-                                isPushToElementDetailView = true
+                                onClickElementItemView(id: elementList[i, j].name.lowercased())
                             } label: {
                                 ElementItemView(
                                     element: .constant(elementList[i, j]),
@@ -107,5 +102,12 @@ private extension PeriodicTableView {
         .background(
             Color.c1A1F2C
         )
+    }
+}
+
+private extension PeriodicTableView {
+    func onClickElementItemView(id: String) {
+        isPushToElementDetailView = true
+        elementID = id
     }
 }

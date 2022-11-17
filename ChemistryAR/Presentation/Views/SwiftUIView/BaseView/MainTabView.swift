@@ -32,8 +32,7 @@ struct MainTabView: View {
                     .ignoresSafeArea(.all, edges: .all)
             } else {
                 PeriodicTableView(
-                    isPushToPeriodicTableView: .constant(false),
-                    elementList: .constant(PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix())
+                    isPushToPeriodicTableView: .constant(false)
                 )
             }
             if selectedTab != .lab {

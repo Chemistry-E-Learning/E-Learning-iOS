@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var isPushToChaptersListView = false
-    @State private var isPushToBranchesView = false
-    @State private var isPushToLawsView = false
+    @StateObject private var viewModel = HomeViewModel()
 
     private let branchColumns = [
         GridItem(.flexible()),
@@ -47,25 +45,35 @@ private extension HomeView {
         ZStack {
             NavigationLink(
                 destination: NavigationLazyView(
-                    ChaptersListView(isPushToChaptersListView: $isPushToChaptersListView)
+                    ChaptersListView(
+                        isPushToChaptersListView: $viewModel.isPushToChaptersListView,
+                        program: viewModel.program,
+                        videosNumber: viewModel.videoNumber
+                    )
                 ),
-                isActive: $isPushToChaptersListView
+                isActive: $viewModel.isPushToChaptersListView
             ) {
                 EmptyView()
             }
             NavigationLink(
                 destination: NavigationLazyView(
-                    ChemistryBranchesView(isPushToBranchesView: $isPushToBranchesView)
+                    ChemistryBranchesView(
+                        isPushToBranchesView: $viewModel.isPushToBranchesView,
+                        seriesID: viewModel.seriesID
+                    )
                 ),
-                isActive: $isPushToBranchesView
+                isActive: $viewModel.isPushToBranchesView
             ) {
                 EmptyView()
             }
             NavigationLink(
                 destination: NavigationLazyView(
-                    ChemistryLawsView(isPushToLawsView: $isPushToLawsView)
+                    ChemistryLawsView(
+                        isPushToLawsView: $viewModel.isPushToLawsView,
+                        seriesID: viewModel.seriesID
+                    )
                 ),
-                isActive: $isPushToLawsView
+                isActive: $viewModel.isPushToLawsView
             ) {
                 EmptyView()
             }
@@ -85,11 +93,14 @@ private extension HomeView {
             makeTitleView(title: Localization.classProgramTitle.localizedString)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 8) {
-                    ForEach(0..<5) { _ in
+                    ForEach(viewModel.programSeries) { item in
                         GeometryReader { geo in
-                            ProgramItemView()
+                            ProgramItemView(
+                                program: item,
+                                videoNumber: 40
+                            )
                                 .onTapGesture {
-                                    isPushToChaptersListView = true
+                                    viewModel.onClickProgramItemView(program: item, videosNumber: 40)
                                 }
                                 .rotation3DEffect(
                                     Angle(degrees: Double(geo.frame(in: .global).minX) - 40) / -20,
@@ -108,11 +119,11 @@ private extension HomeView {
         VStack(alignment: .leading, spacing: 20) {
             makeTitleView(title: Localization.branchesOfChemistryTitle.localizedString)
             LazyVGrid(columns: branchColumns, spacing: 20) {
-                ForEach(0..<6, id: \.self) { _ in
-                    BranchItemView()
+                ForEach(viewModel.branchSeries) { item in
+                    BranchItemView(branch: item)
                         .frame(height: 216)
                         .onTapGesture {
-                            isPushToBranchesView = true
+                            viewModel.onClickBranchItemView(id: item.id)
                         }
                 }
             }
@@ -124,10 +135,10 @@ private extension HomeView {
         VStack(alignment: .leading, spacing: 8) {
             makeTitleView(title: Localization.chemistryLawsTitle.localizedString)
                 .padding(.bottom, 12)
-            ForEach(0..<6) { _ in
-                LawItem()
+            ForEach(viewModel.lawSeries) { item in
+                LawItem(law: item)
                     .onTapGesture {
-                        isPushToLawsView = true
+                        viewModel.onClickLawItemView(id: item.id)
                     }
             }
             .padding(.horizontal, 20)

@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  ARImageTracking
 //
-//  Created by Qi on 8/1/21.
-//
 
 import SwiftUI
 import UIKit

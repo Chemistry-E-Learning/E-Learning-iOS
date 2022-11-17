@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ChaptersListView: View {
+    @StateObject private var viewModel: ChaptersListViewModel
     @Binding var isPushToChaptersListView: Bool
-    @State private var isPushToVideosListView = false
+
+    let program: Series
+    let videosNumber: Int
+
+    init(isPushToChaptersListView: Binding<Bool>, program: Series, videosNumber: Int) {
+        _isPushToChaptersListView = isPushToChaptersListView
+        self.program = program
+        self.videosNumber = videosNumber
+        _viewModel = .init(wrappedValue: ChaptersListViewModel(seriesID: program.id))
+    }
 
     var body: some View {
         GeometryReader { geo in
@@ -17,9 +27,12 @@ struct ChaptersListView: View {
                 Color.cE1E1E1.opacity(0.3).edgesIgnoringSafeArea(.all)
                 NavigationLink(
                     destination: NavigationLazyView(
-                        VideosListView(isPushToVideosListView: $isPushToVideosListView)
+                        VideosListView(
+                            isPushToVideosListView: $viewModel.isPushToVideosListView,
+                            seriesID: viewModel.seriesID
+                        )
                     ),
-                    isActive: $isPushToVideosListView
+                    isActive: $viewModel.isPushToVideosListView
                 ) {
                     EmptyView()
                 }
@@ -39,10 +52,10 @@ private extension ChaptersListView {
     func makeVideoList() -> some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 20) {
-                ForEach(0..<10) { _ in
-                    ChapterItemView()
+                ForEach(Array(viewModel.programDetailSeries.enumerated()), id: \.offset) { index, item in
+                    ChapterItemView(programDetail: item, chapter: index + 1)
                         .onTapGesture {
-                            isPushToVideosListView = true
+                            viewModel.onClickChapterItemView(id: item.id)
                         }
                 }
             }
@@ -60,10 +73,10 @@ private extension ChaptersListView {
                     .font(.system(size: 28, weight: .bold))
                     .foregroundColor(.black.opacity(0.7))
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(Localization.classProgramAttributeTitle.localizedString + " \(8)")
+                    Text(Localization.classProgramAttributeTitle.localizedString + " \(program.seriesName.getClassProgram())")
                         .foregroundColor(.black.opacity(0.7))
                         .font(.system(size: 24, weight: .medium))
-                    Text("\(20) \(Localization.chaptersAttributeTitle.localizedString) - \(30) videos")
+                    Text("\(program.childSeriesNumber ?? 0) \(Localization.chaptersAttributeTitle.localizedString) - \(videosNumber) videos")
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(.black.opacity(0.6))
                 }
@@ -74,10 +87,5 @@ private extension ChaptersListView {
             .padding(.top, height * 0.08)
             .padding(.bottom, 28)
         }
-    }
-}
-struct VideoList_Previews: PreviewProvider {
-    static var previews: some View {
-        ChaptersListView(isPushToChaptersListView: .constant(false))
     }
 }

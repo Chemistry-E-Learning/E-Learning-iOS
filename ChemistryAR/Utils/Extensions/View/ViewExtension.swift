@@ -64,6 +64,51 @@ extension View {
     func squareFrame(_ size: CGFloat) -> some View {
         return self.frame(width: size, height: size)
     }
+
+    @ViewBuilder
+    func redacted(if condition: @autoclosure () -> Bool) -> some View {
+        redacted(reason: condition() ? .placeholder : [])
+    }
+
+    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
+    }
+
+    func shimmerAnimation() -> some View {
+        modifier(ShimmerViewModifier())
+    }
+}
+
+struct EmptyViewModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+    }
+}
+struct ShimmerViewModifier: ViewModifier {
+    @State var isAnimating = false
+    let center = UIScreen.main.bounds.width / 2
+
+    func body(content: Content) -> some View {
+        content
+            .mask {
+                ZStack {
+                    Color.black.opacity(0.8)
+                    Capsule()
+                        .fill(LinearGradient(gradient: .init(colors: [.clear, .white, .clear]), startPoint: .top, endPoint: .bottom))
+                        .rotationEffect(.init(degrees: 70))
+                        .offset(x: isAnimating ? center : -center)
+                }
+            }
+            .onAppear {
+                withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: false)) {
+                    isAnimating = true
+                }
+            }
+    }
 }
 
 // MARK: - RoundedCorner

@@ -7,97 +7,163 @@
 
 import SwiftUI
 
-struct ElementSectionView: View {
+struct OverviewSectionView: View {
+    let overview: OverviewModel
     let parentSize: CGSize
     var body: some View {
         VStack(alignment: .leading) {
-            makeSectionHeaderView(image: "flask", title: "Tính Chất")
+            HeaderSectionView(image: "flask", title: Localization.overviewTitle.localizedString)
                 .padding(.bottom, 8)
-            ForEach(0..<4) { index in
-                makeSectionRowView(
-                    isLastItem: index == 3,
-                    width: parentSize.width,
-                    title: "Số Nguyên Tử",
-                    chemotherapy: [-3, -5, 1, 2, 3]
-                )
-            }
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.englishNameTitle.localizedString,
+                desc: overview.name
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.descriptionTitle.localizedString,
+                desc: overview.description
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.periodTitle.localizedString,
+                desc: String.convertOptionalToString(item: overview.period)
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.groupTitle.localizedString,
+                desc: overview.group
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.discoveredByTitle.localizedString,
+                desc: overview.discoveredBy
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.namedByTitle.localizedString,
+                desc: overview.nameBy
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.structureTitle.localizedString,
+                desc: AppConstant.NoContent,
+                image: overview.structureImage,
+                isLastItem: true,
+                isStructureImage: true
+            )
         }
     }
 }
 
-private extension ElementSectionView {
-    func makeSectionHeaderView(image: String, title: String) -> some View {
-        HStack {
-            Image(image)
-                .resizable()
-                .renderingMode(.template)
-                .squareFrame(36)
-            Text(title)
-                .font(.system(size: 18, weight: .medium))
-            Spacer()
-        }
-        .padding(.horizontal, 12)
-        .frame(height: 68)
-        .foregroundColor(.white)
-        .background(Color.c2A323F.opacity(0.9))
-    }
+struct NatureSectionView: View {
+    let nature: NatureModel
+    let parentSize: CGSize
 
-    func makeSectionRowView(
-        isLastItem: Bool,
-        width: CGFloat,
-        title: String,
-        desc: String? = nil,
-        image: String? = nil,
-        chemotherapy: [Int]? = nil
-    ) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text("\(title):")
+    var body: some View {
+        VStack(alignment: .leading) {
+            HeaderSectionView(image: "flask", title: Localization.natureTitle.localizedString)
+                .padding(.bottom, 8)
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.standardStateTitle.localizedString,
+                desc: nature.standardState
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.atomicMassTitle.localizedString,
+                desc: String.convertOptionalToString(item: nature.atomicMass)
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.densityTitle.localizedString,
+                desc: String.convertOptionalToString(item: nature.density)
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.meltTitle.localizedString,
+                desc: String.convertOptionalToString(item: nature.melt)
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.boilTitle.localizedString,
+                desc: String.convertOptionalToString(item: nature.boil)
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.molarHeatTitle.localizedString,
+                desc: String.convertOptionalToString(item: nature.molarHeat),
+                isLastItem: true
+            )
+        }
+    }
+}
+
+struct AtomParametersView: View {
+    let parameters: AtomParameter
+    let parentSize: CGSize
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            HeaderSectionView(image: "flask", title: Localization.atomParametersTitle.localizedString)
+                .padding(.bottom, 8)
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.electronConfigurationTitle.localizedString,
+                desc: parameters.electronConfiguration
+            )
+            makeChemotherapyView(chemotherapy: parameters.chemotherapy)
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.spectralTitle.localizedString,
+                desc: AppConstant.NoContent,
+                image: parameters.spectralImage
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.electronAffinityTitle.localizedString,
+                desc: String.convertOptionalToString(item: parameters.electronAffinity)
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.electronegativityTitle.localizedString,
+                desc: String.convertOptionalToString(item: parameters.electronegativity)
+            )
+            SectionRowView(
+                width: parentSize.width,
+                title: Localization.ionizationEnergiesTitle.localizedString,
+                desc: String.convertOptionalToString(item: parameters.ionizationEnergies),
+                isLastItem: true
+            )
+        }
+    }
+}
+
+private extension AtomParametersView {
+    func makeChemotherapyView(chemotherapy: [Int]) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("\(Localization.chemotherapyTitle.localizedString):")
                 .font(.system(size: 14))
                 .foregroundColor(.black.opacity(0.7))
-            if let wrappedImage = image {
-                Image(wrappedImage)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: width - 64, height: 72)
-                    .clipped()
-            } else if let wrappedChemotherapy = chemotherapy {
-                makeChemotherapyView(chemotherapy: wrappedChemotherapy)
-                    .padding(.leading, 6)
-                    .padding(.vertical, 8)
-            } else {
-                Text(desc ?? AppConstant.NoContent)
-                    .font(.system(size: 16))
-                    .multilineTextAlignment(.leading)
+            HStack(spacing: 14) {
+                ForEach(chemotherapy, id: \.self) { item in
+                    Text( item > 0 ? "+\(item)" : "\(item)")
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundColor(.white)
+                        .background(
+                            Circle()
+                                .fill(item > 0 ? Color.cBF2121 : Color.c225096)
+                                .squareFrame(24)
+                        )
+                }
             }
+            .padding(.leading, 8)
             Rectangle()
                 .fill(.black.opacity(0.4))
-                .frame(width: .infinity, height: 0.5)
+                .frame(height: 0.5)
                 .padding(.top, 6)
-                .opacity(isLastItem ? 0 : 1)
         }
         .padding(.horizontal, 32)
         .padding(.top, 4)
-    }
-
-    func makeChemotherapyView(chemotherapy: [Int]) -> some View {
-        HStack(spacing: 14) {
-            ForEach(chemotherapy, id: \.self) { item in
-                Text( item > 0 ? "+\(item)" : "\(item)")
-                    .font(.system(size: 11, weight: .bold))
-                    .foregroundColor(.white)
-                    .background(
-                        Circle()
-                            .fill(item > 0 ? Color.cBF2121 : Color.c225096)
-                            .squareFrame(24)
-                    )
-            }
-        }
-    }
-}
-
-
-struct ElementSectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        ElementSectionView(parentSize: UIScreen.main.bounds.size)
     }
 }

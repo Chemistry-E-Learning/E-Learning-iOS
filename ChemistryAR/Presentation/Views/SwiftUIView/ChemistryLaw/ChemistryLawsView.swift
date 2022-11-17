@@ -8,30 +8,45 @@
 import SwiftUI
 
 struct ChemistryLawsView: View {
+    @StateObject private var viewModel: LessonsListViewModel
     @Binding var isPushToLawsView: Bool
-    @State private var isPushToLessonDetailView = false
+
+    init(isPushToLawsView: Binding<Bool>, seriesID: String) {
+        _isPushToLawsView = isPushToLawsView
+        _viewModel = .init(wrappedValue: LessonsListViewModel(seriesID: seriesID))
+    }
 
     var body: some View {
         GeometryReader { geo in
             ZStack {
                 NavigationLink(
                     destination: NavigationLazyView(
-                        LessonDetailView(isPushToLessonDetailView: $isPushToLessonDetailView)
+                        LessonDetailView(
+                            isPushToLessonDetailView: $viewModel.isPushToLessonDetailView,
+                            lessonID: viewModel.lessonID
+                        )
                     ),
-                    isActive: $isPushToLessonDetailView
+                    isActive: $viewModel.isPushToLessonDetailView
                 ) {
                     EmptyView()
                 }
                 HeaderListCustomView(
                     isPushToCurrentView: $isPushToLawsView,
+                    series: viewModel.series,
+                    lessonCount: viewModel.lessons.count,
+                    durationTotal: viewModel.durationTotal,
                     parentHeight: geo.size.height
                 )
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 12) {
-                        ForEach(0..<10) { _ in
-                            BranchLessonItemView()
+                        ForEach(Array(viewModel.lessons.enumerated()), id: \.offset) { index, lesson in
+                            BranchLessonItemView(
+                                lessonTitle: lesson.lessonName,
+                                lessonNumber: index,
+                                durationRead: lesson.duration
+                            )
                                 .onTapGesture {
-                                    isPushToLessonDetailView = true
+                                    viewModel.onClickLessonItemView(id: lesson.id)
                                 }
                         }
                     }
@@ -45,11 +60,5 @@ struct ChemistryLawsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
-    }
-}
-
-struct ChemistryLawsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChemistryLawsView(isPushToLawsView: .constant(false))
     }
 }

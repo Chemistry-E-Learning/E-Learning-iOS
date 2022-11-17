@@ -1,0 +1,12 @@
+//
+//  SeriesRequest.swift
+//  ChemistryAR
+//
+//  Created by NhatMinh on 14/11/2022.
+//
+
+import Foundation
+
+struct SeriesRequest: Encodable {
+    let id: String
+}

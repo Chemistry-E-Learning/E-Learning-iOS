@@ -8,25 +8,31 @@
 import SwiftUI
 
 struct VideosListView: View {
+    @StateObject private var viewModel: LessonsListViewModel
     @Binding var isPushToVideosListView: Bool
-    @State private var isPushToVideoDetailView = false
+
+    init(isPushToVideosListView: Binding<Bool>, seriesID: String) {
+        _isPushToVideosListView = isPushToVideosListView
+        _viewModel = .init(wrappedValue: LessonsListViewModel(seriesID: seriesID))
+    }
 
     var body: some View {
         GeometryReader { geo in
             ZStack {
                 NavigationLink(
                     destination: NavigationLazyView(
-                        VideoDetailView(isPushToVideoDetailView: $isPushToVideoDetailView)
+                        VideoDetailView(
+                            isPushToVideoDetailView: $viewModel.isPushToLessonDetailView,
+                            lessonID: viewModel.lessonID
+                        )
                     ),
-                    isActive: $isPushToVideoDetailView
+                    isActive: $viewModel.isPushToLessonDetailView
                 ) {
                     EmptyView()
                 }
                 Color.cE1E1E1.opacity(0.3).edgesIgnoringSafeArea(.all)
                 VStack {
-                    Image("chapterBG")
-                        .resizable()
-                        .scaledToFill()
+                    ImageFromUrlView(image: viewModel.series.coverImage?.url ?? "")
                         .frame(height: geo.size.height * 0.12)
                         .overlay (
                             VStack(alignment: .leading, spacing: 20) {
@@ -45,10 +51,10 @@ struct VideosListView: View {
                         )
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 16) {
-                            ForEach(0..<20) { _ in
-                                VideoItemView()
+                            ForEach(Array(viewModel.lessons.enumerated()), id: \.offset) { index, lesson in
+                                VideoItemView(title: lesson.lessonName, index: index + 1)
                                     .onTapGesture {
-                                        isPushToVideoDetailView = true
+                                        viewModel.onClickLessonItemView(id: lesson.id)
                                     }
                             }
                         }
@@ -65,12 +71,6 @@ struct VideosListView: View {
     }
 }
 
-struct ChaptersListView_Previews: PreviewProvider {
-    static var previews: some View {
-        VideosListView(isPushToVideosListView: .constant(false))
-    }
-}
-
 private extension VideosListView {
     func makeHeaderContentView() -> some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -78,8 +78,8 @@ private extension VideosListView {
                 .font(.system(size: 24, weight: .bold))
                 .foregroundColor(.white)
             VStack(alignment: .leading, spacing: 4) {
-                Text("\(20) \(Localization.sectionsAttributeTitle.localizedString) - \(40) Videos")
-                Text("Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour")
+                Text("\(viewModel.lessons.count) \(Localization.lessonsAttributeTitle.localizedString) - \(viewModel.videoNumber) Videos")
+                Text(viewModel.series.description ?? AppConstant.NoContent)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)

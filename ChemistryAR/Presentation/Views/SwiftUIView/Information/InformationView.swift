@@ -9,44 +9,33 @@ import SwiftUI
 
 
 struct InformationView: View {
-    @StateObject private var viewModel = ElementTrackingViewModel()
+    @StateObject private var viewModel = ImageTrackingViewModel()
     let elementName: String
 
     var body: some View {
-        ZStack {
-            if let element = viewModel.currentElement {
-                VStack(alignment: .leading) {
-                    Text(element.name)
-                        .fontWeight(.semibold)
-                        .padding(.horizontal, 20)
+        GeometryReader { geo in
+            ZStack {
+                if let _ = viewModel.currentElement {
                     ScrollView(showsIndicators: false) {
-                        VStack(alignment: .leading, spacing: 12) {
-                            makeInformationCell(
-                                title: "What is \(element.name)",
-                                context: element.summary
-                            )
-                            makeElementPropertiesCell()
+                        VStack {
+                            OverviewSectionView(overview: viewModel.overview, parentSize: geo.size)
+                            NatureSectionView(nature: viewModel.nature, parentSize: geo.size)
+                            AtomParametersView(parameters: viewModel.atomParameters, parentSize: geo.size)
+                        }
+                        .padding(.bottom, geo.size.height * 0.36)
+                        .background {
+                            Color.white.ignoresSafeArea(.all)
                         }
                     }
-                    .padding(.top, 8)
-                    .padding(.horizontal, 20)
-                    .background(Color.cE1E1E1.opacity(0.2))
+                } else {
+                    #warning("TODO: MinhNN44 - Animation here")
+                    Text("Is Loading")
                 }
-            } else {
-                #warning("TODO: MinhNN44 - Animation here")
-                Text("Is Loading")
+            }
+            .onAppear {
+                viewModel.doGetElementInformation(with: elementName)
             }
         }
-        .onAppear {
-            viewModel.doGetElementInformation(with: elementName)
-        }
-        .padding(.top, 12)
-        .frame(
-            width: UIScreen.main.bounds.width * 0.8,
-            height: UIScreen.main.bounds.height * 0.8
-        )
-        .background(Color.white)
-        .cornerRadius(12)
     }
 }
 

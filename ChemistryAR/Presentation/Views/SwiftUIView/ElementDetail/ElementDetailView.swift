@@ -8,33 +8,39 @@
 import SwiftUI
 
 struct ElementDetailView: View {
+    @StateObject private var viewModel: ElementViewModel
     @Binding var isPushToElementDetailView: Bool
     @State private var headerOffset = CGFloat.zero
     @State private var stickerSize = CGFloat.zero
-    @State private var isShowWikipedia = false
 
+    init(isPushToElementDetailView: Binding<Bool>, elementID: String) {
+        _isPushToElementDetailView = isPushToElementDetailView
+        _viewModel = .init(wrappedValue: ElementViewModel(elementID: elementID))
+    }
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .top) {
                 NavigationLink(
                     destination: NavigationLazyView(
-                        ElementWikipediaView(isPushToWikipediaView: $isShowWikipedia)
+                        ElementWikipediaView(
+                            isPushToWikipediaView: $viewModel.isShowWikipediaView,
+                            url: viewModel.element.source
+                        )
                     ),
-                    isActive: $isShowWikipedia
+                    isActive: $viewModel.isShowWikipediaView
                 ) {
                     EmptyView()
                 }
                 makeButtonGroupView()
-                    .padding(.top, getSafeArea(edge: .top) - 12)
+                    .padding(.top, getSafeArea(edge: .top) - 8)
                     .zIndex(2)
                 makeHeaderView(size: geo.size)
                     .zIndex(1)
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        ForEach(0..<10) { index in
-                            ElementSectionView(parentSize: geo.size)
-                                .padding(.bottom, index == 3 ? 28 : 0)
-                        }
+                        OverviewSectionView(overview: viewModel.overview, parentSize: geo.size)
+                        NatureSectionView(nature: viewModel.nature, parentSize: geo.size)
+                        AtomParametersView(parameters: viewModel.atomParameters, parentSize: geo.size)
                     }
                     .offset(y: getContentOffset(height: geo.size.height))
                     .padding(.bottom, geo.size.height * 0.36)
@@ -62,12 +68,6 @@ struct ElementDetailView: View {
     }
 }
 
-struct ElementDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ElementDetailView(isPushToElementDetailView: .constant(false))
-    }
-}
-
 private extension ElementDetailView {
     func makeButtonGroupView() -> some View {
         HStack {
@@ -80,7 +80,7 @@ private extension ElementDetailView {
             .padding(.horizontal, 4)
             Spacer()
             Button {
-                isShowWikipedia = true
+                viewModel.onClickWikipediaButton()
             } label: {
                 Image("wikipedia")
                     .resizable()
@@ -94,28 +94,32 @@ private extension ElementDetailView {
     }
 
     func makeHeaderView(size: CGSize) -> some View {
-        Image("nitrogen")
-            .resizable()
-            .scaledToFill()
+        ImageFromUrlView(image: viewModel.element.mainImage.url)
+            .frame(width: size.width, height: size.height * 0.34)
+            .clipped()
             .overlay {
-                ZStack(alignment: .topLeading) {
+                ZStack(alignment: .bottomLeading) {
                     Color.c2A323F.opacity(0.3 + (headerOffset / 300))
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading) {
-                            makeNoticeTag(title: "Phóng Xạ")
-                                .padding(.bottom, -3)
-                                .opacity(headerOffset > 0 ? 0 : 1)
-                            makeElementTagView(serial: 35, category: "Halogen", color: .green)
+                            if let tag = viewModel.element.tag {
+                                makeNoticeTag(title: tag.getGroupName())
+                                    .padding(.bottom, -3)
+                                    .opacity(headerOffset > 0 ? 0 : 1)
+                            }
+                            makeElementTagView(
+                                serial: viewModel.element.number,
+                                category: viewModel.element.group.getGroupName(),
+                                color: .green
+                            )
                             makeElementTitleView()
                                 .offset(y: -size.height * 0.01)
                         }
                         .padding(.top, size.height * 0.04)
                     }
-                    .offset(y: getSafeArea(edge: .top) + size.height * 0.12)
+                    .padding(.bottom, getSafeArea(edge: .top) / 3)
                 }
             }
-            .frame(width: size.width, height: size.height * 0.34)
-            .clipped()
             .offset(y: getHeaderOffset(height: size.height))
     }
 
@@ -154,7 +158,7 @@ private extension ElementDetailView {
 
     func makeElementTitleView() -> some View {
         HStack(spacing: 24 + (stickerSize > 0 ? 0 : stickerSize / 5.5)) {
-            Text("Br")
+            Text(viewModel.element.symbol)
                 .font(.system(size: 60, weight: .medium))
                 .background(
                     Circle()
@@ -166,16 +170,16 @@ private extension ElementDetailView {
                 .scaleEffect(1 + (stickerSize > 0 ? 0 : stickerSize / 400))
                 .padding(.bottom, stickerSize / 7)
             VStack(alignment: .leading, spacing: 4) {
-                Text("Brom")
+                Text(viewModel.element.name)
                     .font(.system(size: 24, weight: .medium))
-                Text("\(79904) (g/mol)")
+                Text("\(viewModel.element.atomicMass ?? 0) (g/mol)")
                     .font(.system(size: 16, weight: .medium))
             }
             .scaleEffect(1 + (stickerSize > 0 ? 0 : stickerSize / 1000))
             .padding(.bottom, stickerSize / 7)
             Spacer()
             Button {
-                print("Open AR View")
+                viewModel.onClickCameraButton()
             } label: {
                 Image(systemName: "camera.viewfinder")
                     .font(.system(size: 32, weight: .medium))

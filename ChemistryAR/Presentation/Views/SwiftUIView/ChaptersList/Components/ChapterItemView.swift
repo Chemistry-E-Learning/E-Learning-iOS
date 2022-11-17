@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ChapterItemView: View {
+    let programDetail: Series
+    let chapter: Int
+
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 8) {
-                Text(Localization.chapterAttributeTitle.localizedString + " \(1)")
+                Text(Localization.chapterAttributeTitle.localizedString + " \(chapter)")
                     .font(.system(size: 12, weight: .regular))
                     .foregroundColor(.white.opacity(0.8))
-                Text("Phản ứng oxi - hoá khử")
+                Text(programDetail.seriesName)
                     .font(.system(size: 18, weight: .medium))
                     .foregroundColor(.white)
             }
@@ -32,9 +35,7 @@ struct ChapterItemView: View {
         .frame(height: 120)
         .background(
             ZStack{
-                Image("chapterBG")
-                    .resizable()
-                    .scaledToFill()
+                ImageFromUrlView(image: programDetail.coverImage?.url ?? "")
                     .frame(height: 120)
                     .blur(radius: 2)
                     .clipped()
@@ -42,15 +43,5 @@ struct ChapterItemView: View {
             }
                 .cornerRadius(16)
         )
-    }
-}
-
-struct ChapterItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChapterItemView()
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .padding()
-            .previewDisplayName("Default preview")
-            .background(Color.red.opacity(0.6))
     }
 }

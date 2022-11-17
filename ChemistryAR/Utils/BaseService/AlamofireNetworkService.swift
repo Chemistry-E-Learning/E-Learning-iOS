@@ -52,7 +52,7 @@ extension AlamofireNetworkService: NetworkServiceProtocol {
             headers: afHeaders
         )
             .responseString { response in
-                // Logger.debug(message: response.result)
+                // print("API Response: \(response.result)")
             }
             .validate(contentType: [
                 HTTPHeaderValue.applicationJson.rawValue,
