@@ -18,6 +18,7 @@ struct AppConstant {
     static let GasIndex = "2"
     static let ShortText = "lorem ipsum est"
     static let LongText = "Le lorem ipsum est, en imprimerie, une suite Le lorem ipsum est, en imprimerie, une suite"
+    static let Paragraph = "Le lorem ipsum est, en imprimerie, une suite L rimerie, une suite Le lorem ipsum est, en imprimerie, une sui rimerie, une suite Le lorem ipsum est, en imprimerie, une suie lorem ipsum est, en imprimerie, une suite rimerie, une suite Le lorem ipsum est, en imprimerie, une sui "
 }
 
 struct IONModel {

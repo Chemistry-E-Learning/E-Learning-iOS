@@ -25,9 +25,6 @@ struct LawItem: View {
                 Spacer()
             }
             .redacted(if: law.id.isEmpty)
-            .if(law.id.isEmpty, transform: { view in
-                view.shimmerAnimation()
-            })
             .padding(.top, 12)
             Spacer()
         }

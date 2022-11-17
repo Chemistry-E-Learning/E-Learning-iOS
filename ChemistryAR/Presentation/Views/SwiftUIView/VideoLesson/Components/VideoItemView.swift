@@ -26,6 +26,7 @@ struct VideoItemView: View {
                 Text(title)
                     .font(.system(size: 13, weight: .medium))
             }
+            .redacted(if: title.isEmpty || title == AppConstant.ShortText)
             .padding(.leading, 4)
             Spacer()
         }

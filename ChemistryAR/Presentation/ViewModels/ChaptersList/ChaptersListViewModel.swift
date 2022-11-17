@@ -9,11 +9,12 @@ import Combine
 import Foundation
 
 final class ChaptersListViewModel: ObservableObject {
-    @Published var programDetailSeries = [Series]()
+    @Published var programDetailSeries = [Series](repeating: Series.emptyData, count: 6)
     @Published var isPushToVideosListView = false
     @Published var isLoading = true
     @Published var isShowError = false
     private(set) var seriesID = ""
+    private(set) var chapterNumber = 0
 
     private let seriesUseCase: SeriesUseCase
     private var disposables = Set<AnyCancellable>()
@@ -51,7 +52,8 @@ extension ChaptersListViewModel {
 
 // MARK: - Function
 extension ChaptersListViewModel {
-    func onClickChapterItemView(id: String) {
+    func onClickChapterItemView(id: String, index: Int) {
+        chapterNumber = index
         seriesID = id
         isPushToVideosListView = true
     }

@@ -68,6 +68,9 @@ extension View {
     @ViewBuilder
     func redacted(if condition: @autoclosure () -> Bool) -> some View {
         redacted(reason: condition() ? .placeholder : [])
+            .if(condition()) { view in
+                view.shimmerAnimation()
+            }
     }
 
     @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
@@ -97,16 +100,15 @@ struct ShimmerViewModifier: ViewModifier {
             .mask {
                 ZStack {
                     Color.black.opacity(0.8)
-                    Capsule()
+                    Rectangle()
                         .fill(LinearGradient(gradient: .init(colors: [.clear, .white, .clear]), startPoint: .top, endPoint: .bottom))
                         .rotationEffect(.init(degrees: 70))
                         .offset(x: isAnimating ? center : -center)
+                        .animation(Animation.default.speed(0.25).delay(0).repeatForever(autoreverses: false), value: isAnimating)
                 }
             }
             .onAppear {
-                withAnimation(Animation.default.speed(0.15).delay(0).repeatForever(autoreverses: false)) {
-                    isAnimating = true
-                }
+                isAnimating.toggle()
             }
     }
 }

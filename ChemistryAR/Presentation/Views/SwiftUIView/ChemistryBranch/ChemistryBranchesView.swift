@@ -32,6 +32,7 @@ struct ChemistryBranchesView: View {
                 }
                 HeaderListCustomView(
                     isPushToCurrentView: $isPushToBranchesView,
+                    isLoading: $viewModel.isLoading,
                     series: viewModel.series,
                     lessonCount: viewModel.lessons.count,
                     durationTotal: viewModel.durationTotal,
@@ -42,11 +43,12 @@ struct ChemistryBranchesView: View {
                         ForEach(Array(viewModel.lessons.enumerated()), id: \.offset) { index, lesson in
                             BranchLessonItemView(
                                 lessonTitle: lesson.lessonName,
-                                lessonNumber: index,
+                                lessonNumber: index + 1,
                                 durationRead: lesson.duration
                             )
+                                .redacted(if: viewModel.isLoading)
                                 .onTapGesture {
-                                    viewModel.onClickLessonItemView(id: lesson.id)
+                                    viewModel.onClickLessonItemView(id: lesson.id, index: index + 1)
                                 }
                         }
                     }

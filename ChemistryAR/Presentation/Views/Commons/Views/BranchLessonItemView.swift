@@ -23,6 +23,7 @@ struct BranchLessonItemView: View {
                         .font(.system(size: 32, weight: .bold))
                 )
                 .clipped()
+                .unredacted()
             VStack(alignment: .leading, spacing: -2) {
                 Spacer()
                 Text(lessonTitle)

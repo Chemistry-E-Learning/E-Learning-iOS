@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 final class LessonsListViewModel: ObservableObject {
-    @Published var lessons = [Lesson]()
+    @Published var lessons = [Lesson](repeating: Lesson.emptyData, count: 6)
     @Published var series = Series.emptyData
     @Published var isPushToLessonDetailView = false
     @Published var isLoading = true
@@ -17,6 +17,7 @@ final class LessonsListViewModel: ObservableObject {
     @Published var videoNumber = 0
     @Published var durationTotal = 0
     private(set) var lessonID = ""
+    private(set) var lessonNumber = 0
 
     private let lessonUseCase: LessonUseCase
     private var disposables = Set<AnyCancellable>()
@@ -76,8 +77,9 @@ private extension LessonsListViewModel {
 
 // MARK: - Function View
 extension LessonsListViewModel {
-    func onClickLessonItemView(id: String) {
+    func onClickLessonItemView(id: String, index: Int) {
         lessonID = id
+        lessonNumber = index
         isPushToLessonDetailView = true
     }
 }

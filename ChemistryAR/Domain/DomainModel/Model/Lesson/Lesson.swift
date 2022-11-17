@@ -19,12 +19,12 @@ struct Lesson: Identifiable {
 
     static let emptyData = Lesson(
         id: "",
-        lessonName: "",
+        lessonName: AppConstant.ShortText,
         coverImageURL: "",
         videoURL: "",
         content: "",
         duration: nil,
         series: Series.emptyData,
-        lessonTag: []
+        lessonTag: nil
     )
 }

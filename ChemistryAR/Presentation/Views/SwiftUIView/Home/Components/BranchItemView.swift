@@ -22,9 +22,6 @@ struct BranchItemView: View {
             VStack(alignment: .leading) {
                 Text(branch.seriesName)
                     .redacted(if: branch.seriesName == AppConstant.ShortText)
-                    .if(branch.seriesName == AppConstant.ShortText){ view in
-                        view.shimmerAnimation()
-                    }
                     .font(.system(size: 16, weight: .semibold))
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(2)

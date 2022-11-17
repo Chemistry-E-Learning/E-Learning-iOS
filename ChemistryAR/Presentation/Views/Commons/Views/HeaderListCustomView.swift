@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HeaderListCustomView: View {
     @Binding var isPushToCurrentView: Bool
+    @Binding var isLoading: Bool
     let series: Series
     let lessonCount: Int
     let durationTotal: Int
@@ -16,7 +17,7 @@ struct HeaderListCustomView: View {
 
     var body: some View {
         GeometryReader { geo in
-            ImageFromUrlView(image: series.coverImage?.url ?? "")
+            ImageFromUrlView(image: series.coverImage?.url ?? "", isClearBackground: false)
                 .overlay {
                     ZStack(alignment: .topLeading) {
                         Color.black.opacity(0.4)
@@ -33,11 +34,13 @@ struct HeaderListCustomView: View {
                                     .font(.system(size: 13, weight: .regular))
                                     .foregroundColor(.white.opacity(0.9))
                             }
+                            .redacted(if: isLoading)
                             Text(series.description ?? AppConstant.NoContent)
                                 .multilineTextAlignment(.leading)
                                 .font(.system(size: 14, weight: .regular))
                                 .foregroundColor(.white)
                                 .lineLimit(4)
+                                .redacted(if: isLoading)
                         }
                         .padding(.horizontal, 28)
                         .offset(y: parentHeight * 0.1)

@@ -32,15 +32,21 @@ struct LessonDetailView: View {
                                     )
                                 }
                             )
-                        WebView(
-                            contentHeight: $contentHeight,
-                            isLoading: .constant(false),
-                            type: .normal,
-                            url: viewModel.lesson.content
-                        )
-                        .frame(height: contentHeight)
-                        .padding(.top, geo.size.height * 0.03)
-                        .padding(.horizontal, 20)
+                        if viewModel.lesson.content.isEmpty {
+                            ContentHolder()
+                                .padding(.top, geo.size.height * 0.03)
+                                .padding(.horizontal, 20)
+                        } else {
+                            WebView(
+                                contentHeight: $contentHeight,
+                                isLoading: $viewModel.isLoading,
+                                type: .normal,
+                                url: viewModel.lesson.content
+                            )
+                            .frame(height: contentHeight)
+                            .padding(.top, geo.size.height * 0.03)
+                            .padding(.horizontal, 20)
+                        }
                     }
                 }
                 .onPreferenceChange(ViewOffsetKey.self) {
@@ -79,25 +85,27 @@ private extension LessonDetailView {
     }
 
     func makeHeaderView(size: CGSize) -> some View {
-        ImageFromUrlView(image: viewModel.lesson.coverImageURL)
+        ImageFromUrlView(image: viewModel.lesson.coverImageURL, isClearBackground: false)
             .overlay {
                 ZStack(alignment: .topLeading) {
                     Color.black.opacity(0.4)
-                    VStack(alignment: .leading, spacing: 6) {
-                        BackCircleButton {
-                            isPushToLessonDetailView = false
-                        }
-                        .padding(.horizontal, 8)
-                        VStack(alignment: .leading) {
-                            makeTitleView(title: viewModel.lesson.lessonName)
-                            if let tags = viewModel.lesson.lessonTag {
-                                TagView(tags: tags)
+                    if !viewModel.isLoading {
+                        VStack(alignment: .leading, spacing: 6) {
+                            BackCircleButton {
+                                isPushToLessonDetailView = false
                             }
+                            .padding(.horizontal, 8)
+                            VStack(alignment: .leading) {
+                                makeTitleView(title: viewModel.lesson.lessonName)
+                                if let tags = viewModel.lesson.lessonTag {
+                                    TagView(tags: tags)
+                                }
+                            }
+                            .padding(.top, 32)
                         }
-                        .padding(.top, 32)
+                        .padding(.top, size.height * 0.06)
+                        .padding(.horizontal, 60)
                     }
-                    .padding(.top, size.height * 0.06)
-                    .padding(.horizontal, 60)
                 }
             }
             .frame(width: size.width, height: size.height * 0.3)

@@ -107,6 +107,7 @@
 		65BAC7D02911564A00B243E1 /* SolubilityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BAC7CF2911564A00B243E1 /* SolubilityModel.swift */; };
 		65BAC7D2291158E400B243E1 /* SolubilityTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 65BAC7D1291158E400B243E1 /* SolubilityTableJSON.json */; };
 		65BC8BB8290927B3004CC8A1 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC8BB7290927B3004CC8A1 /* TagView.swift */; };
+		65BDB88F29268C50001EE2D7 /* ContentHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BDB88E29268C50001EE2D7 /* ContentHolder.swift */; };
 		65C8EE2D29101E7A00E251AB /* ElectrochemicalSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8EE2C29101E7A00E251AB /* ElectrochemicalSeriesView.swift */; };
 		65C8EE302910225300E251AB /* ToolBarCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */; };
 		65D08986291A917B005268B9 /* ImageTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D08985291A917B005268B9 /* ImageTrackingViewModel.swift */; };
@@ -243,6 +244,7 @@
 		65BAC7CF2911564A00B243E1 /* SolubilityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolubilityModel.swift; sourceTree = "<group>"; };
 		65BAC7D1291158E400B243E1 /* SolubilityTableJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SolubilityTableJSON.json; sourceTree = "<group>"; };
 		65BC8BB7290927B3004CC8A1 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		65BDB88E29268C50001EE2D7 /* ContentHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHolder.swift; sourceTree = "<group>"; };
 		65C8EE2C29101E7A00E251AB /* ElectrochemicalSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrochemicalSeriesView.swift; sourceTree = "<group>"; };
 		65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCustomView.swift; sourceTree = "<group>"; };
 		65D08985291A917B005268B9 /* ImageTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrackingViewModel.swift; sourceTree = "<group>"; };
@@ -591,6 +593,7 @@
 				65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */,
 				65BAAA412910AD280055D482 /* HeaderListCustomView.swift */,
 				65DB86F629227EFD003F53BF /* ImageFromURLView.swift */,
+				65BDB88E29268C50001EE2D7 /* ContentHolder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1244,6 +1247,7 @@
 				65093A6728F30BD400538549 /* LawItem.swift in Sources */,
 				657937582922228C00EBF5F8 /* SeriesListHttpEntity.swift in Sources */,
 				65A759F3290FB1E5005105B7 /* Localization.swift in Sources */,
+				65BDB88F29268C50001EE2D7 /* ContentHolder.swift in Sources */,
 				6595DBA728F5275100B1F503 /* ChaptersListView.swift in Sources */,
 				65793745292219F300EBF5F8 /* CommonHttpEntity.swift in Sources */,
 				6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */,

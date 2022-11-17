@@ -26,7 +26,7 @@ struct ImageFromUrlView: View {
             if isClearBackground {
                 Color.clear
             } else {
-                Color.black.opacity(0.2)
+                Color.black.opacity(0.1)
                     .shimmerAnimation()
             }
         }

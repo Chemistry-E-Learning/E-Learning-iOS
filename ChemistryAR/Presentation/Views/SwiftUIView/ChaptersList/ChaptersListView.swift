@@ -24,12 +24,13 @@ struct ChaptersListView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Color.cE1E1E1.opacity(0.3).edgesIgnoringSafeArea(.all)
+                Color.white
                 NavigationLink(
                     destination: NavigationLazyView(
                         VideosListView(
                             isPushToVideosListView: $viewModel.isPushToVideosListView,
-                            seriesID: viewModel.seriesID
+                            seriesID: viewModel.seriesID,
+                            chapterNumber: viewModel.chapterNumber
                         )
                     ),
                     isActive: $viewModel.isPushToVideosListView
@@ -38,10 +39,13 @@ struct ChaptersListView: View {
                 }
                 VStack(alignment: .leading, spacing: 0) {
                     makeHeaderView(height: geo.size.height)
+                    Divider()
                     makeVideoList()
+                        .background {
+                            Color.cE1E1E1.opacity(0.3).edgesIgnoringSafeArea(.bottom)
+                        }
                 }
             }
-            .ignoresSafeArea(.all, edges: .all)
         }
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
@@ -53,13 +57,14 @@ private extension ChaptersListView {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 20) {
                 ForEach(Array(viewModel.programDetailSeries.enumerated()), id: \.offset) { index, item in
-                    ChapterItemView(programDetail: item, chapter: index + 1)
-                        .onTapGesture {
-                            viewModel.onClickChapterItemView(id: item.id)
-                        }
+                    Button {
+                        viewModel.onClickChapterItemView(id: item.id, index: index + 1)
+                    } label: {
+                        ChapterItemView(programDetail: item, chapter: index + 1)
+                            .padding(.top, index == 0 ? 24 : 0)
+                    }
                 }
             }
-            .padding(.bottom, 40)
         }
         .padding(.horizontal, 20)
     }
@@ -84,8 +89,7 @@ private extension ChaptersListView {
                 Spacer()
             }
             .padding(.horizontal, 28)
-            .padding(.top, height * 0.08)
-            .padding(.bottom, 28)
+            .padding(.bottom, 20)
         }
     }
 }

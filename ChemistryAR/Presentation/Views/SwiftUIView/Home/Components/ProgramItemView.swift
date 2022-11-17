@@ -37,10 +37,6 @@ struct ProgramItemView: View {
                 .redacted(if: program.id.isEmpty)
                 .padding(.horizontal, 16)
             }
-            .if(program.id.isEmpty) { view in
-                view
-                    .shimmerAnimation()
-            }
             .frame(width: 300, height: 260)
             .background(
                 RoundedRectangle(cornerRadius: 12)
