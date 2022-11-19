@@ -19,5 +19,6 @@ struct ServerConstant {
         static let predictReaction = ServerConstant.URLBase.baseAPIURL + "/reaction"
         static let lessonsList = ServerConstant.URLBase.baseAPIURL + "/lessons/%@"
         static let lessonDetail = ServerConstant.URLBase.baseAPIURL + "/lesson/%@"
+        static let chemicalsList = ServerConstant.URLBase.baseAPIURL + "/chemicals"
     }
 }

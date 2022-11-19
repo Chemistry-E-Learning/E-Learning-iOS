@@ -42,6 +42,8 @@
 "electronAffinityTitle" = "Electron Affinity";
 "electronegativityTitle" = "Electronegativity";
 "ionizationEnergiesTitle" = "Ionization Energies";
+"chemistryTablesTitle" = "Chemistry Tables";
+"noReactionTitle" = "No Reaction";
 // MARK: - ElementGroup
 "allElementTitle" = "All Elements";
 "diatomicNonMetalTitle" = "Diatomic NonMetal";

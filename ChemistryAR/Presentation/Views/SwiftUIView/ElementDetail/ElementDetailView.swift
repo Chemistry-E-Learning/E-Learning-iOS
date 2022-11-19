@@ -39,8 +39,11 @@ struct ElementDetailView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         OverviewSectionView(overview: viewModel.overview, parentSize: geo.size)
+                            .redacted(if: viewModel.isLoading)
                         NatureSectionView(nature: viewModel.nature, parentSize: geo.size)
+                            .redacted(if: viewModel.isLoading)
                         AtomParametersView(parameters: viewModel.atomParameters, parentSize: geo.size)
+                            .redacted(if: viewModel.isLoading)
                     }
                     .offset(y: getContentOffset(height: geo.size.height))
                     .padding(.bottom, geo.size.height * 0.36)
@@ -94,7 +97,7 @@ private extension ElementDetailView {
     }
 
     func makeHeaderView(size: CGSize) -> some View {
-        ImageFromUrlView(image: viewModel.element.mainImage.url)
+        ImageFromUrlView(image: viewModel.element.mainImage.url, isClearBackground: false)
             .frame(width: size.width, height: size.height * 0.34)
             .clipped()
             .overlay {
@@ -112,8 +115,10 @@ private extension ElementDetailView {
                                 category: viewModel.element.group.getGroupName(),
                                 color: .green
                             )
+                            .redacted(if: viewModel.isLoading)
                             makeElementTitleView()
                                 .offset(y: -size.height * 0.01)
+                                .redacted(if: viewModel.isLoading)
                         }
                         .padding(.top, size.height * 0.04)
                     }
@@ -184,6 +189,7 @@ private extension ElementDetailView {
                 Image(systemName: "camera.viewfinder")
                     .font(.system(size: 32, weight: .medium))
             }
+            .unredacted()
             .squareFrame(44)
             .padding(.top, 16)
             .opacity(headerOffset > 0 ? 0 : 1)

@@ -75,7 +75,6 @@ extension ImageTrackingViewModel {
                     electronegativity: response.electronegativity,
                     ionizationEnergies: response.ionizationEnergies
                 )
-                self.doGetElementProperties()
             }
             .store(in: &disposables)
     }
@@ -99,27 +98,5 @@ extension ImageTrackingViewModel {
                 self.chemicalEquation = response.chemicalEquation
             }
             .store(in: &disposables)
-    }
-}
-
-private extension ImageTrackingViewModel {
-    func doGetElementProperties() {
-//        if let element = currentElement {
-//            properties = [
-//                Property(key: "Standard State", value: element.phase.rawValue),
-//                Property(key: "Atomic Mass", value: "\(element.atomicMass) u"),
-//                Property(key: "Electron Configuration", value: element.electronConfiguration),
-//                Property(key: "Electronegativity", value: "\(String.convertOptionalToString(item: element.electronegativityPauling))"),
-//                Property(key: "Element Group", value: element.category),
-//                Property(key: "Ionization Energy", value: "\(String.convertOptionalToString(item: element.ionizationEnergies.first)) eV"),
-//                Property(key: "Electron Affinity", value: "\(String.convertOptionalToString(item: element.electronAffinity)) eV"),
-//                Property(key: "Melting Point", value: "\(String.convertOptionalToString(item: element.melt)) K"),
-//                Property(key: "Molar Heat", value: "\(String.convertOptionalToString(item: element.molarHeat)) K"),
-//                Property(key: "Boiling Point", value: "\(String.convertOptionalToString(item: element.boil)) K"),
-//                Property(key: "Density", value: "\(String.convertOptionalToString(item: element.density)) g/cm³"),
-//                Property(key: "Named By", value: element.namedBy ?? AppConstant.NoContent),
-//                Property(key: "Discovered By", value: element.discoveredBy ?? AppConstant.NoContent)
-//            ]
-//        }
     }
 }

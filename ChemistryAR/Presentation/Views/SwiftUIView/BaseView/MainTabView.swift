@@ -31,11 +31,9 @@ struct MainTabView: View {
                 VirtualLabView(selectedTab: $selectedTab)
                     .ignoresSafeArea(.all, edges: .all)
             } else {
-                PeriodicTableView(
-                    isPushToPeriodicTableView: .constant(false)
-                )
+                TablesView(selectedTab: $selectedTab)
             }
-            if selectedTab != .lab {
+            if selectedTab != .lab && selectedTab != .table {
                 tabArea
             }
         }

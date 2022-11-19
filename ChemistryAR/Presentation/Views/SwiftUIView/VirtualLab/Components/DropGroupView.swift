@@ -5,15 +5,19 @@
 //  Created by NhatMinh on 21/10/2022.
 //
 
+import Foundation
 import SwiftUI
 
 struct DropGroupView: View {
     @Binding var isAnimating: Bool
     @Binding var isLiquid: Bool
 
-    let chemicalColor: Color
+    let cmsColor: CMSColor
     let initialOffSet: CGSize
     private let animationOffset = 0.1
+    private var chemicalColor: Color { 
+        return Color(hex: UInt(Float(cmsColor.hexColor) ?? 0) ?? 0xFFFFFF, alpha: cmsColor.opacity)
+    }
     private var solidProperties: [(Int, CGSize, Double)] {
         [
             (1, CGSize(width: initialOffSet.width - 15, height: -150), 0),

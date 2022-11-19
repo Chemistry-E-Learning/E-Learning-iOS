@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FloatButtonGroupView: View {
+    @Binding var chemicals: ChemicalsList
     @Binding var isShowInstrument: Bool
     @Binding var chemicalList: [Chemical]
     @Binding var selectedTab: TabItem
@@ -47,17 +48,17 @@ struct FloatButtonGroupView: View {
                             AttachmentButton(needsRotation: .constant(false), iconName: "liquid") {
                                 isShowInstrument = false
                                 rotateBar = false
-                                chemicalList = Chemical.liquid
+                                chemicalList = chemicals.liquidChemicals
                             }
                             AttachmentButton(needsRotation: .constant(false), iconName: "solid") {
                                 isShowInstrument = false
                                 rotateBar = false
-                                chemicalList = Chemical.solid
+                                chemicalList = chemicals.solidChemicals
                             }
                             AttachmentButton(needsRotation: .constant(false), iconName: "gas") {
                                 isShowInstrument = false
                                 rotateBar = false
-                                chemicalList = Chemical.gas
+                                chemicalList = chemicals.gasChemicals
                             }
                         }
                         .foregroundColor(.white)

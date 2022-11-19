@@ -42,6 +42,8 @@
 "electronAffinityTitle" = "Ái Lực Điện";
 "electronegativityTitle" = "Độ Âm Điện";
 "ionizationEnergiesTitle" = "Năng Lượng Ion Hoá";
+"chemistryTablesTitle" = "Bảng Hoá Học";
+"noReactionTitle" = "Không Phản Ứng";
 // MARK: - ElementGroup 
 "allElementTitle" = "Tất cả các nguyên tố";
 "diatomicNonMetalTitle" = "Diatomic Phi Kim";

@@ -13,4 +13,7 @@ final class ReactionUseCaseImpl: ReactionUseCase {
     func doGetReactionResult(param: ReactionRequest) -> AnyPublisher<Reaction, NetworkError> {
         return reactionRepository.doGetReactionResult(param: param)
     }
+    func doGetChemicalsList() -> AnyPublisher<ChemicalsList, NetworkError> {
+        return reactionRepository.doGetChemicalsList()
+    }
 }

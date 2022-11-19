@@ -37,9 +37,9 @@ struct ElementDetail: Identifiable {
 
     static let emptyData = ElementDetail(
         id: "",
-        name: "",
-        symbol: "",
-        summary: "",
+        name: AppConstant.ShortText,
+        symbol: "NIL",
+        summary: AppConstant.LongText,
         appearance: "",
         atomicMass: 0,
         boil: 0,

@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct MetalGroupView: View {
-    let color: Color
+    let cmsColor: CMSColor
+    private var color: Color {
+        Color(hex: UInt(cmsColor.hexColor) ?? 0xFFFFFF, alpha: cmsColor.opacity)
+    }
 
     var body: some View {
         ZStack {
@@ -49,10 +53,5 @@ private extension MetalGroupView {
                 .rotation3DEffect(.degrees(50), axis: (x: 1, y: 0, z: 1))
                 .offset(x: -8, y: 10)
         }
-    }
-}
-struct MetalGroupView_Previews: PreviewProvider {
-    static var previews: some View {
-        MetalGroupView(color: .brown)
     }
 }

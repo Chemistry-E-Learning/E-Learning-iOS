@@ -9,4 +9,5 @@ import Combine
 
 protocol ReactionUseCase {
     func doGetReactionResult(param: ReactionRequest) -> AnyPublisher<Reaction, NetworkError>
+    func doGetChemicalsList() -> AnyPublisher<ChemicalsList, NetworkError>
 }

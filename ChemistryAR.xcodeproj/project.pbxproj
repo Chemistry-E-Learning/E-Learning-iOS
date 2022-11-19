@@ -11,6 +11,8 @@
 		65093A6428F2FB9B00538549 /* BranchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6328F2FB9B00538549 /* BranchItemView.swift */; };
 		65093A6728F30BD400538549 /* LawItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6628F30BD400538549 /* LawItem.swift */; };
 		650B7704290CF72100F8E1C2 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B7703290CF72000F8E1C2 /* BackButton.swift */; };
+		650C19A729291C71004E15C1 /* ChemicalHttpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C19A629291C71004E15C1 /* ChemicalHttpEntity.swift */; };
+		650C19AB29291E07004E15C1 /* Chemical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C19AA29291E07004E15C1 /* Chemical.swift */; };
 		651AFC6F290D702A00719F14 /* ElementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651AFC6E290D702A00719F14 /* ElementDetailView.swift */; };
 		65221A41292540CF00A5C486 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65221A40292540CF00A5C486 /* Lesson.swift */; };
 		65221A432925420300A5C486 /* LessonHttpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65221A422925420300A5C486 /* LessonHttpEntity.swift */; };
@@ -110,6 +112,9 @@
 		65BDB88F29268C50001EE2D7 /* ContentHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BDB88E29268C50001EE2D7 /* ContentHolder.swift */; };
 		65C8EE2D29101E7A00E251AB /* ElectrochemicalSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8EE2C29101E7A00E251AB /* ElectrochemicalSeriesView.swift */; };
 		65C8EE302910225300E251AB /* ToolBarCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */; };
+		65CDB1D529272C7300C640B9 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CDB1D429272C7300C640B9 /* SideBarView.swift */; };
+		65CDB1D829272D8100C640B9 /* TablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CDB1D729272D8100C640B9 /* TablesView.swift */; };
+		65CDB1DB2927577500C640B9 /* VirtualLabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CDB1DA2927577500C640B9 /* VirtualLabViewModel.swift */; };
 		65D08986291A917B005268B9 /* ImageTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D08985291A917B005268B9 /* ImageTrackingViewModel.swift */; };
 		65D0ECBB28FFDA070006E8E9 /* BeakerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */; };
 		65D0ECBD28FFDCA00006E8E9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0ECBC28FFDCA00006E8E9 /* TestView.swift */; };
@@ -148,6 +153,8 @@
 		65093A6328F2FB9B00538549 /* BranchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchItemView.swift; sourceTree = "<group>"; };
 		65093A6628F30BD400538549 /* LawItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawItem.swift; sourceTree = "<group>"; };
 		650B7703290CF72000F8E1C2 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		650C19A629291C71004E15C1 /* ChemicalHttpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemicalHttpEntity.swift; sourceTree = "<group>"; };
+		650C19AA29291E07004E15C1 /* Chemical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chemical.swift; sourceTree = "<group>"; };
 		651AFC6E290D702A00719F14 /* ElementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailView.swift; sourceTree = "<group>"; };
 		65221A40292540CF00A5C486 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		65221A422925420300A5C486 /* LessonHttpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonHttpEntity.swift; sourceTree = "<group>"; };
@@ -247,6 +254,9 @@
 		65BDB88E29268C50001EE2D7 /* ContentHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHolder.swift; sourceTree = "<group>"; };
 		65C8EE2C29101E7A00E251AB /* ElectrochemicalSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrochemicalSeriesView.swift; sourceTree = "<group>"; };
 		65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCustomView.swift; sourceTree = "<group>"; };
+		65CDB1D429272C7300C640B9 /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
+		65CDB1D729272D8100C640B9 /* TablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesView.swift; sourceTree = "<group>"; };
+		65CDB1DA2927577500C640B9 /* VirtualLabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualLabViewModel.swift; sourceTree = "<group>"; };
 		65D08985291A917B005268B9 /* ImageTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrackingViewModel.swift; sourceTree = "<group>"; };
 		65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeakerShape.swift; sourceTree = "<group>"; };
 		65D0ECBC28FFDCA00006E8E9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -298,6 +308,14 @@
 			children = (
 			);
 			path = Manage;
+			sourceTree = "<group>";
+		};
+		650C19A929291DF1004E15C1 /* Chemical */ = {
+			isa = PBXGroup;
+			children = (
+				650C19AA29291E07004E15C1 /* Chemical.swift */,
+			);
+			path = Chemical;
 			sourceTree = "<group>";
 		};
 		651AFC6D290D700900719F14 /* ElementDetail */ = {
@@ -495,6 +513,8 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				65CDB1D629272D7100C640B9 /* Tables */,
+				65CDB1D329272C6400C640B9 /* SideBar */,
 				65985E2728EBE01A00061E68 /* BaseView */,
 				65985E2E28EC5BB500061E68 /* Onboarding */,
 				65E3BDB528F2BF3C0081D29D /* Home */,
@@ -703,6 +723,30 @@
 			path = ElectrochemicalSeries;
 			sourceTree = "<group>";
 		};
+		65CDB1D329272C6400C640B9 /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				65CDB1D429272C7300C640B9 /* SideBarView.swift */,
+			);
+			path = SideBar;
+			sourceTree = "<group>";
+		};
+		65CDB1D629272D7100C640B9 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				65CDB1D729272D8100C640B9 /* TablesView.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
+		65CDB1D92927576000C640B9 /* VirtuaLab */ = {
+			isa = PBXGroup;
+			children = (
+				65CDB1DA2927577500C640B9 /* VirtualLabViewModel.swift */,
+			);
+			path = VirtuaLab;
+			sourceTree = "<group>";
+		};
 		65D08984291A9154005268B9 /* ImageTracking */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,6 +918,7 @@
 		65ED402228D60119000F7477 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				65CDB1D92927576000C640B9 /* VirtuaLab */,
 				65221A51292546E200A5C486 /* Lesson */,
 				65DB87112922AEFF003F53BF /* ElementDetail */,
 				65DB86FA292294AE003F53BF /* ChaptersList */,
@@ -956,6 +1001,7 @@
 			isa = PBXGroup;
 			children = (
 				6579374629221A7300EBF5F8 /* EmptyRequest.swift */,
+				650C19A929291DF1004E15C1 /* Chemical */,
 				65221A3F292540AB00A5C486 /* Lesson */,
 				65B987C02923C1660087104A /* Reaction */,
 				65DB86FD2922A600003F53BF /* Element */,
@@ -1009,6 +1055,7 @@
 				65DB87002922A834003F53BF /* ElementHttpEntity.swift */,
 				65B987C62923C24F0087104A /* ReactionHttpEntity.swift */,
 				65221A422925420300A5C486 /* LessonHttpEntity.swift */,
+				650C19A629291C71004E15C1 /* ChemicalHttpEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1237,6 +1284,7 @@
 				65A5861629011C16007A0860 /* DropShape.swift in Sources */,
 				65AFFBF8292380AF003AE15E /* ElementInformation.swift in Sources */,
 				65BAC7D02911564A00B243E1 /* SolubilityModel.swift in Sources */,
+				65CDB1DB2927577500C640B9 /* VirtualLabViewModel.swift in Sources */,
 				65DB87132922AF14003F53BF /* ElementViewModel.swift in Sources */,
 				6595DBAA28F52DD500B1F503 /* BackCircleButton.swift in Sources */,
 				65221A432925420300A5C486 /* LessonHttpEntity.swift in Sources */,
@@ -1245,6 +1293,7 @@
 				65DB86F729227EFD003F53BF /* ImageFromURLView.swift in Sources */,
 				6579376429223C9700EBF5F8 /* SeriesRepository.swift in Sources */,
 				65093A6728F30BD400538549 /* LawItem.swift in Sources */,
+				650C19A729291C71004E15C1 /* ChemicalHttpEntity.swift in Sources */,
 				657937582922228C00EBF5F8 /* SeriesListHttpEntity.swift in Sources */,
 				65A759F3290FB1E5005105B7 /* Localization.swift in Sources */,
 				65BDB88F29268C50001EE2D7 /* ContentHolder.swift in Sources */,
@@ -1255,6 +1304,7 @@
 				65221A452925422A00A5C486 /* LessonHttpMapper.swift in Sources */,
 				65B21D1D2907A81300D32753 /* ChemistryLawsView.swift in Sources */,
 				65B2CE8C291948D50032C812 /* ChemicalView.swift in Sources */,
+				650C19AB29291E07004E15C1 /* Chemical.swift in Sources */,
 				6595DBAE28F5553600B1F503 /* VideoDetailView.swift in Sources */,
 				6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */,
 				6595DBB028F5690F00B1F503 /* ScaleButtonStyle.swift in Sources */,
@@ -1281,6 +1331,7 @@
 				65221A482925439600A5C486 /* LessonRepository.swift in Sources */,
 				65A5861429010316007A0860 /* WaterFlowAnimation.swift in Sources */,
 				6523304328D626A0007F18F6 /* NetworkService.swift in Sources */,
+				65CDB1D529272C7300C640B9 /* SideBarView.swift in Sources */,
 				65B987CC2923C3170087104A /* ReactionUseCase.swift in Sources */,
 				65E3BDBB28F2C4DC0081D29D /* ProgramItemView.swift in Sources */,
 				65AB8A472906801C00F13B4B /* VideosListView.swift in Sources */,
@@ -1310,6 +1361,7 @@
 				654CABEC28FD32080024A228 /* FloatButtonGroupView.swift in Sources */,
 				65B94EB8290EA8A0001F1FD4 /* PreferenceKey.swift in Sources */,
 				6579376729223E7200EBF5F8 /* SeriesHttpConnectionImpl.swift in Sources */,
+				65CDB1D829272D8100C640B9 /* TablesView.swift in Sources */,
 				65830B6C28F026EB0052BA49 /* ImageTrackingView.swift in Sources */,
 				650B7704290CF72100F8E1C2 /* BackButton.swift in Sources */,
 				65E3BDB428F275210081D29D /* CustomShape.swift in Sources */,

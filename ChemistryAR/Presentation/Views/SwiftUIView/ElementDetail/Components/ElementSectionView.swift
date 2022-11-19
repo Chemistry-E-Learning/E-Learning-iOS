@@ -14,6 +14,7 @@ struct OverviewSectionView: View {
         VStack(alignment: .leading) {
             HeaderSectionView(image: "flask", title: Localization.overviewTitle.localizedString)
                 .padding(.bottom, 8)
+                .unredacted()
             SectionRowView(
                 width: parentSize.width,
                 title: Localization.englishNameTitle.localizedString,
@@ -64,6 +65,7 @@ struct NatureSectionView: View {
         VStack(alignment: .leading) {
             HeaderSectionView(image: "flask", title: Localization.natureTitle.localizedString)
                 .padding(.bottom, 8)
+                .unredacted()
             SectionRowView(
                 width: parentSize.width,
                 title: Localization.standardStateTitle.localizedString,
@@ -107,6 +109,7 @@ struct AtomParametersView: View {
         VStack(alignment: .leading) {
             HeaderSectionView(image: "flask", title: Localization.atomParametersTitle.localizedString)
                 .padding(.bottom, 8)
+                .unredacted()
             SectionRowView(
                 width: parentSize.width,
                 title: Localization.electronConfigurationTitle.localizedString,

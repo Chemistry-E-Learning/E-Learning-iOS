@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct SolubilityTableView: View {
-    @Binding var isShowSolubilityTableView: Bool
-    @Binding var elementList: Matrix<SolubilityModel>
-    @State private var isShowInformationSheet = false
-
+    @Binding var isShowInformationSheet: Bool
     private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -23,32 +20,18 @@ struct SolubilityTableView: View {
         SolubilityModel(symbol: "D", xPos: 0, yPos: 0),
         SolubilityModel(symbol: "-", xPos: 0, yPos: 0),
     ]
+    private let elementList = SolubilityModelList.readJSONFromFile()?.solubilityModelMatrix()
+    ?? SolubilityModelList(data: []).solubilityModelMatrix()
     
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .bottom) {
-                VStack(alignment: .leading) {
-                    ToolBarCustomView(
-                        isPushToCurrentView: $isShowSolubilityTableView,
-                        title: Localization.solubilityTableTitle.localizedString,
-                        rightButtonImage: "info",
-                        rightButtonAction: {
-                            withAnimation(.easeInOut) {
-                                isShowInformationSheet.toggle()
-                            }
+                makeSolubilityTableView(height: geo.size.height)
+                    .onTapGesture {
+                        withAnimation {
+                            isShowInformationSheet = false
                         }
-                    )
-                    makeSolubilityTableView(height: geo.size.height)
-                }
-                .onTapGesture {
-                    withAnimation {
-                        isShowInformationSheet = false
                     }
-                }
-                if isShowInformationSheet {
-                    makeInformationView(height: geo.size.height)
-                        .transition(.move(edge: .bottom))
-                }
             }
         }
         .ignoresSafeArea(.all, edges: .bottom)
@@ -58,25 +41,13 @@ struct SolubilityTableView: View {
     }
 }
 
-struct SolubilityTableView_Previews: PreviewProvider {
-    static var previews: some View {
-        SolubilityTableView(
-            isShowSolubilityTableView: .constant(false),
-            elementList: .constant(
-                SolubilityModelList.readJSONFromFile()?.solubilityModelMatrix()
-                ?? SolubilityModelList(data: []).solubilityModelMatrix()
-            )
-        )
-    }
-}
-
 private extension SolubilityTableView {
     func makeInformationView(height: CGFloat) -> some View {
         LazyVGrid(columns: columns, alignment: .leading)  {
             ForEach(solubilityInformations, id: \.self) { item in
                 HStack {
                     makeSolubilityItemView(item: item, size: CGSize(width: 52, height: 52))
-                        .background(Color.c2E2E3A)
+                        .background(Color.c1E2128)
                     Text(item.getTitle())
                         .font(.system(size: 16, weight: .medium))
                         .foregroundColor(.white)
@@ -84,39 +55,40 @@ private extension SolubilityTableView {
                 }
             }
         }
-            .frame(height: height * 0.3)
-            .padding(.leading, 32)
-            .background(Color.c1E2128)
-            .cornerRadius(24, corners: [.topLeft, .topRight])
+            .padding(.top, -48)
+            .padding(.leading, 36)
     }
 
     func makeSolubilityTableView(height: CGFloat) -> some View {
         ScrollView([.vertical], showsIndicators: false) {
-            HStack(alignment: .top, spacing: 0) {
-                VStack(alignment: .leading, spacing: 0) {
-                    emptyCell
-                    ForEach(Array(AppConstant.anions.enumerated()), id: \.offset) { index, anion in
-                        makeIonItemView(item: anion, isCation: false)
-                    }
-                }
-                ScrollView([.horizontal], showsIndicators: false)  {
+            VStack(alignment: .leading) {
+                HStack(alignment: .top, spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
-                        HStack(spacing: 0) {
-                            ForEach(Array(AppConstant.cations.enumerated()), id: \.offset) { index, cation in
-                                makeIonItemView(item: cation, isCation: true)
-                            }
+                        emptyCell
+                        ForEach(Array(AppConstant.anions.enumerated()), id: \.offset) { index, anion in
+                            makeIonItemView(item: anion, isCation: false)
                         }
-                        ForEach(0...elementList.rows - 1, id: \.self) { i in
-                            HStack(alignment: .center, spacing: 4) {
-                                ForEach(0...elementList.columns - 1, id: \.self) { j in
-                                    makeSolubilityItemView(item: elementList[i, j])
+                    }
+                    ScrollView([.horizontal], showsIndicators: false)  {
+                        VStack(alignment: .leading, spacing: 0) {
+                            HStack(spacing: 0) {
+                                ForEach(Array(AppConstant.cations.enumerated()), id: \.offset) { index, cation in
+                                    makeIonItemView(item: cation, isCation: true)
                                 }
                             }
+                            ForEach(0...elementList.rows - 1, id: \.self) { i in
+                                HStack(alignment: .center, spacing: 4) {
+                                    ForEach(0...elementList.columns - 1, id: \.self) { j in
+                                        makeSolubilityItemView(item: elementList[i, j])
+                                    }
+                                }
+                            }
+                            Spacer()
                         }
-                        Spacer()
+                        .frame(height: height)
                     }
-                    .frame(height: height)
                 }
+                makeInformationView(height: height)
             }
         }
         .background(

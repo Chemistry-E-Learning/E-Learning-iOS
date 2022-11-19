@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ElementWikipediaView: View {
     @Binding var isPushToWikipediaView: Bool
+    @State private var isLoading = true
     let url: String
     
     var body: some View {
@@ -34,7 +35,7 @@ struct ElementWikipediaView: View {
             }
             WebView(
                 contentHeight: .constant(0),
-                isLoading: .constant(false),
+                isLoading: $isLoading,
                 type: .external,
                 url: url
             )

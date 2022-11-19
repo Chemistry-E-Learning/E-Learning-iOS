@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct PeriodicTableView: View {
-    @Binding var isPushToPeriodicTableView: Bool
+    @Binding var isShowFilterView: Bool
     @State private var isPushToElementDetailView = false
-    @State private var isShowFilterView = false
     @State private var viewState = CGSize.zero
     @State private var selectedElement = Element.emptyElement
     @State private var groupSelected = ElementGroup.initial
@@ -32,17 +31,7 @@ struct PeriodicTableView: View {
                 ) {
                     EmptyView()
                 }
-                VStack(alignment: .leading) {
-                    ToolBarCustomView(
-                        isPushToCurrentView: $isPushToPeriodicTableView,
-                        title: Localization.periodicTableTitle.localizedString,
-                        rightButtonImage: "filter",
-                        rightButtonAction: {
-                            isShowFilterView = true
-                        }
-                    )
-                    makePeriodicTableView(height: geo.size.height)
-                }
+                makePeriodicTableView(height: geo.size.height)
                 makeFilterViewOverlay(height: geo.size.height)
             }
         }
@@ -69,35 +58,55 @@ private extension PeriodicTableView {
         }
     }
 
+    var emptyCell: some View {
+        Rectangle()
+            .fill(Color.black.opacity(0.7))
+            .frame(width: 40, height: 38)
+    }
+
     func makePeriodicTableView(height: CGFloat) -> some View {
-        ScrollView([.horizontal], showsIndicators: false)  {
-            VStack(alignment: .leading, spacing: 0) {
-                HStack(spacing: 0) {
-                    ForEach(0..<18) { index in
+        ScrollView([.vertical], showsIndicators: false) {
+            HStack(alignment: .top, spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
+                    emptyCell
+                    ForEach(0..<11) { index in
                         Text("\(index + 1)")
                             .font(.system(size: 16, weight: .medium))
-                            .frame(width: 70, height: 40)
+                            .frame(width: 40, height: 70)
                             .foregroundColor(.white)
                             .background(Color.black.opacity(0.7))
                     }
                 }
-                ForEach(0...elementList.rows - 1, id: \.self) { i in
-                    HStack(alignment: .center, spacing: 0) {
-                        ForEach(0...elementList.columns - 1, id: \.self) { j in
-                            Button {
-                                onClickElementItemView(id: elementList[i, j].name.lowercased())
-                            } label: {
-                                ElementItemView(
-                                    element: .constant(elementList[i, j]),
-                                    groupSelected: $groupSelected
-                                )
+                ScrollView([.horizontal], showsIndicators: false)  {
+                    VStack(alignment: .leading, spacing: 0) {
+                        HStack(spacing: 0) {
+                            ForEach(0..<18) { index in
+                                Text("\(index + 1)")
+                                    .font(.system(size: 16, weight: .medium))
+                                    .frame(width: 70, height: 40)
+                                    .foregroundColor(.white)
+                                    .background(Color.black.opacity(0.7))
                             }
                         }
+                        ForEach(0...elementList.rows - 1, id: \.self) { i in
+                            HStack(alignment: .center, spacing: 0) {
+                                ForEach(0...elementList.columns - 1, id: \.self) { j in
+                                    Button {
+                                        onClickElementItemView(id: elementList[i, j].name.lowercased())
+                                    } label: {
+                                        ElementItemView(
+                                            element: .constant(elementList[i, j]),
+                                            groupSelected: $groupSelected
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                        Spacer()
                     }
+                    .frame(height: height)
                 }
-                Spacer()
             }
-            .frame(height: height)
         }
         .background(
             Color.c1A1F2C

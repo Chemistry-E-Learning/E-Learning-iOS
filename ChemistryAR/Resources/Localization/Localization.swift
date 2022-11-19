@@ -45,7 +45,8 @@ enum Localization: String {
     case electronAffinityTitle
     case electronegativityTitle
     case ionizationEnergiesTitle
-
+    case chemistryTablesTitle
+    case noReactionTitle
     // MARK: - Element Group
     case allElementTitle
     case diatomicNonMetalTitle

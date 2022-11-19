@@ -31,4 +31,27 @@ final class ReactionHttpConnectionImpl: ReactionRepository {
             .map { ReactionHttpMapper.map(entity: $0) }
         return request.eraseToAnyPublisher()
     }
+
+    func doGetChemicalsList() -> AnyPublisher<ChemicalsList, NetworkError> {
+        let apiClient = NetworkService()
+        let urlString = String(format: ServerConstant.APIURL.chemicalsList)
+        guard let url = URL(string: urlString) else {
+            return Fail(
+                error: NetworkError(
+                    initialError: .invalidURL(url: urlString),
+                    backendError: nil
+                )
+            )
+                .eraseToAnyPublisher()
+        }
+        let requestInfo = RequestInfo(url: url, method: .get)
+        let request = apiClient
+            .requestAPI(
+                info: requestInfo,
+                parameters: EmptyRequest(),
+                decodable: ChemicalsListHttpEntity.self
+            )
+            .map { ChemicalHttpMapper.map(entity: $0) }
+        return request.eraseToAnyPublisher()
+    }
 }

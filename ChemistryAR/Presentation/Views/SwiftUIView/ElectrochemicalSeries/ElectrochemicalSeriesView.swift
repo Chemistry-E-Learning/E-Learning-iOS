@@ -8,14 +8,8 @@
 import SwiftUI
 
 struct ElectrochemicalSeriesView: View {
-    @Binding var isPushToElectrochemicalSeriesView: Bool
-
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ToolBarCustomView(
-                isPushToCurrentView: $isPushToElectrochemicalSeriesView,
-                title: Localization.electrochemicalSeriesTitle.localizedString
-            )
             Divider()
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading) {
@@ -32,12 +26,6 @@ struct ElectrochemicalSeriesView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
-    }
-}
-
-struct ElectrochemicalSeriesView_Previews: PreviewProvider {
-    static var previews: some View {
-        ElectrochemicalSeriesView(isPushToElectrochemicalSeriesView: .constant(false))
     }
 }
 

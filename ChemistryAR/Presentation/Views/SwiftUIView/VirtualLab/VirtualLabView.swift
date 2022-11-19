@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct VirtualLabView: View {
+    @StateObject private var viewModel = VirtualLabViewModel()
     @Binding var selectedTab: TabItem
     @State private var animationTask: DispatchWorkItem?
     @State private var chemicalLocation = CGPoint.zero
@@ -18,7 +19,7 @@ struct VirtualLabView: View {
     @State private var isDragging = false
     @State private var chemicalColor = Color.clear
     @State private var selectedInstruments = [Instrument]()
-    @State private var chemicalList = Chemical.liquid
+    @State private var chemicalList = [Chemical]()
     @State private var reactants = [Chemical]()
     @State private var solidReactants = [Chemical]()
     @State private var selectedInstrument: Instrument?
@@ -27,31 +28,40 @@ struct VirtualLabView: View {
 
     var body: some View {
         GeometryReader { geo in
-            ZStack(alignment: .bottom) {
+            ZStack(alignment: .top) {
                 Color.virtualLabBGC
                 makeDeskLabView(width: geo.size.width, height: geo.size.height * 0.1)
-                    .offset(y: -geo.size.height * 0.8)
+                    .offset(y: geo.size.height * 0.1)
                 if isShowInstrument {
                     instrumentListView
-                        .offset(y: -geo.size.height * 0.84)
+                        .offset(y: geo.size.height * 0.08)
                 } else {
                     makeListChemical(height: geo.size.height)
                 }
-                makeReactionEquationView()
-                    .offset(y: -geo.size.height * 0.76)
                 selectedInstrumentView
-                    .offset(y: -geo.size.height * 0.4)
+                    .offset(y: geo.size.height * 0.5)
+                if viewModel.isCompleted && !viewModel.isLoading {
+                    makeReactionEquationView()
+                       .offset(y: geo.size.height * 0.2)
+                }
             }
             .onChange(of: selectedChemical) { newValue in
-                if let item = newValue, !reactants.contains(item) {
+                if let item = newValue, reactants.count < 2, !reactants.contains(item) {
                     reactants.append(item)
-                    if item.category == .solid {
+                    if item.standardState == .solid {
                         solidReactants.append(item)
+                    }
+                    if reactants.count == 2 {
+                        let reactantsFormula = reactants.map { item in
+                            item.formula
+                        }
+                        viewModel.doGetReactionResult(with: reactantsFormula)
                     }
                 }
             }
             .overlay(
                 FloatButtonGroupView(
+                    chemicals: $viewModel.chemicals,
                     isShowInstrument: $isShowInstrument,
                     chemicalList: $chemicalList,
                     selectedTab: $selectedTab
@@ -111,8 +121,8 @@ private extension VirtualLabView {
                         chemicalColor: chemicalColor.opacity(0.4),
                         size: CGSize(width: 120, height: 120)
                     )
-                    ForEach(solidReactants, id: \.self) { item in
-                        MetalGroupView(color: item.color)
+                    ForEach(solidReactants) { item in
+                        MetalGroupView(cmsColor: item.color)
                             .opacity(selectedChemical != item ? 1 : 0)
                             .offset(x: CGFloat(Int.random(in: -10...0)), y: CGFloat(Int.random(in: -10...10)))
                     }
@@ -181,9 +191,38 @@ private extension VirtualLabView {
 // MARK: - Functions View
 private extension VirtualLabView {
     func makeReactionEquationView() -> some View {
-        Text("2HCL + Na2CO3 = H20 + CO2 + 2NaCL")
-            .foregroundColor(.white)
-            .font(.system(size: 16, weight: .bold))
+        VStack {
+            VStack(alignment: .leading, spacing: 20) {
+                if viewModel.chemicalEquation.count == 0 {
+                    Text("\(Localization.noReactionTitle.localizedString.uppercased())!")
+                        .foregroundColor(.white)
+                        .font(.system(size: 24, weight: .bold))
+                } else {
+                    ForEach(viewModel.chemicalEquation, id: \.self) { equation in
+                        Text(equation)
+                            .foregroundColor(.white)
+                            .font(.system(size: 16, weight: .bold))
+                    }
+                }
+            }
+            .padding(.vertical, 32)
+            .frame(width: getScreenBounds().width - 40)
+            .background(
+                ZStack(alignment: .topTrailing) {
+                    Color.black.opacity(0.6)
+                        .cornerRadius(10)
+                    Button {
+                        resetValue()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .foregroundColor(.white)
+                            .padding(.top, 14)
+                            .padding(.trailing, 12)
+                            .scaleEffect(1.2)
+                    }
+                }
+            )
+        }
     }
 
     func makeDeskLabView(width: CGFloat, height: CGFloat) -> some View {
@@ -196,11 +235,9 @@ private extension VirtualLabView {
     func makeListChemical(height: CGFloat) -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(chemicalList, id: \.self) { item in
+                ForEach(chemicalList) { item in
                     ZStack {
-                        Image(item.image)
-                            .resizable()
-                            .scaledToFill()
+                        ImageFromUrlView(image: item.imageURL)
                             .squareFrame(80)
                             .overlay {
                                 Text("\(item.formula)")
@@ -222,7 +259,7 @@ private extension VirtualLabView {
                                         chemicalLocation = value.location
                                     })
                                     .onEnded({ value in
-                                        isLiquid = item.category == .liquid
+                                        isLiquid = item.standardState == .liquid
                                         chemicalLocation = value.location
                                         handleAnimationTask()
                                     })
@@ -241,7 +278,7 @@ private extension VirtualLabView {
             DropGroupView(
                 isAnimating: $isDecant,
                 isLiquid: $isLiquid,
-                chemicalColor: chemical.color,
+                cmsColor: chemical.color,
                 initialOffSet: CGSize.zero
             )
             .rotationEffect(.init(degrees: 180))
@@ -251,67 +288,39 @@ private extension VirtualLabView {
 
 // MARK: - Animation Function
 private extension VirtualLabView {
+    func resetValue() {
+        viewModel.isCompleted = false
+        viewModel.chemicalEquation = []
+        viewModel.reactantsResponse = []
+        reactants = []
+        solidReactants = []
+        chemicalColor = .clear
+    }
+
     func handleAnimationTask() {
         withAnimation(.easeOut(duration: 0.2)) {
             isDecant = true
         }
         animationTask = DispatchWorkItem {
             withAnimation(.easeInOut(duration: 0.3)) {
-                if selectedChemical?.category == .liquid {
-                    chemicalColor = selectedChemical?.color ?? .clear
+                if selectedChemical?.standardState == .liquid {
+                    let color = Color(
+                        hex: UInt(selectedChemical?.color.hexColor ?? "0xFFFFFF") ?? 0xFFFFFF,
+                        alpha: selectedChemical?.color.opacity ?? 0
+                    )
+                    chemicalColor = color
                 }
                 isDecant = false
                 chemicalLocation = CGPoint.zero
                 selectedChemical = nil
+                if reactants.count == 2 {
+                    viewModel.isCompleted = true
+                }
             }
         }
         guard let animationTaskUnwrap = animationTask else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: animationTaskUnwrap)
     }
-}
-
-
-
-struct Chemical: Hashable {
-    let name: String
-    let formula: String
-    let image: String
-    let color: Color
-    let category: ChemicalState
-    let subCategory: ChemicalCategory
-
-    static let liquid = [
-        Chemical(name: "Acid Sulfuric", formula: "H2SO4", image: "yellow-acid", color: .yellow, category: .liquid, subCategory: .acid),
-        Chemical(name: "Acid hydrochloric", formula: "HCL", image: "yellow-acid", color: .yellow, category: .liquid, subCategory: .acid),
-        Chemical(name: "Acid Nitric", formula: "HNO3", image: "hno3", color: .brown, category: .liquid, subCategory: .acid),
-    ]
-
-    static let gas = [
-        Chemical(name: "Acid Sulfuric", formula: "H2", image: "yellow-acid", color: .clear, category: .gas, subCategory: .gas),
-        Chemical(name: "Acid hydrochloric", formula: "O2", image: "yellow-acid", color: .clear, category: .gas, subCategory: .gas),
-        Chemical(name: "Acid Nitric", formula: "CO2", image: "hno3", color: .clear, category: .gas, subCategory: .gas),
-    ]
-
-    static let solid = [
-        Chemical(name: "Acid Sulfuric", formula: "Cu", image: "yellow-acid", color: .brown, category: .solid, subCategory: .metal),
-        Chemical(name: "Acid hydrochloric", formula: "Fe", image: "yellow-acid", color: .red, category: .solid, subCategory: .metal),
-        Chemical(name: "Acid Nitric", formula: "Ag", image: "hno3", color: .gray, category: .solid, subCategory: .metal),
-    ]
-}
-
-enum ChemicalState {
-    case liquid
-    case solid
-    case gas
-}
-
-enum ChemicalCategory {
-    case acid
-    case base
-    case salt
-    case metal
-    case gas
-    case oxide
 }
 
 class Instrument: Identifiable, Equatable  {
