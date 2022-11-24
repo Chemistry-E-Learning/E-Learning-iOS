@@ -15,7 +15,7 @@ final class ImageTrackingViewModel: ObservableObject {
     @Published var nature = NatureModel.emptyData
     @Published var atomParameters = AtomParameter.emptyData
     @Published var properties: [Property]?
-    @Published var isLoading = false
+    @Published var isLoading = true
     @Published var isShowError = false
     @Published var reactants = [String]()
     @Published var chemicalEquation = [String]()
@@ -24,9 +24,11 @@ final class ImageTrackingViewModel: ObservableObject {
     private let reactionUseCase: ReactionUseCase
     private var disposables = Set<AnyCancellable>()
     init(
+        isTrackingView: Bool = true,
         elementUseCase: ElementUseCase = DIContainer.shared.getElementUseCase(),
         reactionUseCase: ReactionUseCase = DIContainer.shared.getReactionUseCase()
     ) {
+        self.isLoading = isTrackingView
         self.elementUseCase = elementUseCase
         self.reactionUseCase = reactionUseCase
     }

@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct PeriodicTableView: View {
+    @StateObject private var viewModel = PeriodicTableViewModel()
     @Binding var isShowFilterView: Bool
-    @State private var isPushToElementDetailView = false
     @State private var viewState = CGSize.zero
     @State private var selectedElement = Element.emptyElement
     @State private var groupSelected = ElementGroup.initial
-    @State private var elementID = ""
 
     var elementList = PeriodicElementList.readJSONFromFile()?.periodicElementMatrix() ?? PeriodicElementList(elements: []).periodicElementMatrix()
 
@@ -23,11 +22,11 @@ struct PeriodicTableView: View {
                 NavigationLink(
                     destination: NavigationLazyView(
                         ElementDetailView(
-                            isPushToElementDetailView: $isPushToElementDetailView,
-                            elementID: elementID
+                            isPushToElementDetailView: $viewModel.isPushToElementDetailView,
+                            elementID: viewModel.elementID
                         )
                     ),
-                    isActive: $isPushToElementDetailView
+                    isActive: $viewModel.isPushToElementDetailView
                 ) {
                     EmptyView()
                 }
@@ -92,7 +91,7 @@ private extension PeriodicTableView {
                             HStack(alignment: .center, spacing: 0) {
                                 ForEach(0...elementList.columns - 1, id: \.self) { j in
                                     Button {
-                                        onClickElementItemView(id: elementList[i, j].name.lowercased())
+                                        viewModel.onClickElementItem(id: elementList[i, j].name.lowercased())
                                     } label: {
                                         ElementItemView(
                                             element: .constant(elementList[i, j]),
@@ -111,12 +110,5 @@ private extension PeriodicTableView {
         .background(
             Color.c1A1F2C
         )
-    }
-}
-
-private extension PeriodicTableView {
-    func onClickElementItemView(id: String) {
-        isPushToElementDetailView = true
-        elementID = id
     }
 }

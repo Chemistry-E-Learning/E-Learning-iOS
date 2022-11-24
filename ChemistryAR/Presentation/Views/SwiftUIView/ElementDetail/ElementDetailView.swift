@@ -11,7 +11,8 @@ struct ElementDetailView: View {
     @StateObject private var viewModel: ElementViewModel
     @Binding var isPushToElementDetailView: Bool
     @State private var headerOffset = CGFloat.zero
-    @State private var stickerSize = CGFloat.zero
+    @State private var model: Element3DModel = Element3DModel.dummyData[0]
+    @State private var index = 0
 
     init(isPushToElementDetailView: Binding<Bool>, elementID: String) {
         _isPushToElementDetailView = isPushToElementDetailView
@@ -33,9 +34,11 @@ struct ElementDetailView: View {
                 }
                 makeButtonGroupView()
                     .padding(.top, getSafeArea(edge: .top) - 8)
-                    .zIndex(2)
-                makeHeaderView(size: geo.size)
-                    .zIndex(1)
+                    .zIndex(99)
+                if !viewModel.isShowARCamera {
+                    makeHeaderView(size: geo.size)
+                        .zIndex(1)
+                }
                 ScrollView(showsIndicators: false) {
                     VStack {
                         OverviewSectionView(overview: viewModel.overview, parentSize: geo.size)
@@ -61,8 +64,11 @@ struct ElementDetailView: View {
                     let _ = getHeaderOffset(height: geo.size.height)
                 }
                 .coordinateSpace(name: "scroll")
+                if viewModel.isShowARCamera {
+                    make3DViewer(height: geo.size.height)
+                }
             }
-
+            .swipeBack(isPresented: $isPushToElementDetailView, maxTranslation: geo.size.width / 3)
         }
         .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
@@ -72,6 +78,45 @@ struct ElementDetailView: View {
 }
 
 private extension ElementDetailView {
+    func make3DViewer(height: CGFloat) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            ZStack(alignment: .bottom) {
+                CustomSceneView(model: $model)
+                    .frame(height: height * 0.28)
+                    .background(Color.black)
+            }
+            .onChange(of: index) { _ in
+                if index >= 0 && index < viewModel.models.count {
+                    model = viewModel.models[index]
+                }
+            }
+            HStack {
+                Rectangle()
+                    .squareFrame(44)
+                    .padding(.leading, 16)
+                Spacer()
+                ControlButtonGroup(index: $index, dataCount: viewModel.models.count)
+                    .scaleEffect(0.5)
+                Spacer()
+                Button {
+                    viewModel.onClickCameraButton()
+                } label: {
+                    Image("ic_3d")
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.white)
+                }
+                .squareFrame(36)
+                .padding(.trailing, 16)
+            }
+            .padding(.bottom, height * 0.01)
+            .frame(height: height * 0.06)
+            .background(Color.black)
+            Spacer()
+        }
+
+    }
     func makeButtonGroupView() -> some View {
         HStack {
             BackButton(
@@ -134,7 +179,7 @@ private extension ElementDetailView {
                 .font(.system(size: 15, weight: .bold))
             Rectangle()
                 .fill(Color.white)
-                .frame(width: 2, height: .infinity)
+                .frame(width: 2)
                 .padding(.vertical, 6)
             Text(category.uppercased())
                 .font(.system(size: 15, weight: .bold))
@@ -162,7 +207,7 @@ private extension ElementDetailView {
     }
 
     func makeElementTitleView() -> some View {
-        HStack(spacing: 24 + (stickerSize > 0 ? 0 : stickerSize / 5.5)) {
+        HStack(spacing: 24 + (getOffset() > 0 ? 0 : getOffset() / 5.5)) {
             Text(viewModel.element.symbol)
                 .font(.system(size: 60, weight: .medium))
                 .background(
@@ -172,29 +217,32 @@ private extension ElementDetailView {
                         .opacity(headerOffset > 0 ? 1 : 0)
                 )
                 .padding(.leading, 32)
-                .scaleEffect(1 + (stickerSize > 0 ? 0 : stickerSize / 400))
-                .padding(.bottom, stickerSize / 7)
+                .scaleEffect(1 + (getOffset() > 0 ? 0 : getOffset() / 400))
+                .padding(.bottom, getOffset() / 7)
             VStack(alignment: .leading, spacing: 4) {
                 Text(viewModel.element.name)
                     .font(.system(size: 24, weight: .medium))
                 Text("\(viewModel.element.atomicMass ?? 0) (g/mol)")
                     .font(.system(size: 16, weight: .medium))
             }
-            .scaleEffect(1 + (stickerSize > 0 ? 0 : stickerSize / 1000))
-            .padding(.bottom, stickerSize / 7)
+            .scaleEffect(1 + (getOffset() > 0 ? 0 : getOffset() / 1000))
+            .padding(.bottom, getOffset() / 7)
             Spacer()
             Button {
                 viewModel.onClickCameraButton()
             } label: {
-                Image(systemName: "camera.viewfinder")
-                    .font(.system(size: 32, weight: .medium))
+                Image("ic_3d")
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.white)
             }
             .unredacted()
-            .squareFrame(44)
+            .squareFrame(36)
             .padding(.top, 16)
             .opacity(headerOffset > 0 ? 0 : 1)
         }
-        .padding(.leading, stickerSize > 0 ? 0 : -stickerSize / 12)
+        .padding(.leading, getOffset() > 0 ? 0 : -getOffset() / 12)
         .padding(.trailing, 20)
         .foregroundColor(.white)
     }
@@ -202,10 +250,15 @@ private extension ElementDetailView {
 
 // MARK: - Helper Function
 private extension ElementDetailView {
+    func getOffset() -> CGFloat {
+        let navSize = getScreenBounds().height * 0.28 - getSafeArea(edge: .top)
+        return headerOffset > navSize ? -navSize : -headerOffset
+    }
+
     func getHeaderOffset(height: CGFloat) -> CGFloat {
         let navSize = height * 0.28 - getSafeArea(edge: .top)
-        stickerSize = headerOffset > navSize ? -navSize : -headerOffset
-        return headerOffset > 0 ? stickerSize : 0
+        let offset = headerOffset > navSize ? -navSize : -headerOffset
+        return headerOffset > 0 ? offset : 0
     }
 
     func getContentOffset(height: CGFloat) -> CGFloat {

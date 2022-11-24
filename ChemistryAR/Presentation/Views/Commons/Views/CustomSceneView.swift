@@ -9,7 +9,7 @@ import SwiftUI
 import SceneKit
 
 struct CustomSceneView: UIViewRepresentable {
-    let scene: SCNScene?
+    @Binding var model: Element3DModel
 
     func makeUIView(context: Context) -> SCNView {
         let view = SCNView()
@@ -17,11 +17,17 @@ struct CustomSceneView: UIViewRepresentable {
         view.autoenablesDefaultLighting = true
         view.scalesLargeContentImage = true
         view.antialiasingMode = .multisampling2X
+        let scene: SCNScene? = .init(named: "art.scnassets/\(model.name).scn")
         view.scene = scene
         view.backgroundColor = .clear
         return view
     }
 
     func updateUIView(_ uiView: SCNView, context: Context) {
+        let scene: SCNScene? = .init(named: "art.scnassets/\(model.name).scn")
+        scene?.rootNode.scale = model.scale
+        scene?.rootNode.eulerAngles.x = model.angle
+        scene?.rootNode.position.y = Float(-3)
+        uiView.scene = scene
     }
 }

@@ -9,31 +9,56 @@ import SwiftUI
 
 
 struct InformationView: View {
-    @StateObject private var viewModel = ImageTrackingViewModel()
-    let elementName: String
+    @StateObject private var viewModel: ImageTrackingViewModel
+    let overview: OverviewModel
+    let nature: NatureModel
+    let atomParameters: AtomParameter
 
+    init(
+        overview: OverviewModel = OverviewModel.emptyData,
+        nature: NatureModel = NatureModel.emptyData,
+        atomParameter: AtomParameter = AtomParameter.emptyData,
+        elementName: String = "",
+        isTrackingImage: Bool = true
+    ) {
+        self.overview = overview
+        self.nature = nature
+        self.atomParameters = atomParameter
+
+        _viewModel = .init(wrappedValue: ImageTrackingViewModel(isTrackingView: isTrackingImage))
+        if isTrackingImage {
+            viewModel.doGetElementInformation(with: elementName)
+        }
+    }
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                if let _ = viewModel.currentElement {
-                    ScrollView(showsIndicators: false) {
-                        VStack {
-                            OverviewSectionView(overview: viewModel.overview, parentSize: geo.size)
-                            NatureSectionView(nature: viewModel.nature, parentSize: geo.size)
-                            AtomParametersView(parameters: viewModel.atomParameters, parentSize: geo.size)
-                        }
-                        .padding(.bottom, geo.size.height * 0.36)
-                        .background {
-                            Color.white.ignoresSafeArea(.all)
-                        }
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        OverviewSectionView(
+                            overview: viewModel.isLoading ? viewModel.overview : overview,
+                            parentSize: geo.size
+                        )
+                            .redacted(if: viewModel.isLoading)
+                        NatureSectionView(
+                            nature: viewModel.isLoading ? viewModel.nature : nature,
+                            parentSize: geo.size
+                        )
+                            .redacted(if: viewModel.isLoading)
+                        AtomParametersView(
+                            parameters: viewModel.isLoading ? viewModel.atomParameters : atomParameters,
+                            parentSize: geo.size
+                        )
+                            .redacted(if: viewModel.isLoading)
                     }
-                } else {
-                    #warning("TODO: MinhNN44 - Animation here")
-                    Text("Is Loading")
+                    .padding(.bottom, geo.size.height * 0.36)
+                    .background {
+                        Color.white.ignoresSafeArea(.all)
+                    }
                 }
             }
-            .onAppear {
-                viewModel.doGetElementInformation(with: elementName)
+            .onDisappear {
+                print("MinhNN44")
             }
         }
     }
@@ -90,5 +115,11 @@ struct BulletCell: View {
             .lineSpacing(2)
             .font(.system(size: 12))
             .multilineTextAlignment(.leading)
+    }
+}
+
+struct Test: PreviewProvider {
+    static var previews: some View {
+        InformationView(elementName: "copper")
     }
 }

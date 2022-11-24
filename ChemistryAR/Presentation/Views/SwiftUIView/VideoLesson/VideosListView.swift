@@ -13,7 +13,6 @@ struct VideosListView: View {
     private let chapterNumber: Int
 
     init(isPushToVideosListView: Binding<Bool>, seriesID: String, chapterNumber: Int) {
-        print("Minh - \(seriesID)")
         _isPushToVideosListView = isPushToVideosListView
         _viewModel = .init(wrappedValue: LessonsListViewModel(seriesID: seriesID))
         self.chapterNumber = chapterNumber

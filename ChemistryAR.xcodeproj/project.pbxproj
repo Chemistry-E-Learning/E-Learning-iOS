@@ -31,6 +31,9 @@
 		6523304328D626A0007F18F6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304228D626A0007F18F6 /* NetworkService.swift */; };
 		6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304428D626A7007F18F6 /* AlamofireNetworkService.swift */; };
 		6523304728D626AE007F18F6 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523304628D626AE007F18F6 /* NetworkServiceProtocol.swift */; };
+		6531F860292DC0BF004C5468 /* PeriodicTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531F85F292DC0BF004C5468 /* PeriodicTableViewModel.swift */; };
+		6531F862292E0BC4004C5468 /* SwipeBackViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531F861292E0BC4004C5468 /* SwipeBackViewModifier.swift */; };
+		6531F864292E5AFC004C5468 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6531F863292E5AFC004C5468 /* TestView.swift */; };
 		65430EE82907DAF700AA83BC /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65430EE72907DAF700AA83BC /* LessonDetailView.swift */; };
 		65430EEA2907DD0800AA83BC /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65430EE92907DD0800AA83BC /* WebView.swift */; };
 		654CABE928FD31B70024A228 /* AttachmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654CABE828FD31B70024A228 /* AttachmentButton.swift */; };
@@ -71,6 +74,7 @@
 		65985E3828EC77EC00061E68 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E3728EC77EC00061E68 /* AppState.swift */; };
 		65A5861429010316007A0860 /* WaterFlowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5861329010316007A0860 /* WaterFlowAnimation.swift */; };
 		65A5861629011C16007A0860 /* DropShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5861529011C16007A0860 /* DropShape.swift */; };
+		65A66663292B5BB8009ABA69 /* VirtualElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A66662292B5BB8009ABA69 /* VirtualElementView.swift */; };
 		65A759E3290F8383005105B7 /* PeriodicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A759E2290F8383005105B7 /* PeriodicTableView.swift */; };
 		65A759E5290FA1CC005105B7 /* PeriodicTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 65A759E4290FA1CC005105B7 /* PeriodicTableJSON.json */; };
 		65A759E9290FA2B2005105B7 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A759E8290FA2B1005105B7 /* Matrix.swift */; };
@@ -94,6 +98,7 @@
 		65B2CE8C291948D50032C812 /* ChemicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2CE8B291948D50032C812 /* ChemicalView.swift */; };
 		65B3510C290FCDA500BEDD92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65B3510E290FCDA500BEDD92 /* Localizable.strings */; };
 		65B35111290FCDF100BEDD92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65B35113290FCDF100BEDD92 /* Localizable.strings */; };
+		65B7C7AE292BD051009D2B46 /* ControlButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */; };
 		65B94EB8290EA8A0001F1FD4 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */; };
 		65B94EBA290EA8E7001F1FD4 /* ElementSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */; };
 		65B987C22923C1880087104A /* Reaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B987C12923C1880087104A /* Reaction.swift */; };
@@ -117,7 +122,6 @@
 		65CDB1DB2927577500C640B9 /* VirtualLabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CDB1DA2927577500C640B9 /* VirtualLabViewModel.swift */; };
 		65D08986291A917B005268B9 /* ImageTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D08985291A917B005268B9 /* ImageTrackingViewModel.swift */; };
 		65D0ECBB28FFDA070006E8E9 /* BeakerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */; };
-		65D0ECBD28FFDCA00006E8E9 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0ECBC28FFDCA00006E8E9 /* TestView.swift */; };
 		65D1ED7328FE8BBC00B9725C /* SineWaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1ED7228FE8BBC00B9725C /* SineWaveShape.swift */; };
 		65DB86F729227EFD003F53BF /* ImageFromURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB86F629227EFD003F53BF /* ImageFromURLView.swift */; };
 		65DB86FC292294D8003F53BF /* ChaptersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB86FB292294D7003F53BF /* ChaptersListViewModel.swift */; };
@@ -173,6 +177,9 @@
 		6523304228D626A0007F18F6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6523304428D626A7007F18F6 /* AlamofireNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkService.swift; sourceTree = "<group>"; };
 		6523304628D626AE007F18F6 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		6531F85F292DC0BF004C5468 /* PeriodicTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableViewModel.swift; sourceTree = "<group>"; };
+		6531F861292E0BC4004C5468 /* SwipeBackViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackViewModifier.swift; sourceTree = "<group>"; };
+		6531F863292E5AFC004C5468 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		65430EE72907DAF700AA83BC /* LessonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
 		65430EE92907DD0800AA83BC /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		654CABE828FD31B70024A228 /* AttachmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentButton.swift; sourceTree = "<group>"; };
@@ -214,6 +221,7 @@
 		65985E3728EC77EC00061E68 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		65A5861329010316007A0860 /* WaterFlowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFlowAnimation.swift; sourceTree = "<group>"; };
 		65A5861529011C16007A0860 /* DropShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropShape.swift; sourceTree = "<group>"; };
+		65A66662292B5BB8009ABA69 /* VirtualElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualElementView.swift; sourceTree = "<group>"; };
 		65A759E2290F8383005105B7 /* PeriodicTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodicTableView.swift; sourceTree = "<group>"; };
 		65A759E4290FA1CC005105B7 /* PeriodicTableJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PeriodicTableJSON.json; sourceTree = "<group>"; };
 		65A759E8290FA2B1005105B7 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
@@ -236,6 +244,7 @@
 		65B2CE8B291948D50032C812 /* ChemicalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemicalView.swift; sourceTree = "<group>"; };
 		65B3510D290FCDA500BEDD92 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65B35112290FCDF100BEDD92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonGroup.swift; sourceTree = "<group>"; };
 		65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSectionView.swift; sourceTree = "<group>"; };
 		65B987C12923C1880087104A /* Reaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reaction.swift; sourceTree = "<group>"; };
@@ -259,7 +268,6 @@
 		65CDB1DA2927577500C640B9 /* VirtualLabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualLabViewModel.swift; sourceTree = "<group>"; };
 		65D08985291A917B005268B9 /* ImageTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrackingViewModel.swift; sourceTree = "<group>"; };
 		65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeakerShape.swift; sourceTree = "<group>"; };
-		65D0ECBC28FFDCA00006E8E9 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		65D1ED7228FE8BBC00B9725C /* SineWaveShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SineWaveShape.swift; sourceTree = "<group>"; };
 		65DB86F629227EFD003F53BF /* ImageFromURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFromURLView.swift; sourceTree = "<group>"; };
 		65DB86FB292294D7003F53BF /* ChaptersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersListViewModel.swift; sourceTree = "<group>"; };
@@ -389,6 +397,14 @@
 				65985E3528EC775D00061E68 /* UserDefaultKeys.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		6531F85E292DC0AE004C5468 /* PeriodicTable */ = {
+			isa = PBXGroup;
+			children = (
+				6531F85F292DC0BF004C5468 /* PeriodicTableViewModel.swift */,
+			);
+			path = PeriodicTable;
 			sourceTree = "<group>";
 		};
 		65430EE62907DADC00AA83BC /* LessonDetail */ = {
@@ -614,6 +630,8 @@
 				65BAAA412910AD280055D482 /* HeaderListCustomView.swift */,
 				65DB86F629227EFD003F53BF /* ImageFromURLView.swift */,
 				65BDB88E29268C50001EE2D7 /* ContentHolder.swift */,
+				65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */,
+				6531F861292E0BC4004C5468 /* SwipeBackViewModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -698,6 +716,7 @@
 			isa = PBXGroup;
 			children = (
 				65830B6B28F026EB0052BA49 /* ImageTrackingView.swift */,
+				65A66662292B5BB8009ABA69 /* VirtualElementView.swift */,
 			);
 			path = "AR Views";
 			sourceTree = "<group>";
@@ -879,7 +898,7 @@
 				65F7A5F7291D084B0091D5CE /* AppDelegate.swift */,
 				65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */,
 				65ED401228D5FE9D000F7477 /* ContentView.swift */,
-				65D0ECBC28FFDCA00006E8E9 /* TestView.swift */,
+				6531F863292E5AFC004C5468 /* TestView.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -918,6 +937,7 @@
 		65ED402228D60119000F7477 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				6531F85E292DC0AE004C5468 /* PeriodicTable */,
 				65CDB1D92927576000C640B9 /* VirtuaLab */,
 				65221A51292546E200A5C486 /* Lesson */,
 				65DB87112922AEFF003F53BF /* ElementDetail */,
@@ -1260,6 +1280,7 @@
 				65C8EE2D29101E7A00E251AB /* ElectrochemicalSeriesView.swift in Sources */,
 				6523304128D62699007F18F6 /* RequestInfo.swift in Sources */,
 				65D0ECBB28FFDA070006E8E9 /* BeakerShape.swift in Sources */,
+				6531F862292E0BC4004C5468 /* SwipeBackViewModifier.swift in Sources */,
 				65221A41292540CF00A5C486 /* Lesson.swift in Sources */,
 				65DB87092922ABF0003F53BF /* ElementUseCase.swift in Sources */,
 				659404EB2901361700D78A70 /* FillShape.swift in Sources */,
@@ -1273,6 +1294,7 @@
 				65F7A5F8291D084B0091D5CE /* AppDelegate.swift in Sources */,
 				6507FAE928F6AAF40013813A /* VirtualLabView.swift in Sources */,
 				6579375E2922261600EBF5F8 /* SeriesUseCaseImpl.swift in Sources */,
+				6531F860292DC0BF004C5468 /* PeriodicTableViewModel.swift in Sources */,
 				65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */,
 				65985E2928EBE04800061E68 /* MainTabView.swift in Sources */,
 				65221A532925477E00A5C486 /* LessonsListViewModel.swift in Sources */,
@@ -1305,6 +1327,7 @@
 				65B21D1D2907A81300D32753 /* ChemistryLawsView.swift in Sources */,
 				65B2CE8C291948D50032C812 /* ChemicalView.swift in Sources */,
 				650C19AB29291E07004E15C1 /* Chemical.swift in Sources */,
+				65A66663292B5BB8009ABA69 /* VirtualElementView.swift in Sources */,
 				6595DBAE28F5553600B1F503 /* VideoDetailView.swift in Sources */,
 				6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */,
 				6595DBB028F5690F00B1F503 /* ScaleButtonStyle.swift in Sources */,
@@ -1337,11 +1360,13 @@
 				65AB8A472906801C00F13B4B /* VideosListView.swift in Sources */,
 				657937522922206200EBF5F8 /* SeriesHttpMapper.swift in Sources */,
 				65B987C42923C1900087104A /* ReactionRequest.swift in Sources */,
+				65B7C7AE292BD051009D2B46 /* ControlButtonGroup.swift in Sources */,
 				65DB86FC292294D8003F53BF /* ChaptersListViewModel.swift in Sources */,
 				65D08986291A917B005268B9 /* ImageTrackingViewModel.swift in Sources */,
 				65B94EBA290EA8E7001F1FD4 /* ElementSectionView.swift in Sources */,
 				65DB87102922AD36003F53BF /* ElementRequest.swift in Sources */,
 				65093A6428F2FB9B00538549 /* BranchItemView.swift in Sources */,
+				6531F864292E5AFC004C5468 /* TestView.swift in Sources */,
 				65EEB8DE2910F17D00474BFF /* SolubilityTableView.swift in Sources */,
 				65DB870E2922ACFD003F53BF /* ElementRepository.swift in Sources */,
 				65E3BDB928F2BFB30081D29D /* HeaderView.swift in Sources */,
@@ -1356,7 +1381,6 @@
 				65430EEA2907DD0800AA83BC /* WebView.swift in Sources */,
 				65ED403B28D606E9000F7477 /* ServerConstant.swift in Sources */,
 				65B987CE2923C3220087104A /* ReactionUseCaseImpl.swift in Sources */,
-				65D0ECBD28FFDCA00006E8E9 /* TestView.swift in Sources */,
 				65B21D16290796B200D32753 /* ChemistryBranchesView.swift in Sources */,
 				654CABEC28FD32080024A228 /* FloatButtonGroupView.swift in Sources */,
 				65B94EB8290EA8A0001F1FD4 /* PreferenceKey.swift in Sources */,

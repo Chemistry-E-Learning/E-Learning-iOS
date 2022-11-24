@@ -12,6 +12,7 @@ final class ElementViewModel: ObservableObject {
     @Published var element = ElementDetail.emptyData
     @Published var overview = OverviewModel.emptyData
     @Published var nature = NatureModel.emptyData
+    @Published var models = Element3DModel.dummyData
     @Published var atomParameters = AtomParameter.emptyData
     @Published var isShowWikipediaView = false
     @Published var isLoading = true
@@ -48,6 +49,7 @@ extension ElementViewModel {
             } receiveValue: { [weak self] response in
                 guard let self = self else { return }
                 self.element = response
+                print("MinhNN44 - \(response.name)")
                 self.overview = OverviewModel(
                     name: response.name,
                     description: response.summary,
@@ -73,6 +75,7 @@ extension ElementViewModel {
                     electronegativity: response.electronegativity,
                     ionizationEnergies: response.ionizationEnergies
                 )
+                // self.models = response.models
             }
             .store(in: &disposables)
     }
@@ -85,6 +88,6 @@ extension ElementViewModel {
     }
     
     func onClickCameraButton() {
-        isShowARCamera = true
+        isShowARCamera.toggle()
     }
 }

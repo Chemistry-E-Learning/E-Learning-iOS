@@ -29,7 +29,7 @@ extension View {
     func createHostingController(for node: SCNNode, width: CGFloat, height: CGFloat) {
         DispatchQueue.main.async {
             let arVC = UIHostingController(rootView: self)
-            arVC.view.backgroundColor = UIColor.clear
+            arVC.view.backgroundColor = UIColor.red
             arVC.view.frame = CGRect(x: 0, y: 0, width: width, height: height)
             let material = SCNMaterial()
             arVC.view.isOpaque = false
@@ -64,6 +64,16 @@ extension View {
     func squareFrame(_ size: CGFloat) -> some View {
         return self.frame(width: size, height: size)
     }
+
+    func swipeBack(
+        isPresented: Binding<Bool>,
+        maxTranslation: CGFloat
+    ) -> some View {
+        modifier(
+            SwipeBackViewModifier(isPresented: isPresented, maxTranslation: maxTranslation)
+        )
+    }
+
 
     @ViewBuilder
     func redacted(if condition: @autoclosure () -> Bool) -> some View {
