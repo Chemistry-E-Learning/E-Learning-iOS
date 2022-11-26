@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SceneKit
 
 struct ElementDetail: Identifiable {
     let id: String
@@ -34,6 +35,7 @@ struct ElementDetail: Identifiable {
     let ionizationEnergies: Double?
     let chemotherapy: [Int]?
     let tag: NoticeTag?
+    let models: [Element3DModel]?
 
     static let emptyData = ElementDetail(
         id: "",
@@ -61,7 +63,8 @@ struct ElementDetail: Identifiable {
         electronegativity: 0,
         ionizationEnergies: 0,
         chemotherapy: [],
-        tag: nil
+        tag: nil,
+        models: nil
     )
 }
 
@@ -77,4 +80,40 @@ enum NoticeTag: String {
             return Localization.theoreticalElementTitle.localizedString
         }
     }
+}
+
+struct Element3DModel: Identifiable {
+    let id = UUID()
+    let name: String
+    let scale: SCNVector3
+    let position: SCNVector3
+    let angle: Float
+    
+    static var emptyData = Element3DModel(
+        name: "",
+        scale: SCNVector3(x: 1, y: 1, z: 1),
+        position: SCNVector3(x: 0, y: 0, z: 0),
+        angle: .pi / 5
+    )
+
+    static var dummyData = [
+        Element3DModel(
+            name: "copper",
+            scale: SCNVector3(x: 1, y: 1, z: 1),
+            position: SCNVector3(x: 0, y: 0, z: 0),
+            angle: .pi / 5
+        ),
+        Element3DModel(
+            name: "centered-cube",
+            scale: SCNVector3(x: 0.7, y: 0.7, z: 0.7),
+            position: SCNVector3(x: -0.002, y: -0.015, z: 0),
+            angle: 0
+        ),
+        Element3DModel(
+            name: "copper_card",
+            scale: SCNVector3(x: 0.6, y: 0.6, z: 0.6),
+            position: SCNVector3(x: -0.002, y: -0.01, z: 0),
+            angle: .pi / 5
+        )
+    ]
 }

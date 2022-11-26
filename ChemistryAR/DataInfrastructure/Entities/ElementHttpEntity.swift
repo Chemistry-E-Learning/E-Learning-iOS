@@ -34,4 +34,18 @@ struct ElementHttpEntity: Codable {
     let ionizationEnergies: Double?
     let chemotherapy: [Int]?
     let tag: String?
+    let models: [ModelHttpEntity]?
+}
+
+struct ModelHttpEntity: Codable {
+    let name: String
+    let scale: VectorModel?
+    let position: VectorModel?
+    let angle: Float?
+}
+
+struct VectorModel: Codable {
+    let xVector: Float
+    let yVector: Float
+    let zVector: Float
 }

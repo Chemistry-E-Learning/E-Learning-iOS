@@ -9,7 +9,7 @@ import Foundation
 
 struct ServerConstant {
     struct URLBase {
-        static var baseAPIURL = "http://192.168.2.6:3000/api/v1"
+        static var baseAPIURL = "http:/192.168.2.6:3000/api/v1"
     }
 
     struct APIURL {
@@ -20,5 +20,6 @@ struct ServerConstant {
         static let lessonsList = ServerConstant.URLBase.baseAPIURL + "/lessons/%@"
         static let lessonDetail = ServerConstant.URLBase.baseAPIURL + "/lesson/%@"
         static let chemicalsList = ServerConstant.URLBase.baseAPIURL + "/chemicals"
+        static let entityDetail = ServerConstant.URLBase.baseAPIURL + "/entity/%@"
     }
 }

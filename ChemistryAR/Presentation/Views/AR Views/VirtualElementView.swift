@@ -10,35 +10,6 @@ import Foundation
 import SceneKit
 import ARKit
 
-struct Element3DModel: Identifiable {
-    let id = UUID()
-    let name: String
-    let scale: SCNVector3
-    let position: SCNVector3
-    let angle: Float
-
-    static var dummyData = [
-        Element3DModel(
-            name: "copper",
-            scale: SCNVector3(x: 1, y: 1, z: 1),
-            position: SCNVector3(x: -0.003, y: 0, z: 0),
-            angle: .pi / 5
-        ),
-        Element3DModel(
-            name: "centered-cube",
-            scale: SCNVector3(x: 0.7, y: 0.7, z: 0.7),
-            position: SCNVector3(x: -0.002, y: -0.015, z: 0),
-            angle: 0
-        ),
-        Element3DModel(
-            name: "copper_card",
-            scale: SCNVector3(x: 0.6, y: 0.6, z: 0.6),
-            position: SCNVector3(x: -0.002, y: -0.01, z: 0),
-            angle: .pi / 5
-        )
-    ]
-}
-
 struct VirtualElementView: View {
     @Binding var isShowARCamera: Bool
     @Binding var models: [Element3DModel]

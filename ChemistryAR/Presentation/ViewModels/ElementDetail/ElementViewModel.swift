@@ -12,7 +12,7 @@ final class ElementViewModel: ObservableObject {
     @Published var element = ElementDetail.emptyData
     @Published var overview = OverviewModel.emptyData
     @Published var nature = NatureModel.emptyData
-    @Published var models = Element3DModel.dummyData
+    @Published var models: [Element3DModel]?
     @Published var atomParameters = AtomParameter.emptyData
     @Published var isShowWikipediaView = false
     @Published var isLoading = true
@@ -75,7 +75,7 @@ extension ElementViewModel {
                     electronegativity: response.electronegativity,
                     ionizationEnergies: response.ionizationEnergies
                 )
-                // self.models = response.models
+                self.models = response.models
             }
             .store(in: &disposables)
     }

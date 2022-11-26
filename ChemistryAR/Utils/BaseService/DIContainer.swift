@@ -32,6 +32,9 @@ final class DIContainer {
         container.register(LessonRepository.self) { _ in
             LessonHttpConnectionImpl()
         }
+        container.register(EntityRepository.self) { _ in
+            EntityHttpConnectionImpl()
+        }
 
 
         // UseCase
@@ -46,6 +49,9 @@ final class DIContainer {
         }
         container.register(LessonUseCase.self) { _ in
             LessonUseCaseImpl()
+        }
+        container.register(EntityUseCase.self) { _ in
+            EntityUseCaseImpl()
         }
 
         // UserDefault
@@ -84,5 +90,13 @@ final class DIContainer {
 
     func getLessonUseCase() -> LessonUseCase {
         return container.resolve(LessonUseCase.self)!
+    }
+
+    func getEntityRepository() -> EntityRepository {
+        return container.resolve(EntityRepository.self)!
+    }
+
+    func getEntityUseCase() -> EntityUseCase {
+        return container.resolve(EntityUseCase.self)!
     }
 }

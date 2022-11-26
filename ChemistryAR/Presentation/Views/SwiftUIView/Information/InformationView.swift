@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct InformationView: View {
-    @StateObject private var viewModel: ImageTrackingViewModel
+    @StateObject private var viewModel: ElementCardTrackingViewModel
     let overview: OverviewModel
     let nature: NatureModel
     let atomParameters: AtomParameter
@@ -25,7 +25,7 @@ struct InformationView: View {
         self.nature = nature
         self.atomParameters = atomParameter
 
-        _viewModel = .init(wrappedValue: ImageTrackingViewModel(isTrackingView: isTrackingImage))
+        _viewModel = .init(wrappedValue: ElementCardTrackingViewModel(isTrackingView: isTrackingImage))
         if isTrackingImage {
             viewModel.doGetElementInformation(with: elementName)
         }

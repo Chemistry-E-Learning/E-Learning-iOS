@@ -54,5 +54,4 @@ final class LessonHttpConnectionImpl: LessonRepository {
             .map { LessonHttpMapper.map(entities: $0) }
         return request.eraseToAnyPublisher()
     }
-
 }

@@ -53,7 +53,7 @@
 		6579375E2922261600EBF5F8 /* SeriesUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579375D2922261600EBF5F8 /* SeriesUseCaseImpl.swift */; };
 		6579376429223C9700EBF5F8 /* SeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579376329223C9700EBF5F8 /* SeriesRepository.swift */; };
 		6579376729223E7200EBF5F8 /* SeriesHttpConnectionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579376629223E7200EBF5F8 /* SeriesHttpConnectionImpl.swift */; };
-		65830B6C28F026EB0052BA49 /* ImageTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65830B6B28F026EB0052BA49 /* ImageTrackingView.swift */; };
+		65830B6C28F026EB0052BA49 /* ElementCardTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65830B6B28F026EB0052BA49 /* ElementCardTrackingView.swift */; };
 		65830B9528F082AF0052BA49 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 65830B9428F082AF0052BA49 /* art.scnassets */; };
 		659404EB2901361700D78A70 /* FillShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659404EA2901361700D78A70 /* FillShape.swift */; };
 		659404ED2901371300D78A70 /* WaveFillShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659404EC2901371300D78A70 /* WaveFillShape.swift */; };
@@ -115,14 +115,21 @@
 		65BAC7D2291158E400B243E1 /* SolubilityTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 65BAC7D1291158E400B243E1 /* SolubilityTableJSON.json */; };
 		65BC8BB8290927B3004CC8A1 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC8BB7290927B3004CC8A1 /* TagView.swift */; };
 		65BDB88F29268C50001EE2D7 /* ContentHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BDB88E29268C50001EE2D7 /* ContentHolder.swift */; };
+		65C71297292FADDB0026A2B9 /* ChemistryBookTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C71296292FADDB0026A2B9 /* ChemistryBookTrackingViewModel.swift */; };
+		65C71299292FB3FB0026A2B9 /* ModelHttpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C71298292FB3FB0026A2B9 /* ModelHttpMapper.swift */; };
+		65C7129C292FB6740026A2B9 /* EntityHttpConnectionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7129B292FB6740026A2B9 /* EntityHttpConnectionImpl.swift */; };
+		65C7129F292FB7400026A2B9 /* EntityUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7129E292FB7400026A2B9 /* EntityUseCase.swift */; };
+		65C712A1292FB74A0026A2B9 /* EntityUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C712A0292FB74A0026A2B9 /* EntityUseCaseImpl.swift */; };
+		65C712A4292FB88C0026A2B9 /* EntityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C712A3292FB88C0026A2B9 /* EntityRepository.swift */; };
 		65C8EE2D29101E7A00E251AB /* ElectrochemicalSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8EE2C29101E7A00E251AB /* ElectrochemicalSeriesView.swift */; };
 		65C8EE302910225300E251AB /* ToolBarCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */; };
 		65CDB1D529272C7300C640B9 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CDB1D429272C7300C640B9 /* SideBarView.swift */; };
 		65CDB1D829272D8100C640B9 /* TablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CDB1D729272D8100C640B9 /* TablesView.swift */; };
 		65CDB1DB2927577500C640B9 /* VirtualLabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CDB1DA2927577500C640B9 /* VirtualLabViewModel.swift */; };
-		65D08986291A917B005268B9 /* ImageTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D08985291A917B005268B9 /* ImageTrackingViewModel.swift */; };
+		65D08986291A917B005268B9 /* ElementCardTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D08985291A917B005268B9 /* ElementCardTrackingViewModel.swift */; };
 		65D0ECBB28FFDA070006E8E9 /* BeakerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */; };
 		65D1ED7328FE8BBC00B9725C /* SineWaveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D1ED7228FE8BBC00B9725C /* SineWaveShape.swift */; };
+		65DADAF9292F2F5B006098EA /* ChemistryBookTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DADAF8292F2F5B006098EA /* ChemistryBookTrackingView.swift */; };
 		65DB86F729227EFD003F53BF /* ImageFromURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB86F629227EFD003F53BF /* ImageFromURLView.swift */; };
 		65DB86FC292294D8003F53BF /* ChaptersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB86FB292294D7003F53BF /* ChaptersListViewModel.swift */; };
 		65DB86FF2922A60A003F53BF /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DB86FE2922A60A003F53BF /* Element.swift */; };
@@ -139,6 +146,7 @@
 		65E3BDB928F2BFB30081D29D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDB828F2BFB30081D29D /* HeaderView.swift */; };
 		65E3BDBB28F2C4DC0081D29D /* ProgramItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDBA28F2C4DC0081D29D /* ProgramItemView.swift */; };
 		65E46FB728E1BA630051A150 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46FB628E1BA630051A150 /* AppConstant.swift */; };
+		65E8939C2930A2AE0033E3E0 /* AutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E8939B2930A2AE0033E3E0 /* AutoScrollView.swift */; };
 		65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */; };
 		65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401228D5FE9D000F7477 /* ContentView.swift */; };
 		65ED401828D5FEA5000F7477 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65ED401728D5FEA5000F7477 /* Preview Assets.xcassets */; };
@@ -199,7 +207,7 @@
 		6579375D2922261600EBF5F8 /* SeriesUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesUseCaseImpl.swift; sourceTree = "<group>"; };
 		6579376329223C9700EBF5F8 /* SeriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRepository.swift; sourceTree = "<group>"; };
 		6579376629223E7200EBF5F8 /* SeriesHttpConnectionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesHttpConnectionImpl.swift; sourceTree = "<group>"; };
-		65830B6B28F026EB0052BA49 /* ImageTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrackingView.swift; sourceTree = "<group>"; };
+		65830B6B28F026EB0052BA49 /* ElementCardTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCardTrackingView.swift; sourceTree = "<group>"; };
 		65830B9428F082AF0052BA49 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		65830B9728F082C90052BA49 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		659404EA2901361700D78A70 /* FillShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillShape.swift; sourceTree = "<group>"; };
@@ -261,14 +269,21 @@
 		65BAC7D1291158E400B243E1 /* SolubilityTableJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SolubilityTableJSON.json; sourceTree = "<group>"; };
 		65BC8BB7290927B3004CC8A1 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		65BDB88E29268C50001EE2D7 /* ContentHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHolder.swift; sourceTree = "<group>"; };
+		65C71296292FADDB0026A2B9 /* ChemistryBookTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryBookTrackingViewModel.swift; sourceTree = "<group>"; };
+		65C71298292FB3FB0026A2B9 /* ModelHttpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHttpMapper.swift; sourceTree = "<group>"; };
+		65C7129B292FB6740026A2B9 /* EntityHttpConnectionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityHttpConnectionImpl.swift; sourceTree = "<group>"; };
+		65C7129E292FB7400026A2B9 /* EntityUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityUseCase.swift; sourceTree = "<group>"; };
+		65C712A0292FB74A0026A2B9 /* EntityUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityUseCaseImpl.swift; sourceTree = "<group>"; };
+		65C712A3292FB88C0026A2B9 /* EntityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityRepository.swift; sourceTree = "<group>"; };
 		65C8EE2C29101E7A00E251AB /* ElectrochemicalSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrochemicalSeriesView.swift; sourceTree = "<group>"; };
 		65C8EE2F2910225300E251AB /* ToolBarCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarCustomView.swift; sourceTree = "<group>"; };
 		65CDB1D429272C7300C640B9 /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
 		65CDB1D729272D8100C640B9 /* TablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesView.swift; sourceTree = "<group>"; };
 		65CDB1DA2927577500C640B9 /* VirtualLabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualLabViewModel.swift; sourceTree = "<group>"; };
-		65D08985291A917B005268B9 /* ImageTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTrackingViewModel.swift; sourceTree = "<group>"; };
+		65D08985291A917B005268B9 /* ElementCardTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCardTrackingViewModel.swift; sourceTree = "<group>"; };
 		65D0ECBA28FFDA070006E8E9 /* BeakerShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeakerShape.swift; sourceTree = "<group>"; };
 		65D1ED7228FE8BBC00B9725C /* SineWaveShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SineWaveShape.swift; sourceTree = "<group>"; };
+		65DADAF8292F2F5B006098EA /* ChemistryBookTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryBookTrackingView.swift; sourceTree = "<group>"; };
 		65DB86F629227EFD003F53BF /* ImageFromURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFromURLView.swift; sourceTree = "<group>"; };
 		65DB86FB292294D7003F53BF /* ChaptersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersListViewModel.swift; sourceTree = "<group>"; };
 		65DB86FE2922A60A003F53BF /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
@@ -285,6 +300,7 @@
 		65E3BDB828F2BFB30081D29D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		65E3BDBA28F2C4DC0081D29D /* ProgramItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramItemView.swift; sourceTree = "<group>"; };
 		65E46FB628E1BA630051A150 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		65E8939B2930A2AE0033E3E0 /* AutoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollView.swift; sourceTree = "<group>"; };
 		65ED400D28D5FE9D000F7477 /* ChemistryAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemistryAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryARApp.swift; sourceTree = "<group>"; };
 		65ED401228D5FE9D000F7477 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -715,8 +731,9 @@
 		65C1693128DAA71F004406CA /* AR Views */ = {
 			isa = PBXGroup;
 			children = (
-				65830B6B28F026EB0052BA49 /* ImageTrackingView.swift */,
+				65830B6B28F026EB0052BA49 /* ElementCardTrackingView.swift */,
 				65A66662292B5BB8009ABA69 /* VirtualElementView.swift */,
+				65DADAF8292F2F5B006098EA /* ChemistryBookTrackingView.swift */,
 			);
 			path = "AR Views";
 			sourceTree = "<group>";
@@ -732,6 +749,39 @@
 				65E3BDB328F275210081D29D /* CustomShape.swift */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		65C71295292FADB70026A2B9 /* ChemistryBookTracking */ = {
+			isa = PBXGroup;
+			children = (
+				65C71296292FADDB0026A2B9 /* ChemistryBookTrackingViewModel.swift */,
+			);
+			path = ChemistryBookTracking;
+			sourceTree = "<group>";
+		};
+		65C7129A292FB65D0026A2B9 /* Entitty */ = {
+			isa = PBXGroup;
+			children = (
+				65C7129B292FB6740026A2B9 /* EntityHttpConnectionImpl.swift */,
+			);
+			path = Entitty;
+			sourceTree = "<group>";
+		};
+		65C7129D292FB6810026A2B9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				65C7129E292FB7400026A2B9 /* EntityUseCase.swift */,
+				65C712A0292FB74A0026A2B9 /* EntityUseCaseImpl.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		65C712A2292FB8600026A2B9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				65C712A3292FB88C0026A2B9 /* EntityRepository.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		65C8EE2B29101E1200E251AB /* ElectrochemicalSeries */ = {
@@ -766,12 +816,12 @@
 			path = VirtuaLab;
 			sourceTree = "<group>";
 		};
-		65D08984291A9154005268B9 /* ImageTracking */ = {
+		65D08984291A9154005268B9 /* ElementCardTracking */ = {
 			isa = PBXGroup;
 			children = (
-				65D08985291A917B005268B9 /* ImageTrackingViewModel.swift */,
+				65D08985291A917B005268B9 /* ElementCardTrackingViewModel.swift */,
 			);
-			path = ImageTracking;
+			path = ElementCardTracking;
 			sourceTree = "<group>";
 		};
 		65DB86F829229486003F53BF /* ChaptersList */ = {
@@ -899,6 +949,7 @@
 				65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */,
 				65ED401228D5FE9D000F7477 /* ContentView.swift */,
 				6531F863292E5AFC004C5468 /* TestView.swift */,
+				65E8939B2930A2AE0033E3E0 /* AutoScrollView.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -937,13 +988,14 @@
 		65ED402228D60119000F7477 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				65C71295292FADB70026A2B9 /* ChemistryBookTracking */,
 				6531F85E292DC0AE004C5468 /* PeriodicTable */,
 				65CDB1D92927576000C640B9 /* VirtuaLab */,
 				65221A51292546E200A5C486 /* Lesson */,
 				65DB87112922AEFF003F53BF /* ElementDetail */,
 				65DB86FA292294AE003F53BF /* ChaptersList */,
 				657937412922159900EBF5F8 /* Home */,
-				65D08984291A9154005268B9 /* ImageTracking */,
+				65D08984291A9154005268B9 /* ElementCardTracking */,
 				65A759EA290FA30D005105B7 /* Models */,
 			);
 			path = ViewModels;
@@ -979,6 +1031,7 @@
 		65ED402728D60150000F7477 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				65C7129D292FB6810026A2B9 /* Entity */,
 				65221A492925441B00A5C486 /* Lesson */,
 				65B987CA2923C2E90087104A /* Reaction */,
 				65DB87072922ABE5003F53BF /* Element */,
@@ -1009,6 +1062,7 @@
 		65ED402A28D60176000F7477 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				65C712A2292FB8600026A2B9 /* Entity */,
 				65221A462925438800A5C486 /* Lesson */,
 				65B987C52923C23C0087104A /* Reaction */,
 				65DB870C2922AC28003F53BF /* Element */,
@@ -1042,6 +1096,7 @@
 		65ED402D28D601F2000F7477 /* Http */ = {
 			isa = PBXGroup;
 			children = (
+				65C7129A292FB65D0026A2B9 /* Entitty */,
 				65221A4E2925450C00A5C486 /* Lesson */,
 				65B987D12923C3D30087104A /* Reaction */,
 				65DB87042922ABC0003F53BF /* Element */,
@@ -1088,6 +1143,7 @@
 				65DB87022922A860003F53BF /* ElementHttpMapper.swift */,
 				65B987CF2923C3910087104A /* ReactionHttpMapper.swift */,
 				65221A442925422A00A5C486 /* LessonHttpMapper.swift */,
+				65C71298292FB3FB0026A2B9 /* ModelHttpMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -1283,7 +1339,9 @@
 				6531F862292E0BC4004C5468 /* SwipeBackViewModifier.swift in Sources */,
 				65221A41292540CF00A5C486 /* Lesson.swift in Sources */,
 				65DB87092922ABF0003F53BF /* ElementUseCase.swift in Sources */,
+				65C7129F292FB7400026A2B9 /* EntityUseCase.swift in Sources */,
 				659404EB2901361700D78A70 /* FillShape.swift in Sources */,
+				65DADAF9292F2F5B006098EA /* ChemistryBookTrackingView.swift in Sources */,
 				6579374A29221AA800EBF5F8 /* Series.swift in Sources */,
 				65DB870B2922ABFD003F53BF /* ElementUseCaseImpl.swift in Sources */,
 				6595DBAC28F5451B00B1F503 /* NavigationLazyView.swift in Sources */,
@@ -1343,6 +1401,7 @@
 				6523303C28D62623007F18F6 /* Bundle+Locator.swift in Sources */,
 				65B987D32923C3FD0087104A /* ReactionHttpConnectionImpl.swift in Sources */,
 				65ED403928D606CC000F7477 /* Logger.swift in Sources */,
+				65C7129C292FB6740026A2B9 /* EntityHttpConnectionImpl.swift in Sources */,
 				65B21D19290796D200D32753 /* BranchLessonItemView.swift in Sources */,
 				65B987D02923C3910087104A /* ReactionHttpMapper.swift in Sources */,
 				65A759E3290F8383005105B7 /* PeriodicTableView.swift in Sources */,
@@ -1358,11 +1417,12 @@
 				65B987CC2923C3170087104A /* ReactionUseCase.swift in Sources */,
 				65E3BDBB28F2C4DC0081D29D /* ProgramItemView.swift in Sources */,
 				65AB8A472906801C00F13B4B /* VideosListView.swift in Sources */,
+				65C712A1292FB74A0026A2B9 /* EntityUseCaseImpl.swift in Sources */,
 				657937522922206200EBF5F8 /* SeriesHttpMapper.swift in Sources */,
 				65B987C42923C1900087104A /* ReactionRequest.swift in Sources */,
 				65B7C7AE292BD051009D2B46 /* ControlButtonGroup.swift in Sources */,
 				65DB86FC292294D8003F53BF /* ChaptersListViewModel.swift in Sources */,
-				65D08986291A917B005268B9 /* ImageTrackingViewModel.swift in Sources */,
+				65D08986291A917B005268B9 /* ElementCardTrackingViewModel.swift in Sources */,
 				65B94EBA290EA8E7001F1FD4 /* ElementSectionView.swift in Sources */,
 				65DB87102922AD36003F53BF /* ElementRequest.swift in Sources */,
 				65093A6428F2FB9B00538549 /* BranchItemView.swift in Sources */,
@@ -1376,17 +1436,19 @@
 				65221A502925451900A5C486 /* LessonHttpConnectionImpl.swift in Sources */,
 				6595DBA228F522FC00B1F503 /* ChapterItemView.swift in Sources */,
 				65B987C22923C1880087104A /* Reaction.swift in Sources */,
+				65C712A4292FB88C0026A2B9 /* EntityRepository.swift in Sources */,
 				659404ED2901371300D78A70 /* WaveFillShape.swift in Sources */,
 				65221A4D2925447600A5C486 /* LessonUseCaseImpl.swift in Sources */,
 				65430EEA2907DD0800AA83BC /* WebView.swift in Sources */,
 				65ED403B28D606E9000F7477 /* ServerConstant.swift in Sources */,
 				65B987CE2923C3220087104A /* ReactionUseCaseImpl.swift in Sources */,
+				65C71297292FADDB0026A2B9 /* ChemistryBookTrackingViewModel.swift in Sources */,
 				65B21D16290796B200D32753 /* ChemistryBranchesView.swift in Sources */,
 				654CABEC28FD32080024A228 /* FloatButtonGroupView.swift in Sources */,
 				65B94EB8290EA8A0001F1FD4 /* PreferenceKey.swift in Sources */,
 				6579376729223E7200EBF5F8 /* SeriesHttpConnectionImpl.swift in Sources */,
 				65CDB1D829272D8100C640B9 /* TablesView.swift in Sources */,
-				65830B6C28F026EB0052BA49 /* ImageTrackingView.swift in Sources */,
+				65830B6C28F026EB0052BA49 /* ElementCardTrackingView.swift in Sources */,
 				650B7704290CF72100F8E1C2 /* BackButton.swift in Sources */,
 				65E3BDB428F275210081D29D /* CustomShape.swift in Sources */,
 				65B987C92923C2710087104A /* ReactionRepository.swift in Sources */,
@@ -1395,10 +1457,12 @@
 				6579374729221A7300EBF5F8 /* EmptyRequest.swift in Sources */,
 				65985E3828EC77EC00061E68 /* AppState.swift in Sources */,
 				65430EE82907DAF700AA83BC /* LessonDetailView.swift in Sources */,
+				65E8939C2930A2AE0033E3E0 /* AutoScrollView.swift in Sources */,
 				65B0EC212902C9ED008C49E0 /* MetalGroupView.swift in Sources */,
 				65A7D56629026DB0009F7206 /* DropGroupView.swift in Sources */,
 				65A86E0728F7E063007BBB16 /* CustomSceneView.swift in Sources */,
 				65AFFBFA2923875C003AE15E /* HeaderSectionView.swift in Sources */,
+				65C71299292FB3FB0026A2B9 /* ModelHttpMapper.swift in Sources */,
 				65793743292215A700EBF5F8 /* HomeViewModel.swift in Sources */,
 				65985E3428EC5D1800061E68 /* OffsetPageTabView.swift in Sources */,
 				65DB87012922A834003F53BF /* ElementHttpEntity.swift in Sources */,

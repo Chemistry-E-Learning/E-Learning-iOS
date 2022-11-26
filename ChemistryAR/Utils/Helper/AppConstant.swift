@@ -9,6 +9,7 @@ import Foundation
 
 struct AppConstant {
     static let ChemistryElementResource = "Chemistry Element"
+    static let ChemistryBookResource = "Chemistry Book"
     static let NoAsset = "Missing expected asset catalog resources."
     static let MaximumImageTracking = 2
     static let NoContent = "---"

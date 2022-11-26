@@ -25,9 +25,11 @@ struct CustomSceneView: UIViewRepresentable {
 
     func updateUIView(_ uiView: SCNView, context: Context) {
         let scene: SCNScene? = .init(named: "art.scnassets/\(model.name).scn")
+        print("MinhNN44 - \(model.name) - \(scene)")
         scene?.rootNode.scale = model.scale
         scene?.rootNode.eulerAngles.x = model.angle
-        scene?.rootNode.position.y = Float(-3)
+        scene?.rootNode.position.y = model.position.y
+        scene?.rootNode.position.x = model.position.x
         uiView.scene = scene
     }
 }

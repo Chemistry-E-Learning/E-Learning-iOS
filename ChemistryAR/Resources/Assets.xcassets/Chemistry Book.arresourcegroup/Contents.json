@@ -1,0 +1,14 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "resources" : [
+    {
+      "filename" : "battery-zn-cu.arreferenceimage"
+    },
+    {
+      "filename" : "electrolysis-cu.arreferenceimage"
+    }
+  ]
+}

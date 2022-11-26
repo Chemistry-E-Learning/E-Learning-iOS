@@ -6,9 +6,18 @@
 //
 
 import Foundation
+import SceneKit
 
 struct ElementHttpMapper {
     static func map(entity: ElementHttpEntity) -> ElementDetail {
+        let models = entity.models?.map({ model in
+            return Element3DModel(
+                name: model.name,
+                scale: SCNVector3(x: model.scale?.xVector ?? 1, y:  model.scale?.yVector ?? 1, z:  model.scale?.zVector ?? 1),
+                position: SCNVector3(x: model.position?.xVector ?? 0, y:  model.position?.yVector ?? 0, z:  model.position?.zVector ?? 0),
+                angle: (model.angle ?? 0) / 180
+            )
+        })
         return ElementDetail(
             id: entity.id,
             name: entity.name,
@@ -35,7 +44,8 @@ struct ElementHttpMapper {
             electronegativity: entity.electronegativity,
             ionizationEnergies: entity.ionizationEnergies,
             chemotherapy: entity.chemotherapy,
-            tag: NoticeTag(rawValue: entity.tag ?? "")
+            tag: NoticeTag(rawValue: entity.tag ?? ""),
+            models: models
         )
     }
 

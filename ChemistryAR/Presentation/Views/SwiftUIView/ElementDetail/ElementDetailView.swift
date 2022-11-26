@@ -11,7 +11,7 @@ struct ElementDetailView: View {
     @StateObject private var viewModel: ElementViewModel
     @Binding var isPushToElementDetailView: Bool
     @State private var headerOffset = CGFloat.zero
-    @State private var model: Element3DModel = Element3DModel.dummyData[0]
+    @State private var model = Element3DModel.emptyData
     @State private var index = 0
 
     init(isPushToElementDetailView: Binding<Bool>, elementID: String) {
@@ -78,44 +78,48 @@ struct ElementDetailView: View {
 }
 
 private extension ElementDetailView {
-    func make3DViewer(height: CGFloat) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
-            ZStack(alignment: .bottom) {
-                CustomSceneView(model: $model)
-                    .frame(height: height * 0.28)
-                    .background(Color.black)
-            }
-            .onChange(of: index) { _ in
-                if index >= 0 && index < viewModel.models.count {
-                    model = viewModel.models[index]
+    @ViewBuilder func make3DViewer(height: CGFloat) -> some View {
+        if let models = viewModel.models {
+            VStack(alignment: .leading, spacing: 0) {
+                ZStack(alignment: .bottom) {
+                    CustomSceneView(model: $model)
+                        .frame(height: height * 0.28)
+                        .background(Color.black)
                 }
-            }
-            HStack {
-                Rectangle()
-                    .squareFrame(44)
-                    .padding(.leading, 16)
-                Spacer()
-                ControlButtonGroup(index: $index, dataCount: viewModel.models.count)
-                    .scaleEffect(0.5)
-                Spacer()
-                Button {
-                    viewModel.onClickCameraButton()
-                } label: {
-                    Image("ic_3d")
-                        .renderingMode(.template)
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(.white)
+                .onAppear {
+                    model = models.first ?? Element3DModel.emptyData
                 }
-                .squareFrame(36)
-                .padding(.trailing, 16)
+                .onChange(of: index) { _ in
+                    if index >= 0 && index < models.count {
+                        model = models[index]
+                    }
+                }
+                HStack {
+                    Rectangle()
+                        .squareFrame(44)
+                        .padding(.leading, 16)
+                    Spacer()
+                    ControlButtonGroup(index: $index, dataCount: models.count)
+                        .scaleEffect(0.5)
+                    Spacer()
+                    Button {
+                        viewModel.onClickCameraButton()
+                    } label: {
+                        Image("ic_3d")
+                            .renderingMode(.template)
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.white)
+                    }
+                    .squareFrame(36)
+                    .padding(.trailing, 16)
+                }
+                .padding(.bottom, height * 0.01)
+                .frame(height: height * 0.06)
+                .background(Color.black)
+                Spacer()
             }
-            .padding(.bottom, height * 0.01)
-            .frame(height: height * 0.06)
-            .background(Color.black)
-            Spacer()
         }
-
     }
     func makeButtonGroupView() -> some View {
         HStack {
