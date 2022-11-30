@@ -25,7 +25,7 @@ struct MainTabView: View {
             if selectedTab == .home {
                 HomeView()
             } else if selectedTab == .ar {
-                ElementCardTrackingView()
+                ARCameraView()
                     .ignoresSafeArea(.all, edges: .all)
             } else if selectedTab == .lab {
                 VirtualLabView(selectedTab: $selectedTab)

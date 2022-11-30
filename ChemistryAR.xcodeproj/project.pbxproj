@@ -72,6 +72,8 @@
 		65985E3428EC5D1800061E68 /* OffsetPageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E3328EC5D1800061E68 /* OffsetPageTabView.swift */; };
 		65985E3628EC775D00061E68 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E3528EC775D00061E68 /* UserDefaultKeys.swift */; };
 		65985E3828EC77EC00061E68 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65985E3728EC77EC00061E68 /* AppState.swift */; };
+		659C0DFD2937395200890906 /* ToggleCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C0DFC2937395200890906 /* ToggleCustomView.swift */; };
+		659C0E00293754BC00890906 /* ARCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659C0DFF293754BC00890906 /* ARCameraView.swift */; };
 		65A5861429010316007A0860 /* WaterFlowAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5861329010316007A0860 /* WaterFlowAnimation.swift */; };
 		65A5861629011C16007A0860 /* DropShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A5861529011C16007A0860 /* DropShape.swift */; };
 		65A66663292B5BB8009ABA69 /* VirtualElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A66662292B5BB8009ABA69 /* VirtualElementView.swift */; };
@@ -226,6 +228,8 @@
 		65985E3328EC5D1800061E68 /* OffsetPageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPageTabView.swift; sourceTree = "<group>"; };
 		65985E3528EC775D00061E68 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
 		65985E3728EC77EC00061E68 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		659C0DFC2937395200890906 /* ToggleCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCustomView.swift; sourceTree = "<group>"; };
+		659C0DFF293754BC00890906 /* ARCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCameraView.swift; sourceTree = "<group>"; };
 		65A5861329010316007A0860 /* WaterFlowAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFlowAnimation.swift; sourceTree = "<group>"; };
 		65A5861529011C16007A0860 /* DropShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropShape.swift; sourceTree = "<group>"; };
 		65A66662292B5BB8009ABA69 /* VirtualElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualElementView.swift; sourceTree = "<group>"; };
@@ -543,6 +547,7 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				659C0DFE293754A800890906 /* ARCamera */,
 				65CDB1D629272D7100C640B9 /* Tables */,
 				65CDB1D329272C6400C640B9 /* SideBar */,
 				65985E2728EBE01A00061E68 /* BaseView */,
@@ -580,6 +585,14 @@
 				65985E3328EC5D1800061E68 /* OffsetPageTabView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		659C0DFE293754A800890906 /* ARCamera */ = {
+			isa = PBXGroup;
+			children = (
+				659C0DFF293754BC00890906 /* ARCameraView.swift */,
+			);
+			path = ARCamera;
 			sourceTree = "<group>";
 		};
 		65A759E1290F8354005105B7 /* PeriodicTable */ = {
@@ -646,6 +659,7 @@
 				65BDB88E29268C50001EE2D7 /* ContentHolder.swift */,
 				65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */,
 				6531F861292E0BC4004C5468 /* SwipeBackViewModifier.swift */,
+				659C0DFC2937395200890906 /* ToggleCustomView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1334,6 +1348,7 @@
 				6523304128D62699007F18F6 /* RequestInfo.swift in Sources */,
 				65D0ECBB28FFDA070006E8E9 /* BeakerShape.swift in Sources */,
 				6531F862292E0BC4004C5468 /* SwipeBackViewModifier.swift in Sources */,
+				659C0DFD2937395200890906 /* ToggleCustomView.swift in Sources */,
 				65221A41292540CF00A5C486 /* Lesson.swift in Sources */,
 				65DB87092922ABF0003F53BF /* ElementUseCase.swift in Sources */,
 				65C7129F292FB7400026A2B9 /* EntityUseCase.swift in Sources */,
@@ -1395,6 +1410,7 @@
 				65A759E9290FA2B2005105B7 /* Matrix.swift in Sources */,
 				65ED403728D60434000F7477 /* ColorExtension.swift in Sources */,
 				65A759ED290FA329005105B7 /* PeriodicElement.swift in Sources */,
+				659C0E00293754BC00890906 /* ARCameraView.swift in Sources */,
 				6523303C28D62623007F18F6 /* Bundle+Locator.swift in Sources */,
 				65B987D32923C3FD0087104A /* ReactionHttpConnectionImpl.swift in Sources */,
 				65ED403928D606CC000F7477 /* Logger.swift in Sources */,
