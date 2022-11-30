@@ -29,7 +29,7 @@ extension View {
     func createHostingController(for node: SCNNode, width: CGFloat, height: CGFloat) {
         DispatchQueue.main.async {
             let arVC = UIHostingController(rootView: self)
-            arVC.view.backgroundColor = UIColor.red
+            arVC.view.backgroundColor = UIColor.clear
             arVC.view.frame = CGRect(x: 0, y: 0, width: width, height: height)
             let material = SCNMaterial()
             arVC.view.isOpaque = false

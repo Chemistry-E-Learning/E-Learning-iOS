@@ -14,7 +14,6 @@ final class ElementCardTrackingViewModel: ObservableObject {
     @Published var overview = OverviewModel.emptyData
     @Published var nature = NatureModel.emptyData
     @Published var atomParameters = AtomParameter.emptyData
-    @Published var properties: [Property]?
     @Published var isLoading = true
     @Published var isShowError = false
     @Published var reactants = [String]()
@@ -24,11 +23,9 @@ final class ElementCardTrackingViewModel: ObservableObject {
     private let reactionUseCase: ReactionUseCase
     private var disposables = Set<AnyCancellable>()
     init(
-        isTrackingView: Bool = true,
         elementUseCase: ElementUseCase = DIContainer.shared.getElementUseCase(),
         reactionUseCase: ReactionUseCase = DIContainer.shared.getReactionUseCase()
     ) {
-        self.isLoading = isTrackingView
         self.elementUseCase = elementUseCase
         self.reactionUseCase = reactionUseCase
     }

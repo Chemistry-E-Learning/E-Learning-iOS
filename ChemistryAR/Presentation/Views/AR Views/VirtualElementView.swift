@@ -129,17 +129,6 @@ struct PeriodicTableARView: UIViewRepresentable {
         node.geometry?.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 1)
         node.position.x = Float(0.08)
         node.position.y = Float(-0.02)
-        InformationView(
-            overview: overview,
-            nature: nature,
-            atomParameter: atomParameter,
-            isTrackingImage: false
-        )
-        .createHostingController(
-            for: node,
-            width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height
-        )
     }
 
     func addModelEntityInNode(

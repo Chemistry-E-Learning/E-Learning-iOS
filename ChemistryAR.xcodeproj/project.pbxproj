@@ -146,7 +146,6 @@
 		65E3BDB928F2BFB30081D29D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDB828F2BFB30081D29D /* HeaderView.swift */; };
 		65E3BDBB28F2C4DC0081D29D /* ProgramItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E3BDBA28F2C4DC0081D29D /* ProgramItemView.swift */; };
 		65E46FB728E1BA630051A150 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E46FB628E1BA630051A150 /* AppConstant.swift */; };
-		65E8939C2930A2AE0033E3E0 /* AutoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E8939B2930A2AE0033E3E0 /* AutoScrollView.swift */; };
 		65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */; };
 		65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED401228D5FE9D000F7477 /* ContentView.swift */; };
 		65ED401828D5FEA5000F7477 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65ED401728D5FEA5000F7477 /* Preview Assets.xcassets */; };
@@ -300,7 +299,6 @@
 		65E3BDB828F2BFB30081D29D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		65E3BDBA28F2C4DC0081D29D /* ProgramItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramItemView.swift; sourceTree = "<group>"; };
 		65E46FB628E1BA630051A150 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
-		65E8939B2930A2AE0033E3E0 /* AutoScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollView.swift; sourceTree = "<group>"; };
 		65ED400D28D5FE9D000F7477 /* ChemistryAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemistryAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryARApp.swift; sourceTree = "<group>"; };
 		65ED401228D5FE9D000F7477 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -949,7 +947,6 @@
 				65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */,
 				65ED401228D5FE9D000F7477 /* ContentView.swift */,
 				6531F863292E5AFC004C5468 /* TestView.swift */,
-				65E8939B2930A2AE0033E3E0 /* AutoScrollView.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1457,7 +1454,6 @@
 				6579374729221A7300EBF5F8 /* EmptyRequest.swift in Sources */,
 				65985E3828EC77EC00061E68 /* AppState.swift in Sources */,
 				65430EE82907DAF700AA83BC /* LessonDetailView.swift in Sources */,
-				65E8939C2930A2AE0033E3E0 /* AutoScrollView.swift in Sources */,
 				65B0EC212902C9ED008C49E0 /* MetalGroupView.swift in Sources */,
 				65A7D56629026DB0009F7206 /* DropGroupView.swift in Sources */,
 				65A86E0728F7E063007BBB16 /* CustomSceneView.swift in Sources */,

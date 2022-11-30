@@ -25,13 +25,7 @@ struct MainTabView: View {
             if selectedTab == .home {
                 HomeView()
             } else if selectedTab == .ar {
-                VirtualElementView(
-                    isShowARCamera: .constant(false),
-                    models: .constant([]),
-                    overview: OverviewModel.emptyData,
-                    nature: NatureModel.emptyData,
-                    atomParameter: AtomParameter.emptyData
-                )
+                ElementCardTrackingView()
                     .ignoresSafeArea(.all, edges: .all)
             } else if selectedTab == .lab {
                 VirtualLabView(selectedTab: $selectedTab)

@@ -9,6 +9,7 @@ import SwiftUI
 import Foundation
 import SceneKit
 import ARKit
+import AVKit
 
 struct ChemistryBookTrackingView: View {
     @StateObject private var viewModel = ChemistryBookTrackingViewModel()
@@ -76,8 +77,13 @@ class BookCoordinator: NSObject, ARSCNViewDelegate {
     @ObservedObject var viewModel: ChemistryBookTrackingViewModel
     @Binding var isTracking: Bool
     @Binding var entityName: String
+    private var avPlayer = AVPlayer()
 
-    init(viewModel: ObservedObject<ChemistryBookTrackingViewModel>, isTracking: Binding<Bool>, entityName: Binding<String>) {
+    init(
+        viewModel: ObservedObject<ChemistryBookTrackingViewModel>,
+        isTracking: Binding<Bool>,
+        entityName: Binding<String>
+    ) {
         _viewModel = viewModel
         _isTracking = isTracking
         _entityName = entityName
@@ -91,14 +97,23 @@ class BookCoordinator: NSObject, ARSCNViewDelegate {
     }
 
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-        if let imageAnchor = anchor as? ARImageAnchor, let _ = imageAnchor.name {
-            if imageAnchor.isTracked && viewModel.currentModel != nil && node.childNodes.count <= 0 {
+        if let imageAnchor = anchor as? ARImageAnchor, let imageName = imageAnchor.name {
+            guard let model = viewModel.currentModel else { return }
+            if imageAnchor.isTracked && node.childNodes.count <= 0 {
                 let physicalSize = imageAnchor.referenceImage.physicalSize
-                let plane = SCNPlane(width: physicalSize.width, height: physicalSize.height)
+                let plane = SCNPlane(
+                    width: physicalSize.width,
+                    height: physicalSize.height
+                )
                 let planeNode = SCNNode(geometry: plane)
                 planeNode.eulerAngles.x = -.pi / 2
-                plane.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 1)
-                if let model = viewModel.currentModel {
+
+                if imageName.contains("video"), let videoURL = URL(string: model.name) {
+                    avPlayer = AVPlayer(url: videoURL)
+                    plane.firstMaterial?.diffuse.contents = avPlayer
+                    node.addChildNode(planeNode)
+                    avPlayer.play()
+                } else {
                     addModelEntityInNode(
                         modelName: model.name,
                         scale: model.scale,
@@ -106,8 +121,12 @@ class BookCoordinator: NSObject, ARSCNViewDelegate {
                         for: planeNode,
                         with: physicalSize
                     )
+                    node.addChildNode(planeNode)
                 }
-                node.addChildNode(planeNode)
+            } else if !imageAnchor.isTracked && imageName.contains("video") {
+                avPlayer.pause()
+            } else if imageAnchor.isTracked && imageName.contains("video") {
+                avPlayer.play()
             }
         }
     }
@@ -127,22 +146,6 @@ private extension BookCoordinator {
                 self.viewModel.currentModel = nil
             }
             viewModel.doGetEntityDetail(with: imageName)
-            #warning("TODO: MinhNN44 - Remove later")
-            let physicalSize = imageAnchor.referenceImage.physicalSize
-            let plane = SCNPlane(width: physicalSize.width, height: physicalSize.height)
-            let planeNode = SCNNode(geometry: plane)
-            planeNode.eulerAngles.x = -.pi / 2
-            plane.firstMaterial?.diffuse.contents = UIColor(white: 1, alpha: 1)
-            addModelEntityInNode(
-                modelName: "geometrie-molecolari",
-                scale: SCNVector3(x: 0.5, y: 0.5, z: 0.5),
-                position: SCNVector3(x: 0, y: 0, z: 0),
-                for: planeNode,
-                with: physicalSize
-            )
-            node.addChildNode(planeNode)
-
-
         }
     }
 
