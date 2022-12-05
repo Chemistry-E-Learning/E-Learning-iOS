@@ -21,6 +21,7 @@ enum Localization: String {
     case lessonsAttributeTitle
     case timeAttributeTitle
     case classProgramAttributeTitle
+    case newsChemistryTitle
     case radiationTitle
     case theoreticalElementTitle
     case overviewTitle
@@ -67,11 +68,14 @@ enum Localization: String {
     case slightlySoluble
     case decomposesInWater
     case unavailableSoluble
+    case voltageTitle
 
     // MARK: - NavigationTitle
     case periodicTableTitle
     case electrochemicalSeriesTitle
     case solubilityTableTitle
+    case alkanePropertiesTitle
+    case hydrocarbonChainTitle
     case experimentVideoTitle
 
     var localizedString: String {

@@ -11,13 +11,14 @@ struct ARCameraView: View {
     @State private var isTrackingCard = true
     var body: some View {
         ZStack(alignment: .top) {
+            if isTrackingCard {
+                ElementCardTrackingView()
+            } else {
+                ChemistryBookTrackingView()
+            }
             HStack {
+                Spacer()
                 ToggleCustomView(isTrackingCard: $isTrackingCard)
-                if isTrackingCard {
-                    ElementCardTrackingView()
-                } else {
-                    ChemistryBookTrackingView()
-                }
             }
             .padding(.top, 40)
             .padding(.horizontal, 20)

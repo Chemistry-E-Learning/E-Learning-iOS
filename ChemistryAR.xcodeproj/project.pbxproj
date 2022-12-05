@@ -117,6 +117,16 @@
 		65BAC7D2291158E400B243E1 /* SolubilityTableJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 65BAC7D1291158E400B243E1 /* SolubilityTableJSON.json */; };
 		65BC8BB8290927B3004CC8A1 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC8BB7290927B3004CC8A1 /* TagView.swift */; };
 		65BDB88F29268C50001EE2D7 /* ContentHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BDB88E29268C50001EE2D7 /* ContentHolder.swift */; };
+		65C00229293B83F300511093 /* AnkanPropertiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C00228293B83F200511093 /* AnkanPropertiesView.swift */; };
+		65C15980293DA1EA006F374F /* NewsHttpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1597F293DA1EA006F374F /* NewsHttpEntity.swift */; };
+		65C15982293DA280006F374F /* NewsHttpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C15981293DA280006F374F /* NewsHttpMapper.swift */; };
+		65C15984293DA557006F374F /* ChemistryNewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C15983293DA557006F374F /* ChemistryNewsDetailView.swift */; };
+		65C15987293DCE89006F374F /* NewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C15986293DCE89006F374F /* NewsUseCase.swift */; };
+		65C15989293DCE98006F374F /* NewsUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C15988293DCE98006F374F /* NewsUseCaseImpl.swift */; };
+		65C1598C293DCF54006F374F /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1598B293DCF54006F374F /* NewsRepository.swift */; };
+		65C1598F293DCF73006F374F /* NewsHttpConnectionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1598E293DCF73006F374F /* NewsHttpConnectionImpl.swift */; };
+		65C15992293DD13D006F374F /* CarouselsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C15991293DD13D006F374F /* CarouselsViewModel.swift */; };
+		65C15994293DE01C006F374F /* NewsContentHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C15993293DE01C006F374F /* NewsContentHolder.swift */; };
 		65C71297292FADDB0026A2B9 /* ChemistryBookTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C71296292FADDB0026A2B9 /* ChemistryBookTrackingViewModel.swift */; };
 		65C71299292FB3FB0026A2B9 /* ModelHttpMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C71298292FB3FB0026A2B9 /* ModelHttpMapper.swift */; };
 		65C7129C292FB6740026A2B9 /* EntityHttpConnectionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7129B292FB6740026A2B9 /* EntityHttpConnectionImpl.swift */; };
@@ -157,6 +167,9 @@
 		65ED403D28D606F6000F7477 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ED403C28D606F6000F7477 /* DIContainer.swift */; };
 		65EEB8DE2910F17D00474BFF /* SolubilityTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EEB8DD2910F17D00474BFF /* SolubilityTableView.swift */; };
 		65F7A5F8291D084B0091D5CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F7A5F7291D084B0091D5CE /* AppDelegate.swift */; };
+		65FCE32E293C469B0078186B /* HydrocarbonChainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCE32D293C469B0078186B /* HydrocarbonChainView.swift */; };
+		65FCE334293C86EE0078186B /* CarouselItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCE333293C86EE0078186B /* CarouselItemView.swift */; };
+		65FCE336293C8B420078186B /* CarouselViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCE335293C8B420078186B /* CarouselViewEntity.swift */; };
 		E7EFBEBD7D064843085F995E /* Pods_ChemistryAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C29B6DA53CABA3BA48A514 /* Pods_ChemistryAR.framework */; };
 /* End PBXBuildFile section */
 
@@ -272,6 +285,16 @@
 		65BAC7D1291158E400B243E1 /* SolubilityTableJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SolubilityTableJSON.json; sourceTree = "<group>"; };
 		65BC8BB7290927B3004CC8A1 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		65BDB88E29268C50001EE2D7 /* ContentHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentHolder.swift; sourceTree = "<group>"; };
+		65C00228293B83F200511093 /* AnkanPropertiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnkanPropertiesView.swift; sourceTree = "<group>"; };
+		65C1597F293DA1EA006F374F /* NewsHttpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHttpEntity.swift; sourceTree = "<group>"; };
+		65C15981293DA280006F374F /* NewsHttpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHttpMapper.swift; sourceTree = "<group>"; };
+		65C15983293DA557006F374F /* ChemistryNewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryNewsDetailView.swift; sourceTree = "<group>"; };
+		65C15986293DCE89006F374F /* NewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUseCase.swift; sourceTree = "<group>"; };
+		65C15988293DCE98006F374F /* NewsUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUseCaseImpl.swift; sourceTree = "<group>"; };
+		65C1598B293DCF54006F374F /* NewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
+		65C1598E293DCF73006F374F /* NewsHttpConnectionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHttpConnectionImpl.swift; sourceTree = "<group>"; };
+		65C15991293DD13D006F374F /* CarouselsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselsViewModel.swift; sourceTree = "<group>"; };
+		65C15993293DE01C006F374F /* NewsContentHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContentHolder.swift; sourceTree = "<group>"; };
 		65C71296292FADDB0026A2B9 /* ChemistryBookTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryBookTrackingViewModel.swift; sourceTree = "<group>"; };
 		65C71298292FB3FB0026A2B9 /* ModelHttpMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelHttpMapper.swift; sourceTree = "<group>"; };
 		65C7129B292FB6740026A2B9 /* EntityHttpConnectionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityHttpConnectionImpl.swift; sourceTree = "<group>"; };
@@ -313,6 +336,9 @@
 		65ED403C28D606F6000F7477 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		65EEB8DD2910F17D00474BFF /* SolubilityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolubilityTableView.swift; sourceTree = "<group>"; };
 		65F7A5F7291D084B0091D5CE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65FCE32D293C469B0078186B /* HydrocarbonChainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrocarbonChainView.swift; sourceTree = "<group>"; };
+		65FCE333293C86EE0078186B /* CarouselItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItemView.swift; sourceTree = "<group>"; };
+		65FCE335293C8B420078186B /* CarouselViewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewEntity.swift; sourceTree = "<group>"; };
 		69C29B6DA53CABA3BA48A514 /* Pods_ChemistryAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChemistryAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF952D4FAD307029EDE348AF /* Pods-ChemistryAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.release.xcconfig"; path = "Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -455,6 +481,7 @@
 		6579374829221A8D00EBF5F8 /* Series */ = {
 			isa = PBXGroup;
 			children = (
+				65FCE335293C8B420078186B /* CarouselViewEntity.swift */,
 				6579374929221AA800EBF5F8 /* Series.swift */,
 				65793755292221FC00EBF5F8 /* SeriesList.swift */,
 				6579374B29221AB700EBF5F8 /* SeriesRequest.swift */,
@@ -547,6 +574,9 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				65FCE32F293C86B90078186B /* Carousel */,
+				65FCE32C293C46870078186B /* HydrocarbonChain */,
+				65DA6C3D2939EFBE00AB2A3E /* AnkanProperties */,
 				659C0DFE293754A800890906 /* ARCamera */,
 				65CDB1D629272D7100C640B9 /* Tables */,
 				65CDB1D329272C6400C640B9 /* SideBar */,
@@ -660,6 +690,7 @@
 				65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */,
 				6531F861292E0BC4004C5468 /* SwipeBackViewModifier.swift */,
 				659C0DFC2937395200890906 /* ToggleCustomView.swift */,
+				65C15993293DE01C006F374F /* NewsContentHolder.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -738,6 +769,39 @@
 				65EEB8DD2910F17D00474BFF /* SolubilityTableView.swift */,
 			);
 			path = SolubilityTable;
+			sourceTree = "<group>";
+		};
+		65C15985293DCE77006F374F /* News */ = {
+			isa = PBXGroup;
+			children = (
+				65C15986293DCE89006F374F /* NewsUseCase.swift */,
+				65C15988293DCE98006F374F /* NewsUseCaseImpl.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		65C1598A293DCF24006F374F /* News */ = {
+			isa = PBXGroup;
+			children = (
+				65C1598B293DCF54006F374F /* NewsRepository.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		65C1598D293DCF65006F374F /* News */ = {
+			isa = PBXGroup;
+			children = (
+				65C1598E293DCF73006F374F /* NewsHttpConnectionImpl.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		65C15990293DD12D006F374F /* Carousels */ = {
+			isa = PBXGroup;
+			children = (
+				65C15991293DD13D006F374F /* CarouselsViewModel.swift */,
+			);
+			path = Carousels;
 			sourceTree = "<group>";
 		};
 		65C1693128DAA71F004406CA /* AR Views */ = {
@@ -834,6 +898,14 @@
 				65D08985291A917B005268B9 /* ElementCardTrackingViewModel.swift */,
 			);
 			path = ElementCardTracking;
+			sourceTree = "<group>";
+		};
+		65DA6C3D2939EFBE00AB2A3E /* AnkanProperties */ = {
+			isa = PBXGroup;
+			children = (
+				65C00228293B83F200511093 /* AnkanPropertiesView.swift */,
+			);
+			path = AnkanProperties;
 			sourceTree = "<group>";
 		};
 		65DB86F829229486003F53BF /* ChaptersList */ = {
@@ -999,6 +1071,7 @@
 		65ED402228D60119000F7477 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				65C15990293DD12D006F374F /* Carousels */,
 				65C71295292FADB70026A2B9 /* ChemistryBookTracking */,
 				6531F85E292DC0AE004C5468 /* PeriodicTable */,
 				65CDB1D92927576000C640B9 /* VirtuaLab */,
@@ -1042,6 +1115,7 @@
 		65ED402728D60150000F7477 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				65C15985293DCE77006F374F /* News */,
 				65C7129D292FB6810026A2B9 /* Entity */,
 				65221A492925441B00A5C486 /* Lesson */,
 				65B987CA2923C2E90087104A /* Reaction */,
@@ -1073,6 +1147,7 @@
 		65ED402A28D60176000F7477 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				65C1598A293DCF24006F374F /* News */,
 				65C712A2292FB8600026A2B9 /* Entity */,
 				65221A462925438800A5C486 /* Lesson */,
 				65B987C52923C23C0087104A /* Reaction */,
@@ -1107,6 +1182,7 @@
 		65ED402D28D601F2000F7477 /* Http */ = {
 			isa = PBXGroup;
 			children = (
+				65C1598D293DCF65006F374F /* News */,
 				65C7129A292FB65D0026A2B9 /* Entitty */,
 				65221A4E2925450C00A5C486 /* Lesson */,
 				65B987D12923C3D30087104A /* Reaction */,
@@ -1142,6 +1218,7 @@
 				65B987C62923C24F0087104A /* ReactionHttpEntity.swift */,
 				65221A422925420300A5C486 /* LessonHttpEntity.swift */,
 				650C19A629291C71004E15C1 /* ChemicalHttpEntity.swift */,
+				65C1597F293DA1EA006F374F /* NewsHttpEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1155,6 +1232,7 @@
 				65B987CF2923C3910087104A /* ReactionHttpMapper.swift */,
 				65221A442925422A00A5C486 /* LessonHttpMapper.swift */,
 				65C71298292FB3FB0026A2B9 /* ModelHttpMapper.swift */,
+				65C15981293DA280006F374F /* NewsHttpMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -1198,6 +1276,31 @@
 				6523303D28D6263C007F18F6 /* String+Localizable.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		65FCE32C293C46870078186B /* HydrocarbonChain */ = {
+			isa = PBXGroup;
+			children = (
+				65FCE32D293C469B0078186B /* HydrocarbonChainView.swift */,
+			);
+			path = HydrocarbonChain;
+			sourceTree = "<group>";
+		};
+		65FCE32F293C86B90078186B /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				65FCE332293C86D60078186B /* Components */,
+				65C15983293DA557006F374F /* ChemistryNewsDetailView.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		65FCE332293C86D60078186B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				65FCE333293C86EE0078186B /* CarouselItemView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		75D4713C920CE1D0A6D35317 /* Pods */ = {
@@ -1365,7 +1468,9 @@
 				6507FAE928F6AAF40013813A /* VirtualLabView.swift in Sources */,
 				6579375E2922261600EBF5F8 /* SeriesUseCaseImpl.swift in Sources */,
 				6531F860292DC0BF004C5468 /* PeriodicTableViewModel.swift in Sources */,
+				65FCE334293C86EE0078186B /* CarouselItemView.swift in Sources */,
 				65ED401328D5FE9D000F7477 /* ContentView.swift in Sources */,
+				65C15982293DA280006F374F /* NewsHttpMapper.swift in Sources */,
 				65985E2928EBE04800061E68 /* MainTabView.swift in Sources */,
 				65221A532925477E00A5C486 /* LessonsListViewModel.swift in Sources */,
 				6579375C2922260C00EBF5F8 /* SeriesUseCase.swift in Sources */,
@@ -1388,9 +1493,11 @@
 				650C19A729291C71004E15C1 /* ChemicalHttpEntity.swift in Sources */,
 				657937582922228C00EBF5F8 /* SeriesListHttpEntity.swift in Sources */,
 				65A759F3290FB1E5005105B7 /* Localization.swift in Sources */,
+				65FCE32E293C469B0078186B /* HydrocarbonChainView.swift in Sources */,
 				65BDB88F29268C50001EE2D7 /* ContentHolder.swift in Sources */,
 				6595DBA728F5275100B1F503 /* ChaptersListView.swift in Sources */,
 				65793745292219F300EBF5F8 /* CommonHttpEntity.swift in Sources */,
+				65C1598C293DCF54006F374F /* NewsRepository.swift in Sources */,
 				6523304528D626A7007F18F6 /* AlamofireNetworkService.swift in Sources */,
 				65221A4B2925446B00A5C486 /* LessonUseCase.swift in Sources */,
 				65221A452925422A00A5C486 /* LessonHttpMapper.swift in Sources */,
@@ -1418,6 +1525,7 @@
 				65B21D19290796D200D32753 /* BranchLessonItemView.swift in Sources */,
 				65B987D02923C3910087104A /* ReactionHttpMapper.swift in Sources */,
 				65A759E3290F8383005105B7 /* PeriodicTableView.swift in Sources */,
+				65C00229293B83F300511093 /* AnkanPropertiesView.swift in Sources */,
 				65E3BDB728F2BF530081D29D /* HomeView.swift in Sources */,
 				6579375029221FFA00EBF5F8 /* SeriesHttpEntity.swift in Sources */,
 				65A759F2290FA3BD005105B7 /* ElementItemView.swift in Sources */,
@@ -1426,13 +1534,16 @@
 				65221A482925439600A5C486 /* LessonRepository.swift in Sources */,
 				65A5861429010316007A0860 /* WaterFlowAnimation.swift in Sources */,
 				6523304328D626A0007F18F6 /* NetworkService.swift in Sources */,
+				65C1598F293DCF73006F374F /* NewsHttpConnectionImpl.swift in Sources */,
 				65CDB1D529272C7300C640B9 /* SideBarView.swift in Sources */,
 				65B987CC2923C3170087104A /* ReactionUseCase.swift in Sources */,
+				65C15989293DCE98006F374F /* NewsUseCaseImpl.swift in Sources */,
 				65E3BDBB28F2C4DC0081D29D /* ProgramItemView.swift in Sources */,
 				65AB8A472906801C00F13B4B /* VideosListView.swift in Sources */,
 				65C712A1292FB74A0026A2B9 /* EntityUseCaseImpl.swift in Sources */,
 				657937522922206200EBF5F8 /* SeriesHttpMapper.swift in Sources */,
 				65B987C42923C1900087104A /* ReactionRequest.swift in Sources */,
+				65C15992293DD13D006F374F /* CarouselsViewModel.swift in Sources */,
 				65B7C7AE292BD051009D2B46 /* ControlButtonGroup.swift in Sources */,
 				65DB86FC292294D8003F53BF /* ChaptersListViewModel.swift in Sources */,
 				65D08986291A917B005268B9 /* ElementCardTrackingViewModel.swift in Sources */,
@@ -1458,11 +1569,13 @@
 				65C71297292FADDB0026A2B9 /* ChemistryBookTrackingViewModel.swift in Sources */,
 				65B21D16290796B200D32753 /* ChemistryBranchesView.swift in Sources */,
 				654CABEC28FD32080024A228 /* FloatButtonGroupView.swift in Sources */,
+				65C15987293DCE89006F374F /* NewsUseCase.swift in Sources */,
 				65B94EB8290EA8A0001F1FD4 /* PreferenceKey.swift in Sources */,
 				6579376729223E7200EBF5F8 /* SeriesHttpConnectionImpl.swift in Sources */,
 				65CDB1D829272D8100C640B9 /* TablesView.swift in Sources */,
 				65830B6C28F026EB0052BA49 /* ElementCardTrackingView.swift in Sources */,
 				650B7704290CF72100F8E1C2 /* BackButton.swift in Sources */,
+				65C15994293DE01C006F374F /* NewsContentHolder.swift in Sources */,
 				65E3BDB428F275210081D29D /* CustomShape.swift in Sources */,
 				65B987C92923C2710087104A /* ReactionRepository.swift in Sources */,
 				65A759EF290FA32F005105B7 /* PeriodicElement+Extension.swift in Sources */,
@@ -1475,6 +1588,7 @@
 				65A86E0728F7E063007BBB16 /* CustomSceneView.swift in Sources */,
 				65AFFBFA2923875C003AE15E /* HeaderSectionView.swift in Sources */,
 				65C71299292FB3FB0026A2B9 /* ModelHttpMapper.swift in Sources */,
+				65C15980293DA1EA006F374F /* NewsHttpEntity.swift in Sources */,
 				65793743292215A700EBF5F8 /* HomeViewModel.swift in Sources */,
 				65985E3428EC5D1800061E68 /* OffsetPageTabView.swift in Sources */,
 				65DB87012922A834003F53BF /* ElementHttpEntity.swift in Sources */,
@@ -1482,6 +1596,8 @@
 				65C8EE302910225300E251AB /* ToolBarCustomView.swift in Sources */,
 				657937542922211F00EBF5F8 /* CommonEntity.swift in Sources */,
 				65985E3028EC5BCF00061E68 /* OnboardingView.swift in Sources */,
+				65FCE336293C8B420078186B /* CarouselViewEntity.swift in Sources */,
+				65C15984293DA557006F374F /* ChemistryNewsDetailView.swift in Sources */,
 				6523304728D626AE007F18F6 /* NetworkServiceProtocol.swift in Sources */,
 				65DB86FF2922A60A003F53BF /* Element.swift in Sources */,
 			);

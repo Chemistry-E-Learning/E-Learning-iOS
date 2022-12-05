@@ -44,6 +44,8 @@
 "ionizationEnergiesTitle" = "Năng Lượng Ion Hoá";
 "chemistryTablesTitle" = "Bảng Hoá Học";
 "noReactionTitle" = "Không Phản Ứng";
+"voltageTitle" = "Điện Áp";
+"newsChemistryTitle" = "Tin Mới Hoá Học";
 // MARK: - ElementGroup 
 "allElementTitle" = "Tất cả các nguyên tố";
 "diatomicNonMetalTitle" = "Diatomic Phi Kim";
@@ -68,3 +70,5 @@
 "electrochemicalSeriesTitle" = "Dãy Điện Hoá";
 "solubilityTableTitle" = "Bảng Tính Tan";
 "experimentVideoTitle" = "Video Thí Nghiệm";
+"alkanePropertiesTitle" = "Tính Chất Của Alkane";
+"hydrocarbonChainTitle" = "Mạch Hydrocarbon";

@@ -10,5 +10,6 @@ import Foundation
 struct SeriesListHttpEntity: Codable {
     let programSeries: CommonHttpEntity<SeriesHttpEntity>
     let branchSeries: CommonHttpEntity<SeriesHttpEntity>
+    let chemistryNews: CommonHttpEntity<NewsHttpEntity>
     let lawSeries: CommonHttpEntity<SeriesHttpEntity>
 }

@@ -45,14 +45,14 @@ struct SideBarView: View {
                         index = 3
                         isShowSideBar = false
                     }) {
-                        TabItemView(image: "ion", title: Localization.electrochemicalSeriesTitle.localizedString, color: self.index == 2 ? Color.red : Color.black)
-                            .foregroundColor(self.index == 4 ? Color.red : Color.black)
+                        TabItemView(image: "methane", title: Localization.alkanePropertiesTitle.localizedString, color: self.index == 3 ? Color.red : Color.black)
+                            .foregroundColor(self.index == 3 ? Color.red : Color.black)
                     }
                     Button(action: {
                         index = 4
                         isShowSideBar = false
                     }) {
-                        TabItemView(image: "ion", title: Localization.electrochemicalSeriesTitle.localizedString, color: self.index == 3 ? Color.red : Color.black)
+                        TabItemView(image: "organic", title: Localization.hydrocarbonChainTitle.localizedString, color: self.index == 4 ? Color.red : Color.black)
                             .foregroundColor(self.index == 4 ? Color.red : Color.black)
                     }
                     Spacer()
@@ -60,7 +60,7 @@ struct SideBarView: View {
                         index = -1
                         isShowSideBar = false
                     }) {
-                        TabItemView(image: "home", title: "Go Home", color: self.index == -1 ? Color.red : Color.black)
+                        TabItemView(image: "home", title: "Home", color: self.index == -1 ? Color.red : Color.black)
                             .foregroundColor(self.index == -1 ? Color.red : Color.black)
                     }
                     .padding(.bottom, getSafeArea(edge: .bottom) + 60)

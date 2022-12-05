@@ -25,6 +25,7 @@ struct HomeView: View {
                         VStack(alignment: .leading, spacing: 12) {
                             makeProgramCarouselView(geo: geo)
                             branchOfChemistryView
+                            makeNewsCarouselView(geo: geo)
                             lawOfChemistryView
                                 .padding(.top, 28)
                                 .padding(.bottom, getSafeArea(edge: .bottom) + 72)
@@ -63,6 +64,17 @@ private extension HomeView {
                     )
                 ),
                 isActive: $viewModel.isPushToBranchesView
+            ) {
+                EmptyView()
+            }
+            NavigationLink(
+                destination: NavigationLazyView(
+                    ChemistryNewsDetailView(
+                        isPushToNewsDetailView: $viewModel.isPushToNewsDetailView,
+                        newsID: viewModel.newsID
+                    )
+                ),
+                isActive: $viewModel.isPushToNewsDetailView
             ) {
                 EmptyView()
             }
@@ -113,6 +125,25 @@ private extension HomeView {
             }
             .frame(width: getScreenBounds().width, height: geo.size.height * 0.4)
         }
+    }
+
+    func makeNewsCarouselView(geo: GeometryProxy) -> some View {
+        VStack(alignment: .leading, spacing: 32) {
+            makeTitleView(title: Localization.newsChemistryTitle.localizedString)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 16) {
+                    ForEach(viewModel.chemistryNews) { item in
+                        CarouselItemView(model: item, size: geo.size)
+                            .onTapGesture {
+                                viewModel.onClickNewsItemView(id: item.id)
+                            }
+                    }
+                }
+                .padding(.horizontal, 20)
+            }
+            .frame(height: 220)
+        }
+        .padding(.top, 24)
     }
 
     var branchOfChemistryView: some View {

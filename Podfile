@@ -10,5 +10,4 @@ target 'ChemistryAR' do
 pod 'lottie-ios'
 pod 'Swinject'
 pod 'Alamofire'
-
 end

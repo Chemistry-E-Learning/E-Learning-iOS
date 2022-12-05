@@ -16,26 +16,25 @@ struct ToggleCustomView: View {
             }
             Circle()
                 .fill(Color.white)
-                .squareFrame(44)
+                .squareFrame(40)
                 .overlay(
                     Image(isTrackingCard ? "card" : "book")
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 28)
+                        .frame(height: 24)
                 )
             if isTrackingCard {
                 Spacer()
             }
         }
         .padding(.horizontal, 4)
-        .frame(width: 100, height: 52)
+        .frame(width: 90, height: 48)
         .background(
             Color.white.opacity(0.5).onTapGesture {
                 isTrackingCard.toggle()
             }
         )
-        .cornerRadius(30)
-
+        .cornerRadius(24)
     }
 }
 

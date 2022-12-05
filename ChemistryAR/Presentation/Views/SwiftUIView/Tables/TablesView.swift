@@ -13,6 +13,7 @@ struct TablesView: View {
     @State private var index = 0
     @State private var isShowFilterView = false
     @State private var isShowInformationSheet = false
+    @State private var isShowWikipediaView = false
 
     var body: some View {
         ZStack {
@@ -57,6 +58,10 @@ private extension TablesView {
             SolubilityTableView(isShowInformationSheet: $isShowInformationSheet)
         case 2:
             ElectrochemicalSeriesView()
+        case 3:
+            AnkanPropertiesView()
+        case 4:
+            HydrocarbonChainView(isShowWikipediaView: $isShowWikipediaView)
         default:
             EmptyView()
         }
@@ -73,6 +78,10 @@ private extension TablesView {
             return Localization.solubilityTableTitle.localizedString
         case 2:
             return Localization.electrochemicalSeriesTitle.localizedString
+        case 3:
+            return Localization.alkanePropertiesTitle.localizedString
+        case 4:
+            return Localization.hydrocarbonChainTitle.localizedString
         default:
             return "Tables"
         }
@@ -82,6 +91,8 @@ private extension TablesView {
         switch index {
         case 0:
             isShowFilterView = true
+        case 4:
+            isShowWikipediaView = true
         default:
             return
         }
@@ -91,6 +102,8 @@ private extension TablesView {
         switch index {
         case 0:
             return "filter"
+        case 4:
+            return "wikipedia"
         default:
             return ""
         }

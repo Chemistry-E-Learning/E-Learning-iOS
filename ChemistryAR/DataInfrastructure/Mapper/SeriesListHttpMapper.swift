@@ -63,6 +63,7 @@ struct SeriesListHttpMapper {
         return SeriesList(
             programSeries: programSeries,
             branchSeries: branchSeries,
+            chemistryNews: NewsHttpMapper.map(entities: entity.chemistryNews),
             lawSeries: lawSeries
         )
     }

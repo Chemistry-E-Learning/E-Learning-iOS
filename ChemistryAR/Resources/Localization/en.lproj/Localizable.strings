@@ -44,6 +44,8 @@
 "ionizationEnergiesTitle" = "Ionization Energies";
 "chemistryTablesTitle" = "Chemistry Tables";
 "noReactionTitle" = "No Reaction";
+"voltageTitle" = "Voltage";
+"newsChemistryTitle" = "Chemistry News";
 // MARK: - ElementGroup
 "allElementTitle" = "All Elements";
 "diatomicNonMetalTitle" = "Diatomic NonMetal";
@@ -68,4 +70,5 @@
 "electrochemicalSeriesTitle" = "Electrochemical Series";
 "solubilityTableTitle" = "Solubility Table";
 "experimentVideoTitle" = "Experiment Video";
-
+"alkanePropertiesTitle" = "Alkane Properties";
+"hydrocarbonChainTitle" = "Hydrocarbon Chain";

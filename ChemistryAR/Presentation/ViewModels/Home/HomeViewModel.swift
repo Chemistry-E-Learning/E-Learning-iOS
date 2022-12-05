@@ -11,15 +11,19 @@ import Foundation
 final class HomeViewModel: ObservableObject {
     @Published var programSeries = [Series](repeating: Series.emptyData, count: 5)
     @Published var branchSeries = AppConstant.branchesDummyData
+    @Published var chemistryNews = [CarouselViewEntity](repeating: CarouselViewEntity.emptyData, count: 9)
     @Published var lawSeries = [Series](repeating: Series.emptyData, count: 9)
     @Published var isPushToChaptersListView = false
     @Published var isPushToBranchesView = false
     @Published var isPushToLawsView = false
+    @Published var isPushToNewsDetailView = false
     @Published var isLoading = true
     @Published var isShowError = false
     private(set) var seriesID = ""
+    private(set) var newsID = ""
     private(set) var program = Series.emptyData
     private(set) var videoNumber = 32
+
 
     private let seriesUseCase: SeriesUseCase
     private var disposables = Set<AnyCancellable>()
@@ -50,6 +54,7 @@ extension HomeViewModel {
                 guard let self = self else { return }
                 self.programSeries = response.programSeries.contents
                 self.branchSeries = response.branchSeries.contents
+                self.chemistryNews = response.chemistryNews.contents
                 self.lawSeries = response.lawSeries.contents
             }
             .store(in: &disposables)
@@ -72,5 +77,10 @@ extension HomeViewModel {
     func onClickLawItemView(id: String) {
         isPushToLawsView = true
         seriesID = id
+    }
+
+    func onClickNewsItemView(id: String) {
+        newsID = id
+        isPushToNewsDetailView = true
     }
 }
