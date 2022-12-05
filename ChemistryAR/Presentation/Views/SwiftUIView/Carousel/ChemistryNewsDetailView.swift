@@ -39,6 +39,7 @@ struct ChemistryNewsDetailView: View {
                     }
                 }
             }
+            .swipeBack(isPresented: $isPushToNewsDetailView, maxTranslation: geo.size.width / 3)
         }
         .ignoresSafeArea(.all)
         .navigationBarHidden(true)
