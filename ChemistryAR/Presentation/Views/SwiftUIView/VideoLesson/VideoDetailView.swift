@@ -67,6 +67,7 @@ struct VideoDetailView: View {
                 BackButton(action: {
                     isPushToVideoDetailView = false
                 }, fontWeight: .medium, color: .black)
+                .padding(.leading, -12)
                 .scaleEffect(0.8)
             }
             ToolbarItem(placement: .navigation) {
