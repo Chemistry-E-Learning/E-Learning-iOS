@@ -16,8 +16,23 @@ struct BoardingModel: Identifiable {
     var bgColor: Color
 
     static let screens = [
-        BoardingModel(image: "", title: "Title test", description: "Le lorem ipsum est, en imprimerie, une suite", bgColor: Color.red),
-        BoardingModel(image: "", title: "Title test", description: "Le lorem ipsum est, en imprimerie, une suite", bgColor: Color.green),
-        BoardingModel(image: "", title: "Title test", description: "Le lorem ipsum est, en imprimerie, une suite", bgColor: Color.purple)
+        BoardingModel(
+            image: "onboarding-first",
+            title: Localization.arTitle.localizedString,
+            description: Localization.arDesc.localizedString,
+            bgColor: Color(hex: 0x7D5ACE)
+        ),
+        BoardingModel(
+            image: "onboarding-second",
+            title: Localization.experimentPracticeTitle.localizedString,
+            description: Localization.experimentPracticeDesc.localizedString,
+            bgColor: Color(hex: 0x6691D2)
+        ),
+        BoardingModel(
+            image: "onboarding-last",
+            title: Localization.additionalKnowledgeTitle.localizedString,
+            description: Localization.additionalKnowledgeDesc.localizedString,
+            bgColor: Color(hex: 0x00A899)
+        )
     ]
 }

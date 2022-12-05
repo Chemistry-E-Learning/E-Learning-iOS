@@ -100,6 +100,7 @@
 		65B2CE8C291948D50032C812 /* ChemicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B2CE8B291948D50032C812 /* ChemicalView.swift */; };
 		65B3510C290FCDA500BEDD92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65B3510E290FCDA500BEDD92 /* Localizable.strings */; };
 		65B35111290FCDF100BEDD92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65B35113290FCDF100BEDD92 /* Localizable.strings */; };
+		65B3DB8F293E44A800D906F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65B3DB8E293E44A800D906F5 /* GoogleService-Info.plist */; };
 		65B7C7AE292BD051009D2B46 /* ControlButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */; };
 		65B94EB8290EA8A0001F1FD4 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */; };
 		65B94EBA290EA8E7001F1FD4 /* ElementSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */; };
@@ -268,6 +269,7 @@
 		65B2CE8B291948D50032C812 /* ChemicalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemicalView.swift; sourceTree = "<group>"; };
 		65B3510D290FCDA500BEDD92 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65B35112290FCDF100BEDD92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65B3DB8E293E44A800D906F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonGroup.swift; sourceTree = "<group>"; };
 		65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSectionView.swift; sourceTree = "<group>"; };
@@ -1029,6 +1031,7 @@
 		65ED401E28D6009F000F7477 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				65B3DB8E293E44A800D906F5 /* GoogleService-Info.plist */,
 				65F7A5F7291D084B0091D5CE /* AppDelegate.swift */,
 				65ED401028D5FE9D000F7477 /* ChemistryARApp.swift */,
 				65ED401228D5FE9D000F7477 /* ContentView.swift */,
@@ -1387,6 +1390,7 @@
 			files = (
 				65830B9528F082AF0052BA49 /* art.scnassets in Resources */,
 				65B3510C290FCDA500BEDD92 /* Localizable.strings in Resources */,
+				65B3DB8F293E44A800D906F5 /* GoogleService-Info.plist in Resources */,
 				65ED401828D5FEA5000F7477 /* Preview Assets.xcassets in Resources */,
 				65B35111290FCDF100BEDD92 /* Localizable.strings in Resources */,
 				65A759E5290FA1CC005105B7 /* PeriodicTableJSON.json in Resources */,

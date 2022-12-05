@@ -72,3 +72,10 @@
 "experimentVideoTitle" = "Experiment Video";
 "alkanePropertiesTitle" = "Alkane Properties";
 "hydrocarbonChainTitle" = "Hydrocarbon Chain";
+// MARK: - OnBoarding
+"arTitle" = "Augmented Reality";
+"arDesc" = "Augmented reality technology helps students visualize configurations, experiments, and lessons.";
+"experimentPracticeTitle" = "Experiment Practice";
+"experimentPracticeDesc" = "2D experiments help students visualize and practice basic chemistry exercises.";
+"additionalKnowledgeTitle" = "Additional Knowledge";
+"additionalKnowledgeDesc" = "Additional knowledge around chemistry helps students love and be more passionate about chemistry.";

@@ -72,3 +72,10 @@
 "experimentVideoTitle" = "Video Thí Nghiệm";
 "alkanePropertiesTitle" = "Tính Chất Của Alkane";
 "hydrocarbonChainTitle" = "Mạch Hydrocarbon";
+// MARK: - OnBoarding
+"arTitle" = "Thực Tế Tăng Cường";
+"arDesc" = "Công nghệ thực tế tăng cường giúp học sinh trực quan hoá các cấu hình, thí nghiệm và bài học.";
+"experimentPracticeTitle" = "Thực Hành Thí Nghiệm";
+"experimentPracticeDesc" = "Thí nghiệm 2D giúp học sinh có thể hình dung và thực hành các bài thực hành hoá học căn bản.";
+"additionalKnowledgeTitle" = "Kiến Thức Bổ Trợ";
+"additionalKnowledgeDesc" = "Các kiến thức bổ trợ xoay quanh hoá học giúp học sinh yêu thích và đam mê việc học hoá hơn.";

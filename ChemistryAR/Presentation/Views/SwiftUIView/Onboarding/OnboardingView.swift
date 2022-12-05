@@ -17,11 +17,8 @@ struct OnboardingView: View {
                         Image(screen.image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(
-                                width: getScreenBounds().width - 100,
-                                height: getScreenBounds().width - 100
-                            )
-                            .offset(y: -110)
+                            .squareFrame(getScreenBounds().width * 0.6)
+                            .offset(y: -getScreenBounds().width * 0.46)
                         VStack(alignment: .leading, spacing: 12) {
                             Text(screen.title)
                                 .font(.largeTitle.bold())
@@ -31,7 +28,7 @@ struct OnboardingView: View {
                                 .foregroundColor(.white)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .offset(y: -70)
+                        .offset(y: -40)
                     }
                     .padding()
                     .frame(width: getScreenBounds().width)
@@ -52,7 +49,7 @@ struct OnboardingView: View {
                 .offset(y: -getScreenBounds().width + 20)
         )
         .background(
-            Color("screen\(getIndex() + 1)")
+            BoardingModel.screens[getIndex()].bgColor
                 .animation(.easeInOut, value: getIndex())
         )
         .ignoresSafeArea(.container, edges: .all)

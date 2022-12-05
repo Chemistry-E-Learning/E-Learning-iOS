@@ -78,6 +78,14 @@ enum Localization: String {
     case hydrocarbonChainTitle
     case experimentVideoTitle
 
+    // MARK: - Onboarding
+    case arTitle
+    case arDesc
+    case experimentPracticeTitle
+    case experimentPracticeDesc
+    case additionalKnowledgeTitle
+    case additionalKnowledgeDesc
+
     var localizedString: String {
         return rawValue.localizedString
     }
