@@ -86,6 +86,10 @@ struct UserSettingView: View {
                 })
                 .padding(.top, 12)
             }
+            .swipeBack(
+                isPresented: $isPushToUserSettingView,
+                maxTranslation: geo.size.width / 3
+            )
             .sheet(isPresented: $isShowImagePicker, onDismiss: loadImage) {
                 ImagePicker(selectedImage: $inputImage)
             }

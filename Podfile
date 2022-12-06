@@ -10,5 +10,7 @@ target 'ChemistryAR' do
 pod 'lottie-ios'
 pod 'Swinject'
 pod 'Alamofire'
-pod 'Firebase/Analytics'
+pod 'Firebase/Crashlytics', '~> 9.6.0'
+pod 'Firebase/AnalyticsWithoutAdIdSupport', '~> 9.6.0'
+pod 'Firebase/Messaging', '~> 9.6.0'
 end

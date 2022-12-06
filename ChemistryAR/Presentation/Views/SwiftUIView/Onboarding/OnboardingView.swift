@@ -49,8 +49,7 @@ struct OnboardingView: View {
                 .offset(y: -getScreenBounds().width + 20)
         )
         .background(
-            BoardingModel.screens[getIndex()].bgColor
-                .animation(.easeInOut, value: getIndex())
+            backgroundView
         )
         .ignoresSafeArea(.container, edges: .all)
         .overlay {
@@ -93,6 +92,12 @@ struct OnboardingView: View {
 
 // MARK: - Logic Function
 private extension OnboardingView {
+    @ViewBuilder var backgroundView: some View {
+        if getIndex() >= 0 && getIndex() < BoardingModel.screens.count {
+            BoardingModel.screens[getIndex()].bgColor
+                .animation(.easeInOut, value: getIndex())
+        }
+    }
     func getIndex() -> Int {
         let progress = (offset / getScreenBounds().width).rounded()
         return Int(progress)

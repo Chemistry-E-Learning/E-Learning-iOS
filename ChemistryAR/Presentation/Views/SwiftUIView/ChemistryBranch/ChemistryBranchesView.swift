@@ -14,6 +14,7 @@ struct ChemistryBranchesView: View {
     init(isPushToBranchesView: Binding<Bool>, seriesID: String) {
         _isPushToBranchesView = isPushToBranchesView
         _viewModel = .init(wrappedValue: LessonsListViewModel(seriesID: seriesID))
+        GA4Manager.shared.trackScreenView(.branchesOfChemistry)
     }
 
     var body: some View {
