@@ -26,6 +26,8 @@ struct ChapterItemView: View {
                     Text(programDetail.seriesName)
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.white)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(2)
                 }
                 .redacted(if: programDetail.id.isEmpty)
                 Spacer()

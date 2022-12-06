@@ -13,34 +13,37 @@ struct ElementWikipediaView: View {
     let url: String
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                BackButton(action: {
-                    isPushToWikipediaView = false
-                }, fontWeight: .medium, color: .black)
-                Spacer()
-                HStack(spacing: -1) {
-                    Image("wikipedia")
-                        .resizable()
-                        .squareFrame(36)
-                    Text("ikipedia")
-                        .font(.system(size: 20, weight: .medium))
-                        .tracking(2)
-                        .offset(y: 3)
+        GeometryReader { geo in
+            VStack(alignment: .leading) {
+                HStack {
+                    BackButton(action: {
+                        isPushToWikipediaView = false
+                    }, fontWeight: .medium, color: .black)
+                    Spacer()
+                    HStack(spacing: -1) {
+                        Image("wikipedia")
+                            .resizable()
+                            .squareFrame(36)
+                        Text("ikipedia")
+                            .font(.system(size: 20, weight: .medium))
+                            .tracking(2)
+                            .offset(y: 3)
+                    }
+                    Spacer()
+                    Rectangle()
+                        .squareFrame(44)
+                        .opacity(0)
                 }
-                Spacer()
-                Rectangle()
-                    .squareFrame(44)
-                    .opacity(0)
+                WebView(
+                    contentHeight: .constant(0),
+                    isLoading: $isLoading,
+                    type: .external,
+                    url: url
+                )
             }
-            WebView(
-                contentHeight: .constant(0),
-                isLoading: $isLoading,
-                type: .external,
-                url: url
-            )
+            .swipeBack(isPresented: $isPushToWikipediaView, maxTranslation: geo.size.width / 3)
+            .ignoresSafeArea(.all, edges: .bottom)
         }
-        .ignoresSafeArea(.all, edges: .bottom)
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)
