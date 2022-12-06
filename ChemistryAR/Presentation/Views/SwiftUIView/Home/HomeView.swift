@@ -24,7 +24,7 @@ struct HomeView: View {
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 12) {
                             makeProgramCarouselView(geo: geo)
-                            branchOfChemistryView
+                            makeBranchOfChemistryView(width: geo.size.width)
                             makeNewsCarouselView(geo: geo)
                             lawOfChemistryView
                                 .padding(.top, 28)
@@ -154,13 +154,12 @@ private extension HomeView {
         .padding(.top, 24)
     }
 
-    var branchOfChemistryView: some View {
+    func makeBranchOfChemistryView(width: CGFloat) -> some View {
         VStack(alignment: .leading, spacing: 20) {
             makeTitleView(title: Localization.branchesOfChemistryTitle.localizedString)
             LazyVGrid(columns: branchColumns, spacing: 20) {
                 ForEach(viewModel.branchSeries) { item in
-                    BranchItemView(branch: item)
-                        .frame(height: 216)
+                    BranchItemView(branch: item, width: width)
                         .onTapGesture {
                             viewModel.onClickBranchItemView(id: item.id)
                         }

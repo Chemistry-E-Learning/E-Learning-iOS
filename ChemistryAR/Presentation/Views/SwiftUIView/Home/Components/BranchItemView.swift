@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BranchItemView: View {
     let branch: Series
+    let width: CGFloat
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -16,7 +17,7 @@ struct BranchItemView: View {
                 image: branch.thumbImage?.url ?? "",
                 isClearBackground: false
             )
-                .frame(height: 120)
+                .frame(height: width * 0.28)
                 .cornerRadius(12, corners: [.topLeft, .topRight])
                 .clipped()
             VStack(alignment: .leading) {
@@ -44,7 +45,6 @@ struct BranchItemView: View {
             .padding(.leading, 16)
             Spacer()
         }
-        .frame(height: 216)
         .background(
             Color.white.cornerRadius(12)
         )
