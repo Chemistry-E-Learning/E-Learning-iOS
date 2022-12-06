@@ -9,6 +9,7 @@ import Foundation
 
 enum UserDefaultKeys: String {
     case user
+    case username
     case isFirstLaunch
 
     var stringValue: String {
@@ -27,6 +28,15 @@ class UserDefaultsData {
         }
         set {
             userDefaults.set(newValue, forKey: UserDefaultKeys.isFirstLaunch.stringValue)
+        }
+    }
+
+    var username: String {
+        get {
+            return userDefaults.string(forKey: UserDefaultKeys.username.stringValue) ?? AppConstant.NoContent
+        }
+        set {
+            userDefaults.set(newValue, forKey: UserDefaultKeys.username.stringValue)
         }
     }
 }

@@ -109,6 +109,7 @@ private extension UserSettingView {
             HStack {
                 Button {
                     saveImage()
+                    UserDefaultsData.shared.username = viewModel.user.username
                     let user = UserViewEntity(
                         username: viewModel.user.username,
                         fullName: viewModel.user.fullName,

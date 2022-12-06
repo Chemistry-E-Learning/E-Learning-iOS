@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
     @Binding var isPushToUserSettingView: Bool
+    @State private var image: Image = Image("avatar")
 
     var body: some View {
         HStack {
@@ -21,23 +22,36 @@ struct HeaderView: View {
                         .resizable()
                         .frame(width: 16, height: 16)
                 }
-                Text("Minh Nguyen")
+                Text(UserDefaultsData.shared.username)
                     .font(.system(size: 15, weight: .medium))
             }
             Spacer()
             Button {
                 isPushToUserSettingView = true
             } label: {
-                Image("avatar")
+                image
                     .resizable()
                     .squareFrame(48)
                     .clipShape(Circle())
             }
             .squareFrame(48)
         }
+        .onAppear {
+            loadImageUserDefault()
+        }
         .padding(.vertical, 12 )
         .padding(.horizontal, 20)
         .background(Color.clear)
+    }
+}
+
+private extension HeaderView {
+    func loadImageUserDefault() {
+        guard let data = UserDefaults.standard.data(forKey: "avatar") else { return }
+        let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
+        if let uiImage = UIImage(data: decoded) {
+            image = Image(uiImage: uiImage)
+        }
     }
 }
 

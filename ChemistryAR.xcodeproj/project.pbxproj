@@ -104,6 +104,9 @@
 		65B77A46293EDFDC00DB6325 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77A45293EDFDC00DB6325 /* UserSettingView.swift */; };
 		65B77A49293EFE8600DB6325 /* UserSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77A48293EFE8600DB6325 /* UserSettingViewModel.swift */; };
 		65B77A4F293F28B600DB6325 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77A4E293F28B600DB6325 /* ImagePicker.swift */; };
+		65B77A51293F3C3900DB6325 /* transition.json in Resources */ = {isa = PBXBuildFile; fileRef = 65B77A50293F3C3900DB6325 /* transition.json */; };
+		65B77A53293F3C4400DB6325 /* tutorial.json in Resources */ = {isa = PBXBuildFile; fileRef = 65B77A52293F3C4400DB6325 /* tutorial.json */; };
+		65B77A55293F3DE400DB6325 /* LottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77A54293F3DE400DB6325 /* LottieAnimationView.swift */; };
 		65B7C7AE292BD051009D2B46 /* ControlButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */; };
 		65B94EB8290EA8A0001F1FD4 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */; };
 		65B94EBA290EA8E7001F1FD4 /* ElementSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */; };
@@ -276,6 +279,9 @@
 		65B77A45293EDFDC00DB6325 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		65B77A48293EFE8600DB6325 /* UserSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewModel.swift; sourceTree = "<group>"; };
 		65B77A4E293F28B600DB6325 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		65B77A50293F3C3900DB6325 /* transition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transition.json; sourceTree = "<group>"; };
+		65B77A52293F3C4400DB6325 /* tutorial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tutorial.json; sourceTree = "<group>"; };
+		65B77A54293F3DE400DB6325 /* LottieAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationView.swift; sourceTree = "<group>"; };
 		65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonGroup.swift; sourceTree = "<group>"; };
 		65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSectionView.swift; sourceTree = "<group>"; };
@@ -612,6 +618,7 @@
 			children = (
 				65985E2C28EC560A00061E68 /* SplashAnimationView.swift */,
 				65985E2828EBE04800061E68 /* MainTabView.swift */,
+				65B77A54293F3DE400DB6325 /* LottieAnimationView.swift */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -655,7 +662,9 @@
 		65A759E7290FA1ED005105B7 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				65B77A52293F3C4400DB6325 /* tutorial.json */,
 				65985E2A28EC51A800061E68 /* splash.json */,
+				65B77A50293F3C3900DB6325 /* transition.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -1408,11 +1417,13 @@
 				65830B9528F082AF0052BA49 /* art.scnassets in Resources */,
 				65B3510C290FCDA500BEDD92 /* Localizable.strings in Resources */,
 				65B3DB8F293E44A800D906F5 /* GoogleService-Info.plist in Resources */,
+				65B77A53293F3C4400DB6325 /* tutorial.json in Resources */,
 				65ED401828D5FEA5000F7477 /* Preview Assets.xcassets in Resources */,
 				65B35111290FCDF100BEDD92 /* Localizable.strings in Resources */,
 				65A759E5290FA1CC005105B7 /* PeriodicTableJSON.json in Resources */,
 				65BAC7D2291158E400B243E1 /* SolubilityTableJSON.json in Resources */,
 				65AF945B28F1D0A500B77BEB /* Assets.xcassets in Resources */,
+				65B77A51293F3C3900DB6325 /* transition.json in Resources */,
 				65985E2B28EC51A800061E68 /* splash.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1575,6 +1586,7 @@
 				65DB87102922AD36003F53BF /* ElementRequest.swift in Sources */,
 				65093A6428F2FB9B00538549 /* BranchItemView.swift in Sources */,
 				6531F864292E5AFC004C5468 /* TestView.swift in Sources */,
+				65B77A55293F3DE400DB6325 /* LottieAnimationView.swift in Sources */,
 				65EEB8DE2910F17D00474BFF /* SolubilityTableView.swift in Sources */,
 				65DB870E2922ACFD003F53BF /* ElementRepository.swift in Sources */,
 				65E3BDB928F2BFB30081D29D /* HeaderView.swift in Sources */,

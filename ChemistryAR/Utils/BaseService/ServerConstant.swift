@@ -9,7 +9,7 @@ import Foundation
 
 struct ServerConstant {
     struct URLBase {
-        static var baseAPIURL = "http:/localhost:3000/api/v1"
+        static var baseAPIURL = "http:/192.168.2.5:3000/api/v1"
     }
 
     struct APIURL {
