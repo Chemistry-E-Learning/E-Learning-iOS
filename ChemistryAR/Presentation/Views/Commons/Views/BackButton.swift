@@ -31,5 +31,6 @@ struct BackButton: View {
 struct BackButton_Previews: PreviewProvider {
     static var previews: some View {
         BackButton(action: {})
+            .background(Color.black)
     }
 }

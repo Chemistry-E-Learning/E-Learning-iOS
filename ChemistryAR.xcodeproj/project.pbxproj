@@ -101,6 +101,9 @@
 		65B3510C290FCDA500BEDD92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65B3510E290FCDA500BEDD92 /* Localizable.strings */; };
 		65B35111290FCDF100BEDD92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65B35113290FCDF100BEDD92 /* Localizable.strings */; };
 		65B3DB8F293E44A800D906F5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65B3DB8E293E44A800D906F5 /* GoogleService-Info.plist */; };
+		65B77A46293EDFDC00DB6325 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77A45293EDFDC00DB6325 /* UserSettingView.swift */; };
+		65B77A49293EFE8600DB6325 /* UserSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77A48293EFE8600DB6325 /* UserSettingViewModel.swift */; };
+		65B77A4F293F28B600DB6325 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B77A4E293F28B600DB6325 /* ImagePicker.swift */; };
 		65B7C7AE292BD051009D2B46 /* ControlButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */; };
 		65B94EB8290EA8A0001F1FD4 /* PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */; };
 		65B94EBA290EA8E7001F1FD4 /* ElementSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */; };
@@ -270,6 +273,9 @@
 		65B3510D290FCDA500BEDD92 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65B35112290FCDF100BEDD92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65B3DB8E293E44A800D906F5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		65B77A45293EDFDC00DB6325 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
+		65B77A48293EFE8600DB6325 /* UserSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewModel.swift; sourceTree = "<group>"; };
+		65B77A4E293F28B600DB6325 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		65B7C7AD292BD051009D2B46 /* ControlButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonGroup.swift; sourceTree = "<group>"; };
 		65B94EB7290EA8A0001F1FD4 /* PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKey.swift; sourceTree = "<group>"; };
 		65B94EB9290EA8E6001F1FD4 /* ElementSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementSectionView.swift; sourceTree = "<group>"; };
@@ -576,6 +582,7 @@
 		65985E2628EBDFF900061E68 /* SwiftUIView */ = {
 			isa = PBXGroup;
 			children = (
+				65B77A44293EDF9600DB6325 /* UserSetting */,
 				65FCE32F293C86B90078186B /* Carousel */,
 				65FCE32C293C46870078186B /* HydrocarbonChain */,
 				65DA6C3D2939EFBE00AB2A3E /* AnkanProperties */,
@@ -693,6 +700,7 @@
 				6531F861292E0BC4004C5468 /* SwipeBackViewModifier.swift */,
 				659C0DFC2937395200890906 /* ToggleCustomView.swift */,
 				65C15993293DE01C006F374F /* NewsContentHolder.swift */,
+				65B77A4E293F28B600DB6325 /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -720,6 +728,22 @@
 				65B21D1C2907A81300D32753 /* ChemistryLawsView.swift */,
 			);
 			path = ChemistryLaw;
+			sourceTree = "<group>";
+		};
+		65B77A44293EDF9600DB6325 /* UserSetting */ = {
+			isa = PBXGroup;
+			children = (
+				65B77A45293EDFDC00DB6325 /* UserSettingView.swift */,
+			);
+			path = UserSetting;
+			sourceTree = "<group>";
+		};
+		65B77A47293EFE7500DB6325 /* UserSetting */ = {
+			isa = PBXGroup;
+			children = (
+				65B77A48293EFE8600DB6325 /* UserSettingViewModel.swift */,
+			);
+			path = UserSetting;
 			sourceTree = "<group>";
 		};
 		65B94EB6290EA86C001F1FD4 /* Others */ = {
@@ -1074,6 +1098,7 @@
 		65ED402228D60119000F7477 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				65B77A47293EFE7500DB6325 /* UserSetting */,
 				65C15990293DD12D006F374F /* Carousels */,
 				65C71295292FADB70026A2B9 /* ChemistryBookTracking */,
 				6531F85E292DC0AE004C5468 /* PeriodicTable */,
@@ -1198,16 +1223,8 @@
 		65ED402E28D60205000F7477 /* DB */ = {
 			isa = PBXGroup;
 			children = (
-				65ED402F28D60211000F7477 /* UserDefaults */,
 			);
 			path = DB;
-			sourceTree = "<group>";
-		};
-		65ED402F28D60211000F7477 /* UserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		65ED403028D6021A000F7477 /* Entities */ = {
@@ -1449,6 +1466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B77A46293EDFDC00DB6325 /* UserSettingView.swift in Sources */,
 				6523303128D624FB007F18F6 /* ViewExtension.swift in Sources */,
 				65985E3228EC5BFF00061E68 /* BoardingModel.swift in Sources */,
 				65C8EE2D29101E7A00E251AB /* ElectrochemicalSeriesView.swift in Sources */,
@@ -1513,6 +1531,7 @@
 				6523302F28D624D4007F18F6 /* UserDefault.swift in Sources */,
 				6595DBB028F5690F00B1F503 /* ScaleButtonStyle.swift in Sources */,
 				65ED401128D5FE9D000F7477 /* ChemistryARApp.swift in Sources */,
+				65B77A49293EFE8600DB6325 /* UserSettingViewModel.swift in Sources */,
 				651AFC6F290D702A00719F14 /* ElementDetailView.swift in Sources */,
 				65E46FB728E1BA630051A150 /* AppConstant.swift in Sources */,
 				65AFFBFC29238DBE003AE15E /* SectionRowView.swift in Sources */,
@@ -1534,6 +1553,7 @@
 				6579375029221FFA00EBF5F8 /* SeriesHttpEntity.swift in Sources */,
 				65A759F2290FA3BD005105B7 /* ElementItemView.swift in Sources */,
 				65ED403D28D606F6000F7477 /* DIContainer.swift in Sources */,
+				65B77A4F293F28B600DB6325 /* ImagePicker.swift in Sources */,
 				65985E2D28EC560A00061E68 /* SplashAnimationView.swift in Sources */,
 				65221A482925439600A5C486 /* LessonRepository.swift in Sources */,
 				65A5861429010316007A0860 /* WaterFlowAnimation.swift in Sources */,

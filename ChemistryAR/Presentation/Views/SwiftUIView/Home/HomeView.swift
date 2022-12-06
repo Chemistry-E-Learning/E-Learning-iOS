@@ -20,7 +20,7 @@ struct HomeView: View {
             ZStack {
                 navigationLinkGroup
                 VStack(alignment: .leading, spacing: 0) {
-                    HeaderView()
+                    HeaderView(isPushToUserSettingView: $viewModel.isPushToUserSettingView)
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 12) {
                             makeProgramCarouselView(geo: geo)
@@ -86,6 +86,14 @@ private extension HomeView {
                     )
                 ),
                 isActive: $viewModel.isPushToLawsView
+            ) {
+                EmptyView()
+            }
+            NavigationLink(
+                destination: NavigationLazyView(
+                    UserSettingView(isPushToUserSettingView: $viewModel.isPushToUserSettingView)
+                ),
+                isActive: $viewModel.isPushToUserSettingView
             ) {
                 EmptyView()
             }

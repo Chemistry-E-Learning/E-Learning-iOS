@@ -17,6 +17,7 @@ final class HomeViewModel: ObservableObject {
     @Published var isPushToBranchesView = false
     @Published var isPushToLawsView = false
     @Published var isPushToNewsDetailView = false
+    @Published var isPushToUserSettingView = false
     @Published var isLoading = true
     @Published var isShowError = false
     private(set) var seriesID = ""

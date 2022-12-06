@@ -6,6 +6,8 @@
   
 */
 "startButtonTitle" = "Bắt Đầu";
+"saveButtonTitle" = "Lưu";
+"discardButtonTitle" = "Bỏ Qua";
 "welcomeBackTitle" = "Xin Chào";
 "classProgramTitle" = "Chương Trình Học";
 "branchesOfChemistryTitle" = "Các Phân Nhánh Hoá Học";
@@ -72,6 +74,7 @@
 "experimentVideoTitle" = "Video Thí Nghiệm";
 "alkanePropertiesTitle" = "Tính Chất Của Alkane";
 "hydrocarbonChainTitle" = "Mạch Hydrocarbon";
+"profileTitle" = "Hồ Sơ";
 // MARK: - OnBoarding
 "arTitle" = "Thực Tế Tăng Cường";
 "arDesc" = "Công nghệ thực tế tăng cường giúp học sinh trực quan hoá các cấu hình, thí nghiệm và bài học.";

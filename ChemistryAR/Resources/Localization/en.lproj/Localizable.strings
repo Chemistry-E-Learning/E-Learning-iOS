@@ -6,6 +6,8 @@
   
 */
 "startButtonTitle" = "Start";
+"saveButtonTitle" = "Save";
+"discardButtonTitle" = "Discard";
 "welcomeBackTitle" = "Welcome Back";
 "classProgramTitle" = "Class Programs";
 "branchesOfChemistryTitle" = "Branches Of Chemistry";
@@ -72,6 +74,7 @@
 "experimentVideoTitle" = "Experiment Video";
 "alkanePropertiesTitle" = "Alkane Properties";
 "hydrocarbonChainTitle" = "Hydrocarbon Chain";
+"profileTitle" = "Profile";
 // MARK: - OnBoarding
 "arTitle" = "Augmented Reality";
 "arDesc" = "Augmented reality technology helps students visualize configurations, experiments, and lessons.";

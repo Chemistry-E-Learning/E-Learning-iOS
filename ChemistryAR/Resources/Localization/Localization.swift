@@ -9,6 +9,8 @@ import Foundation
 
 enum Localization: String {
     case startButtonTitle
+    case saveButtonTitle
+    case discardButtonTitle
     case welcomeBackTitle
     case classProgramTitle
     case branchesOfChemistryTitle
@@ -77,6 +79,7 @@ enum Localization: String {
     case alkanePropertiesTitle
     case hydrocarbonChainTitle
     case experimentVideoTitle
+    case profileTitle
 
     // MARK: - Onboarding
     case arTitle

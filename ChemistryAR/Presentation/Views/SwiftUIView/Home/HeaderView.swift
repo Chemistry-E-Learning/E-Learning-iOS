@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @Binding var isPushToUserSettingView: Bool
+
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
@@ -23,10 +25,15 @@ struct HeaderView: View {
                     .font(.system(size: 15, weight: .medium))
             }
             Spacer()
-            Image("avatar")
-                .resizable()
-                .frame(width: 48, height: 48)
-                .clipShape(Circle())
+            Button {
+                isPushToUserSettingView = true
+            } label: {
+                Image("avatar")
+                    .resizable()
+                    .squareFrame(48)
+                    .clipShape(Circle())
+            }
+            .squareFrame(48)
         }
         .padding(.vertical, 12 )
         .padding(.horizontal, 20)
@@ -36,7 +43,7 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
+        HeaderView(isPushToUserSettingView: .constant(false))
             .previewLayout(PreviewLayout.sizeThatFits)
             .padding()
     }
