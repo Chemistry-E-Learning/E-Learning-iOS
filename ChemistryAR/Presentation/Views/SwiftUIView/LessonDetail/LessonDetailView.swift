@@ -55,6 +55,7 @@ struct LessonDetailView: View {
                 .coordinateSpace(name: "scroll")
                 makeStickerHeaderView(size: geo.size)
             }
+            .swipeBack(isPresented: $isPushToLessonDetailView, maxTranslation: geo.size.width / 3)
         }
         .ignoresSafeArea(.all)
         .navigationBarHidden(true)
