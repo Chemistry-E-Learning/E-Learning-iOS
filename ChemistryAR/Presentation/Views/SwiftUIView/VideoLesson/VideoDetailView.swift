@@ -22,6 +22,22 @@ struct VideoDetailView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .leading, spacing: 0) {
+                if #available(iOS 16.0, *) {
+                    HStack {
+                        BackButton(action: {
+                            isPushToVideoDetailView = false
+                        }, fontWeight: .medium, color: .black)
+                        Spacer()
+                        Text("\(Localization.lessonAttributeTitle.localizedString) \(lessonNumber)")
+                            .font(.system(size: 22, weight: .medium))
+                        Spacer()
+                        Rectangle()
+                            .fill(.clear)
+                            .squareFrame(44)
+                    }
+                    .padding(.horizontal, 8)
+                }
+                Spacer()
                 if let player = viewModel.avPlayer {
                     VideoPlayer(player: player)
                         .frame(height: UIScreen.main.bounds.height * 0.3)
@@ -73,10 +89,14 @@ struct VideoDetailView: View {
                 .padding(.leading, -12)
                 .scaleEffect(0.8)
             }
-            ToolbarItem(placement: .navigation) {
+            ToolbarItem(placement: .automatic) {
                 Text("\(Localization.lessonAttributeTitle.localizedString) \(lessonNumber)")
                     .font(.system(size: 22, weight: .medium))
-                    .padding(.leading, getScreenBounds().width * 0.21)
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Rectangle()
+                    .fill(.clear)
+                    .frame(width: UIScreen.main.bounds.width * 0.356, height: 44)
             }
         }
             .navigationBarHidden(true)
