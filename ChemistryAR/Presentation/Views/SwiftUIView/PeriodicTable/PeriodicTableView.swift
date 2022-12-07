@@ -34,6 +34,9 @@ struct PeriodicTableView: View {
                 makeFilterViewOverlay(height: geo.size.height)
             }
         }
+        .onAppear {
+            GA4Manager.shared.trackScreenView(.periodicTable)
+        }
         .ignoresSafeArea(.all, edges: .bottom)
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)

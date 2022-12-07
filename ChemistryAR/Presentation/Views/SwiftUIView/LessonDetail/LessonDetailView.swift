@@ -12,10 +12,12 @@ struct LessonDetailView: View {
     @Binding var isPushToLessonDetailView: Bool
     @State private var contentHeight = CGFloat.zero
     @State private var headerOffset = CGFloat.zero
+    @State private var isShowReportSheet = false
 
     init(isPushToLessonDetailView: Binding<Bool>, lessonID: String) {
         _isPushToLessonDetailView = isPushToLessonDetailView
         _viewModel = .init(wrappedValue: LessonDetailViewModel(lessonID: lessonID))
+        GA4Manager.shared.trackScreenView(.lessonDetail)
     }
 
     var body: some View {
@@ -55,6 +57,13 @@ struct LessonDetailView: View {
                 .coordinateSpace(name: "scroll")
                 makeStickerHeaderView(size: geo.size)
             }
+            .fullScreenCover(isPresented: $isShowReportSheet) {
+                ReportView(
+                    isShowReportView: $isShowReportSheet,
+                    contentID: viewModel.lesson.id,
+                    contentName: viewModel.lesson.lessonName
+                )
+            }
             .swipeBack(isPresented: $isPushToLessonDetailView, maxTranslation: geo.size.width / 3)
         }
         .ignoresSafeArea(.all)
@@ -92,8 +101,27 @@ private extension LessonDetailView {
                     Color.black.opacity(0.4)
                     if !viewModel.isLoading {
                         VStack(alignment: .leading, spacing: 6) {
-                            BackCircleButton {
-                                isPushToLessonDetailView = false
+                            HStack {
+                                BackCircleButton {
+                                    isPushToLessonDetailView = false
+                                }
+                                Spacer()
+                                Button {
+                                    isShowReportSheet = true
+                                } label: {
+                                    Circle()
+                                        .fill(Color.black.opacity(0.6))
+                                        .squareFrame(48)
+                                        .overlay(
+                                            Image("warning")
+                                                .renderingMode(.template)
+                                                .resizable()
+                                                .scaledToFit()
+                                                .squareFrame(24)
+                                                .foregroundColor(.white)
+                                        )
+                                }
+                                .squareFrame(48)
                             }
                             .padding(.horizontal, 8)
                             VStack(alignment: .leading) {

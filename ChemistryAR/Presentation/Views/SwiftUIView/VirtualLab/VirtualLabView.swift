@@ -45,6 +45,9 @@ struct VirtualLabView: View {
                        .offset(y: geo.size.height * 0.2)
                 }
             }
+            .onAppear {
+                GA4Manager.shared.trackScreenView(.virtualLab)
+            }
             .onChange(of: selectedChemical) { newValue in
                 if let item = newValue, reactants.count < 2, !reactants.contains(item) {
                     reactants.append(item)

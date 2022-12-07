@@ -13,10 +13,12 @@ struct ChemistryNewsDetailView: View {
     @State private var contentHeight = CGFloat.zero
     @State private var headerOffset = CGFloat.zero
     @State private var isWebViewLoading = true
+    @State private var isShowReportSheet = false
 
     init(isPushToNewsDetailView: Binding<Bool>, newsID: String) {
         _isPushToNewsDetailView = isPushToNewsDetailView
         _viewModel = .init(wrappedValue: CarouselsViewModel(id: newsID))
+        GA4Manager.shared.trackScreenView(.newsDetail)
     }
 
     var body: some View {
@@ -39,6 +41,13 @@ struct ChemistryNewsDetailView: View {
                     }
                 }
             }
+            .fullScreenCover(isPresented: $isShowReportSheet) {
+                ReportView(
+                    isShowReportView: $isShowReportSheet,
+                    contentID: viewModel.news.id,
+                    contentName: viewModel.news.title
+                )
+            }
             .swipeBack(isPresented: $isPushToNewsDetailView, maxTranslation: geo.size.width / 3)
         }
         .ignoresSafeArea(.all)
@@ -55,11 +64,30 @@ private extension ChemistryNewsDetailView {
                 ZStack(alignment: .topLeading) {
                     ImageFromUrlView(image: viewModel.news.mainImageURL, isClearBackground: false)
                         .frame(width: geo.size.width, height: geo.size.height * 0.3)
-                    BackCircleButton {
-                        isPushToNewsDetailView = false
+                    HStack {
+                        BackCircleButton {
+                            isPushToNewsDetailView = false
+                        }
+                        Spacer()
+                        Button {
+                            isShowReportSheet = true
+                        } label: {
+                            Circle()
+                                .fill(Color.black.opacity(0.6))
+                                .squareFrame(48)
+                                .overlay(
+                                    Image("warning")
+                                        .renderingMode(.template)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .squareFrame(24)
+                                        .foregroundColor(.white)
+                                )
+                        }
+                        .squareFrame(48)
                     }
                     .padding(.top, getSafeArea(edge: .top) + 20)
-                    .padding(.leading, 28)
+                    .padding(.horizontal, 28)
                 }
             }
             VStack(alignment: .leading) {
@@ -107,11 +135,30 @@ private extension ChemistryNewsDetailView {
                 type: .external,
                 url: viewModel.news.externalLink
             )
-            BackCircleButton {
-                isPushToNewsDetailView = false
+            HStack {
+                BackCircleButton {
+                    isPushToNewsDetailView = false
+                }
+                Spacer()
+                Button {
+                    isShowReportSheet = true
+                } label: {
+                    Circle()
+                        .fill(Color.black.opacity(0.6))
+                        .squareFrame(48)
+                        .overlay(
+                            Image("warning")
+                                .renderingMode(.template)
+                                .resizable()
+                                .scaledToFit()
+                                .squareFrame(24)
+                                .foregroundColor(.white)
+                        )
+                }
+                .squareFrame(48)
             }
             .padding(.top, getSafeArea(edge: .top) + 20)
-            .padding(.leading, 28)
+            .padding(.horizontal, 28)
         }
     }
 }

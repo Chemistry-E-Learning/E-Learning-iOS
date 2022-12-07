@@ -44,6 +44,9 @@ struct ElementWikipediaView: View {
             .swipeBack(isPresented: $isPushToWikipediaView, maxTranslation: geo.size.width / 3)
             .ignoresSafeArea(.all, edges: .bottom)
         }
+        .onAppear {
+            GA4Manager.shared.trackScreenView(.wikipedia)
+        }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)

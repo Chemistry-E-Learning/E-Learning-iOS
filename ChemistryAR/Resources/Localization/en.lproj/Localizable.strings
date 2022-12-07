@@ -48,6 +48,16 @@
 "noReactionTitle" = "No Reaction";
 "voltageTitle" = "Voltage";
 "newsChemistryTitle" = "Chemistry News";
+"reportHeadlineText" = "Let us know what's going on";
+"reportHeadlineDesc" = "Based on your feedback, we will detect if something is wrong.";
+"wrongContent" = "Wrong Content";
+"oldContent" = "Old Content";
+"inappropriateContent" = "Inappropriate Content";
+"objectionableContent" = "Injury Or Objectionable Content";
+"unauthorizedSales" = "Unauthorized Sales";
+"other" = "Other";
+"spamContent" = "Spam Content";
+"submitCommentsTitle" = "Submit Report";
 // MARK: - ElementGroup
 "allElementTitle" = "All Elements";
 "diatomicNonMetalTitle" = "Diatomic NonMetal";
@@ -75,6 +85,7 @@
 "alkanePropertiesTitle" = "Alkane Properties";
 "hydrocarbonChainTitle" = "Hydrocarbon Chain";
 "profileTitle" = "Profile";
+"reportTitle" = "Report Content";
 // MARK: - OnBoarding
 "arTitle" = "Augmented Reality";
 "arDesc" = "Augmented reality technology helps students visualize configurations, experiments, and lessons.";

@@ -17,6 +17,7 @@ struct ElementDetailView: View {
     init(isPushToElementDetailView: Binding<Bool>, elementID: String) {
         _isPushToElementDetailView = isPushToElementDetailView
         _viewModel = .init(wrappedValue: ElementViewModel(elementID: elementID))
+        GA4Manager.shared.trackScreenView(.elementDetail)
     }
     var body: some View {
         GeometryReader { geo in

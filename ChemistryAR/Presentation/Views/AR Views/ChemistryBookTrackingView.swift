@@ -29,6 +29,9 @@ struct ChemistryBookTrackingView: View {
                 isTracking = false
             }
         }
+        .onAppear {
+            GA4Manager.shared.trackScreenView(.chemistryBook)
+        }
         .edgesIgnoringSafeArea(.all)
     }
 }

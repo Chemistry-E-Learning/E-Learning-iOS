@@ -33,7 +33,7 @@ extension AlamofireNetworkService: NetworkServiceProtocol {
         let httpMethod = getHTTPMethod(info.method)
 
         let jsonEncoder = JSONEncoder()
-        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
+        // jsonEncoder.keyEncodingStrategy = .c
 
         var paramsEncoder: ParameterEncoder = JSONParameterEncoder(encoder: jsonEncoder)
 
@@ -43,7 +43,6 @@ extension AlamofireNetworkService: NetworkServiceProtocol {
         }
 
         let afHeaders = convertHeaders(info.headers)
-
         let session = sessionManager.request(
             info.url,
             method: httpMethod,

@@ -16,6 +16,9 @@ struct AnkanPropertiesView: View {
                 }
             }
         }
+        .onAppear {
+            GA4Manager.shared.trackScreenView(.alkaneProperties)
+        }
         .background(Color.c1A1F2C.opacity(0.9))
     }
 }

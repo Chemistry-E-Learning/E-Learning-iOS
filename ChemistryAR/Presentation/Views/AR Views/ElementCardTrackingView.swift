@@ -35,6 +35,9 @@ struct ElementCardTrackingView: View {
                 .rotationEffect(.init(degrees: -90))
             }
         }
+        .onAppear {
+            GA4Manager.shared.trackScreenView(.elementCard)
+        }
         .onChange(of: reactantsTracking) { _ in
             if reactantsTracking.count == 2 {
                 // Call api reaction

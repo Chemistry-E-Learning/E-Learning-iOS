@@ -38,7 +38,9 @@ final class DIContainer {
         container.register(NewsRepository.self) { _ in
             NewsHttpConnectionImpl()
         }
-
+        container.register(ReportRepository.self) { _ in
+            ReportHttpConnectionImpl()
+        }
 
         // UseCase
         container.register(SeriesUseCase.self) { _ in
@@ -58,6 +60,9 @@ final class DIContainer {
         }
         container.register(NewsUseCase.self) { _ in
             NewsUseCaseImpl()
+        }
+        container.register(ReportUseCase.self) { _ in
+            ReportUseCaseImpl()
         }
         // UserDefault
         //        container.register(UserDefaultsDataProtocol.self) { _ in
@@ -111,5 +116,13 @@ final class DIContainer {
 
     func getNewsUseCase() -> NewsUseCase {
         return container.resolve(NewsUseCase.self)!
+    }
+
+    func getReportRepository() -> ReportRepository {
+        return container.resolve(ReportRepository.self)!
+    }
+
+    func getReportUseCase() -> ReportUseCase {
+        return container.resolve(ReportUseCase.self)!
     }
 }

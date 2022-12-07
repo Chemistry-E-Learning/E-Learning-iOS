@@ -48,6 +48,16 @@
 "noReactionTitle" = "Không Phản Ứng";
 "voltageTitle" = "Điện Áp";
 "newsChemistryTitle" = "Tin Mới Hoá Học";
+"reportHeadlineText" = "Hãy cho chúng tôi biết chuyện gì đang xảy ra";
+"reportHeadlineDesc" = "Dựa trên ý kiến đóng góp của bạn, chúng tôi sẽ phát hiện được nếu có gì đó không ổn";
+"wrongContent" = "Nội dung không đúng";
+"oldContent" = "Nội dung cũ";
+"inappropriateContent" = "Nội dung không phù hợp";
+"objectionableContent" = "Nội dung phản cảm và gây tổn thưởng";
+"unauthorizedSales" = "Bán hàng trái phép";
+"other" = "Other";
+"spamContent" = "Nội dung spam";
+"submitCommentsTitle" = "Gửi Báo Cáo";
 // MARK: - ElementGroup 
 "allElementTitle" = "Tất cả các nguyên tố";
 "diatomicNonMetalTitle" = "Diatomic Phi Kim";
@@ -75,6 +85,7 @@
 "alkanePropertiesTitle" = "Tính Chất Của Alkane";
 "hydrocarbonChainTitle" = "Mạch Hydrocarbon";
 "profileTitle" = "Hồ Sơ";
+"reportTitle" = "Báo Cáo Nội Dung";
 // MARK: - OnBoarding
 "arTitle" = "Thực Tế Tăng Cường";
 "arDesc" = "Công nghệ thực tế tăng cường giúp học sinh trực quan hoá các cấu hình, thí nghiệm và bài học.";

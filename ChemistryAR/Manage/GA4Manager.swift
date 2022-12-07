@@ -94,12 +94,15 @@ enum GA4EventScreenView: String {
     case branchesOfChemistry = "chemistry-ar-app/branches"
     case chemistryLaws = "chemistry-ar-app/laws"
     case virtualLab = "chemistry-ar-app/virtualLab"
-    case arCamera = "chemistry-ar-app/arCamera"
+    case elementCard = "chemistry-ar-app/elementCard"
+    case chemistryBook = "chemistry-ar-app/chemistryBook"
     case periodicTable = "chemistry-ar-app/periodicTable"
     case solubilityTable = "chemistry-ar-app/solubilityTable"
     case electrochemicalSeries = "chemistry-ar-app/electrochemicalSeries"
     case alkaneProperties = "chemistry-ar-app/alkaneProperties"
     case hydrocarbonChain = "chemistry-ar-app/hydrocarbonChain"
+    case wikipedia = "chemistry-ar-app/wikipedia"
+    case elementDetail = "chemistry-ar-app/elementDetail"
 
     var screenName: String {
         switch self {
@@ -115,8 +118,10 @@ enum GA4EventScreenView: String {
             return "Chemistry Laws"
         case .virtualLab:
             return "Virtual Lab"
-        case .arCamera:
-            return "AR Camera"
+        case .elementCard:
+            return "Element Card"
+        case .chemistryBook:
+            return "Chemistry Book"
         case .periodicTable:
             return "Periodic Table"
         case .solubilityTable:
@@ -127,6 +132,10 @@ enum GA4EventScreenView: String {
             return "Alkane Properties"
         case .hydrocarbonChain:
             return "Hydrocarbon Chain"
+        case .wikipedia:
+            return "Wikipedia"
+        case .elementDetail:
+            return "Element Detail"
         }
     }
 

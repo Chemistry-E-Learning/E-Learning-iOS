@@ -21,6 +21,9 @@ struct ElectrochemicalSeriesView: View {
             }
             .background(Color.c1A1F2C.opacity(0.9))
         }
+        .onAppear {
+            GA4Manager.shared.trackScreenView(.electrochemicalSeries)
+        }
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)

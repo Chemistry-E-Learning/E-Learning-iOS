@@ -45,6 +45,9 @@ struct HydrocarbonChainView: View {
                 }
             }
         }
+        .onAppear {
+            GA4Manager.shared.trackScreenView(.hydrocarbonChain)
+        }
     }
 }
 

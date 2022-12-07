@@ -50,6 +50,16 @@ enum Localization: String {
     case ionizationEnergiesTitle
     case chemistryTablesTitle
     case noReactionTitle
+    case reportHeadlineText
+    case reportHeadlineDesc
+    case wrongContent
+    case oldContent
+    case inappropriateContent
+    case objectionableContent
+    case unauthorizedSales
+    case other
+    case spamContent
+    case submitCommentsTitle
     // MARK: - Element Group
     case allElementTitle
     case diatomicNonMetalTitle
@@ -80,6 +90,7 @@ enum Localization: String {
     case hydrocarbonChainTitle
     case experimentVideoTitle
     case profileTitle
+    case reportTitle
 
     // MARK: - Onboarding
     case arTitle

@@ -12,12 +12,14 @@ struct VideoDetailView: View {
     @StateObject private var viewModel: LessonDetailViewModel
     @Binding var isPushToVideoDetailView: Bool
     @State private var contentHeight = CGFloat.zero
+    @State private var isShowReportSheet = false
     private let lessonNumber: Int
 
     init(isPushToVideoDetailView: Binding<Bool>, lessonID: String, lessonNumber: Int) {
         _isPushToVideoDetailView = isPushToVideoDetailView
         _viewModel = .init(wrappedValue: LessonDetailViewModel(lessonID: lessonID))
         self.lessonNumber = lessonNumber
+        GA4Manager.shared.trackScreenView(.virtualLab)
     }
     var body: some View {
         GeometryReader { geo in
@@ -31,9 +33,15 @@ struct VideoDetailView: View {
                         Text("\(Localization.lessonAttributeTitle.localizedString) \(lessonNumber)")
                             .font(.system(size: 22, weight: .medium))
                         Spacer()
-                        Rectangle()
-                            .fill(.clear)
-                            .squareFrame(44)
+                        Button {
+                            isShowReportSheet = true
+                        } label: {
+                            Image("warning")
+                                .resizable()
+                                .scaledToFit()
+                                .squareFrame(28)
+                        }
+                        .squareFrame(44)
                     }
                     .padding(.horizontal, 8)
                 }
@@ -79,6 +87,13 @@ struct VideoDetailView: View {
                 .offset(y: viewModel.isLoading ? getSafeArea(edge: .top) * 0.8 : 0)
                 .padding(.horizontal, 16)
             }
+            .fullScreenCover(isPresented: $isShowReportSheet) {
+                ReportView(
+                    isShowReportView: $isShowReportSheet,
+                    contentID: viewModel.lesson.id,
+                    contentName: viewModel.lesson.lessonName
+                )
+            }
             .swipeBack(isPresented: $isPushToVideoDetailView, maxTranslation: geo.size.width / 3)
         }
         .toolbar {
@@ -94,9 +109,19 @@ struct VideoDetailView: View {
                     .font(.system(size: 22, weight: .medium))
             }
             ToolbarItem(placement: .navigationBarTrailing) {
-                Rectangle()
-                    .fill(.clear)
-                    .frame(width: UIScreen.main.bounds.width * 0.356, height: 44)
+                HStack {
+                    Spacer()
+                    Button {
+                        isShowReportSheet = true
+                    } label: {
+                        Image("warning")
+                            .resizable()
+                            .scaledToFit()
+                            .squareFrame(28)
+                    }
+                    .squareFrame(44)
+                }
+                .frame(width: UIScreen.main.bounds.width * 0.356, height: 44)
             }
         }
             .navigationBarHidden(true)

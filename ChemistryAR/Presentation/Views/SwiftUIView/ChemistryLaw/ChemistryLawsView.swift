@@ -14,6 +14,7 @@ struct ChemistryLawsView: View {
     init(isPushToLawsView: Binding<Bool>, seriesID: String) {
         _isPushToLawsView = isPushToLawsView
         _viewModel = .init(wrappedValue: LessonsListViewModel(seriesID: seriesID))
+        GA4Manager.shared.trackScreenView(.chemistryLaws)
     }
 
     var body: some View {

@@ -34,6 +34,9 @@ struct SolubilityTableView: View {
                     }
             }
         }
+        .onAppear {
+            GA4Manager.shared.trackScreenView(.solubilityTable)
+        }
         .ignoresSafeArea(.all, edges: .bottom)
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
