@@ -96,7 +96,7 @@ DEPENDENCIES:
   - Firebase/AnalyticsWithoutAdIdSupport (~> 9.6.0)
   - Firebase/Crashlytics (~> 9.6.0)
   - Firebase/Messaging (~> 9.6.0)
-  - lottie-ios
+  - lottie-ios (~> 3.5.0)
   - Swinject
 
 SPEC REPOS:
@@ -136,6 +136,6 @@ SPEC CHECKSUMS:
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   Swinject: b4a11b31992e8668308dc594ba1cb9b3164a37ab
 
-PODFILE CHECKSUM: 63a476f66c9540e00b652bd0c15a7bb6583325b1
+PODFILE CHECKSUM: be2514e27ec22b76059a1a2da0967688133d0654
 
 COCOAPODS: 1.11.3

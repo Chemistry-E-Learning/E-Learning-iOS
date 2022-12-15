@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B131AE0F2FEAD7168566657 /* Pods_ChemistryAR_ChemistryARTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC3FF4A6035F138B4576318 /* Pods_ChemistryAR_ChemistryARTests.framework */; };
 		6507FAE928F6AAF40013813A /* VirtualLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6507FAE828F6AAF40013813A /* VirtualLabView.swift */; };
 		65093A6428F2FB9B00538549 /* BranchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6328F2FB9B00538549 /* BranchItemView.swift */; };
 		65093A6728F30BD400538549 /* LawItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65093A6628F30BD400538549 /* LawItem.swift */; };
@@ -54,6 +55,9 @@
 		6579376729223E7200EBF5F8 /* SeriesHttpConnectionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6579376629223E7200EBF5F8 /* SeriesHttpConnectionImpl.swift */; };
 		65830B6C28F026EB0052BA49 /* ElementCardTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65830B6B28F026EB0052BA49 /* ElementCardTrackingView.swift */; };
 		65830B9528F082AF0052BA49 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 65830B9428F082AF0052BA49 /* art.scnassets */; };
+		6592EF292946E37B00BD9732 /* ChemistryARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592EF282946E37B00BD9732 /* ChemistryARTests.swift */; };
+		6592EF302946E3A600BD9732 /* LessonUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592EF062946DCFF00BD9732 /* LessonUseCaseTest.swift */; };
+		6592EF322946E3AA00BD9732 /* LessonDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6592EF082946E0D600BD9732 /* LessonDetailViewModelTests.swift */; };
 		659404EB2901361700D78A70 /* FillShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659404EA2901361700D78A70 /* FillShape.swift */; };
 		659404ED2901371300D78A70 /* WaveFillShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659404EC2901371300D78A70 /* WaveFillShape.swift */; };
 		6595DBA028F520BD00B1F503 /* VideoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595DB9F28F520BD00B1F503 /* VideoItemView.swift */; };
@@ -93,6 +97,11 @@
 		65AFFBFA2923875C003AE15E /* HeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AFFBF92923875C003AE15E /* HeaderSectionView.swift */; };
 		65AFFBFC29238DBE003AE15E /* SectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AFFBFB29238DBE003AE15E /* SectionRowView.swift */; };
 		65B0EC212902C9ED008C49E0 /* MetalGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B0EC202902C9ED008C49E0 /* MetalGroupView.swift */; };
+		65B1009C294709170034DA35 /* LessonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B1009B294709170034DA35 /* LessonListViewModelTests.swift */; };
+		65B1009F294709550034DA35 /* VideoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B1009E294709550034DA35 /* VideoListViewModelTests.swift */; };
+		65B100A2294709E10034DA35 /* VideoDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B100A1294709E10034DA35 /* VideoDetailViewModelTests.swift */; };
+		65B100A529470A780034DA35 /* ElementDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B100A429470A780034DA35 /* ElementDetailViewModelTests.swift */; };
+		65B100A829470ABD0034DA35 /* ElementCardTrackingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B100A729470ABD0034DA35 /* ElementCardTrackingViewModelTests.swift */; };
 		65B15F3B2940C715002F8804 /* ReportContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B15F3A2940C715002F8804 /* ReportContentViewModel.swift */; };
 		65B15F3E2940D7F4002F8804 /* ReportUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B15F3D2940D7F4002F8804 /* ReportUseCase.swift */; };
 		65B15F402940D7FE002F8804 /* ReportUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B15F3F2940D7FE002F8804 /* ReportUseCaseImpl.swift */; };
@@ -190,6 +199,16 @@
 		E7EFBEBD7D064843085F995E /* Pods_ChemistryAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C29B6DA53CABA3BA48A514 /* Pods_ChemistryAR.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6592EF2A2946E37B00BD9732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65ED400528D5FE9D000F7477 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65ED400C28D5FE9D000F7477;
+			remoteInfo = ChemistryAR;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		26EA850E32323879880D3AB7 /* Pods-ChemistryAR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.debug.xcconfig"; path = "Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.debug.xcconfig"; sourceTree = "<group>"; };
 		6507FAE828F6AAF40013813A /* VirtualLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualLabView.swift; sourceTree = "<group>"; };
@@ -240,6 +259,17 @@
 		65830B6B28F026EB0052BA49 /* ElementCardTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCardTrackingView.swift; sourceTree = "<group>"; };
 		65830B9428F082AF0052BA49 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		65830B9728F082C90052BA49 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		6592EF062946DCFF00BD9732 /* LessonUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonUseCaseTest.swift; sourceTree = "<group>"; };
+		6592EF082946E0D600BD9732 /* LessonDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailViewModelTests.swift; sourceTree = "<group>"; };
+		6592EF262946E37B00BD9732 /* ChemistryARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChemistryARTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6592EF282946E37B00BD9732 /* ChemistryARTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryARTests.swift; sourceTree = "<group>"; };
+		6592EF342946E5BA00BD9732 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6592EF362946E61100BD9732 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAnalytics.xcframework; path = Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
+		6592EF382946E61100BD9732 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6592EF3A2946E61100BD9732 /* FirebaseCoreInternal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCoreInternal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6592EF3C2946E61100BD9732 /* FirebaseCrashlytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCrashlytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6592EF3E2946E61100BD9732 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseInstallations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6592EF402946E61100BD9732 /* FirebaseMessaging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseMessaging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		659404EA2901361700D78A70 /* FillShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillShape.swift; sourceTree = "<group>"; };
 		659404EC2901371300D78A70 /* WaveFillShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveFillShape.swift; sourceTree = "<group>"; };
 		6595DB9F28F520BD00B1F503 /* VideoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItemView.swift; sourceTree = "<group>"; };
@@ -278,6 +308,11 @@
 		65AFFBF92923875C003AE15E /* HeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSectionView.swift; sourceTree = "<group>"; };
 		65AFFBFB29238DBE003AE15E /* SectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionRowView.swift; sourceTree = "<group>"; };
 		65B0EC202902C9ED008C49E0 /* MetalGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalGroupView.swift; sourceTree = "<group>"; };
+		65B1009B294709170034DA35 /* LessonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonListViewModelTests.swift; sourceTree = "<group>"; };
+		65B1009E294709550034DA35 /* VideoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModelTests.swift; sourceTree = "<group>"; };
+		65B100A1294709E10034DA35 /* VideoDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModelTests.swift; sourceTree = "<group>"; };
+		65B100A429470A780034DA35 /* ElementDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetailViewModelTests.swift; sourceTree = "<group>"; };
+		65B100A729470ABD0034DA35 /* ElementCardTrackingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementCardTrackingViewModelTests.swift; sourceTree = "<group>"; };
 		65B15F3A2940C715002F8804 /* ReportContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportContentViewModel.swift; sourceTree = "<group>"; };
 		65B15F3D2940D7F4002F8804 /* ReportUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUseCase.swift; sourceTree = "<group>"; };
 		65B15F3F2940D7FE002F8804 /* ReportUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUseCaseImpl.swift; sourceTree = "<group>"; };
@@ -370,14 +405,26 @@
 		65ED403C28D606F6000F7477 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		65EEB8DD2910F17D00474BFF /* SolubilityTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolubilityTableView.swift; sourceTree = "<group>"; };
 		65F7A5F7291D084B0091D5CE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		65F7DB03294B31EF00C5C38E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		65FCE32D293C469B0078186B /* HydrocarbonChainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrocarbonChainView.swift; sourceTree = "<group>"; };
 		65FCE333293C86EE0078186B /* CarouselItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselItemView.swift; sourceTree = "<group>"; };
 		65FCE335293C8B420078186B /* CarouselViewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewEntity.swift; sourceTree = "<group>"; };
 		69C29B6DA53CABA3BA48A514 /* Pods_ChemistryAR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChemistryAR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E67F2F5B651AE780BEE34A /* Pods-ChemistryAR-ChemistryARTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR-ChemistryARTests.debug.xcconfig"; path = "Target Support Files/Pods-ChemistryAR-ChemistryARTests/Pods-ChemistryAR-ChemistryARTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BCC3FF4A6035F138B4576318 /* Pods_ChemistryAR_ChemistryARTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChemistryAR_ChemistryARTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7E1F1C36F86DC64A21BEF65 /* Pods-ChemistryAR-ChemistryARTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR-ChemistryARTests.release.xcconfig"; path = "Target Support Files/Pods-ChemistryAR-ChemistryARTests/Pods-ChemistryAR-ChemistryARTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF952D4FAD307029EDE348AF /* Pods-ChemistryAR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChemistryAR.release.xcconfig"; path = "Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		456F5A17F8474F30C8798E0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B131AE0F2FEAD7168566657 /* Pods_ChemistryAR_ChemistryARTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65ED400A28D5FE9D000F7477 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -571,6 +618,37 @@
 			path = VirtualLab;
 			sourceTree = "<group>";
 		};
+		6592EF042946DBC500BD9732 /* LessonDetailViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				6592EF062946DCFF00BD9732 /* LessonUseCaseTest.swift */,
+				6592EF082946E0D600BD9732 /* LessonDetailViewModelTests.swift */,
+			);
+			path = LessonDetailViewModelTests;
+			sourceTree = "<group>";
+		};
+		6592EF052946DC0D00BD9732 /* LessonListViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				65B1009B294709170034DA35 /* LessonListViewModelTests.swift */,
+			);
+			path = LessonListViewModelTests;
+			sourceTree = "<group>";
+		};
+		6592EF272946E37B00BD9732 /* ChemistryARTests */ = {
+			isa = PBXGroup;
+			children = (
+				65B100A629470A7D0034DA35 /* ElementCardTrackingTests */,
+				65B100A329470A610034DA35 /* ElementDetailViewModelTests */,
+				65B100A0294709C70034DA35 /* VideoDetailViewModelTests */,
+				65B1009D294709400034DA35 /* VideoListViewModelTests */,
+				6592EF052946DC0D00BD9732 /* LessonListViewModelTests */,
+				6592EF042946DBC500BD9732 /* LessonDetailViewModelTests */,
+				6592EF282946E37B00BD9732 /* ChemistryARTests.swift */,
+			);
+			path = ChemistryARTests;
+			sourceTree = "<group>";
+		};
 		6595DBA328F526CE00B1F503 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,6 +825,38 @@
 				65B2CE8B291948D50032C812 /* ChemicalView.swift */,
 			);
 			path = Information;
+			sourceTree = "<group>";
+		};
+		65B1009D294709400034DA35 /* VideoListViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				65B1009E294709550034DA35 /* VideoListViewModelTests.swift */,
+			);
+			path = VideoListViewModelTests;
+			sourceTree = "<group>";
+		};
+		65B100A0294709C70034DA35 /* VideoDetailViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				65B100A1294709E10034DA35 /* VideoDetailViewModelTests.swift */,
+			);
+			path = VideoDetailViewModelTests;
+			sourceTree = "<group>";
+		};
+		65B100A329470A610034DA35 /* ElementDetailViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				65B100A429470A780034DA35 /* ElementDetailViewModelTests.swift */,
+			);
+			path = ElementDetailViewModelTests;
+			sourceTree = "<group>";
+		};
+		65B100A629470A7D0034DA35 /* ElementCardTrackingTests */ = {
+			isa = PBXGroup;
+			children = (
+				65B100A729470ABD0034DA35 /* ElementCardTrackingViewModelTests.swift */,
+			);
+			path = ElementCardTrackingTests;
 			sourceTree = "<group>";
 		};
 		65B15F392940C709002F8804 /* Report */ = {
@@ -1091,6 +1201,7 @@
 			isa = PBXGroup;
 			children = (
 				65ED400F28D5FE9D000F7477 /* ChemistryAR */,
+				6592EF272946E37B00BD9732 /* ChemistryARTests */,
 				65ED400E28D5FE9D000F7477 /* Products */,
 				75D4713C920CE1D0A6D35317 /* Pods */,
 				C3510D40054748E7B58F712F /* Frameworks */,
@@ -1101,6 +1212,7 @@
 			isa = PBXGroup;
 			children = (
 				65ED400D28D5FE9D000F7477 /* ChemistryAR.app */,
+				6592EF262946E37B00BD9732 /* ChemistryARTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1108,14 +1220,15 @@
 		65ED400F28D5FE9D000F7477 /* ChemistryAR */ = {
 			isa = PBXGroup;
 			children = (
+				65F7DB03294B31EF00C5C38E /* Info.plist */,
 				65093A6528F2FE7A00538549 /* Manage */,
 				65ED401E28D6009F000F7477 /* Config */,
 				65ED401F28D600C0000F7477 /* Resources */,
 				65ED402928D60164000F7477 /* DataInfrastructure */,
 				65ED402528D60132000F7477 /* Domain */,
 				65ED402128D600E7000F7477 /* Presentation */,
-				65ED402028D600D6000F7477 /* Utils */,
 				65ED401628D5FEA5000F7477 /* Preview Content */,
+				65ED402028D600D6000F7477 /* Utils */,
 			);
 			path = ChemistryAR;
 			sourceTree = "<group>";
@@ -1407,6 +1520,8 @@
 			children = (
 				26EA850E32323879880D3AB7 /* Pods-ChemistryAR.debug.xcconfig */,
 				FF952D4FAD307029EDE348AF /* Pods-ChemistryAR.release.xcconfig */,
+				B9E67F2F5B651AE780BEE34A /* Pods-ChemistryAR-ChemistryARTests.debug.xcconfig */,
+				D7E1F1C36F86DC64A21BEF65 /* Pods-ChemistryAR-ChemistryARTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1414,7 +1529,15 @@
 		C3510D40054748E7B58F712F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6592EF362946E61100BD9732 /* FirebaseAnalytics.xcframework */,
+				6592EF382946E61100BD9732 /* FirebaseCoreDiagnostics.framework */,
+				6592EF3A2946E61100BD9732 /* FirebaseCoreInternal.framework */,
+				6592EF3C2946E61100BD9732 /* FirebaseCrashlytics.framework */,
+				6592EF3E2946E61100BD9732 /* FirebaseInstallations.framework */,
+				6592EF402946E61100BD9732 /* FirebaseMessaging.framework */,
+				6592EF342946E5BA00BD9732 /* FirebaseCore.framework */,
 				69C29B6DA53CABA3BA48A514 /* Pods_ChemistryAR.framework */,
+				BCC3FF4A6035F138B4576318 /* Pods_ChemistryAR_ChemistryARTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1422,6 +1545,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6592EF252946E37B00BD9732 /* ChemistryARTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6592EF2C2946E37B00BD9732 /* Build configuration list for PBXNativeTarget "ChemistryARTests" */;
+			buildPhases = (
+				022844777900EE919DA5AF8B /* [CP] Check Pods Manifest.lock */,
+				6592EF222946E37B00BD9732 /* Sources */,
+				6592EF242946E37B00BD9732 /* Resources */,
+				456F5A17F8474F30C8798E0A /* Frameworks */,
+				5442936D5D68AC7E093812D0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6592EF2B2946E37B00BD9732 /* PBXTargetDependency */,
+			);
+			name = ChemistryARTests;
+			productName = ChemistryARTests;
+			productReference = 6592EF262946E37B00BD9732 /* ChemistryARTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		65ED400C28D5FE9D000F7477 /* ChemistryAR */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65ED401B28D5FEA5000F7477 /* Build configuration list for PBXNativeTarget "ChemistryAR" */;
@@ -1437,8 +1580,6 @@
 			dependencies = (
 			);
 			name = ChemistryAR;
-			packageProductDependencies = (
-			);
 			productName = ChemistryAR;
 			productReference = 65ED400D28D5FE9D000F7477 /* ChemistryAR.app */;
 			productType = "com.apple.product-type.application";
@@ -1450,9 +1591,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					6592EF252946E37B00BD9732 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 65ED400C28D5FE9D000F7477;
+					};
 					65ED400C28D5FE9D000F7477 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -1468,18 +1613,24 @@
 				vi,
 			);
 			mainGroup = 65ED400428D5FE9D000F7477;
-			packageReferences = (
-			);
 			productRefGroup = 65ED400E28D5FE9D000F7477 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				65ED400C28D5FE9D000F7477 /* ChemistryAR */,
+				6592EF252946E37B00BD9732 /* ChemistryARTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6592EF242946E37B00BD9732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65ED400B28D5FE9D000F7477 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1501,6 +1652,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		022844777900EE919DA5AF8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChemistryAR-ChemistryARTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		409ED7FB0E0485EE92F749E5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1516,6 +1689,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR/Pods-ChemistryAR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5442936D5D68AC7E093812D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR-ChemistryARTests/Pods-ChemistryAR-ChemistryARTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR-ChemistryARTests/Pods-ChemistryAR-ChemistryARTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChemistryAR-ChemistryARTests/Pods-ChemistryAR-ChemistryARTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7A63C5A5645C82403FBA2BA2 /* [CP] Check Pods Manifest.lock */ = {
@@ -1543,6 +1733,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6592EF222946E37B00BD9732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65B100A829470ABD0034DA35 /* ElementCardTrackingViewModelTests.swift in Sources */,
+				65B1009C294709170034DA35 /* LessonListViewModelTests.swift in Sources */,
+				6592EF292946E37B00BD9732 /* ChemistryARTests.swift in Sources */,
+				6592EF302946E3A600BD9732 /* LessonUseCaseTest.swift in Sources */,
+				65B100A529470A780034DA35 /* ElementDetailViewModelTests.swift in Sources */,
+				65B100A2294709E10034DA35 /* VideoDetailViewModelTests.swift in Sources */,
+				6592EF322946E3AA00BD9732 /* LessonDetailViewModelTests.swift in Sources */,
+				65B1009F294709550034DA35 /* VideoListViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65ED400928D5FE9D000F7477 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1721,6 +1926,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6592EF2B2946E37B00BD9732 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65ED400C28D5FE9D000F7477 /* ChemistryAR */;
+			targetProxy = 6592EF2A2946E37B00BD9732 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		65B3510E290FCDA500BEDD92 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -1741,6 +1954,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6592EF2D2946E37B00BD9732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9E67F2F5B651AE780BEE34A /* Pods-ChemistryAR-ChemistryARTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minh.ChemistryARTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChemistryAR.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChemistryAR";
+			};
+			name = Debug;
+		};
+		6592EF2E2946E37B00BD9732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7E1F1C36F86DC64A21BEF65 /* Pods-ChemistryAR-ChemistryARTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minh.ChemistryARTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChemistryAR.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChemistryAR";
+			};
+			name = Release;
+		};
 		65ED401928D5FEA5000F7477 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1861,14 +2124,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChemistryAR/Preview Content\"";
 				DEVELOPMENT_TEAM = 7ANZRV2MVT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "camera use";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_FILE = ChemistryAR/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Grant camera access to use this feature";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -1882,6 +2146,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Minh.ChemistryAR.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1897,14 +2162,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChemistryAR/Preview Content\"";
 				DEVELOPMENT_TEAM = 7ANZRV2MVT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "camera use";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_FILE = ChemistryAR/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Grant camera access to use this feature";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
@@ -1918,6 +2184,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Minh.ChemistryAR.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1930,6 +2197,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6592EF2C2946E37B00BD9732 /* Build configuration list for PBXNativeTarget "ChemistryARTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6592EF2D2946E37B00BD9732 /* Debug */,
+				6592EF2E2946E37B00BD9732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		65ED400828D5FE9D000F7477 /* Build configuration list for PBXProject "ChemistryAR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
