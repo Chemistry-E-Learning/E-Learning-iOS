@@ -63,7 +63,7 @@ struct FloatButtonGroupView: View {
                         }
                         .foregroundColor(.white)
                         .rotationEffect(.init(degrees: rotateBar ? 0 : 90), anchor: .zero)
-                        .offset(y: rotateBar ? 0 : 72)
+                        .offset(y: rotateBar ? 0 : 100)
                         .animation(Animation.spring(), value: rotateBar)
                     }
 

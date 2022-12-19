@@ -39,8 +39,7 @@ struct ChemicalView: View {
                     )
                 }
         } else {
-            #warning("TODO: MinhNN44 - Animation here")
-            Text("Is Loading")
+            Text("")
                 .onAppear {
                     viewModel.doGetElementInformation(with: elementName)
                 }

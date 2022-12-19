@@ -69,6 +69,8 @@ struct VirtualLabView: View {
                     chemicalList: $chemicalList,
                     selectedTab: $selectedTab
                 )
+                .padding(.leading, 16)
+                .padding(.bottom, 20)
                 ,alignment: .bottomLeading
             )
             .ignoresSafeArea(.all, edges: .all)
@@ -342,7 +344,7 @@ class Instrument: Identifiable, Equatable  {
         Instrument(name: "beaker", image: "beaker", location: CGPoint.zero),
         Instrument(name: "flat-bottemed-flask", image: "flat-bottemed-flask", location: CGPoint.zero),
         Instrument(name: "triangular-vase", image: "triangular-vase", location: CGPoint.zero),
-        Instrument(name: "triangular-vase-2", image: "triangular-vase", location: CGPoint.zero)
+        Instrument(name: "alcohol_lamp", image: "alcohol_lamp", location: CGPoint.zero)
     ]
 
     static func == (lhs: Instrument, rhs: Instrument) -> Bool {
