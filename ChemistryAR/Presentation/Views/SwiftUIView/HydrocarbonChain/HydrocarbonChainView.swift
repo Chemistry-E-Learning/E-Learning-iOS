@@ -112,7 +112,7 @@ struct ChainModel: Identifiable {
         ),
         ChainModel(
             name: "Fluorite",
-            image: "fluorite",
+            image: "indeno",
             parameter: "0.000019g/100ml",
             color: Color(hex: 0xB16686)
         ),
@@ -166,7 +166,7 @@ struct ChainModel: Identifiable {
         ),
         ChainModel(
             name: "Dibenzo(a,h)",
-            image: "Dibenzo",
+            image: "dibenzo",
             parameter: "0.0031g/100ml",
             color: Color(hex: 0x358210)
         ),

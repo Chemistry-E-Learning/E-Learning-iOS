@@ -54,6 +54,17 @@ extension LessonsListViewModel {
             }
             .store(in: &disposables)
     }
+
+    func logGA4EventSelectLesson(lesson: Lesson) {
+        GA4Manager.shared.trackCustomEvent(
+            eventName: .selectContent,
+            parameters: [
+                GA4ParameterKey.contentType.key: GA4ParameterValue.lesson.value,
+                GA4ParameterKey.itemID.key: lesson.id,
+                GA4ParameterKey.lessonName.key: lesson.lessonName
+            ]
+        )
+    }
 }
 
 // MARK: - Helper Function

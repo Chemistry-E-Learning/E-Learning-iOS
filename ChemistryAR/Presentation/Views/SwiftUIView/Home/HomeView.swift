@@ -144,6 +144,7 @@ private extension HomeView {
                         CarouselItemView(model: item, size: geo.size)
                             .onTapGesture {
                                 viewModel.onClickNewsItemView(id: item.id)
+                                viewModel.logGA4EventSelectNews(news: item)
                             }
                     }
                 }

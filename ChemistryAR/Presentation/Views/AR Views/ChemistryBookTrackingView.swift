@@ -67,6 +67,7 @@ struct ChemistryBookTrackingARView: UIViewRepresentable {
         sceneView.delegate = context.coordinator
         sceneView.showsStatistics = true
         sceneView.autoenablesDefaultLighting = true
+        sceneView.allowsCameraControl = true
         sceneView.automaticallyUpdatesLighting = true
         sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         return sceneView

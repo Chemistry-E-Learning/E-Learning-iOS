@@ -5,13 +5,55 @@
   },
   "resources" : [
     {
+      "filename" : "al203-reaction-video.arreferenceimage"
+    },
+    {
       "filename" : "battery-zn-cu.arreferenceimage"
     },
     {
       "filename" : "bauxite-electrolysis-video.arreferenceimage"
     },
     {
+      "filename" : "benzen.arreferenceimage"
+    },
+    {
+      "filename" : "butadiene-polymerization.arreferenceimage"
+    },
+    {
+      "filename" : "carboxylic-acids.arreferenceimage"
+    },
+    {
+      "filename" : "centered-cube-book.arreferenceimage"
+    },
+    {
+      "filename" : "centered-mass-book.arreferenceimage"
+    },
+    {
+      "filename" : "chemistry-bottles.arreferenceimage"
+    },
+    {
+      "filename" : "diamond.arreferenceimage"
+    },
+    {
       "filename" : "electrolysis-cu.arreferenceimage"
+    },
+    {
+      "filename" : "h2so4-hot-solid-video.arreferenceimage"
+    },
+    {
+      "filename" : "nacl-model.arreferenceimage"
+    },
+    {
+      "filename" : "nacl.arreferenceimage"
+    },
+    {
+      "filename" : "overlapping-shaft.arreferenceimage"
+    },
+    {
+      "filename" : "sp2.arreferenceimage"
+    },
+    {
+      "filename" : "sulfurhidro-reaction-video.arreferenceimage"
     }
   ]
 }

@@ -38,6 +38,7 @@ struct SectionRowView: View {
             if let wrappedImage = image {
                 ImageFromUrlView(image: wrappedImage)
                     .frame(width: isStructureImage ? 240 : width - 64, height: isStructureImage ? 240 : 72)
+                    .scaleEffect(0.8)
                     .clipped()
             } else {
                 Text(desc)

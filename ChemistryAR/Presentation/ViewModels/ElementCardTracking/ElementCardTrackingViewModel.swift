@@ -15,6 +15,7 @@ final class ElementCardTrackingViewModel: ObservableObject {
     @Published var nature = NatureModel.emptyData
     @Published var atomParameters = AtomParameter.emptyData
     @Published var isLoading = true
+    @Published var isLoadingReaction = true
     @Published var isShowError = false
     @Published var reactants = [String]()
     @Published var chemicalEquation = [String]()
@@ -90,7 +91,7 @@ extension ElementCardTrackingViewModel {
                 case .finished:
                     break
                 }
-                self.isLoading = false
+                self.isLoadingReaction = false
             } receiveValue: { [weak self] response in
                 guard let self = self else { return }
                 self.reactants = response.reactants

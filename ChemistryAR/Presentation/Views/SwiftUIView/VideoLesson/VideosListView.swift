@@ -65,6 +65,7 @@ struct VideosListView: View {
                                 VideoItemView(title: lesson.lessonName, index: index + 1)
                                     .onTapGesture {
                                         viewModel.onClickLessonItemView(id: lesson.id, index: index + 1)
+                                        viewModel.logGA4EventSelectLesson(lesson: lesson)
                                     }
                             }
                         }

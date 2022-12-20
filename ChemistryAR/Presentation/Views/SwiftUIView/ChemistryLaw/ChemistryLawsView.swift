@@ -50,6 +50,7 @@ struct ChemistryLawsView: View {
                                 .redacted(if: viewModel.isLoading)
                                 .onTapGesture {
                                     viewModel.onClickLessonItemView(id: lesson.id, index: index + 1)
+                                    viewModel.logGA4EventSelectLesson(lesson: lesson)
                                 }
                         }
                     }

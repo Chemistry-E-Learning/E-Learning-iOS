@@ -5,13 +5,13 @@
   },
   "resources" : [
     {
+      "filename" : "aluminum.arreferenceimage"
+    },
+    {
       "filename" : "beryllium.arreferenceimage"
     },
     {
       "filename" : "bromine-backside.arreferenceimage"
-    },
-    {
-      "filename" : "bromine.arreferenceimage"
     },
     {
       "filename" : "calcium-backside.arreferenceimage"
@@ -54,6 +54,12 @@
     },
     {
       "filename" : "oxygen.arreferenceimage"
+    },
+    {
+      "filename" : "radon-backside.arreferenceimage"
+    },
+    {
+      "filename" : "radon.arreferenceimage"
     }
   ]
 }

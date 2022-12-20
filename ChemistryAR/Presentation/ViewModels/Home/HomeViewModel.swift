@@ -60,6 +60,17 @@ extension HomeViewModel {
             }
             .store(in: &disposables)
     }
+
+    func logGA4EventSelectNews(news: CarouselViewEntity) {
+        GA4Manager.shared.trackCustomEvent(
+            eventName: .selectContent,
+            parameters: [
+                GA4ParameterKey.contentType.key: GA4ParameterValue.news.value,
+                GA4ParameterKey.itemID.key: news.id,
+                GA4ParameterKey.newsName.key: news.title
+            ]
+        )
+    }
 }
 
 // MARK: - Function

@@ -159,12 +159,12 @@ enum GA4EventName: String {
     }
 }
 
-/// パラメータキー | Parameter key
 enum GA4ParameterKey: String {
     case contentGroup = "content_group"
     case contentType = "content_type"
     case category = "category"
     case itemID = "item_id"
+    case lessonName = "lesson_name"
     case programName = "program_name"
     case firstTime = "first_time"
     case genre = "genre"
