@@ -32,15 +32,13 @@ struct ElementCardTrackingView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 16)
                 .background(Color.white.opacity(0.6).cornerRadius(12))
-                .rotationEffect(.init(degrees: 90))
             } else if !viewModel.isLoadingReaction {
                 Text(Localization.noReactionTitle.localizedString)
                     .font(.system(size: 24, weight: .medium))
                     .padding(.horizontal, 20)
                     .padding(.vertical, 16)
                     .background(Color.white.opacity(0.6).cornerRadius(12))
-                    .rotationEffect(.init(degrees: 90))
-            }
+                 }
         }
         .onAppear {
             GA4Manager.shared.trackScreenView(.elementCard)
